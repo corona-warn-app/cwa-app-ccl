@@ -1,0 +1,24 @@
+{
+  "name": "cwa-app-ccl",
+  "version": "1.0.0",
+  "description": "Common Covid Logic (CCL) for Android and iOS",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corona-warn-app/cwa-app-ccl.git"
+  },
+  "keywords": [],
+  "author": "SAP SE <corona-warn-app.opensource@sap.com>",
+  "contributors": [
+    "Maximilian Lenkeit <maximilian.lenkeit@sap.com>"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/corona-warn-app/cwa-app-ccl/issues"
+  },
+  "homepage": "https://github.com/corona-warn-app/cwa-app-ccl#readme"
+}
