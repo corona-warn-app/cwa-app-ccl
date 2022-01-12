@@ -1,0 +1,2139 @@
+[
+  {
+    "title": "script - is a supported operation",
+    "logic": {
+      "script": []
+    },
+    "data": {},
+    "exp": null
+  },
+  {
+    "title": "script - restricts the scope of variable declarations",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "offset",
+            5
+          ]
+        },
+        {
+          "declare": [
+            "multiplier",
+            6
+          ]
+        },
+        {
+          "script": [
+            {
+              "declare": [
+                "offset",
+                50
+              ]
+            },
+            {
+              "declare": [
+                "multiplier",
+                60
+              ]
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                "offset", { "var": "offset" },
+                "multiplier", { "var": "multiplier" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": {},
+    "exp": {
+      "offset": 5,
+      "multiplier": 6
+    }
+  },
+  {
+    "title": "return - can be used in a script",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            "hello"
+          ]
+        }
+      ]
+    },
+    "data": {},
+    "exp": "hello"
+  },
+  {
+    "title": "return - can return a string",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            "hello"
+          ]
+        }
+      ]
+    },
+    "data": {},
+    "exp": "hello"
+  },
+  {
+    "title": "return - can return a number (integer)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            5
+          ]
+        }
+      ]
+    },
+    "data": {},
+    "exp": 5
+  },
+  {
+    "title": "return - can return a number (float)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            5.5
+          ]
+        }
+      ]
+    },
+    "data": {},
+    "exp": 5.5
+  },
+  {
+    "title": "return - can return a boolean (true)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            true
+          ]
+        }
+      ]
+    },
+    "data": {},
+    "exp": true
+  },
+  {
+    "title": "return - can return a boolean (false)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            false
+          ]
+        }
+      ]
+    },
+    "data": {},
+    "exp": false
+  },
+  {
+    "title": "return - can return null",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            null
+          ]
+        }
+      ]
+    },
+    "data": {},
+    "exp": null
+  },
+  {
+    "title": "return - evaluates a var statement",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "greeting": "hello" },
+    "exp": "hello"
+  },
+  {
+    "title": "declare - can be used in a script",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "greeting",
+            "hello"
+          ]
+        }
+      ]
+    },
+    "data": { },
+    "exp": null
+  },
+  {
+    "title": "declare - declares a variable",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "greeting",
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { },
+    "exp": "hello"
+  },
+  {
+    "title": "declare - overwrites variable from the data context",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "greeting",
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "greeting": "hola!" },
+    "exp": "hello"
+  },
+  {
+    "title": "declare - supports var statements for the value",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "greeting",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "value": "hello" },
+    "exp": "hello"
+  },
+  {
+    "title": "declare - supports var statements for the identifier",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "param": "greeting" },
+    "exp": "hello"
+  },
+  {
+    "title": "declare - data types - if first parameter is a string, creates a variable with the given name",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "param": "greeting" },
+    "exp": "hello"
+  },
+  {
+    "title": "declare - data types - if first parameter is a number, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "param": 5 },
+    "throws": true
+  },
+  {
+    "title": "declare - data types - if first parameter is a boolean (true), throws an exception",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "param": true },
+    "throws": true
+  },
+  {
+    "title": "declare - data types - if first parameter is a boolean (false), throws an exception",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "param": false },
+    "throws": true
+  },
+  {
+    "title": "declare - data types - if first parameter is an array, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "param": ["hello"] },
+    "throws": true
+  },
+  {
+    "title": "declare - data types - if first parameter is an object, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "param": { "hello": "world"} },
+    "throws": true
+  },
+  {
+    "title": "declare - data types - if first parameter is null, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "param": null },
+    "throws": true
+  },
+  {
+    "title": "declare - data types - if second parameter is a number (integer), sets the value accordingly",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "param",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "param"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "value": 5 },
+    "exp": 5
+  },
+  {
+    "title": "declare - data types - if second parameter is a number (float), sets the value accordingly",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "param",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "param"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "value": 5.5 },
+    "exp": 5.5
+  },
+  {
+    "title": "declare - data types - if second parameter is a boolean (true), sets the value accordingly",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "param",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "param"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "value": true },
+    "exp": true
+  },
+  {
+    "title": "declare - data types - if second parameter is a boolean (false), sets the value accordingly",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "param",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "param"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "value": false },
+    "exp": false
+  },
+  {
+    "title": "declare - data types - if second parameter is an array, sets the value accordingly",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "param",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "param"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "value": [1, 2, 3] },
+    "exp": [1, 2, 3]
+  },
+  {
+    "title": "declare - data types - if second parameter is an object, sets the value accordingly",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "param",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "param"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "value": { "hello": "world" } },
+    "exp": { "hello": "world" }
+  },
+  {
+    "title": "declare - data types - if second parameter is null, sets the value accordingly",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "param",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "param"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "value": null },
+    "exp": null
+  },
+  {
+    "title": "assign - can be used in a script",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            "greeting",
+            "hello"
+          ]
+        }
+      ]
+    },
+    "data": { "greeting": "hola!" },
+    "exp": null
+  },
+  {
+    "title": "assign - changes the value of a variable",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            "greeting",
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "greeting": "hola!" },
+    "exp": "hello"
+  },
+  {
+    "title": "assign - changes properties of an object",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            "greetings.en",
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greetings"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "greetings": {
+      "en": "Good Morning",
+      "es": "hola"
+      }
+    },
+    "exp": {
+      "en": "hello",
+      "es": "hola"
+      }
+  },
+  {
+    "title": "assign - changes properties of an array",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            "greetings.0",
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greetings"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "greetings": ["Good Morning", "hola"]
+    },
+    "exp": ["hello", "hola"]
+  },
+  {
+    "title": "assign - supports var statements for the identifier",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greetings"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greetings": ["Good Morning", "hola"],
+      "param": "greetings.0"
+    },
+    "exp": ["hello", "hola"]
+  },
+  {
+    "title": "assign - supports var statements for the value",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            "greetings.0",
+            { "var": "value" }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greetings"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greetings": ["Good Morning", "hola"],
+      "value": "hello"
+    },
+    "exp": ["hello", "hola"]
+  },
+  {
+    "title": "assign - changes nested properties",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            "people.0.gn",
+            "John M."
+          ]
+        },
+        {
+          "assign": [
+            "people.0.interests.0",
+            "fun"
+          ]
+        },
+        {
+          "assign": [
+            "people.0.interests.1",
+            "books"
+          ]
+        },
+        {
+          "assign": [
+            "greetings.short",
+            []
+          ]
+        },
+        {
+          "assign": [
+            "greetings.short.0",
+            "Hi"
+          ]
+        },
+        {
+          "assign": [
+            "greetings.informal",
+            "Hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": ""
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "people": [
+        {
+          "gn": "John",
+          "fn": "Doe",
+          "interests": ["games"]
+        }
+      ],
+      "greetings": {
+        "formal": ["Good Morning"],
+        "informal": ["Hello"]
+      }
+    },
+    "exp": { 
+      "people": [
+        {
+          "gn": "John M.",
+          "fn": "Doe",
+          "interests": ["fun", "books"]
+        }
+      ],
+      "greetings": {
+        "formal": ["Good Morning"],
+        "informal": "Hello",
+        "short": ["Hi"]
+      }
+    }
+  },
+  {
+    "title": "assign - data types - if first parameter is a string, updates the variable with the given name",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greeting": "Good Morning",
+      "param": "greeting"
+    },
+    "exp": "hello"
+  },
+  {
+    "title": "assign - data types - if first parameter is a number, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greeting": "Good Morning",
+      "param": 5
+    },
+    "throws": true
+  },
+  {
+    "title": "assign - data types - if first parameter is a boolean (true), throws an exception",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greeting": "Good Morning",
+      "param": true
+    },
+    "throws": true
+  },
+  {
+    "title": "assign - data types - if first parameter is a boolean (false), throws an exception",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greeting": "Good Morning",
+      "param": false
+    },
+    "throws": true
+  },
+  {
+    "title": "assign - data types - if first parameter is an array, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greeting": "Good Morning",
+      "param": []
+    },
+    "throws": true
+  },
+  {
+    "title": "assign - data types - if first parameter is an object, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greeting": "Good Morning",
+      "param": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "assign - data types - if first parameter is null, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "assign": [
+            { "var": "param" },
+            "hello"
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "greeting"
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "greeting": "Good Morning",
+      "param": null
+    },
+    "throws": true
+  },
+  {
+    "title": "init - initializes a literal value",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": "hello"
+    },
+    "exp": "hello"
+  },
+  {
+    "title": "init - initializes an array that is empty by default",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": []
+    },
+    "exp": []
+  },
+  {
+    "title": "init - initializes an array with elements",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                "hello",
+                1,
+                { "var": "value"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": []
+    },
+    "exp": ["hello", 1, []]
+  },
+  {
+    "title": "init - initializes an array with spread",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                {
+                  "spread": [
+                    { "var": "first" }
+                  ]
+                },
+                "hello",
+                1,
+                {
+                  "spread": [
+                    { "var": "second" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "first": [0, 2, 3],
+      "second": ["hello", 1],
+      "value": []
+    },
+    "exp": [0, 2, 3, "hello", 1, "hello", 1]
+  },
+  {
+    "title": "init - initializes an object that is empty by default",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": []
+    },
+    "exp": {}
+  },
+  {
+    "title": "init - initializes an object with properties",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" },
+                "greeting",
+                "hola"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": "hello",
+      "value": "world"
+    },
+    "exp": {"hello": "world", "greeting": "hola"}
+  },
+  {
+    "title": "init - initializes an object with spread",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                "hello",
+                "me",
+                {
+                  "spread": [
+                    { "var": "base"}
+                  ]
+                },
+                "foo",
+                "big",
+                {
+                  "spread": [
+                    { "var": "top" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "base": {
+        "hello": "you",
+        "foo": "bar",
+        "baz": "qux"
+      },
+      "top": {
+        "fizz": "buzz"
+      },
+      "key": "hello",
+      "value": "world"
+    },
+    "exp": {"hello": "you", "foo": "big", "baz": "qux", "fizz": "buzz"}
+  },
+  {
+    "title": "init - data types - literal supports strings",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": "hello"
+    },
+    "exp": "hello"
+  },
+  {
+    "title": "init - data types - literal supports numbers (integer)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": 5
+    },
+    "exp": 5
+  },
+  {
+    "title": "init - data types - literal supports numbers (float)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": 5.5
+    },
+    "exp": 5.5
+  },
+  {
+    "title": "init - data types - literal supports boolean (true)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": true
+    },
+    "exp": true
+  },
+  {
+    "title": "init - data types - literal supports boolean (false)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": false
+    },
+    "exp": false
+  },
+  {
+    "title": "init - data types - literal throws if value is an array",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": []
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - literal throws if value is an object",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": []
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - literal supports null",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "literal",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": null
+    },
+    "exp": null
+  },
+  {
+    "title": "init - data types - array supports strings",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": "hello"
+    },
+    "exp": ["hello"]
+  },
+  {
+    "title": "init - data types - array supports numbers (integer)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": 5
+    },
+    "exp": [5]
+  },
+  {
+    "title": "init - data types - array supports numbers (float)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": 5.5
+    },
+    "exp": [5.5]
+  },
+  {
+    "title": "init - data types - array supports boolean (true)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": true
+    },
+    "exp": [true]
+  },
+  {
+    "title": "init - data types - array supports boolean (false)",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": false
+    },
+    "exp": [false]
+  },
+  {
+    "title": "init - data types - array supports arrays",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": [1,2,3]
+    },
+    "exp": [[1,2,3]]
+  },
+  {
+    "title": "init - data types - array supports objects",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": { "hello": "world"}
+    },
+    "exp": [{ "hello": "world"}]
+  },
+  {
+    "title": "init - data types - array supports null",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": null
+    },
+    "exp": [null]
+  },
+  {
+    "title": "init - data types - array spread - if parameter is a string, throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": "hello"
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - array spread - if parameter is a number, throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": 5
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - array spread - if parameter is a boolean (true), throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": true
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - array spread - if parameter is a boolean (false), throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": false
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - array spread - if parameter is an object, throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": {
+        "hello": "world"
+      }
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - array spread - if parameter is null, throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "array",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": null
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - object keys - supports strings",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": "hello",
+      "value": "world"
+    },
+    "exp": {
+      "hello": "world"
+    }
+  },
+  {
+    "title": "init - data types - object keys - treats numbers (integer) as string",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": 5,
+      "value": "world"
+    },
+    "exp": {
+      "5": "world"
+    }
+  },
+  {
+    "title": "init - data types - object keys - treats numbers (float) as string",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": 5.5,
+      "value": "world"
+    },
+    "exp": {
+      "5.5": "world"
+    }
+  },
+  {
+    "title": "init - data types - object keys - treats boolean (true) as string",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": true,
+      "value": "world"
+    },
+    "exp": {
+      "true": "world"
+    }
+  },
+  {
+    "title": "init - data types - object keys - treats boolean (false) as string",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": false,
+      "value": "world"
+    },
+    "exp": {
+      "false": "world"
+    }
+  },
+  {
+    "title": "init - data types - object keys - if parameter is an array, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": ["hello"],
+      "value": "world"
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - object keys - if parameter is an object, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": {
+        "hello": "world"
+      },
+      "value": "world"
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - object keys - if parameter is null, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                { "var": "key" },
+                { "var": "value" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "key": null,
+      "value": "world"
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - object spread - if parameter is a string, throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": "world"
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - object spread - if parameter is a number, throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": 5
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - object spread - if parameter is a boolean (true), throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": true
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - object spread - if parameter is a boolean (false), throws an error",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": false
+    },
+    "throws": true
+  },
+  {
+    "title": "init - data types - object spread - if parameter is an array, adds all elements by using their index as key",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                "0",
+                "hola",
+                "target",
+                "world",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": ["hello", "hi"]
+    },
+    "exp": {
+      "0": "hello",
+      "target": "world",
+      "1": "hi"
+    }
+  },
+  {
+    "title": "init - data types - object spread - if parameter is null, does not alter the object",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                {
+                  "spread": [
+                    { "var": "value" }
+                  ]
+                },
+                "hello",
+                "world"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { 
+      "value": null
+    },
+    "exp": {"hello": "world"}
+  },
+  {
+    "title": "evaluate - allows to evaluate a JsonFunctions expression",
+    "logic": {
+      "script": [
+        {
+          "return": [
+            {
+              "evaluate": [
+                { "var": "jsonLogicExpression" },
+                { "var": "jsonLogicParameters" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "jsonLogicExpression": {
+        "+": [
+          { "var": "a" },
+          { "var": "b" }
+        ]
+      },
+      "jsonLogicParameters": {
+        "a": 1,
+        "b": 2
+      }
+    },
+    "exp": 3
+  },
+  {
+    "title": "evaluate - allows to run EU Business Rules",
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "businessRuleParameters",
+            {
+              "init": [
+                "object",
+                "payload",
+                { "var": "pseudoDcc" }
+              ]
+            }
+          ]
+        },
+        {
+          "declare": [
+            "result",
+            {
+              "map": [
+                { "var": "businessRules"},
+                {
+                  "evaluate": [
+                    { "var": "it.Logic" },
+                    { "var": "businessRuleParameters" }
+                  ]
+                },
+                "it"
+              ]
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "result"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "businessRules": [
+        {
+          "Identifier": "VR-DE-0001",
+          "Logic": {
+            "if": [
+              {
+                "var": "payload.v.0"
+              },
+              {
+                ">=": [
+                  {
+                    "var": "payload.v.0.dn"
+                  },
+                  {
+                    "var": "payload.v.0.sd"
+                  }
+                ]
+              },
+              true
+            ]
+          }
+        },
+        {
+          "Identifier": "VR-DE-0002",
+          "Logic": {
+            "if": [
+              {
+                "var": "payload.v.0"
+              },
+              {
+                "in": [
+                  {
+                    "var": "payload.v.0.mp"
+                  },
+                  [
+                    "EU/1/20/1528",
+                    "EU/1/20/1507",
+                    "EU/1/21/1529",
+                    "EU/1/20/1525"
+                  ]
+                ]
+              },
+              true
+            ]
+          }
+        }
+      ],
+      "pseudoDcc": {
+        "v": [
+          {
+            "mp": "EU/1/20/1528",
+            "dn": 1,
+            "sd": 3
+          }
+        ]
+      }
+    },
+    "exp": [ false, true ]
+  }
+]

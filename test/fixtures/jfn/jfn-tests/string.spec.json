@@ -1,0 +1,1446 @@
+[
+  {
+    "title": "split - splits the string into an array based on the given character",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "hel-lo,hola,hello",
+      "separator": ","
+    },
+    "exp": [
+      "hel-lo",
+      "hola",
+      "hello"
+    ]
+  },
+  {
+    "title": "split - returns the string in an array if the separator is not present",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "hello",
+      "separator": ","
+    },
+    "exp": [
+      "hello"
+    ]
+  },
+  {
+    "title": "split - splits the string by each character if the separator is an empty string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "hel lo",
+      "separator": ""
+    },
+    "exp": [
+      "h",
+      "e",
+      "l",
+      " ",
+      "l",
+      "o"
+    ]
+  },
+  {
+    "title": "split - data types - if first parameter is a number (integer), treats it as a string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": 55,
+      "separator": ""
+    },
+    "exp": ["5", "5"]
+  },
+  {
+    "title": "split - data types - if first parameter is a number (float), treats it as a string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": 5.55,
+      "separator": "."
+    },
+    "exp": ["5", "55"]
+  },
+  {
+    "title": "split - data types - if first parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": true,
+      "separator": "u"
+    },
+    "exp": ["tr", "e"]
+  },
+  {
+    "title": "split - data types - if first parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": false,
+      "separator": "l"
+    },
+    "exp": ["fa", "se"]
+  },
+  {
+    "title": "split - data types - if first parameter is an array, returns an empty array",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": [],
+      "separator": ""
+    },
+    "exp": []
+  },
+  {
+    "title": "split - data types - if first parameter is an object, returns an empty array",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": {},
+      "separator": ""
+    },
+    "exp": []
+  },
+  {
+    "title": "split - data types - if first parameter is null returns an empty array",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": null,
+      "separator": ""
+    },
+    "exp": []
+  },
+  {
+    "title": "split - data types - if second parameter is a number (integer), treats it as a string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "hel5lo",
+      "separator": 5
+    },
+    "exp": ["hel", "lo"]
+  },
+  {
+    "title": "split - data types - if second parameter is a number (float), treats it as a string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "hel5.55lo",
+      "separator": 5.55
+    },
+    "exp": ["hel", "lo"]
+  },
+  {
+    "title": "split - data types - if second parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "heltruelo",
+      "separator": true
+    },
+    "exp": ["hel", "lo"]
+  },
+  {
+    "title": "split - data types - if second parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "helfalselo",
+      "separator": false
+    },
+    "exp": ["hel", "lo"]
+  },
+  {
+    "title": "split - data types - if second parameter is an array, returns the string in an array",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "hello",
+      "separator": []
+    },
+    "exp": ["hello"]
+  },
+  {
+    "title": "split - data types - if second parameter is an object, returns the string in an array",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "hel[object Object]lo",
+      "separator": {}
+    },
+    "exp": ["hel[object Object]lo"]
+  },
+  {
+    "title": "split - data types - if second parameter is null, returns the string in an array",
+    "logic": {
+      "split": [
+        {
+          "var": "greetings"
+        },
+        {
+          "var": "separator"
+        }
+      ]
+    },
+    "data": {
+      "greetings": "helnulllo",
+      "separator": null
+    },
+    "exp": ["helnulllo"]
+  },
+  {
+    "title": "replaceAll - replaces all occurrences of a given substring with a new value",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "hello john john doe",
+      "oldName": "john",
+      "newName": "jane"
+    },
+    "exp": "hello jane jane doe"
+  },
+  {
+    "title": "replaceAll - handles regexp special characters",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "hello. john. doe",
+      "oldName": ".",
+      "newName": "jane"
+    },
+    "exp": "hellojane johnjane doe"
+  },
+  {
+    "title": "replaceAll - returns the unmodified string if there is no match",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "hello john john doe",
+      "oldName": "daniel",
+      "newName": "jane"
+    },
+    "exp": "hello john john doe"
+  },
+  {
+    "title": "replaceAll - data types - if first parameter is a number (integer), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": 456,
+      "oldName": "5",
+      "newName": "jane"
+    },
+    "exp": "4jane6"
+  },
+  {
+    "title": "replaceAll - data types - if first parameter is a number (float), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": 4.56,
+      "oldName": "5",
+      "newName": "jane"
+    },
+    "exp": "4.jane6"
+  },
+  {
+    "title": "replaceAll - data types - if first parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": true,
+      "oldName": "u",
+      "newName": "U"
+    },
+    "exp": "trUe"
+  },
+  {
+    "title": "replaceAll - data types - if first parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": false,
+      "oldName": "a",
+      "newName": "A"
+    },
+    "exp": "fAlse"
+  },
+  {
+    "title": "replaceAll - data types - if first parameter is an array, returns an empty string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": ["a", "b"],
+      "oldName": "a",
+      "newName": "A"
+    },
+    "exp": ""
+  },
+  {
+    "title": "replaceAll - data types - if first parameter is an object, returns an empty string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": {
+        "a": "a"
+      },
+      "oldName": "a",
+      "newName": "A"
+    },
+    "exp": ""
+  },
+  {
+    "title": "replaceAll - data types - if first parameter is null, returns an empty string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": null,
+      "oldName": "u",
+      "newName": "U"
+    },
+    "exp": ""
+  },
+  {
+    "title": "replaceAll - data types - if second parameter is a number (integer), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": 5,
+      "newName": "jane"
+    },
+    "exp": "4jane6"
+  },
+  {
+    "title": "replaceAll - data types - if second parameter is a number (float), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "45.556",
+      "oldName": 5.55,
+      "newName": "jane"
+    },
+    "exp": "4jane6"
+  },
+  {
+    "title": "replaceAll - data types - if second parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "4true6",
+      "oldName": true,
+      "newName": "jane"
+    },
+    "exp": "4jane6"
+  },
+  {
+    "title": "replaceAll - data types - if second parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "4false6",
+      "oldName": false,
+      "newName": "jane"
+    },
+    "exp": "4jane6"
+  },
+  {
+    "title": "replaceAll - data types - if second parameter is an array, returns the original string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": ["5", "6"],
+      "newName": "jane"
+    },
+    "exp": "456"
+  },
+  {
+    "title": "replaceAll - data types - if second parameter is an object, returns the original string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": {},
+      "newName": "jane"
+    },
+    "exp": "456"
+  },
+  {
+    "title": "replaceAll - data types - if second parameter is null, returns the original string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": null,
+      "newName": "jane"
+    },
+    "exp": "456"
+  },
+  {
+    "title": "replaceAll - data types - if third parameter is a number (integer), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": "5",
+      "newName": 6
+    },
+    "exp": "466"
+  },
+  {
+    "title": "replaceAll - data types - if third parameter is a number (float), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": "5",
+      "newName": 5.55
+    },
+    "exp": "45.556"
+  },
+  {
+    "title": "replaceAll - data types - if third parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": "5",
+      "newName": true
+    },
+    "exp": "4true6"
+  },
+  {
+    "title": "replaceAll - data types - if third parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": "5",
+      "newName": false
+    },
+    "exp": "4false6"
+  },
+  {
+    "title": "replaceAll - data types - if third parameter is an array, returns the original string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": "5",
+      "newName": ["5", "6"]
+    },
+    "exp": "456"
+  },
+  {
+    "title": "replaceAll - data types - if third parameter is an object, returns the original string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": "5",
+      "newName": {}
+    },
+    "exp": "456"
+  },
+  {
+    "title": "replaceAll - data types - if third parameter is null, returns the original string",
+    "logic": {
+      "replaceAll": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "oldName"
+        },
+        {
+          "var": "newName"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "456",
+      "oldName": "5",
+      "newName": null
+    },
+    "exp": "456"
+  },
+  {
+    "title": "concatenate - concatenates strings",
+    "logic": {
+      "concatenate": [
+        {
+          "var": "greeting"
+        },
+        " ",
+        {
+          "var": "name"
+        },
+        "!"
+      ]
+    },
+    "data": {
+      "greeting": "Hello",
+      "name": "John"
+    },
+    "exp": "Hello John!"
+  },
+  {
+    "title": "concatenate - concatenates strings and numbers",
+    "logic": {
+      "concatenate": [
+        {
+          "var": "greeting"
+        },
+        {
+          "var": "number"
+        }
+      ]
+    },
+    "data": {
+      "greeting": "Hello",
+      "number": 123
+    },
+    "exp": "Hello123"
+  },
+  {
+    "title": "concatenate - concatenates two numbers instead of adding them",
+    "logic": {
+      "concatenate": [
+        {
+          "var": "one"
+        },
+        {
+          "var": "two"
+        }
+      ]
+    },
+    "data": {
+      "one": 1,
+      "two": 2
+    },
+    "exp": "12"
+  },
+  {
+    "title": "concatenate - concatenates any number of arguments",
+    "logic": {
+      "concatenate": [
+        {
+          "var": "one"
+        },
+        {
+          "var": "two"
+        },
+        "hello",
+        "world"
+      ]
+    },
+    "data": {
+      "one": "one",
+      "two": 2
+    },
+    "exp": "one2helloworld"
+  },
+  {
+    "title": "concatenate - data types - if parameter is a number (integer), treats it as a string",
+    "logic": {
+      "concatenate": [
+        "hello",
+        {
+          "var": "param"
+        }
+      ]
+    },
+    "data": {
+      "param": 1
+    },
+    "exp": "hello1"
+  },
+  {
+    "title": "concatenate - data types - if parameter is a number (float), treats it as a string",
+    "logic": {
+      "concatenate": [
+        "hello",
+        {
+          "var": "param"
+        }
+      ]
+    },
+    "data": {
+      "param": 1.1
+    },
+    "exp": "hello1.1"
+  },
+  {
+    "title": "concatenate - data types - if parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "concatenate": [
+        "hello",
+        {
+          "var": "param"
+        }
+      ]
+    },
+    "data": {
+      "param": true
+    },
+    "exp": "hellotrue"
+  },
+  {
+    "title": "concatenate - data types - if parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "concatenate": [
+        "hello",
+        {
+          "var": "param"
+        }
+      ]
+    },
+    "data": {
+      "param": false
+    },
+    "exp": "hellofalse"
+  },
+  {
+    "title": "concatenate - data types - if parameter is an array, treats it as an empty string",
+    "logic": {
+      "concatenate": [
+        "hello",
+        {
+          "var": "param"
+        }
+      ]
+    },
+    "data": {
+      "param": ["world"]
+    },
+    "exp": "hello"
+  },
+  {
+    "title": "concatenate - data types - if parameter is an object, treats it as an empty string",
+    "logic": {
+      "concatenate": [
+        "hello",
+        {
+          "var": "param"
+        }
+      ]
+    },
+    "data": {
+      "param": {
+        "target": "World"
+      }
+    },
+    "exp": "hello"
+  },
+  {
+    "title": "concatenate - data types - if parameter is null, treats it as an empty string",
+    "logic": {
+      "concatenate": [
+        "hello",
+        {
+          "var": "param"
+        }
+      ]
+    },
+    "data": {
+      "param": null
+    },
+    "exp": "hello"
+  },
+  {
+    "title": "trim - trims leading and trailing whitespace",
+    "logic": {
+      "trim": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": "  John Doe  "
+    },
+    "exp": "John Doe"
+  },
+  {
+    "title": "trim - data types - if parameter is a number (integer), treats it as a string",
+    "logic": {
+      "trim": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": 5
+    },
+    "exp": "5"
+  },
+  {
+    "title": "trim - data types - if parameter is a number (float), treats it as a string",
+    "logic": {
+      "trim": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": 5.5
+    },
+    "exp": "5.5"
+  },
+  {
+    "title": "trim - data types - if parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "trim": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": true
+    },
+    "exp": "true"
+  },
+  {
+    "title": "trim - data types - if parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "trim": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": false
+    },
+    "exp": "false"
+  },
+  {
+    "title": "trim - data types - if parameter is an array, treats it as an empty string",
+    "logic": {
+      "trim": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": [ "hello", "world" ]
+    },
+    "exp": ""
+  },
+  {
+    "title": "trim - data types - if parameter is an object, treats it as an empty string",
+    "logic": {
+      "trim": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": {
+        "hello": "World"
+      }
+    },
+    "exp": ""
+  },
+  {
+    "title": "trim - data types - if parameter is null, treats it as an empty string",
+    "logic": {
+      "trim": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": null
+    },
+    "exp": ""
+  },
+  {
+    "title": "toUpperCase - returns the string in upper case characters",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": "john doe"
+    },
+    "exp": "JOHN DOE"
+  },
+  {
+    "title": "toUpperCase - handles German umlaut",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": "üäö"
+    },
+    "exp": "ÜÄÖ"
+  },
+  {
+    "title": "toUpperCase - handles German ß as SS",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": "ß"
+    },
+    "exp": "SS"
+  },
+  {
+    "title": "toUpperCase - data types - if parameter is a number (integer), treats it as a string",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": 5
+    },
+    "exp": "5"
+  },
+  {
+    "title": "toUpperCase - data types - if parameter is a number (float), treats it as a string",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": 5.5
+    },
+    "exp": "5.5"
+  },
+  {
+    "title": "toUpperCase - data types - if parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": true
+    },
+    "exp": "TRUE"
+  },
+  {
+    "title": "toUpperCase - data types - if parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": false
+    },
+    "exp": "FALSE"
+  },
+  {
+    "title": "toUpperCase - data types - if parameter is an array, treats it as an empty string",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": ["hello"]
+    },
+    "exp": ""
+  },
+  {
+    "title": "toUpperCase - data types - if parameter is an object, treats it as an empty string",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": {
+        "hello": "World"
+      }
+    },
+    "exp": ""
+  },
+  {
+    "title": "toUpperCase - data types - if parameter is null, treats it as an empty string",
+    "logic": {
+      "toUpperCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": null
+    },
+    "exp": ""
+  },
+  {
+    "title": "toLowerCase - returns the string in upper case characters",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": "JOHN DOE"
+    },
+    "exp": "john doe"
+  },
+  {
+    "title": "toLowerCase - handles German umlaut",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": "ÜÄÖ"
+    },
+    "exp": "üäö"
+  },
+  {
+    "title": "toLowerCase - handles German ß as ß",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": "ß"
+    },
+    "exp": "ß"
+  },
+  {
+    "title": "toLowerCase - handles German SS as ss",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": "SS"
+    },
+    "exp": "ss"
+  },
+  {
+    "title": "toLowerCase - data types - if parameter is a number (integer), treats it as a string",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": 5
+    },
+    "exp": "5"
+  },
+  {
+    "title": "toLowerCase - data types - if parameter is a number (float), treats it as a string",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": 5.5
+    },
+    "exp": "5.5"
+  },
+  {
+    "title": "toLowerCase - data types - if parameter is a boolean (true), treats it as a string",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": true
+    },
+    "exp": "true"
+  },
+  {
+    "title": "toLowerCase - data types - if parameter is a boolean (false), treats it as a string",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": false
+    },
+    "exp": "false"
+  },
+  {
+    "title": "toLowerCase - data types - if parameter is an array, treats it as an empty string",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": ["hello"]
+    },
+    "exp": ""
+  },
+  {
+    "title": "toLowerCase - data types - if parameter is an object, treats it as an empty string",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": {
+        "hello": "World"
+      }
+    },
+    "exp": ""
+  },
+  {
+    "title": "toLowerCase - data types - if parameter is null, treats it as an empty string",
+    "logic": {
+      "toLowerCase": [
+        {
+          "var": "name"
+        }
+      ]
+    },
+    "data": {
+      "name": null
+    },
+    "exp": ""
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "collections": [
+    {
+      "collectionName": "cwa-app-ccl",
+      "folders": [
+        {
+          "startingFolderPath": "**/i18n/**",
+          "sourceFilters": [
+            "strings-de.xml"
+          ],
+          "targetFolderPath": "../[langCode]"
+        }
+      ]
+    }
+  ],
+  "defaultConfiguration": {
+    "pseudoLocFolderPath": "../values-2Q",
+    "oneQFolderPath": "../values-1Q",
+    "targetFileNamingConvention": "[filename].[extension]"
+  }
+}

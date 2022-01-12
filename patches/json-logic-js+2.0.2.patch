@@ -1,0 +1,60 @@
+diff --git a/node_modules/json-logic-js/logic.js b/node_modules/json-logic-js/logic.js
+index 2767087..04be299 100644
+--- a/node_modules/json-logic-js/logic.js
++++ b/node_modules/json-logic-js/logic.js
+@@ -189,6 +189,8 @@ http://ricostacruz.com/cheatsheets/umdjs.html
+   jsonLogic.truthy = function(value) {
+     if (Array.isArray(value) && value.length === 0) {
+       return false;
++    } else if (value instanceof Object && Object.keys(value).length === 0) {
++      return false;
+     }
+     return !! value;
+   };
+@@ -227,6 +229,10 @@ http://ricostacruz.com/cheatsheets/umdjs.html
+       values = [values];
+     }
+ 
++    if (customOperations[op]) {
++      return customOperations[op](values, data)
++    }
++
+     // 'if', 'and', and 'or' violate the normal rule of depth-first calculating consequents, let each manage recursion as needed.
+     if (op === "if" || op == "?:") {
+       /* 'if' should be called with a odd number of parameters, 3 or greater
+@@ -471,5 +477,35 @@ http://ricostacruz.com/cheatsheets/umdjs.html
+     return false;
+   };
+ 
++  const functions = {};
++  jsonLogic.add_function = function(name, descriptor) {
++    functions[name] = descriptor
++  };
++
++  jsonLogic.get_function = function(name) {
++    return functions[name]
++  };
++
++  jsonLogic.evaluate_function = function(name, parameters) {
++    if (typeof name !== 'string') throw new Error('Function name must be a string')
++    const definition = functions[name]
++
++    if (!definition) {
++      throw new Error('No such function')
++    }
++
++    const scopedData = definition.parameters.reduce((scopedData, param) => {
++      if (parameters[param.name] !== undefined) scopedData[param.name] = parameters[param.name]
++      else scopedData[param.name] = param.default
++      return scopedData
++    }, {})
++    return jsonLogic.apply({ script: definition.logic }, scopedData);
++  };
++
++  const customOperations = {}
++  jsonLogic.add_custom_operation = function(name, code) {
++    customOperations[name] = code
++  };
++
+   return jsonLogic;
+ }));

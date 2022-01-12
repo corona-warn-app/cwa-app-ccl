@@ -1,0 +1,2378 @@
+[
+  {
+    "title": "filter - removes elements that do not evaluate to truthy",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            {
+              "var": "num"
+            },
+            3
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ]
+    },
+    "exp": [
+      {
+        "num": 4
+      },
+      {
+        "num": 5
+      }
+    ]
+  },
+  {
+    "title": "filter - allows to specify the variable name for the current value and to access the outer context",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            {
+              "var": "it.num"
+            },
+            {
+              "var": "threshold"
+            }
+          ]
+        },
+        "it"
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ],
+      "threshold": 3
+    },
+    "exp": [
+      {
+        "num": 4
+      },
+      {
+        "num": 5
+      }
+    ]
+  },
+  {
+    "title": "filter - data types - if first parameter is a string, returns an empty array",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": []
+  },
+  {
+    "title": "filter - data types - if first parameter is a number, returns an empty array",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": 123
+    },
+    "exp": []
+  },
+  {
+    "title": "filter - data types - if first parameter is a boolean (true), returns an empty array",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": []
+  },
+  {
+    "title": "filter - data types - if first parameter is a boolean (false), returns an empty array",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": []
+  },
+  {
+    "title": "filter - data types - if first parameter is an object, returns an empty array",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": []
+  },
+  {
+    "title": "filter - data types - if first parameter is null, returns an empty array",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false
+      ]
+    },
+    "data": {
+      "elements": null
+    },
+    "exp": []
+  },
+  {
+    "title": "filter - data types - if third parameter is a number, throws an exception",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false,
+        { "var": "it "}
+      ]
+    },
+    "data": {
+      "elements": [1, 2, 3],
+      "it": 1
+    },
+    "throws": true
+  },
+  {
+    "title": "filter - data types - if third parameter is a boolean (true), throws an exception",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false,
+        { "var": "it "}
+      ]
+    },
+    "data": {
+      "elements": [1, 2, 3],
+      "it": true
+    },
+    "throws": true
+  },
+  {
+    "title": "filter - data types - if third parameter is a boolean (false), throws an exception",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false,
+        { "var": "it "}
+      ]
+    },
+    "data": {
+      "elements": [1, 2, 3],
+      "it": false
+    },
+    "throws": true
+  },
+  {
+    "title": "filter - data types - if third parameter is an array, throws an exception",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false,
+        { "var": "it "}
+      ]
+    },
+    "data": {
+      "elements": [1, 2, 3],
+      "it": []
+    },
+    "throws": true
+  },
+  {
+    "title": "filter - data types - if third parameter is an object, throws an exception",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false,
+        { "var": "it "}
+      ]
+    },
+    "data": {
+      "elements": [1, 2, 3],
+      "it": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "filter - data types - if third parameter is null, throws an exception",
+    "logic": {
+      "filter": [
+        {
+          "var": "elements"
+        },
+        false,
+        { "var": "it "}
+      ]
+    },
+    "data": {
+      "elements": [1, 2, 3],
+      "it": null
+    },
+    "throws": true
+  },
+  {
+    "title": "map - maps each element to a new value",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        {
+          "+": [
+            {
+              "var": "num"
+            },
+            3
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ]
+    },
+    "exp": [
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "title": "map - allows to specify the variable name for the current value and to access the outer context",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        {
+          "+": [
+            {
+              "var": "it.num"
+            },
+            {
+              "var": "threshold"
+            }
+          ]
+        },
+        "it"
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ],
+      "threshold": 3
+    },
+    "exp": [
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "title": "map - allows to use script inside for complex operations",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        {
+          "script": [
+            {
+              "declare": [
+                "result",
+                {
+                  "+": [
+                    {
+                      "var": "it"
+                    },
+                    {
+                      "var": "offset"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "return": [
+                { "var": "result" }
+              ]
+            }
+          ]
+        },
+        "it"
+      ]
+    },
+    "data": {
+      "elements": [1, 2, 3],
+      "offset": 5
+    },
+    "exp": [6, 7, 8]
+  },
+  {
+    "title": "map - data types - if first parameter is a string, returns an empty array",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": []
+  },
+  {
+    "title": "map - data types - if first parameter is a number, returns an empty array",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": 5
+    },
+    "exp": []
+  },
+  {
+    "title": "map - data types - if first parameter is a boolean (true), returns an empty array",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": []
+  },
+  {
+    "title": "map - data types - if first parameter is a boolean (false), returns an empty array",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": false
+    },
+    "exp": []
+  },
+  {
+    "title": "map - data types - if first parameter is an object, returns an empty array",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": []
+  },
+  {
+    "title": "map - data types - if first parameter is null, returns an empty array",
+    "logic": {
+      "map": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": null
+    },
+    "exp": []
+  },
+  {
+    "title": "reduce - reduces an array to a single value",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        {
+          "+": [
+            {
+              "var": "current.num"
+            },
+            {
+              "var": "accumulator"
+            }
+          ]
+        },
+        5
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ]
+    },
+    "exp": 17
+  },
+  {
+    "title": "reduce - allows to specify the variable name for the current value and to access the outer context",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        {
+          "+": [
+            {
+              "var": "current.num"
+            },
+            {
+              "var": "accumulator"
+            },
+            {
+              "var": "offset"
+            }
+          ]
+        },
+        5
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ],
+      "offset": 3
+    },
+    "exp": 26
+  },
+  {
+    "title": "reduce - allows to set the initial value from a variable",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        {
+          "+": [
+            {
+              "var": "current.num"
+            },
+            {
+              "var": "accumulator"
+            }
+          ]
+        },
+        {
+          "var": "initial"
+        }
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ],
+      "initial": 5
+    },
+    "exp": 17
+  },
+  {
+    "title": "reduce - allows to access the index of the element in the closure",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        {
+          "+": [
+            {
+              "var": "__index__"
+            },
+            {
+              "var": "accumulator"
+            }
+          ]
+        },
+        5
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ]
+    },
+    "exp": 8
+  },
+  {
+    "title": "reduce - data types - if first parameter is a string, returns the initial value",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        { "var": "current" },
+        "initialValue"
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": "initialValue"
+  },
+  {
+    "title": "reduce - data types - if first parameter is a number, returns the initial value",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        { "var": "current" },
+        "initialValue"
+      ]
+    },
+    "data": {
+      "elements": 5
+    },
+    "exp": "initialValue"
+  },
+  {
+    "title": "reduce - data types - if first parameter is a boolean (true), returns the initial value",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        { "var": "current" },
+        "initialValue"
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": "initialValue"
+  },
+  {
+    "title": "reduce - data types - if first parameter is a boolean (false), returns the initial value",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        { "var": "current" },
+        "initialValue"
+      ]
+    },
+    "data": {
+      "elements": false
+    },
+    "exp": "initialValue"
+  },
+  {
+    "title": "reduce - data types - if first parameter is an object, returns the initial value",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        { "var": "current" },
+        "initialValue"
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": "initialValue"
+  },
+  {
+    "title": "reduce - data types - if first parameter is null, returns the initial value",
+    "logic": {
+      "reduce": [
+        {
+          "var": "elements"
+        },
+        { "var": "current" },
+        "initialValue"
+      ]
+    },
+    "data": {
+      "elements": null
+    },
+    "exp": "initialValue"
+  },
+  {
+    "title": "count - counts the number of elements in an array",
+    "logic": {
+      "count": [
+        {
+          "var": "elements"
+        }
+      ]
+    },
+    "data": {
+      "elements": [3,4,5
+      ]
+    },
+    "exp": 3
+  },
+  {
+    "title": "count - data types - if first parameter is a string, returns 0",
+    "logic": {
+      "count": [
+        {
+          "var": "elements"
+        }
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": 0
+  },
+  {
+    "title": "count - data types - if first parameter is a number, returns 0",
+    "logic": {
+      "count": [
+        {
+          "var": "elements"
+        }
+      ]
+    },
+    "data": {
+      "elements": 5
+    },
+    "exp": 0
+  },
+  {
+    "title": "count - data types - if first parameter is a boolean (true), returns 0",
+    "logic": {
+      "count": [
+        {
+          "var": "elements"
+        }
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": 0
+  },
+  {
+    "title": "count - data types - if first parameter is a boolean (false), returns 0",
+    "logic": {
+      "count": [
+        {
+          "var": "elements"
+        }
+      ]
+    },
+    "data": {
+      "elements": false
+    },
+    "exp": 0
+  },
+  {
+    "title": "count - data types - if first parameter is an object, returns 0",
+    "logic": {
+      "count": [
+        {
+          "var": "elements"
+        }
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": 0
+  },
+  {
+    "title": "count - data types - if first parameter is null, returns 0",
+    "logic": {
+      "count": [
+        {
+          "var": "elements"
+        }
+      ]
+    },
+    "data": {
+      "elements": null
+    },
+    "exp": 0
+  },
+  {
+    "title": "find - returns the first element that evaluates to truthy",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            {
+              "var": "num"
+            },
+            3
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ]
+    },
+    "exp": {
+      "num": 4
+    }
+  },
+  {
+    "title": "find - allows to specify the variable name for the current value and to access the outer context",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            {
+              "var": "it.num"
+            },
+            {
+              "var": "threshold"
+            }
+          ]
+        },
+        "it"
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ],
+      "threshold": 3
+    },
+    "exp": {
+      "num": 4
+    }
+  },
+  {
+    "title": "find - returns null if there is no match",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            {
+              "var": "num"
+            },
+            10
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [
+        {
+          "num": 3
+        },
+        {
+          "num": 4
+        },
+        {
+          "num": 5
+        }
+      ]
+    },
+    "exp": null
+  },
+  {
+    "title": "find - data types - if first parameter is a string, returns null",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": null
+  },
+  {
+    "title": "find - data types - if first parameter is a number, returns null",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": 5
+    },
+    "exp": null
+  },
+  {
+    "title": "find - data types - if first parameter is a boolean (true), returns null",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": null
+  },
+  {
+    "title": "find - data types - if first parameter is a boolean (false), returns null",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": false
+    },
+    "exp": null
+  },
+  {
+    "title": "find - data types - if first parameter is an object, returns null",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": null
+  },
+  {
+    "title": "find - data types - if first parameter is null, returns null",
+    "logic": {
+      "find": [
+        {
+          "var": "elements"
+        },
+        true
+      ]
+    },
+    "data": {
+      "elements": null
+    },
+    "exp": null
+  },
+  {
+    "title": "push - adds an element to the end of an array",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [
+        1,
+        2,
+        3
+      ],
+      "value": 4
+    },
+    "exp": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "title": "push - supports adding multiple elements",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            },
+            {
+              "var": "value2"
+            },
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [
+        1,
+        2,
+        3
+      ],
+      "value": 4,
+      "value2": 5
+    },
+    "exp": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "title": "push - supports different data types in the same array",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            "hello",
+            1,
+            true,
+            false,
+            [
+              1,
+              2,
+              3
+            ],
+            {
+              "var": "obj"
+            },
+            null
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [],
+      "obj": {
+        "hello": "world"
+      }
+    },
+    "exp": [
+      "hello",
+      1,
+      true,
+      false,
+      [
+        1,
+        2,
+        3
+      ],
+      {
+        "hello": "world"
+      },
+      null
+    ]
+  },
+  {
+    "title": "push - data types - if first parameter is a string, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": "hello",
+      "value": 4
+    },
+    "throws": true
+  },
+  {
+    "title": "push - data types - if first parameter is a number, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": 4,
+      "value": 4
+    },
+    "throws": true
+  },
+  {
+    "title": "push - data types - if first parameter is a boolean (true), throws an exception",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": true,
+      "value": 4
+    },
+    "throws": true
+  },
+  {
+    "title": "push - data types - if first parameter is a boolean (false), throws an exception",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": false,
+      "value": 4
+    },
+    "throws": true
+  },
+  {
+    "title": "push - data types - if first parameter is an object, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": {},
+      "value": 4
+    },
+    "throws": true
+  },
+  {
+    "title": "push - data types - if first parameter is null, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": null,
+      "value": 4
+    },
+    "throws": true
+  },
+  {
+    "title": "push - data types - if second parameter is a string, pushes the string",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [],
+      "value": "hello"
+    },
+    "exp": [
+      "hello"
+    ]
+  },
+  {
+    "title": "push - data types - if second parameter is a number, pushes the number",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [],
+      "value": 5
+    },
+    "exp": [
+      5
+    ]
+  },
+  {
+    "title": "push - data types - if second parameter is a boolean (true), pushes the boolean",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [],
+      "value": true
+    },
+    "exp": [
+      true
+    ]
+  },
+  {
+    "title": "push - data types - if second parameter is a boolean (false), pushes the boolean",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [],
+      "value": false
+    },
+    "exp": [
+      false
+    ]
+  },
+  {
+    "title": "push - data types - if second parameter is an array, pushes the array",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [],
+      "value": [
+        1,
+        2,
+        3
+      ]
+    },
+    "exp": [
+      [
+        1,
+        2,
+        3
+      ]
+    ]
+  },
+  {
+    "title": "push - data types - if second parameter is an object, pushes the object",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [],
+      "value": {
+        "hello": "world"
+      }
+    },
+    "exp": [
+      {
+        "hello": "world"
+      }
+    ]
+  },
+  {
+    "title": "push - data types - if second parameter is null, pushes null",
+    "logic": {
+      "script": [
+        {
+          "push": [
+            {
+              "var": "arr"
+            },
+            {
+              "var": "value"
+            }
+          ]
+        },
+        {
+          "return": [
+            {
+              "var": "arr"
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [],
+      "value": null
+    },
+    "exp": [
+      null
+    ]
+  },
+  {
+    "title": "all - returns true if the closure returns truthy for all elements (positive test)",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": [ true, 1, "hello" ]
+    },
+    "exp": true
+  },
+  {
+    "title": "all - returns false if the closure returns falsy for at least one element (negative test)",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": [ true, 1, "hello", false ]
+    },
+    "exp": false
+  },
+  {
+    "title": "all - allows to specify the variable name for the current value and to access the outer context",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "and": [
+            {
+              "var": "it"
+            },
+            {
+              "var": "outer"
+            }
+          ]
+        },
+        "it"
+      ]
+    },
+    "data": {
+      "elements": [ true, 1, "hello" ],
+      "outer": true
+    },
+    "exp": true
+  },
+  {
+    "title": "all - data types - if first parameter is a string, returns false",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": false
+  },
+  {
+    "title": "all - data types - if first parameter is a number, returns false",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": 5
+    },
+    "exp": false
+  },
+  {
+    "title": "all - data types - if first parameter is a boolean (true), returns false",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": false
+  },
+  {
+    "title": "all - data types - if first parameter is a boolean (false), returns false",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": false
+    },
+    "exp": false
+  },
+  {
+    "title": "all - data types - if first parameter is an object, returns false",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": false
+  },
+  {
+    "title": "all - data types - if first parameter is null, returns false",
+    "logic": {
+      "all": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": null
+    },
+    "exp": false
+  },
+  {
+    "title": "none - returns true if the closure returns falsy for all elements (positive test)",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": [ false, 0, "" ]
+    },
+    "exp": true
+  },
+  {
+    "title": "none - returns false if the closure returns true for at least one elements (negative test)",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": [ false, 0, "", true ]
+    },
+    "exp": false
+  },
+  {
+    "title": "none - allows to specify the variable name for the current value and to access the outer context",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "and": [
+            {
+              "var": "it"
+            },
+            {
+              "var": "outer"
+            }
+          ]
+        },
+        "it"
+      ]
+    },
+    "data": {
+      "elements": [ false, 0, "" ],
+      "outer": false
+    },
+    "exp": true
+  },
+  {
+    "title": "none - data types - if first parameter is a string, returns true",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": true
+  },
+  {
+    "title": "none - data types - if first parameter is a number, returns true",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": 5
+    },
+    "exp": true
+  },
+  {
+    "title": "none - data types - if first parameter is a boolean (true), returns true",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": true
+  },
+  {
+    "title": "none - data types - if first parameter is a boolean (false), returns true",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": false
+    },
+    "exp": true
+  },
+  {
+    "title": "none - data types - if first parameter is an object, returns true",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": true
+  },
+  {
+    "title": "none - data types - if first parameter is null, returns true",
+    "logic": {
+      "none": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": null
+    },
+    "exp": true
+  },
+  {
+    "title": "some - returns true if the closure returns truthy for at least one element (positive test)",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": [ false, 0, "", true ]
+    },
+    "exp": true
+  },
+  {
+    "title": "some - returns false if the closure returns falsy for for all elements (negative test)",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": [ false, 0, "" ]
+    },
+    "exp": false
+  },
+  {
+    "title": "some - allows to specify the variable name for the current value and to access the outer context",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "and": [
+            {
+              "var": "it"
+            },
+            {
+              "var": "outer"
+            }
+          ]
+        },
+        "it"
+      ]
+    },
+    "data": {
+      "elements": [ false, 0, "", true ],
+      "outer": true
+    },
+    "exp": true
+  },
+  {
+    "title": "some - data types - if first parameter is a string, returns false",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": false
+  },
+  {
+    "title": "some - data types - if first parameter is a number, returns false",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": 5
+    },
+    "exp": false
+  },
+  {
+    "title": "some - data types - if first parameter is a boolean (true), returns false",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": false
+  },
+  {
+    "title": "some - data types - if first parameter is a boolean (false), returns false",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": false
+    },
+    "exp": false
+  },
+  {
+    "title": "some - data types - if first parameter is an object, returns false",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": false
+  },
+  {
+    "title": "some - data types - if first parameter is null, returns false",
+    "logic": {
+      "some": [
+        {
+          "var": "elements"
+        },
+        {
+          "var": ""
+        }
+      ]
+    },
+    "data": {
+      "elements": null
+    },
+    "exp": false
+  },
+  {
+    "title": "sort - sorts the elements according to the logic of the closure (test with ascending order)",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            { "var": "a" },
+            { "var": "b" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [7, 4, 7, 3, 1,6,9]
+    },
+    "exp": [1, 3, 4, 6, 7, 7, 9]
+  },
+  {
+    "title": "sort - sorts the elements according to the logic of the closure (test with descending order)",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            { "var": "b" },
+            { "var": "a" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [7, 4, 7, 3, 1,6,9]
+    },
+    "exp": [9, 7,7,6,4,3,1]
+  },
+  {
+    "title": "sort - supports sorting of objects",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            { "var": "a.i" },
+            { "var": "b.i" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [{ "i": 3}, { "i": 2}, { "i": -4}, {"i": 5}]
+    },
+    "exp": [{ "i": -4}, { "i": 2}, { "i": 3}, {"i": 5}]
+  },
+  {
+    "title": "sort - allows access to the outer context",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          "if": [
+            {
+              "or": [
+                {
+                  ">=": [
+                    { "var": "a.i"},
+                    { "var": "offset" }
+                  ]
+                },
+                {
+                  ">=": [
+                    { "var": "b.i"},
+                    { "var": "offset" }
+                  ]
+                }
+              ]
+            },
+            {
+              ">": [
+                { "var": "a.i" },
+                { "var": "b.i" }
+              ]
+            },
+            {
+              ">": [
+                { "var": "b.i" },
+                { "var": "a.i" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [{"i": 6}, { "i": 3}, { "i": 1}, { "i": 2}, { "i": 3}, { "i": -4}, {"i": 5}],
+      "offset": 3
+    },
+    "exp": [{ "i": 2}, { "i": 1}, { "i": -4}, { "i": 3}, { "i": 3}, {"i": 5}, {"i": 6}]
+  },
+  {
+    "title": "sort - supports sorting of dates",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          "after": [
+            { "var": "a.date" },
+            { "var": "b.date" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": [
+        { "date": "2022-01-10"},
+        { "date": "2022-01-01"},
+        { "date": "2022-03-04"},
+        { "date": "2022-01-04"},
+        { "date": "2022-02-01"}
+      ]
+    },
+    "exp": [
+      { "date": "2022-01-01"},
+      { "date": "2022-01-04"},
+      { "date": "2022-01-10"},
+      { "date": "2022-02-01"},
+      { "date": "2022-03-04"}
+    ]
+  },
+  {
+    "title": "sort - data types - if first parameter is a string, returns an empty array",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            { "var": "a" },
+            { "var": "b" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": "not-an-array"
+    },
+    "exp": []
+  },
+  {
+    "title": "sort - data types - if first parameter is a number, returns an empty array",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            { "var": "a" },
+            { "var": "b" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": 5
+    },
+    "exp": []
+  },
+  {
+    "title": "sort - data types - if first parameter is a boolean (true), returns an empty array",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            { "var": "a" },
+            { "var": "b" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": true
+    },
+    "exp": []
+  },
+  {
+    "title": "sort - data types - if first parameter is a boolean (false), returns an empty array",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            { "var": "a" },
+            { "var": "b" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": false
+    },
+    "exp": []
+  },
+  {
+    "title": "sort - data types - if first parameter is an object, returns an empty array",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {
+          ">": [
+            { "var": "a" },
+            { "var": "b" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "elements": {}
+    },
+    "exp": []
+  },
+  {
+    "title": "sort - data types - if closure returns a string, leaves the array unchanged",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        "unchanged"
+      ]
+    },
+    "data": {
+      "elements": [ 5, 3, 7]
+    },
+    "exp": [ 5, 3, 7]
+  },
+  {
+    "title": "sort - data types - if closure returns a number (positive), leaves the array unchanged",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        1
+      ]
+    },
+    "data": {
+      "elements": [ 5, 3, 7]
+    },
+    "exp": [ 5, 3, 7]
+  },
+  {
+    "title": "sort - data types - if closure returns a number (negative), leaves the array unchanged",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        -1
+      ]
+    },
+    "data": {
+      "elements": [ 5, 3, 7]
+    },
+    "exp": [ 5, 3, 7]
+  },
+  {
+    "title": "sort - data types - if closure returns an array, leaves the array unchanged",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        []
+      ]
+    },
+    "data": {
+      "elements": [ 5, 3, 7]
+    },
+    "exp": [ 5, 3, 7]
+  },
+  {
+    "title": "sort - data types - if closure returns an object, leaves the array unchanged",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        {}
+      ]
+    },
+    "data": {
+      "elements": [ 5, 3, 7]
+    },
+    "exp": [ 5, 3, 7]
+  },
+  {
+    "title": "sort - data types - if closure returns null, leaves the array unchanged",
+    "logic": {
+      "sort": [
+        {
+          "var": "elements"
+        },
+        null
+      ]
+    },
+    "data": {
+      "elements": [ 5, 3, 7]
+    },
+    "exp": [ 5, 3, 7]
+  }
+]

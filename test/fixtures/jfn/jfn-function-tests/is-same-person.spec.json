@@ -1,0 +1,836 @@
+[
+  {
+    "title": "isSamePerson",
+    "functions": [
+      {
+        "name": "__intersectArrays",
+        "definition": {
+          "parameters": [
+            {
+              "name": "arrayA"
+            },
+            {
+              "name": "arrayB"
+            }
+          ],
+          "logic": [
+            {
+              "declare": [
+                "intersection",
+                {
+                  "filter": [
+                    {
+                      "var": "arrayA"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": "a"
+                        },
+                        {
+                          "var": "arrayB"
+                        }
+                      ]
+                    },
+                    "a"
+                  ]
+                }
+              ]
+            },
+            {
+              "return": [
+                {
+                  "var": "intersection"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "__getNameChunks",
+        "definition": {
+          "parameters": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "ignoreChunks",
+              "default": []
+            }
+          ],
+          "logic": [
+            {
+              "declare": [
+                "allChunks",
+                {
+                  "split": [
+                    {
+                      "trim": [
+                        {
+                          "var": "name"
+                        }
+                      ]
+                    },
+                    "<"
+                  ]
+                }
+              ]
+            },
+            {
+              "declare": [
+                "filteredChunks",
+                {
+                  "filter": [
+                    {
+                      "var": "allChunks"
+                    },
+                    {
+                      "and": [
+                        {
+                          "!!": [
+                            {
+                              "var": "it"
+                            }
+                          ]
+                        },
+                        {
+                          "!": [
+                            {
+                              "in": [
+                                {
+                                  "var": "it"
+                                },
+                                {
+                                  "var": "ignoreChunks"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "it"
+                  ]
+                }
+              ]
+            },
+            {
+              "return": [
+                {
+                  "var": "filteredChunks"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "isSamePerson",
+        "definition": {
+          "parameters": [
+            {
+              "name": "holderA"
+            },
+            {
+              "name": "holderB"
+            },
+            {
+              "name": "ignoreGntChunks",
+              "default": []
+            },
+            {
+              "name": "ignoreFntChunks",
+              "default": []
+            }
+          ],
+          "logic": [
+            {
+              "declare": [
+                "doesDobMatch",
+                {
+                  "===": [
+                    {
+                      "var": "holderA.dob"
+                    },
+                    {
+                      "var": "holderB.dob"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "if": [
+                {
+                  "!": [
+                    {
+                      "var": "doesDobMatch"
+                    }
+                  ]
+                },
+                {
+                  "return": [
+                    false
+                  ]
+                }
+              ]
+            },
+            {
+              "declare": [
+                "holderAGntChunks",
+                {
+                  "call": [
+                    "__getNameChunks",
+                    {
+                      "name": {
+                        "var": "holderA.nam.gnt"
+                      },
+                      "ignoreChunks": {
+                        "var": "ignoreGntChunks"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "declare": [
+                "holderBGntChunks",
+                {
+                  "call": [
+                    "__getNameChunks",
+                    {
+                      "name": {
+                        "var": "holderB.nam.gnt"
+                      },
+                      "ignoreChunks": {
+                        "var": "ignoreGntChunks"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "declare": [
+                "gntMatches",
+                {
+                  "call": [
+                    "__intersectArrays",
+                    {
+                      "arrayA": {
+                        "var": "holderAGntChunks"
+                      },
+                      "arrayB": {
+                        "var": "holderBGntChunks"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "if": [
+                {
+                  "===": [
+                    {
+                      "count": [
+                        {
+                          "var": "gntMatches"
+                        }
+                      ]
+                    },
+                    0
+                  ]
+                },
+                {
+                  "return": [
+                    false
+                  ]
+                }
+              ]
+            },
+            {
+              "declare": [
+                "holderAFntChunks",
+                {
+                  "call": [
+                    "__getNameChunks",
+                    {
+                      "name": {
+                        "var": "holderA.nam.fnt"
+                      },
+                      "ignoreChunks": {
+                        "var": "ignoreFntChunks"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "declare": [
+                "holderBFntChunks",
+                {
+                  "call": [
+                    "__getNameChunks",
+                    {
+                      "name": {
+                        "var": "holderB.nam.fnt"
+                      },
+                      "ignoreChunks": {
+                        "var": "ignoreFntChunks"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "declare": [
+                "fntMatches",
+                {
+                  "call": [
+                    "__intersectArrays",
+                    {
+                      "arrayA": {
+                        "var": "holderAFntChunks"
+                      },
+                      "arrayB": {
+                        "var": "holderBFntChunks"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "if": [
+                {
+                  "===": [
+                    {
+                      "count": [
+                        {
+                          "var": "fntMatches"
+                        }
+                      ]
+                    },
+                    0
+                  ]
+                },
+                {
+                  "return": [
+                    false
+                  ]
+                }
+              ]
+            },
+            {
+              "return": [
+                true
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "functionName": "isSamePerson",
+    "scenarios": [
+      {
+        "title": "happy path - match",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "happy path - no match - different dob",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1970-01-01"
+          }
+        },
+        "exp": false
+      },
+      {
+        "title": "happy path - no match - no matches in gnt",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JANE",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": false
+      },
+      {
+        "title": "happy path - no match - no matches in fnt",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOUGH"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": false
+      },
+      {
+        "title": "match despite optional middle name",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JOHN<WILLIAM",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "match despite last name addendum",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE<DOUGH"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "no match for twins",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JANE",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": false
+      },
+      {
+        "title": "match for twins with same middle name (false positive)",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN<ALEX",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JANE<ALEX",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "no match for siblings with same middle name",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN<ALEX",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JANE<ALEX",
+              "fnt": "DOE"
+            },
+            "dob": "1970-01-01"
+          }
+        },
+        "exp": false
+      },
+      {
+        "title": "match despite leading and trailing chevron (<)",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "<JOHN<",
+              "fnt": "<DOE<"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "no match because of matching chevrons (<)",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "<JOHN<",
+              "fnt": "<DOE<"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "<JANE<",
+              "fnt": "<DOE<"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": false
+      },
+      {
+        "title": "match despite leading and trailing whitespace",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": " JOHN ",
+              "fnt": " DOE "
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "no match because of matching whitespace",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": " JOHN ",
+              "fnt": " DOE "
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": " JANE ",
+              "fnt": " DOE "
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": false
+      },
+      {
+        "title": "match despite PhD in fnt (no space)",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DR<DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "match despite PhD in fnt (with space)",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DR<<DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "match despite PhD in gnt (no space)",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "DR<JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "match despite PhD in gnt (with space)",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "DR<<JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": true
+      },
+      {
+        "title": "no match because of matching PhD in gnt",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "DR<<JOHN",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "DR<<JANE",
+              "fnt": "DOE"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": false
+      },
+      {
+        "title": "no match because of matching PhD in fnt",
+        "parameters": {
+          "ignoreGntChunks": [
+            "DR"
+          ],
+          "ignoreFntChunks": [
+            "DR"
+          ],
+          "holderA": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DR<<DOE"
+            },
+            "dob": "1980-02-03"
+          },
+          "holderB": {
+            "nam": {
+              "gnt": "JOHN",
+              "fnt": "DR<<DOUGH"
+            },
+            "dob": "1980-02-03"
+          }
+        },
+        "exp": false
+      }
+    ]
+  }
+]

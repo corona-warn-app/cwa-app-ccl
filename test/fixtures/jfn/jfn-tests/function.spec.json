@@ -1,0 +1,1237 @@
+[
+  {
+    "title": "evaluateFunction - allows to call functions without parameters",
+    "functions": [
+      {
+        "name": "getStaticTestData0001",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                "hello"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "getStaticTestData0001",
+      "parameters": {}
+    },
+    "data": {},
+    "exp": "hello"
+  },
+  {
+    "title": "evaluateFunction - allows to call functions with parameters",
+    "functions": [
+      {
+        "name": "addStaticTestData0001",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "+": [
+                    {
+                      "var": "a"
+                    },
+                    {
+                      "var": "b"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "addStaticTestData0001",
+      "parameters": {
+        "a": 3,
+        "b": 4
+      }
+    },
+    "exp": 7
+  },
+  {
+    "title": "evaluateFunction - uses default parameter values",
+    "functions": [
+      {
+        "name": "addStaticTestData0002",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b",
+              "default": 9
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "+": [
+                    {
+                      "var": "a"
+                    },
+                    {
+                      "var": "b"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "addStaticTestData0002",
+      "parameters": {
+        "a": 4
+      }
+    },
+    "exp": 13
+  },
+  {
+    "title": "evaluateFunction - throws an exception if the function does not exist",
+    "functions": [
+    ],
+    "evaluateFunction": {
+      "name": "noSuchFunction",
+      "parameters": {
+      }
+    },
+    "throws": true
+  },
+  {
+    "title": "call - allows to call other functions without parameters",
+    "functions": [
+      {
+        "name": "pi",
+        "definition": {
+          "parameters": [
+          ],
+          "logic": [
+            {
+              "return": [
+                3.1416
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "n-pi",
+        "definition": {
+          "parameters": [
+            {
+              "name": "n",
+              "default": 2
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "*": [
+                    {
+                      "call": [
+                        "pi"
+                      ]
+                    },
+                    {
+                      "var": "n"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "n-pi",
+      "parameters": {
+        "n": 2
+      }
+    },
+    "exp": 6.2832
+  },
+  {
+    "title": "call - allows to call other functions with parameters",
+    "functions": [
+      {
+        "name": "multiply",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b",
+              "default": 9
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "*": [
+                    {
+                      "var": "a"
+                    },
+                    {
+                      "var": "b"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "square",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "multiply",
+                    {
+                      "a": { "var": "a"},
+                      "b": { "var": "a"}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "square",
+      "parameters": {
+        "a": 4
+      }
+    },
+    "exp": 16
+  },
+  {
+    "title": "call - allows to call other functions with strings",
+    "functions": [
+      {
+        "name": "echo",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "a" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "echo",
+                    {
+                      "a": "hello"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": "hello"
+  },
+  {
+    "title": "call - allows to call other functions with numbers (integer)",
+    "functions": [
+      {
+        "name": "echo",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "a" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "echo",
+                    {
+                      "a": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": 5
+  },
+  {
+    "title": "call - allows to call other functions with numbers (float)",
+    "functions": [
+      {
+        "name": "echo",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "a" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "echo",
+                    {
+                      "a": 
+                      5.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": 
+    5.5
+  },
+  {
+    "title": "call - allows to call other functions with boolean (true)",
+    "functions": [
+      {
+        "name": "echo",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "a" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "echo",
+                    {
+                      "a": 
+                      true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": 
+    true
+  },
+  {
+    "title": "call - allows to call other functions with boolean (false)",
+    "functions": [
+      {
+        "name": "echo",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "a" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "echo",
+                    {
+                      "a": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": false
+  },
+  {
+    "title": "call - allows to call other functions with array",
+    "functions": [
+      {
+        "name": "echo",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "a" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "echo",
+                    {
+                      "a": ["hello", 1, true]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": ["hello", 1, true]
+  },
+  {
+    "title": "call - allows to call other functions with object",
+    "functions": [
+      {
+        "name": "echo",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "a" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "echo",
+                    {
+                      "a": {
+                        "hello": "world",
+                        "1": true,
+                        "more": {
+                          "hello": "world",
+                          "1": true
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": {
+      "hello": "world",
+      "1": true,
+      "more": {
+        "hello": "world",
+        "1": true
+      }
+    }
+  },
+  {
+    "title": "call - allows to call other functions with null",
+    "functions": [
+      {
+        "name": "echo",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "a" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [
+            {
+              "name": "a"
+            }
+          ],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "echo",
+                    {
+                      "a": null
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": null
+  },
+  {
+    "title": "call - throws an exception if the function does not exist",
+    "functions": [
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "noSuchFunction",
+                    {}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if first parameter is a number, throws an exception",
+    "functions": [
+      {
+        "name": "5",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                "hello"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    5
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if first parameter is a boolean (true), throws an exception",
+    "functions": [
+      {
+        "name": "true",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                "hello"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if first parameter is a boolean (false), throws an exception",
+    "functions": [
+      {
+        "name": "false",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                "hello"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if first parameter is an array, throws an exception",
+    "functions": [
+      {
+        "name": "hello",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                "hello"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    ["hello"]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if first parameter is an object, throws an exception",
+    "functions": [
+      {
+        "name": "[object Object]",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                "hello"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    {}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if first parameter is null, throws an exception",
+    "functions": [
+      {
+        "name": "null",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                "hello"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    null
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if second parameter is absent, calls the function with empty parameters",
+    "functions": [
+      {
+        "name": "greet",
+        "definition": {
+          "parameters": [
+            { "name": "greeting", "default": "hi"}
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "greeting" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "greet"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": "hi"
+  },
+  {
+    "title": "call - data types - if second parameter is a string, throws an exception",
+    "functions": [
+      {
+        "name": "greet",
+        "definition": {
+          "parameters": [
+            { "name": "greeting", "default": "hi"}
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "greeting" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "greet",
+                    "hello"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if second parameter is a number, throws an exception",
+    "functions": [
+      {
+        "name": "greet",
+        "definition": {
+          "parameters": [
+            { "name": "greeting", "default": "hi"}
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "greeting" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "greet",
+                    5
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if second parameter is a boolean (true), throws an exception",
+    "functions": [
+      {
+        "name": "greet",
+        "definition": {
+          "parameters": [
+            { "name": "greeting", "default": "hi"}
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "greeting" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "greet",
+                    true
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if second parameter is a boolean (false), throws an exception",
+    "functions": [
+      {
+        "name": "greet",
+        "definition": {
+          "parameters": [
+            { "name": "greeting", "default": "hi"}
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "greeting" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "greet",
+                    false
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if second parameter is an array, throws an exception",
+    "functions": [
+      {
+        "name": "greet",
+        "definition": {
+          "parameters": [
+            { "name": "greeting", "default": "hi"}
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "greeting" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "greet",
+                    ["hello"]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "throws": true
+  },
+  {
+    "title": "call - data types - if second parameter is null, calls the function with empty parameters",
+    "functions": [
+      {
+        "name": "greet",
+        "definition": {
+          "parameters": [
+            { "name": "greeting", "default": "hi"}
+          ],
+          "logic": [
+            {
+              "return": [
+                { "var": "greeting" }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "main",
+        "definition": {
+          "parameters": [],
+          "logic": [
+            {
+              "return": [
+                {
+                  "call": [
+                    "greet",
+                    null
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "evaluateFunction": {
+      "name": "main",
+      "parameters": {}
+    },
+    "exp": "hi"
+  }
+]
