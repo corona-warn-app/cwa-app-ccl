@@ -5,9 +5,12 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "fix": "standard 'lib/**/*.js' 'test/**/*.js' 'scripts/**/*.js' --fix --verbose | snazzy",
+    "lint": "standard 'lib/**/*.js' 'test/**/*.js' 'scripts/**/*.js' --verbose | snazzy",
     "postinstall": "patch-package",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:unit": "mocha test/unit --recursive --color"
+    "test:unit": "mocha test/unit --recursive --color",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -26,11 +29,20 @@
   "devDependencies": {
     "chai": "4.3.4",
     "fs-extra": "10.0.0",
+    "husky": "7.0.4",
+    "lint-staged": "12.1.7",
     "mocha": "9.1.3",
-    "moment": "2.29.1"
+    "moment": "2.29.1",
+    "snazzy": "9.0.0",
+    "standard": "16.0.4"
   },
   "dependencies": {
     "json-logic-js": "2.0.2",
     "patch-package": "6.4.7"
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix"
+    ]
   }
 }

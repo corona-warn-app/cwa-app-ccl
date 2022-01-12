@@ -10,7 +10,7 @@ const testCasesInJavaScript = [
 const convertJsonLogicTestCases = tests => {
   return tests
     .filter(it => typeof it !== 'string') // comments
-    .reduce((allTestCases, [ rule, data, expected ], idx) => {
+    .reduce((allTestCases, [rule, data, expected], idx) => {
       allTestCases.push({
         title: `test case ${idx} - ${JSON.stringify(rule)} - ${JSON.stringify(data)} - ${JSON.stringify(expected)}`,
         logic: rule,
@@ -38,7 +38,7 @@ const convertCertLogicTestCases = ({ name: sut, cases }) => {
   return cases.reduce((allTestCases, { name, certLogicExpression, assertions }) => {
     return assertions.reduce((allTestCases, { data, expected }, idx) => {
       allTestCases.push({
-        title: `${sut} - ${name} - #${idx+1} with ${JSON.stringify(data)}`,
+        title: `${sut} - ${name} - #${idx + 1} with ${JSON.stringify(data)}`,
         logic: certLogicExpression,
         data: data,
         exp: expected
