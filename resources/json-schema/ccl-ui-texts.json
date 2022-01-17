@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccl.coronawarn.app/ccl-ui-texts.json",
+  "title": "CCL - UI Texts",
+  "description": "Common Covid Logic (CCL) - Schema for UI Texts",
+  "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+}

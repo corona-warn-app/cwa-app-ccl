@@ -1,0 +1,116 @@
+- id: 1
+  name: biontech-booster-test
+  description: biontech vaccination + biontech booster
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+    - time: +P5M
+      vc: biontech3/3
+    - time: +P4W
+      tc: pcr1
+    - time: +P4W
+      tc: rat1
+  testCases:
+    # vaccination not yet complete
+    - time: biontech1/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: biontech1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        vaccinationValidFrom: 
+        mostRecentVaccination: biontech1/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech1/2
+    # Complete vaccination not yet valid
+    - time: biontech2/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+    # Complete vaccination still not valid after 14 days
+    - time: biontech2/2+14DT1S
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+    # Complete vaccination valid after 15 days
+    - time: biontech2/2+P15DT1S
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+    # Booster vaccination is immedeately valid
+    - time: biontech3/3
+      assertions:
+        admissionState: 2G_PLUS_BOOSTER
+        mostRelevantCertificate: biontech3/3
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech3/3
+        hasBooster: true
+        verificationCertificates:
+          - certificate: biontech3/3
+    # Additional valid PCR test changes admission state
+    - time: pcr1
+      assertions:
+        admissionState: 2G_PLUS_PCR
+        mostRelevantCertificate: biontech3/3
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech3/3
+        hasBooster: true
+        verificationCertificates:
+          - certificate: biontech3/3
+          - certificate: pcr1
+    # Additional PCR test older than 72h does not change admission state
+    - time: pcr1+P3DT1S
+      assertions:
+        admissionState: 2G_PLUS_BOOSTER
+        mostRelevantCertificate: biontech3/3
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech3/3
+        hasBooster: true
+        verificationCertificates:
+          - certificate: biontech3/3
+    # Additional valid RAT test changes admission state
+    - time: rat1
+      assertions:
+        admissionState: 2G_PLUS_RAT
+        mostRelevantCertificate: biontech3/3
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech3/3
+        hasBooster: true
+        verificationCertificates:
+          - certificate: biontech3/3
+          - certificate: rat1
+    # Additional RAT test older than 48h does not change admission state
+    - time: rat1+P2DT1S
+      assertions:
+        admissionState: 2G_PLUS_BOOSTER
+        mostRelevantCertificate: biontech3/3
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech3/3
+        hasBooster: true
+        verificationCertificates:
+          - certificate: biontech3/3

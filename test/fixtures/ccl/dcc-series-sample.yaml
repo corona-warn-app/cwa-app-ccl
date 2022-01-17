@@ -1,0 +1,69 @@
+- id: 1
+  name: sample-series
+  description: Sample series to illustrate the syntax
+  series:
+    # values for `time` attribute:
+    #   t0 - a random point in time
+    #   +<duration> - the date of the previous entry plus the ISO 8601 duration
+    #   t<n>+<duration> - the date describe by the n-th entry plus the ISO 8601 duration
+    #   <vc>+<duration> - the date of the respective vc entry plus the ISO 8601 duration
+    #   <rc>+<duration> - the date of the respective rc entry plus the ISO 8601 duration
+    #   <tc>+<duration> - the date of the respective tc entry plus the ISO 8601 duration
+    #   ISO 8601 date string e.g. '2021-12-12'
+    # examples:
+    #   t0, +P1M, t0+P1M, moderna2/2+P14D, pcr1+P2W, 2021-12-12, 2021-12-12-12+P2W
+    #
+    # syntax for `vc` attribute:
+    #   <shortName><dn>/<sd>
+    # shortName values:
+    #   janssen, astra, moderna, biontech
+    # examples:
+    #   janssen1/1, astra2/2, moderna3/2, biontech10/5
+    #
+    # syntax for `rc` attribute:
+    #   rc<n>
+    # examples:
+    #   rc1, rc2, rc3
+    #
+    # syntax for `tc` attribute:
+    #   <testType><n>
+    # testType values:
+    #   pcr1, rat2, pcr3, pcr4
+    - time: t0
+      vc: janssen1/1
+    - time: +P4W
+      vc: moderna2/2
+    - time: janssen1/1+P8W
+      vc: moderna3/2
+    - time: 2022-05-10+P1D
+      rc: rc1
+    - time: rc1+P2D
+      tc: pcr1
+  testCases:
+    - time: janssen1/1
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: janssen1/1
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: janssen1/1+P15D
+        mostRecentVaccination: janssen1/1
+        verificationCertificates:
+          - certificate: janssen1/1
+    - time: janssen1/1+P2W
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: janssen1/1
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: janssen1/1+P15D
+        mostRecentVaccination: janssen1/1
+        verificationCertificates:
+          - certificate: janssen1/1
+    - time: janssen1/1+P2W1D
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: janssen1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1+P15D
+        mostRecentVaccination: janssen1/1
+        verificationCertificates:
+          - certificate: janssen1/1

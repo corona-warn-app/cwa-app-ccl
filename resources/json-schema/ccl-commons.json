@@ -1,0 +1,400 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccl.coronawarn.app/ccl-commons.json",
+  "title": "CCL - UI Texts",
+  "description": "Common Covid Logic (CCL) - Common Data Structures",
+  "$defs": {
+    "certificateReference": {
+      "type": "object",
+      "required": [
+        "barcodeData"
+      ],
+      "properties": {
+        "barcodeData": {
+          "type": "string",
+          "pattern": "^HC\\d+:"
+        }
+      }
+    },
+    "certificate": {
+      "type": "object",
+      "required": [
+        "cose",
+        "cwt",
+        "hcert",
+        "validityState"
+      ],
+      "properties": {
+        "cose": {
+          "type": "object",
+          "properties": {
+            "kid": {
+              "$comment": "optional property",
+              "type": "string"
+            }
+          }
+        },
+        "cwt": {
+          "type": "object",
+          "required": [
+            "iss",
+            "iat",
+            "exp"
+          ],
+          "properties": {
+            "iss": {
+              "type": "string"
+            },
+            "iat": {
+              "type": "number"
+            },
+            "exp": {
+              "type": "number"
+            }
+          }
+        },
+        "hcert": {
+          "$ref": "#/$defs/dcc"
+        },
+        "validityState": {
+          "type": "string",
+          "enum": [
+            "VALID",
+            "EXPIRING_SOON",
+            "EXPIRED",
+            "INVALID",
+            "BLOCKED"
+          ]
+        }
+      }
+    },
+    "dcc": {
+      "$ref": "https://id.uvci.eu/DCC.combined-schema.json"
+    },
+    "validationRule": {
+      "$ref": "https://webgate.acceptance.ec.europa.eu/dgcg-json-api/validation-rule.schema.json"
+    },
+    "systemTime": {
+      "type": "object",
+      "required": [
+        "timestamp",
+        "localDate",
+        "localDateTime",
+        "localDateTimeMidnight",
+        "utcDate",
+        "utcDateTime",
+        "utcDateTimeMidnight"
+      ],
+      "properties": {
+        "timestamp": {
+          "type": "number"
+        },
+        "localDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "localDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "localDateTimeMidnight": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "utcDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "utcDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "utcDateTimeMidnight": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "systemTimeDependentTextResolverInput": {
+      "type": "object",
+      "required": [
+        "now"
+      ],
+      "properties": {
+        "now": {
+          "$ref": "#/$defs/systemTime"
+        }
+      }
+    },
+    "systemTimeDependentTextResolverOutput": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/uiTextSingular"
+        },
+        {
+          "$ref": "#/$defs/uiTextPlural"
+        }
+      ]
+    },
+    "invisible": {
+      "type": "object",
+      "required": [
+        "visible"
+      ],
+      "properties": {
+        "visible": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "invisibleDivision": {
+      "type": "object",
+      "required": [
+        "visible"
+      ],
+      "properties": {
+        "visible": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "visibleDivision": {
+      "type": "object",
+      "required": [
+        "visible",
+        "titleText",
+        "subtitleText",
+        "longText"
+      ],
+      "properties": {
+        "visible": {
+          "const": true
+        },
+        "titleText": {
+          "$ref": "#/$defs/uiText"
+        },
+        "subtitleText": {
+          "$ref": "#/$defs/uiText"
+        },
+        "longText": {
+          "$ref": "#/$defs/uiText"
+        },
+        "faqAnchor": {
+          "type": "string"
+        }
+      }
+    },
+    "uiText": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/uiTextSingular"
+        },
+        {
+          "$ref": "#/$defs/uiTextPlural"
+        },
+        {
+          "$ref": "#/$defs/uiTextSystemTimeDependent"
+        }
+      ]
+    },
+    "uiTextSingular": {
+      "type": "object",
+      "required": [
+        "type",
+        "localizedText",
+        "parameters"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "singular"
+          ]
+        },
+        "localizedText": {
+          "type": "object",
+          "patternProperties": {
+            "[a-z]{2}": {
+              "type": "string"
+            }
+          }
+        },
+        "parameters": {
+          "$ref": "#/$defs/uiTextParameters"
+        }
+      }
+    },
+    "uiTextPlural": {
+      "type": "object",
+      "required": [
+        "type",
+        "localizedTexts",
+        "parameters"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "quantity"
+          ]
+        },
+        {
+          "required": [
+            "quantityParameterIndex"
+          ]
+        }
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "plural"
+          ]
+        },
+        "parameters": {
+          "$ref": "#/$defs/uiTextParameters"
+        },
+        "localizedTexts": {
+          "type": "object",
+          "patternProperties": {
+            "[a-z]{2}": {
+              "type": "object",
+              "properties": {
+                "zero": {
+                  "type": "string"
+                },
+                "one": {
+                  "type": "string"
+                },
+                "two": {
+                  "type": "string"
+                },
+                "few": {
+                  "type": "string"
+                },
+                "many": {
+                  "type": "string"
+                },
+                "other": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "zero",
+                "one",
+                "two",
+                "few",
+                "many",
+                "other"
+              ]
+            }
+          }
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "quantityParameterIndex": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "uiTextSystemTimeDependent": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "system-time-dependent"
+          ]
+        },
+        "functionName": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "object"
+        }
+      }
+    },
+    "uiTextParameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "value"
+        ],
+        "oneOf": [
+          {
+            "$comment": "String parameter",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "string"
+                ]
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$comment": "Number parameter",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "number"
+                ]
+              },
+              "value": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "$comment": "Boolean parameter",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "boolean"
+                ]
+              },
+              "value": {
+                "type": "boolean"
+              }
+            }
+          },
+          {
+            "$comment": "Date parameter",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "date"
+                ]
+              },
+              "value": {
+                "type": "string"
+              },
+              "format": {
+                "type": "string",
+                "enum": [
+                  "date-diff-now"
+                ]
+              },
+              "unit": {
+                "type": "string",
+                "enum": [
+                  "day"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccl.coronawarn.app/functions/getDccWalletInfo",
+  "title": "CCL - Get DCC Wallet Info",
+  "description": "Common Covid Logic (CCL) - Get DCC Wallet Info",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/input"
+    },
+    {
+      "$ref": "#/$defs/output"
+    }
+  ],
+  "$defs": {
+    "input": {
+      "title": "CCL - Get DCC Wallet Info - Input",
+      "description": "Common Covid Logic (CCL) - Input of Get DCC Wallet Info",
+      "type": "object",
+      "required": [
+        "os",
+        "language",
+        "now",
+        "certificates",
+        "boosterNotificationRules"
+      ],
+      "properties": {
+        "os": {
+          "type": "string",
+          "enum": [
+            "android",
+            "ios"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "now": {
+          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/systemTime"
+        },
+        "certificates": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificate"
+          }
+        },
+        "boosterNotificationRules": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/validationRule"
+          }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "admissionState",
+        "vaccinationState",
+        "boosterNotification",
+        "mostRelevantCertificate",
+        "verification",
+        "validUntil"
+      ],
+      "properties": {
+        "admissionState": {
+          "oneOf": [
+            {
+              "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/invisibleDivision"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/visibleDivision"
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "badgeText"
+                  ],
+                  "properties": {
+                    "badgeText": {
+                      "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                    }
+                  }
+                }
+                
+              ]
+            }
+          ]
+        },
+        "vaccinationState": {
+          "oneOf": [
+            {
+              "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/invisibleDivision"
+            },
+            {
+              "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/visibleDivision"
+            }
+          ]
+        },
+        "boosterNotification": {
+          "oneOf": [
+            {
+              "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/invisibleDivision"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/visibleDivision"
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "identifier"
+                  ],
+                  "properties": {
+                    "identifier": {
+                      "type": "string"
+                    }
+                  }
+                }
+                
+              ]
+            }
+          ]
+        },
+        "mostRelevantCertificate": {
+          "type": "object",
+          "required": [
+            "certificateRef"
+          ],
+          "properties": {
+            "certificateRef": {
+              "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
+            }
+          }
+        },
+        "verification": {
+          "type": "object",
+          "required": [
+            "certificates"
+          ],
+          "properties": {
+            "certificates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "buttonText",
+                  "certificateRef"
+                ],
+                "properties": {
+                  "buttonText": {
+                    "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                  },
+                  "certificateRef": {
+                    "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "validUntil": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "vaccinationStateShortTextResolverInput": {
+      "allOf": [
+        {
+          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/systemTimeDependentTextResolverInput"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        }
+      ]
+    },
+    "vaccinationStateShortTextResolverOutput": {
+      "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/systemTimeDependentTextResolverOutput"
+    }
+  }
+}
