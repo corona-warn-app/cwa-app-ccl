@@ -3,7 +3,7 @@
 const async = require('async')
 const moment = require('moment')
 
-const dgcGenerate = require('./dgc-generate')
+const generate = require('./dcc-generate')
 
 const vaccineShortNamesByMedicalProduct = {
   'EU/1/20/1525': ['jj', 'johnson', 'janssen'],
@@ -132,14 +132,14 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
       ...partialDccDescriptor
     }
     const {
-      dccData,
+      dcc,
       barcodeData
-    } = await dgcGenerate(dccDescriptor)
+    } = await generate(dccDescriptor)
     return {
       ...it,
       time,
       dccDescriptor,
-      dccData,
+      dcc,
       barcodeData
     }
   })

@@ -2,7 +2,7 @@
 
 const moment = require('moment')
 const transliteration = require('transliteration')
-const chanceFactory = require('./../chance')
+const chanceFactory = require('../chance')
 
 const VC_MP_JOHNSON_JOHNSON = 'EU/1/20/1525'
 const VC_MP_ASTRA = 'EU/1/21/1529'
@@ -46,7 +46,7 @@ const generateVaccinationCertificate = ({ seed, piiSeed } = {}) => {
   const is = 'Robert Koch-Institut'
   const ci = generateCi({ chance })
 
-  const dgc = {
+  const dcc = {
     ver,
     nam: {
       gn, fn, gnt, fnt
@@ -65,7 +65,7 @@ const generateVaccinationCertificate = ({ seed, piiSeed } = {}) => {
       ci
     }]
   }
-  return dgc
+  return dcc
 }
 
 const generateTestCertificate = ({ seed, now = moment(), piiSeed } = {}) => {
@@ -91,7 +91,7 @@ const generateTestCertificate = ({ seed, now = moment(), piiSeed } = {}) => {
   const sc = moment(now).subtract(chance.natural({ min: 10, max: 2160 }), 'minutes').millisecond(0).toISOString(true).replace('.000', '')
   const dr = moment(now).millisecond(0).toISOString(true).replace('.000', '')
 
-  const dgc = {
+  const dcc = {
     ver,
     nam: {
       gn, fn, gnt, fnt
@@ -111,7 +111,7 @@ const generateTestCertificate = ({ seed, now = moment(), piiSeed } = {}) => {
       ci
     }]
   }
-  return dgc
+  return dcc
 }
 
 const generateRecoveryCertificate = ({ seed, now = moment(), piiSeed } = {}) => {
@@ -134,7 +134,7 @@ const generateRecoveryCertificate = ({ seed, now = moment(), piiSeed } = {}) => 
   const du = moment(_fr).add(180, 'days').format('YYYY-MM-DD')
   const ci = generateCi({ chance })
 
-  const dgc = {
+  const dcc = {
     ver,
     nam: {
       gn, fn, gnt, fnt
@@ -150,7 +150,7 @@ const generateRecoveryCertificate = ({ seed, now = moment(), piiSeed } = {}) => 
       ci
     }]
   }
-  return dgc
+  return dcc
 }
 
 module.exports = {

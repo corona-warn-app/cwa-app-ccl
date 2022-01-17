@@ -3,10 +3,10 @@
 const jp = require('jsonpath')
 const moment = require('moment')
 
-const dgcData = require('./dgc-data')
-const dgcDsc = require('./dgc-dsc')
-const dgcEncode = require('./dgc-encode')
-const dgcSignature = require('./dgc-signature')
+const dccData = require('./dcc-data')
+const dccDsc = require('./dcc-dsc')
+const dccEncode = require('./dcc-encode')
+const dccSignature = require('./dcc-signature')
 
 const parseRelativeDateStr = str => {
   if (!str) return [0, 'seconds']
@@ -88,7 +88,7 @@ const generate = async ({
     : dccType === 'tc'
       ? 'generateTestCertificate'
       : 'generateRecoveryCertificate'
-  const dccData = dgcData[dccGeneratorFunction]({ seed: dccSeed, now, piiSeed: dccPiiSeed })
+  const dcc = dccData[dccGeneratorFunction]({ seed: dccSeed, now, piiSeed: dccPiiSeed })
 
   if (Array.isArray(dccOverwrites) && dccOverwrites.length > 0) {
     // log.info('Applying attribute overwrites')
@@ -99,7 +99,7 @@ const generate = async ({
         const pathComponents = jp.parse(pathExpression)
         const leafComponent = pathComponents.pop()
         const parentPathExpression = jp.stringify(pathComponents)
-        jp.apply(dccData, parentPathExpression, node => {
+        jp.apply(dcc, parentPathExpression, node => {
           delete node[leafComponent.expression.value]
           return node
         })
@@ -113,7 +113,7 @@ const generate = async ({
               : isDateTimeAttribute(pathExpression) && isRelativeDateStr(_newValue)
                 ? deriveMomentOrDefault(_newValue).millisecond(0).toISOString(true).replace('.000', '')
                 : _newValue
-        jp.value(dccData, pathExpression, newValue)
+        jp.value(dcc, pathExpression, newValue)
       }
     })
   }
@@ -122,10 +122,10 @@ const generate = async ({
   const iat = _iat.valueOf() / 1000
   const _exp = deriveMomentOrDefault(cwtExp, moment(_iat).add(1, 'year'))
   const exp = _exp.valueOf() / 1000
-  const dsc = await dgcDsc.load()
+  const dsc = await dccDsc.load()
 
-  const coseBuffer = await dgcSignature.sign({
-    dgc: dccData,
+  const coseBuffer = await dccSignature.sign({
+    dcc: dcc,
     iss: cwtIss,
     iat,
     exp,
@@ -135,9 +135,9 @@ const generate = async ({
     alg: dsc.alg
   })
 
-  const barcodeData = dgcEncode.toBarcodeData(coseBuffer)
+  const barcodeData = dccEncode.toBarcodeData(coseBuffer)
   return {
-    dccData,
+    dcc,
     barcodeData
   }
 }

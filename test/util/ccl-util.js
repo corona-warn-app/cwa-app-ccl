@@ -1,15 +1,15 @@
 'use strict'
 
 const moment = require('moment')
-const dgc = require('./dgc')
+const dcc = require('./dcc')
 
 const mapBarcodeDataToCertificate = (barcodeData, { validityState }) => {
   const {
     iss, iat, exp,
     coseProtectedHeader, coseUnprotectedHeader,
-    dgc: hcert
-  } = dgc.decode.fromBarcodeData(barcodeData)
-  const kid = dgc.util.getKID(coseProtectedHeader, coseUnprotectedHeader)
+    dcc: hcert
+  } = dcc.decode.fromBarcodeData(barcodeData)
+  const kid = dcc.util.getKID(coseProtectedHeader, coseUnprotectedHeader)
   const kidStr = kid.toString('base64')
   return {
     cose: {

@@ -47,8 +47,8 @@ const cwtFromCwtBuffer = cwtBuffer => {
   const exp = data.get(4)
   const iat = data.get(6)
   const hcert = data.get(-260)
-  const dgc = hcert.get(1)
-  return { iss, iat, exp, hcert, dgc }
+  const dcc = hcert.get(1)
+  return { iss, iat, exp, hcert, dcc }
 }
 
 const cwtFromCoseBuffer = coseBuffer => {

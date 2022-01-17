@@ -7,7 +7,7 @@ const moment = require('moment')
 
 const ccl = require('./../../../lib/ccl')
 // const jfn = require('./../../../lib/jfn/jfn-main')
-const dgc = require('./../../util/dgc/dgc-main')
+const dcc = require('../../util/dcc/dcc-main')
 
 describe.skip('ccl/get-dcc-wallet-info', () => {
   context('test', () => {
@@ -213,21 +213,21 @@ describe.skip('ccl/get-dcc-wallet-info', () => {
 
     before(async () => {
       const t0 = moment()
-      const { dccDescriptor } = dgc.data.presets.findPreset({ type: 'vc', idOrName: 'moderna12' })
+      const { dccDescriptor } = dcc.data.presets.findPreset({ type: 'vc', idOrName: 'moderna12' })
       dccDescriptor.dccOverwrites = dccDescriptor.dccOverwrites || []
       dccDescriptor.dccOverwrites.push(`v.0.dt=${t0.format('YYYY-MM-DD')}`)
       const {
         barcodeData
-      } = await dgc.generate(dccDescriptor)
+      } = await dcc.generate(dccDescriptor)
       moderna12BarcodeData = barcodeData
 
       const mapBarcodeDataToCertificate = (barcodeData, { validityState }) => {
         const {
           iss, iat, exp,
           coseProtectedHeader, coseUnprotectedHeader,
-          dgc: hcert
-        } = dgc.decode.fromBarcodeData(barcodeData)
-        const kid = dgc.util.getKID(coseProtectedHeader, coseUnprotectedHeader)
+          dcc: hcert
+        } = dcc.decode.fromBarcodeData(barcodeData)
+        const kid = dcc.util.getKID(coseProtectedHeader, coseUnprotectedHeader)
         const kidStr = kid.toString('base64')
         return {
           cose: {

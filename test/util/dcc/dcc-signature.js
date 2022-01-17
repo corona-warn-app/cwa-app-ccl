@@ -6,7 +6,7 @@ const cose = require('cose-js')
 const moment = require('moment')
 
 const sign = async ({
-  dgc,
+  dcc,
   iss = 'DE',
   iat = moment().unix(),
   exp = moment().add(1, 'year').unix(),
@@ -19,7 +19,7 @@ const sign = async ({
   assert.strictEqual(typeof exp, 'number', 'exp must be a number')
 
   const hcert = new cbor.Map()
-  hcert.set(1, dgc)
+  hcert.set(1, dcc)
   const cwt = new cbor.Map()
   cwt.set(1, iss)
   cwt.set(4, exp)

@@ -11,7 +11,7 @@ const yaml = require('js-yaml')
 const ccl = require('./../../../lib/ccl')
 
 const cclUtil = require('./../../util/ccl-util')
-const dgc = require('../../util/dgc/dgc-main')
+const dcc = require('../../util/dcc/dcc-main')
 
 describe.only('ccl/__analyzeDccWallet', async () => {
   const filenames = [
@@ -48,16 +48,16 @@ describe.only('ccl/__analyzeDccWallet', async () => {
               it.tc === certRef
           })
         if (!certificate) return null
-        return certificate.dccData.v?.[0]?.ci ||
-          certificate.dccData.r?.[0]?.ci ||
-          certificate.dccData.t?.[0]?.ci
+        return certificate.dcc.v?.[0]?.ci ||
+          certificate.dcc.r?.[0]?.ci ||
+          certificate.dcc.t?.[0]?.ci
       }
 
       const resolveCiToCertRef = ci => {
         const certificate = series.find(it => {
-          return it.dccData.v?.[0]?.ci === ci ||
-            it.dccData.r?.[0]?.ci === ci ||
-            it.dccData.t?.[0]?.ci === ci
+          return it.dcc.v?.[0]?.ci === ci ||
+            it.dcc.r?.[0]?.ci === ci ||
+            it.dcc.t?.[0]?.ci === ci
         })
         if (!certificate) return null
         return certificate.vc ||
@@ -69,7 +69,7 @@ describe.only('ccl/__analyzeDccWallet', async () => {
         const defaultDccDescriptor = {
           dccPiiSeed: preset.description || preset.name
         }
-        series = await dgc.series.parseSeries({
+        series = await dcc.series.parseSeries({
           series: preset.series,
           t0,
           defaultDccDescriptor
@@ -84,7 +84,7 @@ describe.only('ccl/__analyzeDccWallet', async () => {
           let input, output
 
           before(async () => {
-            timeUnderTest = dgc.series.resolveTime(testCase.time, -1, series, t0)
+            timeUnderTest = dcc.series.resolveTime(testCase.time, -1, series, t0)
             seriesUnderTest = series
               .filter(it => it.time.isSameOrBefore(timeUnderTest))
 
@@ -116,7 +116,7 @@ describe.only('ccl/__analyzeDccWallet', async () => {
 
             const prefix = `${chalk.magenta('[DEBUG]')} `
 
-            const dccData = seriesUnderTest.map(it => it.dccData)
+            const dccData = seriesUnderTest.map(it => it.dcc)
 
             const debugLog = `Start of debugging: ${chalk.magenta(testCaseDescription)}
 
@@ -170,7 +170,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             has('vaccinationValidFrom') &&
             it('check vaccinationValidFrom', () => {
-              const expValidFromMoment = dgc.series.resolveTime(assertions.vaccinationValidFrom, -1, series, t0)
+              const expValidFromMoment = dcc.series.resolveTime(assertions.vaccinationValidFrom, -1, series, t0)
               const expValidFrom = expValidFromMoment.utc().toISOString()
               expect(output)
                 .to.have.property('vaccinationValidFrom')
