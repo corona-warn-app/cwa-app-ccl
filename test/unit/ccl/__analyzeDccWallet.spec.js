@@ -13,7 +13,7 @@ const ccl = require('./../../../lib/ccl')
 const cclUtil = require('./../../util/ccl-util')
 const dcc = require('../../util/dcc/dcc-main')
 
-describe.only('ccl/__analyzeDccWallet', async () => {
+describe('ccl/__analyzeDccWallet', async () => {
   const filenames = [
     'dcc-series-sample.yaml',
     'dcc-series-janssen.yaml',

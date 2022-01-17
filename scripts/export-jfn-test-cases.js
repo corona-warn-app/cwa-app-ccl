@@ -3,6 +3,9 @@
 const fse = require('fs-extra')
 const path = require('path')
 
+const target = process.argv[2]
+if (!target) throw new Error('Required target parameter is missing')
+
 const testCasesInJavaScript = [
   'time.moment.spec.js'
 ]
@@ -22,7 +25,7 @@ const convertJsonLogicTestCases = tests => {
 }
 
 const getJsonLogicTestCases = async () => {
-  const dirpath = path.resolve(__dirname, './../test/unit/jfn/json-logic-tests')
+  const dirpath = path.resolve(__dirname, './../test/fixtures/jfn/json-logic-tests')
   const allFiles = await fse.readdir(dirpath)
   const allJsonFiles = allFiles.filter(it => it.endsWith('.json'))
   const allTestCasesNested = await Promise.all(allJsonFiles.map(async it => {
@@ -49,7 +52,7 @@ const convertCertLogicTestCases = ({ name: sut, cases }) => {
 }
 
 const getCertLogicTestCases = async () => {
-  const dirpath = path.resolve(__dirname, './../test/unit/jfn/certlogic-tests')
+  const dirpath = path.resolve(__dirname, './../test/fixtures/jfn/certlogic-tests')
   const allFiles = await fse.readdir(dirpath)
   const allJsonFiles = allFiles.filter(it => it.endsWith('.json'))
   const allTestCasesNested = await Promise.all(allJsonFiles.map(async it => {
@@ -64,7 +67,7 @@ const getCertLogicTestCases = async () => {
 const convertJsonFunctionsTestCases = async testCases => testCases
 
 const getJsonFunctionsTestCases = async () => {
-  const dirpath = path.resolve(__dirname, './../test/unit/jfn/jfn-tests')
+  const dirpath = path.resolve(__dirname, './../test/fixtures/jfn/jfn-tests')
   const allFiles = await fse.readdir(dirpath)
   const allJsonFiles = allFiles.filter(it => it.endsWith('.json'))
   const allTestCasesNested = await Promise.all(allJsonFiles.map(async it => {
@@ -78,7 +81,7 @@ const getJsonFunctionsTestCases = async () => {
 
 const getJavaScriptTestCases = async () => {
   return testCasesInJavaScript
-    .map(it => require(`./../test/unit/jfn/jfn-tests/${it}`))
+    .map(it => require(`./../test/fixtures/jfn/jfn-tests/${it}`))
     .flat(1)
 }
 
@@ -100,7 +103,7 @@ const convertJsonFunctionsFunctionTestCases = async testCases => {
 }
 
 const getJsonFunctionsFunctionTestCases = async () => {
-  const dirpath = path.resolve(__dirname, './../test/unit/jfn/jfn-function-tests')
+  const dirpath = path.resolve(__dirname, './../test/fixtures/jfn/jfn-function-tests')
   const allFiles = await fse.readdir(dirpath)
   const allJsonFiles = allFiles.filter(it => it.endsWith('.json'))
   const allTestCasesNested = await Promise.all(allJsonFiles.map(async it => {
@@ -113,6 +116,9 @@ const getJsonFunctionsFunctionTestCases = async () => {
 }
 
 const main = async () => {
+  const targetFilepath = path.resolve(process.cwd(), target)
+  await fse.ensureFile(targetFilepath)
+
   const allTestCasesNested = await Promise.all([
     getJsonLogicTestCases(),
     getCertLogicTestCases(),
@@ -129,7 +135,8 @@ const main = async () => {
     $comment: `Generated at ${new Date().toString()}`,
     testCases: allTestCases
   }
-  console.log(JSON.stringify(data, null, '  '))
+
+  await fse.writeJSON(targetFilepath, data, { spaces: 2 })
 }
 
 main()

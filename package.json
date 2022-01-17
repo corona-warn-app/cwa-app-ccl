@@ -8,10 +8,11 @@
     "fix": "standard 'lib/**/*.js' 'test/**/*.js' 'scripts/**/*.js' --fix --verbose | snazzy",
     "lint": "standard 'lib/**/*.js' 'test/**/*.js' 'scripts/**/*.js' --verbose | snazzy",
     "postinstall": "patch-package",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test:unit",
     "test:unit": "mocha test/unit --recursive --color",
     "test:ccl": "mocha test/unit/ccl --recursive --color",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "watch:unit": "mocha test/unit --recursive --color --watch"
   },
   "repository": {
     "type": "git",
