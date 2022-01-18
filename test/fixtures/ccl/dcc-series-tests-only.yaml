@@ -1,0 +1,145 @@
+- id: 1
+  name: tests-only
+  description: A person who only has PCR and RAT tests and no vaccination or recovery certificate
+  series:
+    - time: t0
+      tc: rat1
+    - time: +P1D
+      tc: pcr1
+    - time: +P1D
+      tc: rat2
+    - time: +P1D
+      tc: rat3
+  testCases:
+    - time: rat1
+      assertions:
+        admissionState: 3G_WITH_RAT
+        mostRelevantCertificate: rat1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: rat1
+        walletInfo:
+          admissionState:
+            visible: true
+            badgeText:
+              de: 3G
+            subtitleText:
+              de: 3G
+            longText:
+              de: erfüllen die 3G-Regel
+          vaccinationState:
+            visible: false
+    - time: pcr1
+      assertions:
+        admissionState: 3G_WITH_PCR
+        mostRelevantCertificate: pcr1
+        verificationCertificates:
+          - certificate: pcr1
+        walletInfo:
+          admissionState:
+            visible: true
+            badgeText:
+              de: 3G+
+            subtitleText:
+              de: 3G+
+            longText:
+              de: erfüllen die 3G-Plus-Regel
+    - time: rat2
+      assertions:
+        admissionState: 3G_WITH_PCR
+        mostRelevantCertificate: pcr1
+        verificationCertificates:
+          - certificate: pcr1
+        walletInfo:
+          admissionState:
+            visible: true
+            badgeText:
+              de: 3G+
+            subtitleText:
+              de: 3G+
+            longText:
+              de: erfüllen die 3G-Plus-Regel
+    - time: rat3
+      assertions:
+        admissionState: 3G_WITH_PCR
+        mostRelevantCertificate: pcr1
+        verificationCertificates:
+          - certificate: pcr1
+        walletInfo:
+          admissionState:
+            visible: true
+            badgeText:
+              de: 3G+
+            subtitleText:
+              de: 3G+
+            longText:
+              de: erfüllen die 3G-Plus-Regel
+    - time: pcr1+P3DT1S
+      assertions:
+        admissionState: 3G_WITH_RAT
+        mostRelevantCertificate: rat3
+        verificationCertificates:
+          - certificate: rat3
+        walletInfo:
+          admissionState:
+            visible: true
+            badgeText:
+              de: 3G
+            subtitleText:
+              de: 3G
+            longText:
+              de: erfüllen die 3G-Regel
+- id: 2
+  name: rat-test-priority
+  description: The most recent RAT test has priority
+  series:
+    - time: t0
+      tc: rat1
+    - time: +PT1H
+      tc: rat2
+  testCases:
+    - time: rat1
+      assertions:
+        admissionState: 3G_WITH_RAT
+        mostRelevantCertificate: rat1
+        verificationCertificates:
+          - certificate: rat1
+    - time: rat2
+      assertions:
+        admissionState: 3G_WITH_RAT
+        mostRelevantCertificate: rat2
+        verificationCertificates:
+          - certificate: rat2
+    - time: rat2+P1M
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: rat2
+        verificationCertificates:
+          - certificate: rat2
+- id: 3
+  name: pcr-test-priority
+  description: The most recent PCR test has priority
+  series:
+    - time: t0
+      tc: pcr1
+    - time: +PT1H
+      tc: pcr2
+  testCases:
+    - time: pcr1
+      assertions:
+        admissionState: 3G_WITH_PCR
+        mostRelevantCertificate: pcr1
+        verificationCertificates:
+          - certificate: pcr1
+    - time: pcr2
+      assertions:
+        admissionState: 3G_WITH_PCR
+        mostRelevantCertificate: pcr2
+        verificationCertificates:
+          - certificate: pcr2
+    - time: pcr2+P1M
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: pcr2
+        verificationCertificates:
+          - certificate: pcr2

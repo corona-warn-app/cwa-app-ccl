@@ -30,6 +30,18 @@
   <string name="ADMISSION_STATE_2G_SUBTITLE_TEXT">"2G"</string>
   <!-- XTXT: Admission State - 2G Card Body -->
   <string name="ADMISSION_STATE_2G_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_SUBTITLE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G_WITH_RAT"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_SUBTITLE_TEXT">"3G_WITH_RAT"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
 
   <!-- XHEX: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Impfstatus"</string>

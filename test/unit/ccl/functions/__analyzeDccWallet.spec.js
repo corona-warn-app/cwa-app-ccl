@@ -18,7 +18,8 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
     'dcc-series-sample.yaml',
     'dcc-series-janssen.yaml',
     'dcc-series-recovery.yaml',
-    'dcc-series-standard-vaccination.yaml'
+    'dcc-series-standard-vaccination.yaml',
+    'dcc-series-tests-only.yaml'
   ]
   const presets = filenames.reduce((allPresets, filename) => {
     const filepath = path.resolve(__dirname, `./../../../fixtures/ccl/${filename}`)
