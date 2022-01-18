@@ -1,25 +1,23 @@
 - description: getTextDescriptor returns a string with empty parameters
   functionName: __i18n.getTextDescriptor
   parameters:
-    key: greeting
+    key: ADMISSION_STATE_TITLE_TEXT
   exp:
     type: string
     localizedText:
-      de: 'Hallo %s'
-      en: 'Hallo %s'
+      de: 'Status-Nachweis'
     parameters: []
 - description: getTextDescriptor returns a string with parameters if specified parameters
   functionName: __i18n.getTextDescriptor
   parameters:
-    key: greeting
+    key: ADMISSION_STATE_TITLE_TEXT
     parameters:
       - type: string
         value: World
   exp:
     type: string
     localizedText:
-      de: 'Hallo %s'
-      en: 'Hallo %s'
+      de: 'Status-Nachweis'
     parameters:
       - type: string
         value: World
