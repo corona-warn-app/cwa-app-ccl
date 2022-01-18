@@ -22,7 +22,6 @@
         hasBooster: false
         verificationCertificates:
           - certificate: janssen1/1
-        
     # Complete J&J vaccination still not valid after 14 days
     - time: janssen1/1
       assertions:

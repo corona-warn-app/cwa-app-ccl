@@ -14,7 +14,7 @@ const ccl = require('../../../../lib/ccl')
 const cclUtil = require('../../../util/ccl-util')
 const dcc = require('../../../util/dcc/dcc-main')
 
-describe.only('ccl/functions/getDccWalletInfo', async () => {
+describe('ccl/functions/getDccWalletInfo', async () => {
   const filenames = [
     'dcc-series-sample.yaml',
     'dcc-series-janssen.yaml',
@@ -41,7 +41,7 @@ describe.only('ccl/functions/getDccWalletInfo', async () => {
       const t0 = moment.utc('2022-01-01')
       let series
 
-      const resolveCertRefToCi = certRef => {
+      const resolveCertRefToBarcodeData = certRef => {
         const certificate = series
           .find(it => {
             return it.vc === certRef ||
@@ -49,16 +49,12 @@ describe.only('ccl/functions/getDccWalletInfo', async () => {
               it.tc === certRef
           })
         if (!certificate) return null
-        return certificate.dcc.v?.[0]?.ci ||
-          certificate.dcc.r?.[0]?.ci ||
-          certificate.dcc.t?.[0]?.ci
+        return certificate.barcodeData
       }
 
-      const resolveCiToCertRef = ci => {
+      const resolveBarcodeDataToCertRef = barcodeData => {
         const certificate = series.find(it => {
-          return it.dcc.v?.[0]?.ci === ci ||
-            it.dcc.r?.[0]?.ci === ci ||
-            it.dcc.t?.[0]?.ci === ci
+          return it.barcodeData === barcodeData
         })
         if (!certificate) return null
         return certificate.vc ||
@@ -137,8 +133,12 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
           })
 
           it('input matches JSON schema', async function () {
-            // if (!isCwaTechSpecAvailable) return this.skip()
             const results = await ccl.schema.functions.getDccWalletInfo.input.validate(input)
+            expect(results.errors, JSON.stringify(results.errors, null, '  ')).to.be.empty
+          })
+
+          it('output matches JSON schema', async function () {
+            const results = await ccl.schema.functions.getDccWalletInfo.output.validate(output)
             expect(results.errors, JSON.stringify(results.errors, null, '  ')).to.be.empty
           })
 
@@ -146,7 +146,9 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             const { assertions } = testCase
             // const has = propertyPath => Object.prototype.hasOwnProperty.call(assertions, prop) &&
             //   (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
-            const has = pathExpression => jp.query(assertions, `$..${pathExpression}`).length > 0
+            const has = pathExpression => jp.query(assertions, `$..${pathExpression}`)
+              .filter(it => it !== null)
+              .length > 0
 
             has('admissionState.value') &&
             it('check admissionState.value', () => {
@@ -162,7 +164,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             })
 
             const format = (textDescriptor, languageCode) => {
-              console.log(textDescriptor, languageCode)
+              // console.log(textDescriptor, languageCode)
               if (textDescriptor.type === 'string') {
                 const formatString = textDescriptor.localizedText[languageCode]
                 return formatString
@@ -240,7 +242,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             vaccinationStateTexts.forEach(textAttribute => {
               has(`vaccinationState.${textAttribute}`) &&
               it(`check vaccinationState.${textAttribute}`, () => {
-                console.log(textAttribute, output.vaccinationState[textAttribute])
+                // console.log(textAttribute, output.vaccinationState[textAttribute])
                 expect(output).to.have.nested.property(`vaccinationState.${textAttribute}`)
                 expectTextToMatch(output.vaccinationState[textAttribute], assertions.vaccinationState[textAttribute])
               })
@@ -255,12 +257,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             has('mostRelevantCertificate') &&
             it('check mostRelevantCertificate', () => {
               const expCertRef = assertions.mostRelevantCertificate
-              const expCi = resolveCertRefToCi(expCertRef)
-              expect(output)
-                .to.have.property('mostRelevantCertificate')
-              const actCertRef = resolveCiToCertRef(output.mostRelevantCertificate.ci)
-              expect(output.mostRelevantCertificate, `expected reference to ${expCertRef} but got ${actCertRef}`)
-                .to.have.property('ci', expCi)
+              const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
+              const actCertRef = resolveBarcodeDataToCertRef(output.mostRelevantCertificate.certificateRef.barcodeData)
+
+              expect(output).to.have.nested.property(
+                'mostRelevantCertificate.certificateRef.barcodeData',
+                expBarcodeData,
+                `expected reference to ${expCertRef} but got ${actCertRef}`
+              )
             })
 
             has('vaccinationValidFrom') &&
@@ -275,12 +279,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             has('mostRecentVaccination') &&
             it('check mostRecentVaccination', () => {
               const expCertRef = assertions.mostRecentVaccination
-              const expCi = resolveCertRefToCi(expCertRef)
-              expect(output)
-                .to.have.property('mostRecentVaccination')
-              const actCertRef = resolveCiToCertRef(output.mostRecentVaccination.ci)
-              expect(output.mostRecentVaccination, `expected reference to ${expCertRef} but got ${actCertRef}`)
-                .to.have.property('ci', expCi)
+              const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
+              const actCertRef = resolveBarcodeDataToCertRef(output.mostRecentVaccination.certificateRef.barcodeData)
+
+              expect(output).to.have.nested.property(
+                'mostRecentVaccination.certificateRef.barcodeData',
+                expBarcodeData,
+                `expected reference to ${expCertRef} but got ${actCertRef}`
+              )
             })
 
             has('hasBooster') &&
@@ -300,15 +306,22 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 .and.to.have.lengthOf(assertions.verificationCertificates.length)
               assertions.verificationCertificates.forEach((it, idx) => {
                 const act = output.verificationCertificates.certificates[idx]
-                // console.log(act)
-                const expCi = resolveCertRefToCi(it.certificate)
-                const expCertRef = resolveCiToCertRef(expCi)
-                const actCertRef = resolveCiToCertRef(act.ci)
-                expect(act, `expected reference to ${expCertRef} but got ${actCertRef}`)
-                  .to.have.property('ci', expCi)
+
+                const expBarcodeData = resolveCertRefToBarcodeData(it.certificate)
+                const expCertRef = resolveBarcodeDataToCertRef(expBarcodeData)
+                const actCertRef = resolveBarcodeDataToCertRef(act.certificateRef.barcodeData)
+
+                expect(act).to.have.nested.property(
+                  'certificateRef.barcodeData',
+                  expBarcodeData,
+                  `expected reference to ${expCertRef} but got ${actCertRef}`
+                )
 
                 if (it.buttonText) {
-                  expectTextToMatch(act.buttonText, it.buttonText)
+                  const actButtonText = act.buttonText
+                  const expButtonText = it.buttonText
+                  expectTextToMatch(actButtonText, expButtonText)
+                  // expect(false).to.equal(true)
                 }
               })
             })

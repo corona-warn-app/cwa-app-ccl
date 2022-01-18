@@ -34,7 +34,7 @@ const main = async () => {
     cclConfiguration
   ]
 
-  await fse.writeJSON(targetFilepath, cclConfigurations, { spaces: 2 })
+  await fse.writeJSON(targetFilepath, cclConfigurations)
 }
 
 main()

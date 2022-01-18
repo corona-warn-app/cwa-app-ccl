@@ -6,6 +6,12 @@
 
   <!-- XHEX: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Status-Nachweis"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_BOOSTER Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_BOOSTER_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_BOOSTER Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_BOOSTER_SUBTITLE_TEXT">"2G+ Booster"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_BOOSTER Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_BOOSTER_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
   <!-- XTXT: Admission State - 2G_PLUS_PCR Badge Text -->
   <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"2G+"</string>
   <!-- XTXT: Admission State - 2G_PLUS_PCR Card Subtitle -->
