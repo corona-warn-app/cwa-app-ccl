@@ -12,6 +12,6 @@
     <item quantity="two">"Begegnungen mit niedrigem Risiko an %1$d Tagen"</item>
     <item quantity="few">"Begegnungen mit niedrigem Risiko an %1$d Tagen"</item>
     <item quantity="many">"Begegnungen mit niedrigem Risiko an %1$d Tagen"</item>
-</plurals>
+  </plurals>
 
 </resources>

@@ -12,6 +12,7 @@ const mapBarcodeDataToCertificate = (barcodeData, { validityState }) => {
   const kid = dcc.util.getKID(coseProtectedHeader, coseUnprotectedHeader)
   const kidStr = kid.toString('base64')
   return {
+    barcodeData,
     cose: {
       kid: kidStr
     },

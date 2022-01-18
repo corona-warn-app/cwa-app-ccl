@@ -19,12 +19,17 @@
     "certificate": {
       "type": "object",
       "required": [
+        "barcodeData",
         "cose",
         "cwt",
         "hcert",
         "validityState"
       ],
       "properties": {
+        "barcodeData": {
+          "type": "string",
+          "pattern": "^HC\\d+:"
+        },
         "cose": {
           "type": "object",
           "properties": {

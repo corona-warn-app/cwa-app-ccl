@@ -22,6 +22,7 @@
         hasBooster: false
         verificationCertificates:
           - certificate: janssen1/1
+        
     # Complete J&J vaccination still not valid after 14 days
     - time: janssen1/1
       assertions:
@@ -101,6 +102,101 @@
         hasBooster: true
         verificationCertificates:
           - certificate: biontech2/1
+
+    ###
+    # text/ui assertions
+    ###
+    # Complete J&J vaccination not yet valid
+    - time: janssen1/1
+      assertions:
+        admissionState:
+          value: OTHER
+          visible: false
+        vaccinationState:
+          value: COMPLETE_IMMUNIZATION_PENDING
+          visible: true
+          titleText:
+            de: Impfstatus
+          subtitleText:
+            de: Letzte Impfung heute
+          longText:
+            de: in 15 Tagen vollständig
+          faqAnchor: test
+    - time: janssen1/1+P1D
+      assertions:
+        vaccinationState:
+          value: COMPLETE_IMMUNIZATION_PENDING
+          subtitleText:
+            de: Letzte Impfung vor 1 Tag
+          longText:
+            de: in 14 Tagen vollständig
+    - time: janssen1/1+P2D
+      assertions:
+        vaccinationState:
+          value: COMPLETE_IMMUNIZATION_PENDING
+          subtitleText:
+            de: Letzte Impfung vor 2 Tagen
+          longText:
+            de: in 13 Tagen vollständig
+    - time: janssen1/1+P14D
+      assertions:
+        vaccinationState:
+          value: COMPLETE_IMMUNIZATION_PENDING
+          longText:
+            de: in 1 Tag vollständig
+    # Complete J&J vaccination valid after 15 days
+    - time: janssen1/1+P15D
+      assertions:
+        # admissionState: 2G
+        admissionState:
+          value: 2G
+          visible: true
+          badgeText:
+            de: 2G
+          titleText:
+            de: Status-Nachweis
+          subtitleText:
+            de: 2G
+          longText:
+            de: erfüllen die 2G-Regel
+          faqAnchor: 'test'
+        vaccinationState:
+          value: COMPLETE_IMMUNIZATION
+          longText:
+            de: Ihr Impfschutz ist vollständig
+    # Additional valid PCR test changes admission state
+    - time: pcr1
+      assertions:
+        admissionState:
+          value: 2G_PLUS_PCR
+          visible: true
+          badgeText:
+            de: 2G+
+          subtitleText:
+            de: 2G\+ PCR-Test
+          longText:
+            de: erfüllen die 2G-Plus-Regel
+          faqAnchor: 'test'
+        verificationCertificates:
+          - certificate: biontech2/1
+            buttonText:
+              de: 2G-Zertifikat
+          - certificate: pcr1
+            buttonText:
+              de: Testzertifikat
+    # Additional valid RAT test changes admission state
+    - time: rat1
+      assertions:
+        admissionState:
+          value: 2G_PLUS_RAT
+          visible: true
+          badgeText:
+            de: 2G+
+          subtitleText:
+            de: 2G\+ Schnelltest
+          longText:
+            de: erfüllen die 2G-Plus-Regel, es sei denn, es wird ein PCR-Test
+          faqAnchor: 'test'
 # Same testcases like above, but with booster certificate issued as 2/2 instead of 2/1
 - id: 2
   name: janssen-booster2/2-pcr

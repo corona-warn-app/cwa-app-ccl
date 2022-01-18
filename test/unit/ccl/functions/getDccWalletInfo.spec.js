@@ -4,6 +4,7 @@
 
 const { expect } = require('chai')
 const moment = require('moment')
+const jp = require('jsonpath')
 const path = require('path')
 const fse = require('fs-extra')
 const yaml = require('js-yaml')
@@ -13,7 +14,7 @@ const ccl = require('../../../../lib/ccl')
 const cclUtil = require('../../../util/ccl-util')
 const dcc = require('../../../util/dcc/dcc-main')
 
-describe('ccl/functions/__analyzeDccWallet', async () => {
+describe.only('ccl/functions/getDccWalletInfo', async () => {
   const filenames = [
     'dcc-series-sample.yaml',
     'dcc-series-janssen.yaml',
@@ -100,7 +101,8 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
               boosterNotificationRules: []
             }
 
-            output = ccl.evaluateFunction('__analyzeDccWallet', input)
+            // output = ccl.evaluateFunction('__analyzeDccWallet', input)
+            output = ccl.api.getDccWalletInfo(input)
           })
 
           it('series under test is not empty', () => {
@@ -142,13 +144,112 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
           context('assertions', () => {
             const { assertions } = testCase
-            const has = prop => Object.prototype.hasOwnProperty.call(assertions, prop) &&
-              (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
+            // const has = propertyPath => Object.prototype.hasOwnProperty.call(assertions, prop) &&
+            //   (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
+            const has = pathExpression => jp.query(assertions, `$..${pathExpression}`).length > 0
 
-            has('admissionState') &&
-            it('check admissionState', () => {
+            has('admissionState.value') &&
+            it('check admissionState.value', () => {
+              expect(output).to.have.property('admissionState')
+              expect(output.admissionState)
+                .to.have.property('value', assertions.admissionState.value)
+            })
+
+            has('admissionState.visible') &&
+            it('check admissionState.visible', () => {
               expect(output)
-                .to.have.property('admissionState', assertions.admissionState.value || assertions.admissionState)
+                .to.have.nested.property('admissionState.visible', assertions.admissionState.visible)
+            })
+
+            const format = (textDescriptor, languageCode) => {
+              console.log(textDescriptor, languageCode)
+              if (textDescriptor.type === 'string') {
+                const formatString = textDescriptor.localizedText[languageCode]
+                return formatString
+              } else if (textDescriptor.type === 'plural') {
+                const quantityStrings = textDescriptor.localizedText[languageCode]
+                const quantity = textDescriptor.quantity
+                const quantityKey = (() => {
+                  if (quantity === 0) return 'zero'
+                  if (quantity === 1) return 'one'
+                  if (quantity === 2) return 'two'
+                  return 'many'
+                })()
+                const formatString = quantityStrings[quantityKey]
+                const { sprintf } = require('printj')
+                const formatParameters = textDescriptor.parameters.map(it => {
+                  return it.value
+                })
+                return sprintf(formatString, formatParameters)
+              } else if (textDescriptor.type === 'system-time-dependent') {
+                const functionName = textDescriptor.functionName
+                const now = timeUnderTest
+                const functionParameters = {
+                  ...textDescriptor.parameters,
+                  now: cclUtil.mapMomentToNow(now)
+                }
+                const newTextDescriptor = ccl.evaluateFunction(functionName, functionParameters)
+                return format(newTextDescriptor, languageCode)
+              } else {
+                throw new Error(`Unknown text type ${textDescriptor.type}`)
+              }
+            }
+
+            const expectTextToMatch = (textDescriptor, expDescriptor) => {
+              Object.entries(expDescriptor)
+                .forEach(([languageCode, expStr]) => {
+                  const expPattern = new RegExp(expStr)
+                  const formatted = format(textDescriptor, languageCode)
+                  expect(formatted).to.match(expPattern)
+                })
+            }
+
+            const admissionStateTexts = [
+              'badgeText', 'titleText', 'subtitleText', 'longText'
+            ]
+            admissionStateTexts.forEach(textAttribute => {
+              has(`admissionState.${textAttribute}`) &&
+              it(`check admissionState.${textAttribute}`, () => {
+                expect(output).to.have.nested.property(`admissionState.${textAttribute}`)
+                expectTextToMatch(output.admissionState[textAttribute], assertions.admissionState[textAttribute])
+              })
+            })
+
+            has('admissionState.faqAnchor') &&
+            it('check admissionState.faqAnchor', () => {
+              expect(output)
+                .to.have.nested.property('admissionState.faqAnchor', assertions.admissionState.faqAnchor)
+            })
+
+            has('vaccinationState.value') &&
+            it('check vaccinationState.value', () => {
+              expect(output).to.have.property('vaccinationState')
+              expect(output.vaccinationState)
+                .to.have.property('value', assertions.vaccinationState.value)
+            })
+
+            has('vaccinationState.visible') &&
+            it('check vaccinationState.visible', () => {
+              expect(output)
+                .to.have.nested.property('vaccinationState.visible', assertions.vaccinationState.visible)
+            })
+
+            const vaccinationStateTexts = [
+              'titleText', 'subtitleText', 'longText'
+            ]
+            vaccinationStateTexts.forEach(textAttribute => {
+              has(`vaccinationState.${textAttribute}`) &&
+              it(`check vaccinationState.${textAttribute}`, () => {
+                console.log(textAttribute, output.vaccinationState[textAttribute])
+                expect(output).to.have.nested.property(`vaccinationState.${textAttribute}`)
+                expectTextToMatch(output.vaccinationState[textAttribute], assertions.vaccinationState[textAttribute])
+              })
+            })
+
+            has('vaccinationState.faqAnchor') &&
+            it('check vaccinationState.faqAnchor', () => {
+              expect(output)
+                .to.have.nested.property('vaccinationState.faqAnchor', assertions.vaccinationState.faqAnchor)
             })
 
             has('mostRelevantCertificate') &&
@@ -160,12 +261,6 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               const actCertRef = resolveCiToCertRef(output.mostRelevantCertificate.ci)
               expect(output.mostRelevantCertificate, `expected reference to ${expCertRef} but got ${actCertRef}`)
                 .to.have.property('ci', expCi)
-            })
-
-            has('vaccinationState') &&
-            it('check vaccinationState', () => {
-              expect(output)
-                .to.have.property('vaccinationState', assertions.vaccinationState.value || assertions.vaccinationState)
             })
 
             has('vaccinationValidFrom') &&
@@ -211,6 +306,10 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 const actCertRef = resolveCiToCertRef(act.ci)
                 expect(act, `expected reference to ${expCertRef} but got ${actCertRef}`)
                   .to.have.property('ci', expCi)
+
+                if (it.buttonText) {
+                  expectTextToMatch(act.buttonText, it.buttonText)
+                }
               })
             })
           })
