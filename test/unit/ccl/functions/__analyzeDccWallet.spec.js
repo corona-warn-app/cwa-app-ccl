@@ -87,7 +87,7 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
             input = {
               os: 'android',
               language: 'en',
-              now: cclUtil.mapMomentToNow(timeUnderTest),
+              now: ccl.util.mapMomentToNow(timeUnderTest),
               certificates: seriesUnderTest.map(it => {
                 return cclUtil.mapBarcodeDataToCertificate(it.barcodeData, {
                   validityState: 'VALID'

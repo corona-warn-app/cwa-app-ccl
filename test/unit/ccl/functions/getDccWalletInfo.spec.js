@@ -14,6 +14,15 @@ const ccl = require('../../../../lib/ccl')
 const cclUtil = require('../../../util/ccl-util')
 const dcc = require('../../../util/dcc/dcc-main')
 
+const expectTextToMatch = (textDescriptor, expDescriptor, { timeUnderTest }) => {
+  Object.entries(expDescriptor)
+    .forEach(([languageCode, expStr]) => {
+      const expPattern = new RegExp(expStr)
+      const formatted = ccl.util.formatText(textDescriptor, languageCode, { now: timeUnderTest })
+      expect(formatted).to.match(expPattern)
+    })
+}
+
 describe('ccl/functions/getDccWalletInfo', async () => {
   const filenames = [
     'dcc-series-sample.yaml',
@@ -88,7 +97,7 @@ describe('ccl/functions/getDccWalletInfo', async () => {
             input = {
               os: 'android',
               language: 'en',
-              now: cclUtil.mapMomentToNow(timeUnderTest),
+              now: ccl.util.mapMomentToNow(timeUnderTest),
               certificates: seriesUnderTest.map(it => {
                 return cclUtil.mapBarcodeDataToCertificate(it.barcodeData, {
                   validityState: 'VALID'
@@ -233,49 +242,6 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               })
             })
 
-            const format = (textDescriptor, languageCode) => {
-              // console.log(textDescriptor, languageCode)
-              if (textDescriptor.type === 'string') {
-                const formatString = textDescriptor.localizedText[languageCode]
-                return formatString
-              } else if (textDescriptor.type === 'plural') {
-                const quantityStrings = textDescriptor.localizedText[languageCode]
-                const quantity = textDescriptor.quantity
-                const quantityKey = (() => {
-                  if (quantity === 0) return 'zero'
-                  if (quantity === 1) return 'one'
-                  if (quantity === 2) return 'two'
-                  return 'many'
-                })()
-                const formatString = quantityStrings[quantityKey]
-                const { sprintf } = require('printj')
-                const formatParameters = textDescriptor.parameters.map(it => {
-                  return it.value
-                })
-                return sprintf(formatString, formatParameters)
-              } else if (textDescriptor.type === 'system-time-dependent') {
-                const functionName = textDescriptor.functionName
-                const now = timeUnderTest
-                const functionParameters = {
-                  ...textDescriptor.parameters,
-                  now: cclUtil.mapMomentToNow(now)
-                }
-                const newTextDescriptor = ccl.evaluateFunction(functionName, functionParameters)
-                return format(newTextDescriptor, languageCode)
-              } else {
-                throw new Error(`Unknown text type ${textDescriptor.type}`)
-              }
-            }
-
-            const expectTextToMatch = (textDescriptor, expDescriptor) => {
-              Object.entries(expDescriptor)
-                .forEach(([languageCode, expStr]) => {
-                  const expPattern = new RegExp(expStr)
-                  const formatted = format(textDescriptor, languageCode)
-                  expect(formatted).to.match(expPattern)
-                })
-            }
-
             context('walletInfo', () => {
               const expWalletInfo = assertions.walletInfo || {}
               const has = pathExpression => jp.query(expWalletInfo, `$..${pathExpression}`)
@@ -304,7 +270,8 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                     expect(output).to.have.nested.property(`admissionState.${textAttribute}`)
                     expectTextToMatch(
                       output.admissionState[textAttribute],
-                      expAdmissionState[textAttribute]
+                      expAdmissionState[textAttribute],
+                      { timeUnderTest }
                     )
                   })
                 })
@@ -340,7 +307,8 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                     expect(output).to.have.nested.property(`vaccinationState.${textAttribute}`)
                     expectTextToMatch(
                       output.vaccinationState[textAttribute],
-                      expVaccinationState[textAttribute]
+                      expVaccinationState[textAttribute],
+                      { timeUnderTest }
                     )
                   })
                 })
@@ -398,7 +366,11 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                       const expButtonText = buttonText
                       const actCertificate = actVerification.certificates[idx]
                       const actButtonText = actCertificate.buttonText
-                      expectTextToMatch(actButtonText, expButtonText)
+                      expectTextToMatch(
+                        actButtonText,
+                        expButtonText,
+                        { timeUnderTest }
+                      )
                     })
                 })
               })
