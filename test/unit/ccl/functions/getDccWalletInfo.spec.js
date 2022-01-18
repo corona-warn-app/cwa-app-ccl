@@ -146,21 +146,91 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             const { assertions } = testCase
             // const has = propertyPath => Object.prototype.hasOwnProperty.call(assertions, prop) &&
             //   (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
-            const has = pathExpression => jp.query(assertions, `$..${pathExpression}`)
-              .filter(it => it !== null)
-              .length > 0
+            // const has = pathExpression => jp.query(assertions, `$..${pathExpression}`)
+            //   .filter(it => it !== null)
+            //   .length > 0
+            const has = prop => Object.prototype.hasOwnProperty.call(assertions, prop) &&
+              (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
 
-            has('admissionState.value') &&
-            it('check admissionState.value', () => {
-              expect(output).to.have.property('admissionState')
-              expect(output.admissionState)
-                .to.have.property('value', assertions.admissionState.value)
+            has('admissionState') &&
+            it('check admissionState', () => {
+              expect(output).to.have.nested.property(
+                'admissionState.value',
+                assertions.admissionState
+              )
             })
 
-            has('admissionState.visible') &&
-            it('check admissionState.visible', () => {
+            has('mostRelevantCertificate') &&
+            it('check mostRelevantCertificate', () => {
+              const expCertRef = assertions.mostRelevantCertificate
+              const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
+              const actCertRef = resolveBarcodeDataToCertRef(output.mostRelevantCertificate.certificateRef.barcodeData)
+
+              expect(output).to.have.nested.property(
+                'mostRelevantCertificate.certificateRef.barcodeData',
+                expBarcodeData,
+                `expected reference to ${expCertRef} but got ${actCertRef}`
+              )
+            })
+
+            has('vaccinationState') &&
+            it('check vaccinationState', () => {
+              expect(output).to.have.nested.property(
+                'vaccinationState.value',
+                assertions.vaccinationState
+              )
+            })
+
+            has('vaccinationValidFrom') &&
+            it('check vaccinationValidFrom', () => {
+              const expValidFromMoment = dcc.series.resolveTime(assertions.vaccinationValidFrom, -1, series, t0)
+              const expValidFrom = expValidFromMoment.utc().toISOString()
+              expect(output).to.have.property(
+                'vaccinationValidFrom',
+                expValidFrom
+              )
+            })
+
+            has('mostRecentVaccination') &&
+            it('check mostRecentVaccination', () => {
+              const expCertRef = assertions.mostRecentVaccination
+              const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
+              const actCertRef = resolveBarcodeDataToCertRef(output.mostRecentVaccination.certificateRef.barcodeData)
+
+              expect(output).to.have.nested.property(
+                'mostRecentVaccination.certificateRef.barcodeData',
+                expBarcodeData,
+                `expected reference to ${expCertRef} but got ${actCertRef}`
+              )
+            })
+
+            has('hasBooster') &&
+            it('check hasBooster', () => {
               expect(output)
-                .to.have.nested.property('admissionState.visible', assertions.admissionState.visible)
+                .to.have.property('hasBooster', assertions.hasBooster)
+            })
+
+            has('verificationCertificates') &&
+            it('check verificationCertificates', () => {
+              expect(output.verification)
+                .to.be.an('object')
+                .and.to.have.property('certificates')
+              expect(output.verification.certificates, 'length of verification.certificates')
+                .to.be.an('array')
+                .and.to.have.lengthOf(assertions.verificationCertificates.length)
+              assertions.verificationCertificates.forEach((it, idx) => {
+                const act = output.verification.certificates[idx]
+
+                const expBarcodeData = resolveCertRefToBarcodeData(it.certificate)
+                const expCertRef = resolveBarcodeDataToCertRef(expBarcodeData)
+                const actCertRef = resolveBarcodeDataToCertRef(act.certificateRef.barcodeData)
+
+                expect(act).to.have.nested.property(
+                  'certificateRef.barcodeData',
+                  expBarcodeData,
+                  `expected reference to ${expCertRef} but got ${actCertRef}`
+                )
+              })
             })
 
             const format = (textDescriptor, languageCode) => {
@@ -206,123 +276,131 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 })
             }
 
-            const admissionStateTexts = [
-              'badgeText', 'titleText', 'subtitleText', 'longText'
-            ]
-            admissionStateTexts.forEach(textAttribute => {
-              has(`admissionState.${textAttribute}`) &&
-              it(`check admissionState.${textAttribute}`, () => {
-                expect(output).to.have.nested.property(`admissionState.${textAttribute}`)
-                expectTextToMatch(output.admissionState[textAttribute], assertions.admissionState[textAttribute])
+            context('walletInfo', () => {
+              const expWalletInfo = assertions.walletInfo || {}
+              const has = pathExpression => jp.query(expWalletInfo, `$..${pathExpression}`)
+                .filter(it => it !== null)
+                .length > 0
+
+              context('admissionState', () => {
+                const {
+                  admissionState: expAdmissionState
+                } = expWalletInfo
+
+                has('admissionState.visible') &&
+                it('check admissionState.visible', () => {
+                  expect(output).to.have.nested.property(
+                    'admissionState.visible',
+                    expAdmissionState.visible
+                  )
+                })
+
+                const admissionStateTexts = [
+                  'badgeText', 'titleText', 'subtitleText', 'longText'
+                ]
+                admissionStateTexts.forEach(textAttribute => {
+                  has(`admissionState.${textAttribute}`) &&
+                  it(`check admissionState.${textAttribute}`, () => {
+                    expect(output).to.have.nested.property(`admissionState.${textAttribute}`)
+                    expectTextToMatch(
+                      output.admissionState[textAttribute],
+                      expAdmissionState[textAttribute]
+                    )
+                  })
+                })
+
+                has('admissionState.faqAnchor') &&
+                it('check admissionState.faqAnchor', () => {
+                  expect(output).to.have.nested.property(
+                    'admissionState.faqAnchor',
+                    expAdmissionState.faqAnchor
+                  )
+                })
               })
-            })
 
-            has('admissionState.faqAnchor') &&
-            it('check admissionState.faqAnchor', () => {
-              expect(output)
-                .to.have.nested.property('admissionState.faqAnchor', assertions.admissionState.faqAnchor)
-            })
+              context('vaccinationState', () => {
+                const {
+                  vaccinationState: expVaccinationState
+                } = expWalletInfo
 
-            has('vaccinationState.value') &&
-            it('check vaccinationState.value', () => {
-              expect(output).to.have.property('vaccinationState')
-              expect(output.vaccinationState)
-                .to.have.property('value', assertions.vaccinationState.value)
-            })
+                has('vaccinationState.visible') &&
+                it('check vaccinationState.visible', () => {
+                  expect(output).to.have.nested.property(
+                    'vaccinationState.visible',
+                    expVaccinationState.visible
+                  )
+                })
 
-            has('vaccinationState.visible') &&
-            it('check vaccinationState.visible', () => {
-              expect(output)
-                .to.have.nested.property('vaccinationState.visible', assertions.vaccinationState.visible)
-            })
+                const vaccinationStateTexts = [
+                  'titleText', 'subtitleText', 'longText'
+                ]
+                vaccinationStateTexts.forEach(textAttribute => {
+                  has(`vaccinationState.${textAttribute}`) &&
+                  it(`check vaccinationState.${textAttribute}`, () => {
+                    expect(output).to.have.nested.property(`vaccinationState.${textAttribute}`)
+                    expectTextToMatch(
+                      output.vaccinationState[textAttribute],
+                      expVaccinationState[textAttribute]
+                    )
+                  })
+                })
 
-            const vaccinationStateTexts = [
-              'titleText', 'subtitleText', 'longText'
-            ]
-            vaccinationStateTexts.forEach(textAttribute => {
-              has(`vaccinationState.${textAttribute}`) &&
-              it(`check vaccinationState.${textAttribute}`, () => {
-                // console.log(textAttribute, output.vaccinationState[textAttribute])
-                expect(output).to.have.nested.property(`vaccinationState.${textAttribute}`)
-                expectTextToMatch(output.vaccinationState[textAttribute], assertions.vaccinationState[textAttribute])
+                has('vaccinationState.faqAnchor') &&
+                it('check vaccinationState.faqAnchor', () => {
+                  expect(output).to.have.nested.property(
+                    'vaccinationState.faqAnchor',
+                    expVaccinationState.faqAnchor
+                  )
+                })
               })
-            })
 
-            has('vaccinationState.faqAnchor') &&
-            it('check vaccinationState.faqAnchor', () => {
-              expect(output)
-                .to.have.nested.property('vaccinationState.faqAnchor', assertions.vaccinationState.faqAnchor)
-            })
+              context('verification', () => {
+                const {
+                  verification: expVerification
+                } = expWalletInfo
 
-            has('mostRelevantCertificate') &&
-            it('check mostRelevantCertificate', () => {
-              const expCertRef = assertions.mostRelevantCertificate
-              const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
-              const actCertRef = resolveBarcodeDataToCertRef(output.mostRelevantCertificate.certificateRef.barcodeData)
+                has('verification') &&
+                it('check verification', () => {
+                  expect(output).to.have.nested.property('verification.certificates')
+                  expect(output.verification.certificates, 'length of verification.certificates')
+                    .to.be.an('array')
+                    .and.to.have.lengthOf(expVerification.length)
+                })
 
-              expect(output).to.have.nested.property(
-                'mostRelevantCertificate.certificateRef.barcodeData',
-                expBarcodeData,
-                `expected reference to ${expCertRef} but got ${actCertRef}`
-              )
-            })
+                has('verification') &&
+                it('check verification[].certificate', () => {
+                  const actVerification = output.verification
 
-            has('vaccinationValidFrom') &&
-            it('check vaccinationValidFrom', () => {
-              const expValidFromMoment = dcc.series.resolveTime(assertions.vaccinationValidFrom, -1, series, t0)
-              const expValidFrom = expValidFromMoment.utc().toISOString()
-              expect(output)
-                .to.have.property('vaccinationValidFrom')
-              expect(output.vaccinationValidFrom).to.equal(expValidFrom)
-            })
+                  expVerification
+                    .filter(it => it.certificate)
+                    .forEach(({ certificate }, idx) => {
+                      const expCertRef = certificate
+                      const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
+                      const actCertificate = actVerification.certificates[idx]
+                      const actBarcodeData = actCertificate.certificateRef.barcodeData
+                      const actCertRef = resolveBarcodeDataToCertRef(actBarcodeData)
 
-            has('mostRecentVaccination') &&
-            it('check mostRecentVaccination', () => {
-              const expCertRef = assertions.mostRecentVaccination
-              const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
-              const actCertRef = resolveBarcodeDataToCertRef(output.mostRecentVaccination.certificateRef.barcodeData)
+                      expect(actCertificate).to.have.nested.property(
+                        'certificateRef.barcodeData',
+                        expBarcodeData,
+                        `expected reference to ${expCertRef} but got ${actCertRef}`
+                      )
+                    })
+                })
 
-              expect(output).to.have.nested.property(
-                'mostRecentVaccination.certificateRef.barcodeData',
-                expBarcodeData,
-                `expected reference to ${expCertRef} but got ${actCertRef}`
-              )
-            })
+                has('verification') &&
+                it('check verification[].buttonText', () => {
+                  const actVerification = output.verification
 
-            has('hasBooster') &&
-            it('check hasBooster', () => {
-              expect(output)
-                .to.have.property('hasBooster', assertions.hasBooster)
-            })
-
-            has('verificationCertificates') &&
-            it('check verificationCertificates', () => {
-              // console.log('output.verificationCertificates', output.verificationCertificates)
-              expect(output.verificationCertificates)
-                .to.be.an('object')
-                .and.to.have.property('certificates')
-              expect(output.verificationCertificates.certificates, 'length of verificationCertificates.certificates')
-                .to.be.an('array')
-                .and.to.have.lengthOf(assertions.verificationCertificates.length)
-              assertions.verificationCertificates.forEach((it, idx) => {
-                const act = output.verificationCertificates.certificates[idx]
-
-                const expBarcodeData = resolveCertRefToBarcodeData(it.certificate)
-                const expCertRef = resolveBarcodeDataToCertRef(expBarcodeData)
-                const actCertRef = resolveBarcodeDataToCertRef(act.certificateRef.barcodeData)
-
-                expect(act).to.have.nested.property(
-                  'certificateRef.barcodeData',
-                  expBarcodeData,
-                  `expected reference to ${expCertRef} but got ${actCertRef}`
-                )
-
-                if (it.buttonText) {
-                  const actButtonText = act.buttonText
-                  const expButtonText = it.buttonText
-                  expectTextToMatch(actButtonText, expButtonText)
-                  // expect(false).to.equal(true)
-                }
+                  expVerification
+                    .filter(it => it.buttonText)
+                    .forEach(({ buttonText }, idx) => {
+                      const expButtonText = buttonText
+                      const actCertificate = actVerification.certificates[idx]
+                      const actButtonText = actCertificate.buttonText
+                      expectTextToMatch(actButtonText, expButtonText)
+                    })
+                })
               })
             })
           })
