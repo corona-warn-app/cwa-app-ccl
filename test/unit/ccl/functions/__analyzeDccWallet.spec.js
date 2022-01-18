@@ -8,12 +8,12 @@ const path = require('path')
 const fse = require('fs-extra')
 const yaml = require('js-yaml')
 
-const ccl = require('./../../../lib/ccl')
+const ccl = require('../../../../lib/ccl')
 
-const cclUtil = require('./../../util/ccl-util')
-const dcc = require('../../util/dcc/dcc-main')
+const cclUtil = require('../../../util/ccl-util')
+const dcc = require('../../../util/dcc/dcc-main')
 
-describe('ccl/__analyzeDccWallet', async () => {
+describe('ccl/functions/__analyzeDccWallet', async () => {
   const filenames = [
     'dcc-series-sample.yaml',
     'dcc-series-janssen.yaml',
@@ -21,7 +21,7 @@ describe('ccl/__analyzeDccWallet', async () => {
     'dcc-series-standard-vaccination.yaml'
   ]
   const presets = filenames.reduce((allPresets, filename) => {
-    const filepath = path.resolve(__dirname, `./../../fixtures/ccl/${filename}`)
+    const filepath = path.resolve(__dirname, `./../../../fixtures/ccl/${filename}`)
     const presetsStr = fse.readFileSync(filepath)
     const presets = yaml.load(presetsStr)
       .map(preset => {
@@ -112,7 +112,7 @@ describe('ccl/__analyzeDccWallet', async () => {
             if (testCase.debug !== true) return
 
             const chalk = require('chalk')
-            const terminal = require('./../../util/terminal')
+            const terminal = require('../../../util/terminal')
 
             const prefix = `${chalk.magenta('[DEBUG]')} `
 

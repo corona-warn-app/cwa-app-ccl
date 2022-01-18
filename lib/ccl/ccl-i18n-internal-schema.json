@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Internal JSON Schema for i18n Files",
+  "type": "array",
+  "items": {
+    "oneOf": [
+      {
+        "$ref": "#/$defs/comment"
+      },
+      {
+        "$ref": "#/$defs/string"
+      },
+      {
+        "$ref": "#/$defs/plurals"
+      }
+    ]
+  },
+  "$defs": {
+    "comment": {
+      "type": "object",
+      "required": [
+        "tag",
+        "value"
+      ],
+      "properties": {
+        "tag": {
+          "type": "string",
+          "const": "__comment"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "string": {
+      "type": "object",
+      "required": [
+        "tag",
+        "value",
+        "attributes"
+      ],
+      "properties": {
+        "tag": {
+          "type": "string",
+          "const": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "attributes": {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "plurals": {
+      "type": "object",
+      "required": [
+        "tag",
+        "value",
+        "attributes"
+      ],
+      "properties": {
+        "tag": {
+          "type": "string",
+          "const": "plurals"
+        },
+        "value": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": [
+              "tag",
+              "value",
+              "attributes"
+            ],
+            "properties": {
+              "tag": {
+                "type": "string",
+                "const": "item"
+              },
+              "value": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "required": [
+                  "quantity"
+                ],
+                "properties": {
+                  "quantity": {
+                    "enum": [
+                      "zero",
+                      "one",
+                      "two",
+                      "few",
+                      "many",
+                      "other"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "attributes": {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

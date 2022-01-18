@@ -129,7 +129,7 @@
     "systemTimeDependentTextResolverOutput": {
       "oneOf": [
         {
-          "$ref": "#/$defs/uiTextSingular"
+          "$ref": "#/$defs/uiTextString"
         },
         {
           "$ref": "#/$defs/uiTextPlural"
@@ -189,7 +189,7 @@
     "uiText": {
       "oneOf": [
         {
-          "$ref": "#/$defs/uiTextSingular"
+          "$ref": "#/$defs/uiTextString"
         },
         {
           "$ref": "#/$defs/uiTextPlural"
@@ -199,7 +199,7 @@
         }
       ]
     },
-    "uiTextSingular": {
+    "uiTextString": {
       "type": "object",
       "required": [
         "type",
@@ -210,7 +210,7 @@
         "type": {
           "type": "string",
           "enum": [
-            "singular"
+            "string"
           ]
         },
         "localizedText": {
@@ -230,7 +230,7 @@
       "type": "object",
       "required": [
         "type",
-        "localizedTexts",
+        "localizedText",
         "parameters"
       ],
       "oneOf": [
@@ -255,7 +255,7 @@
         "parameters": {
           "$ref": "#/$defs/uiTextParameters"
         },
-        "localizedTexts": {
+        "localizedText": {
           "type": "object",
           "patternProperties": {
             "[a-z]{2}": {

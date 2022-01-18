@@ -5,11 +5,11 @@
 const { expect } = require('chai')
 const moment = require('moment')
 
-const ccl = require('./../../../lib/ccl')
+const ccl = require('./../../../../lib/ccl')
 // const jfn = require('./../../../lib/jfn/jfn-main')
-const dcc = require('../../util/dcc/dcc-main')
+const dcc = require('../../../util/dcc/dcc-main')
 
-describe.skip('ccl/get-dcc-wallet-info', () => {
+describe.skip('ccl/functions/get-dcc-wallet-info', () => {
   context('test', () => {
     let input, output
 

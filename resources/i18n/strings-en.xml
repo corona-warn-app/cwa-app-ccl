@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+  <!-- XTXT: sample text -->
+  <string name="greeting">"Hallo %s"</string>
+  
+  <!-- XTXT: sample text -->
+  <plurals name="risk_card_low_risk_encounter_days_body">
+    <item quantity="one">"Begegnungen mit niedrigem Risiko an %1$d Tag"</item>
+    <item quantity="other">"Begegnungen mit niedrigem Risiko an %1$d Tagen"</item>
+    <item quantity="zero">"Keine Risiko-Begegnungen"</item>
+    <item quantity="two">"Begegnungen mit niedrigem Risiko an %1$d Tagen"</item>
+    <item quantity="few">"Begegnungen mit niedrigem Risiko an %1$d Tagen"</item>
+    <item quantity="many">"Begegnungen mit niedrigem Risiko an %1$d Tagen"</item>
+</plurals>
+
+</resources>

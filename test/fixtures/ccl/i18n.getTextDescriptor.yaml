@@ -1,0 +1,25 @@
+- description: getTextDescriptor returns a string with empty parameters
+  functionName: __i18n.getTextDescriptor
+  parameters:
+    key: greeting
+  exp:
+    type: string
+    localizedText:
+      de: 'Hallo %s'
+      en: 'Hallo %s'
+    parameters: []
+- description: getTextDescriptor returns a string with parameters if specified parameters
+  functionName: __i18n.getTextDescriptor
+  parameters:
+    key: greeting
+    parameters:
+      - type: string
+        value: World
+  exp:
+    type: string
+    localizedText:
+      de: 'Hallo %s'
+      en: 'Hallo %s'
+    parameters:
+      - type: string
+        value: World

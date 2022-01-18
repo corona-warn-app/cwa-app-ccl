@@ -1,0 +1,82 @@
+- description: returns a quantity string with empty parameters
+  functionName: __i18n.getQuantityDescriptor
+  parameters:
+    key: risk_card_low_risk_encounter_days_body
+    quantity: 5
+  exp:
+    type: plural
+    quantity: 5
+    localizedText:
+      de:
+        few: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        many: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        one: Begegnungen mit niedrigem Risiko an %1$d Tag
+        other: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        two: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        zero: Keine Risiko-Begegnungen
+      en:
+        few: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        many: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        one: Begegnungen mit niedrigem Risiko an %1$d Tag
+        other: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        two: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        zero: Keine Risiko-Begegnungen
+    parameters: []
+- description: returns a quantity string with parameters
+  functionName: __i18n.getQuantityDescriptor
+  parameters:
+    key: risk_card_low_risk_encounter_days_body
+    quantity: 5
+    parameters:
+      - type: string
+        value: World
+  exp:
+    type: plural
+    quantity: 5
+    localizedText:
+      de:
+        few: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        many: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        one: Begegnungen mit niedrigem Risiko an %1$d Tag
+        other: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        two: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        zero: Keine Risiko-Begegnungen
+      en:
+        few: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        many: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        one: Begegnungen mit niedrigem Risiko an %1$d Tag
+        other: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        two: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        zero: Keine Risiko-Begegnungen
+    parameters:
+      - type: string
+        value: World
+- description: returns a quantity string with quantityParameterIndex
+  functionName: __i18n.getQuantityDescriptor
+  parameters:
+    key: risk_card_low_risk_encounter_days_body
+    quantityParameterIndex: 0
+    parameters:
+      - type: string
+        value: World
+  exp:
+    type: plural
+    quantityParameterIndex: 0
+    localizedText:
+      de:
+        few: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        many: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        one: Begegnungen mit niedrigem Risiko an %1$d Tag
+        other: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        two: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        zero: Keine Risiko-Begegnungen
+      en:
+        few: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        many: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        one: Begegnungen mit niedrigem Risiko an %1$d Tag
+        other: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        two: Begegnungen mit niedrigem Risiko an %1$d Tagen
+        zero: Keine Risiko-Begegnungen
+    parameters:
+      - type: string
+        value: World
