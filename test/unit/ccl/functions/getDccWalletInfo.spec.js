@@ -7,12 +7,12 @@ const jp = require('jsonpath')
 
 const ccl = require('../../../../lib/ccl')
 
-const cclUtil = require('../../../util/ccl-util')
-const fixtures = require('../../../util/fixtures')
+const cclTestUtil = require('../../../util/ccl-util')
 const dcc = require('../../../util/dcc/dcc-main')
+const fixtures = require('../../../util/fixtures')
 
-const expectTextToMatch = (textDescriptor, expDescriptor, { timeUnderTest }) => {
-  Object.entries(expDescriptor)
+const expectTextToMatch = (textDescriptor, textAssertionDescriptor, { timeUnderTest }) => {
+  Object.entries(textAssertionDescriptor)
     .forEach(([languageCode, expStr]) => {
       const expPattern = new RegExp(expStr)
       const formatted = ccl.util.formatText(textDescriptor, languageCode, { now: timeUnderTest })
@@ -58,7 +58,7 @@ describe('ccl/functions/getDccWalletInfo', async () => {
               language: 'en',
               now: ccl.util.mapMomentToNow(timeUnderTest),
               certificates: seriesUnderTest.map(it => {
-                return cclUtil.mapBarcodeDataToCertificate(it.barcodeData, {
+                return cclTestUtil.mapBarcodeDataToCertificate(it.barcodeData, {
                   validityState: 'VALID'
                 })
               }),
@@ -112,11 +112,6 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
           context('assertions', () => {
             const { assertions } = testCase
-            // const has = propertyPath => Object.prototype.hasOwnProperty.call(assertions, prop) &&
-            //   (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
-            // const has = pathExpression => jp.query(assertions, `$..${pathExpression}`)
-            //   .filter(it => it !== null)
-            //   .length > 0
             const has = prop => Object.prototype.hasOwnProperty.call(assertions, prop) &&
               (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
 
@@ -130,14 +125,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             has('mostRelevantCertificate') &&
             it('check mostRelevantCertificate', () => {
-              const expCertRef = assertions.mostRelevantCertificate
-              const expBarcodeData = resolveCertNameToBarcodeData(expCertRef)
-              const actCertRef = resolveBarcodeDataToCertName(output.mostRelevantCertificate.certificateRef.barcodeData)
+              const expCertName = assertions.mostRelevantCertificate
+              const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+              const actCertName = resolveBarcodeDataToCertName(output.mostRelevantCertificate.certificateRef.barcodeData)
 
               expect(output).to.have.nested.property(
                 'mostRelevantCertificate.certificateRef.barcodeData',
                 expBarcodeData,
-                `expected reference to ${expCertRef} but got ${actCertRef}`
+                `expected reference to ${expCertName} but got ${actCertName}`
               )
             })
 
@@ -161,14 +156,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             has('mostRecentVaccination') &&
             it('check mostRecentVaccination', () => {
-              const expCertRef = assertions.mostRecentVaccination
-              const expBarcodeData = resolveCertNameToBarcodeData(expCertRef)
-              const actCertRef = resolveBarcodeDataToCertName(output.mostRecentVaccination.certificateRef.barcodeData)
+              const expCertName = assertions.mostRecentVaccination
+              const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+              const actCertName = resolveBarcodeDataToCertName(output.mostRecentVaccination.certificateRef.barcodeData)
 
               expect(output).to.have.nested.property(
                 'mostRecentVaccination.certificateRef.barcodeData',
                 expBarcodeData,
-                `expected reference to ${expCertRef} but got ${actCertRef}`
+                `expected reference to ${expCertName} but got ${actCertName}`
               )
             })
 
@@ -189,14 +184,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               assertions.verificationCertificates.forEach((it, idx) => {
                 const act = output.verification.certificates[idx]
 
-                const expBarcodeData = resolveCertNameToBarcodeData(it.certificate)
-                const expCertRef = resolveBarcodeDataToCertName(expBarcodeData)
-                const actCertRef = resolveBarcodeDataToCertName(act.certificateRef.barcodeData)
+                const expCertName = it.certificate
+                const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+                const actCertName = resolveBarcodeDataToCertName(act.certificateRef.barcodeData)
 
                 expect(act).to.have.nested.property(
                   'certificateRef.barcodeData',
                   expBarcodeData,
-                  `expected reference to ${expCertRef} but got ${actCertRef}`
+                  `expected reference to ${expCertName} but got ${actCertName}`
                 )
               })
             })
@@ -227,9 +222,11 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   has(`admissionState.${textAttribute}`) &&
                   it(`check admissionState.${textAttribute}`, () => {
                     expect(output).to.have.nested.property(`admissionState.${textAttribute}`)
+                    const actTextDescriptor = output.admissionState[textAttribute]
+                    const textAssertionDescriptor = expAdmissionState[textAttribute]
                     expectTextToMatch(
-                      output.admissionState[textAttribute],
-                      expAdmissionState[textAttribute],
+                      actTextDescriptor,
+                      textAssertionDescriptor,
                       { timeUnderTest }
                     )
                   })
@@ -264,9 +261,11 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   has(`vaccinationState.${textAttribute}`) &&
                   it(`check vaccinationState.${textAttribute}`, () => {
                     expect(output).to.have.nested.property(`vaccinationState.${textAttribute}`)
+                    const actTextDescriptor = output.vaccinationState[textAttribute]
+                    const textAssertionDescriptor = expVaccinationState[textAttribute]
                     expectTextToMatch(
-                      output.vaccinationState[textAttribute],
-                      expVaccinationState[textAttribute],
+                      actTextDescriptor,
+                      textAssertionDescriptor,
                       { timeUnderTest }
                     )
                   })
@@ -301,16 +300,16 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   expVerification
                     .filter(it => it.certificate)
                     .forEach(({ certificate }, idx) => {
-                      const expCertRef = certificate
-                      const expBarcodeData = resolveCertNameToBarcodeData(expCertRef)
+                      const expCertName = certificate
+                      const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
                       const actCertificate = actVerification.certificates[idx]
                       const actBarcodeData = actCertificate.certificateRef.barcodeData
-                      const actCertRef = resolveBarcodeDataToCertName(actBarcodeData)
+                      const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
 
                       expect(actCertificate).to.have.nested.property(
                         'certificateRef.barcodeData',
                         expBarcodeData,
-                        `expected reference to ${expCertRef} but got ${actCertRef}`
+                        `expected reference to ${expCertName} but got ${actCertName}`
                       )
                     })
                 })
@@ -322,12 +321,12 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   expVerification
                     .filter(it => it.buttonText)
                     .forEach(({ buttonText }, idx) => {
-                      const expButtonText = buttonText
+                      const buttonTextAssertionDescriptor = buttonText
                       const actCertificate = actVerification.certificates[idx]
-                      const actButtonText = actCertificate.buttonText
+                      const actButtonTextDescriptor = actCertificate.buttonText
                       expectTextToMatch(
-                        actButtonText,
-                        expButtonText,
+                        actButtonTextDescriptor,
+                        buttonTextAssertionDescriptor,
                         { timeUnderTest }
                       )
                     })

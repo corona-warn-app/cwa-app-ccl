@@ -7,13 +7,11 @@ const path = require('path')
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 
-const fixtures = require('./../test/util/fixtures')
-const dcc = require('./../test/util/dcc/dcc-main')
-
 const ccl = require('./../lib/ccl')
-const cclUtil = require('./../test/util/ccl-util')
 
-const allDccSeries = fixtures.readAllDccSeriesSync()
+const cclTestUtil = require('./../test/util/ccl-util')
+const dcc = require('./../test/util/dcc/dcc-main')
+const fixtures = require('./../test/util/fixtures')
 
 const argv = yargs(hideBin(process.argv))
   .option('json-target', {
@@ -22,6 +20,8 @@ const argv = yargs(hideBin(process.argv))
   .argv
 
 const main = async () => {
+  const allDccSeries = fixtures.readAllDccSeriesSync()
+
   const allTestCases = []
 
   await async.forEach(allDccSeries, async seriesDescriptor => {
@@ -42,7 +42,7 @@ const main = async () => {
         language: 'en',
         now: ccl.util.mapMomentToNow(timeUnderTest),
         certificates: seriesUnderTest.map(it => {
-          return cclUtil.mapBarcodeDataToCertificate(it.barcodeData, {
+          return cclTestUtil.mapBarcodeDataToCertificate(it.barcodeData, {
             validityState: 'VALID'
           })
         }),

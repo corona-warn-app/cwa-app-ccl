@@ -6,9 +6,9 @@ const { expect } = require('chai')
 
 const ccl = require('../../../../lib/ccl')
 
-const cclUtil = require('../../../util/ccl-util')
-const fixtures = require('../../../util/fixtures')
+const cclTestUtil = require('../../../util/ccl-util')
 const dcc = require('../../../util/dcc/dcc-main')
+const fixtures = require('../../../util/fixtures')
 
 describe('ccl/functions/__analyzeDccWallet', async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
@@ -48,7 +48,7 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
               language: 'en',
               now: ccl.util.mapMomentToNow(timeUnderTest),
               certificates: seriesUnderTest.map(it => {
-                return cclUtil.mapBarcodeDataToCertificate(it.barcodeData, {
+                return cclTestUtil.mapBarcodeDataToCertificate(it.barcodeData, {
                   validityState: 'VALID'
                 })
               }),
@@ -107,14 +107,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             has('mostRelevantCertificate') &&
             it('check mostRelevantCertificate', () => {
-              const expCertRef = assertions.mostRelevantCertificate
-              const expBarcodeData = resolveCertNameToBarcodeData(expCertRef)
-              const actCertRef = resolveBarcodeDataToCertName(output.mostRelevantCertificate.certificateRef.barcodeData)
+              const expCertName = assertions.mostRelevantCertificate
+              const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+              const actCertName = resolveBarcodeDataToCertName(output.mostRelevantCertificate.certificateRef.barcodeData)
 
               expect(output).to.have.nested.property(
                 'mostRelevantCertificate.certificateRef.barcodeData',
                 expBarcodeData,
-                `expected reference to ${expCertRef} but got ${actCertRef}`
+                `expected reference to ${expCertName} but got ${actCertName}`
               )
             })
 
@@ -135,14 +135,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             has('mostRecentVaccination') &&
             it('check mostRecentVaccination', () => {
-              const expCertRef = assertions.mostRecentVaccination
-              const expBarcodeData = resolveCertNameToBarcodeData(expCertRef)
-              const actCertRef = resolveBarcodeDataToCertName(output.mostRecentVaccination.certificateRef.barcodeData)
+              const expCertName = assertions.mostRecentVaccination
+              const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+              const actCertName = resolveBarcodeDataToCertName(output.mostRecentVaccination.certificateRef.barcodeData)
 
               expect(output).to.have.nested.property(
                 'mostRecentVaccination.certificateRef.barcodeData',
                 expBarcodeData,
-                `expected reference to ${expCertRef} but got ${actCertRef}`
+                `expected reference to ${expCertName} but got ${actCertName}`
               )
             })
 
@@ -163,14 +163,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               assertions.verificationCertificates.forEach((it, idx) => {
                 const act = output.verificationCertificates.certificates[idx]
 
-                const expBarcodeData = resolveCertNameToBarcodeData(it.certificate)
-                const expCertRef = resolveBarcodeDataToCertName(expBarcodeData)
-                const actCertRef = resolveBarcodeDataToCertName(act.certificateRef.barcodeData)
+                const expCertName = it.certificate
+                const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+                const actCertName = resolveBarcodeDataToCertName(act.certificateRef.barcodeData)
 
                 expect(act).to.have.nested.property(
                   'certificateRef.barcodeData',
                   expBarcodeData,
-                  `expected reference to ${expCertRef} but got ${actCertRef}`
+                  `expected reference to ${expCertName} but got ${actCertName}`
                 )
               })
             })
