@@ -1,6 +1,32 @@
-# cwa-app-ccl
+<h1 align="center">
+    Corona Warn App - Common Covid Logic (CCL)
+</h1>
 
-Common Covid Logic (CCL) for Android and iOS
+<p align="center">
+    <a href="#about-this-repository">About this Repository</a> •
+    <a href="#support-and-feedback">Support and Feedback</a> •
+    <a href="#how-to-contribute">How to Contribute</a> •
+    <a href="#licensing">Licensing</a>
+</p>
+
+## About this Repository
+
+Common Covid Logic (CCL) describes a layer of common logic - especially regarding the interpretation of Digital COVID Certificates (DCCs) - that can be shared across different operating systems and implementations.
+
+The logic in CCL is described in JSON format. An engine processes the logic on the client against a defined input structure (e.g. the set of DCCs) and can expect a defined output structure. The client can update the JSON regularly from a server. This facilitates updates to CCL independent of client releases, e.g. in order to respond to legal or regulatory pandemic-related changes on short notice.
+
+## Support and Feedback
+
+The following channels are available for discussions, feedback, and support requests:
+
+| Type                     | Channel                                                |
+| ------------------------ | ------------------------------------------------------ |
+| **General discussion, issues, bugs**   | <a href="https://github.com/corona-warn-app/cwa-app-ccl/issues/new/choose" title="General Discussion"><img src="https://img.shields.io/github/issues/corona-warn-app/cwa-app-ccl/question.svg?style=flat-square"></a> </a>   |
+| **Other requests**    | <a href="mailto:corona-warn-app.opensource@sap.com" title="Email CWA Team"><img src="https://img.shields.io/badge/email-CWA%20team-green?logo=mail.ru&style=flat-square&logoColor=white"></a> |
+
+## How to Contribute
+
+Contribution and feedback are encouraged and always welcome. For more information about how to contribute, the project structure, as well as additional contribution information, see our [Contribution Guidelines](./CONTRIBUTING.md). By participating in this project, you agree to abide by its [Code of Conduct](./CODE_OF_CONDUCT.md) at all times.
 
 ## Contributors
 
