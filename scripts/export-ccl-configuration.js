@@ -1,17 +1,24 @@
 'use strict'
 
+const chalk = require('chalk')
+const cbor = require('cbor')
 const fse = require('fs-extra')
 const path = require('path')
+const yargs = require('yargs/yargs')
+const { hideBin } = require('yargs/helpers')
 
 const ccl = require('./../lib/ccl')
 
-const target = process.argv[2]
-if (!target) throw new Error('Required target parameter is missing')
+const argv = yargs(hideBin(process.argv))
+  .option('cbor-target', {
+    string: true
+  })
+  .option('json-target', {
+    string: true
+  })
+  .argv
 
 const main = async () => {
-  const targetFilepath = path.resolve(process.cwd(), target)
-  await fse.ensureFile(targetFilepath)
-
   const functionDescriptors = ccl.getFunctionDescriptors()
   const allDescriptors = functionDescriptors
     .map(it => it.getDescriptor())
@@ -34,7 +41,23 @@ const main = async () => {
     cclConfiguration
   ]
 
-  await fse.writeJSON(targetFilepath, cclConfigurations)
+  if (argv.jsonTarget) {
+    const targetFilepath = path.resolve(process.cwd(), argv.jsonTarget)
+    await fse.ensureFile(targetFilepath)
+    await fse.writeJSON(targetFilepath, cclConfigurations)
+    console.log(`Created JSON target ${chalk.cyan(argv.jsonTarget)}`)
+  }
+
+  if (argv.cborTarget) {
+    const asBuffer = cbor.encode(cclConfigurations)
+
+    const targetFilepath = path.resolve(process.cwd(), argv.cborTarget)
+    await fse.ensureFile(targetFilepath)
+    await fse.writeFile(targetFilepath, asBuffer)
+    console.log(`Created CBOR target ${chalk.cyan(argv.cborTarget)}`)
+  }
 }
 
 main()
+  .then(() => console.log('Done.'))
+  .catch(err => console.log('Error:', err))

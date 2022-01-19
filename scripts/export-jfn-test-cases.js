@@ -1,10 +1,16 @@
 'use strict'
 
+const chalk = require('chalk')
 const fse = require('fs-extra')
 const path = require('path')
+const yargs = require('yargs/yargs')
+const { hideBin } = require('yargs/helpers')
 
-const target = process.argv[2]
-if (!target) throw new Error('Required target parameter is missing')
+const argv = yargs(hideBin(process.argv))
+  .option('json-target', {
+    string: true
+  })
+  .argv
 
 const testCasesInJavaScript = [
   'time.moment.spec.js'
@@ -116,9 +122,6 @@ const getJsonFunctionsFunctionTestCases = async () => {
 }
 
 const main = async () => {
-  const targetFilepath = path.resolve(process.cwd(), target)
-  await fse.ensureFile(targetFilepath)
-
   const allTestCasesNested = await Promise.all([
     getJsonLogicTestCases(),
     getCertLogicTestCases(),
@@ -136,7 +139,14 @@ const main = async () => {
     testCases: allTestCases
   }
 
-  await fse.writeJSON(targetFilepath, data, { spaces: 2 })
+  if (argv.jsonTarget) {
+    const targetFilepath = path.resolve(process.cwd(), argv.jsonTarget)
+    await fse.ensureFile(targetFilepath)
+    await fse.writeJSON(targetFilepath, data, { spaces: 2 })
+    console.log(`Created JSON target ${chalk.cyan(argv.jsonTarget)}`)
+  }
 }
 
 main()
+  .then(() => console.log('Done.'))
+  .catch(err => console.log('Error:', err))
