@@ -5,29 +5,19 @@
 const { expect } = require('chai')
 const fse = require('fs-extra')
 const path = require('path')
-
-const jfn = require('../../../lib/jfn/jfn-main')
+const executeJfnTestCase = require('./../../util/execute-jfn-test-case')({ expect })
 
 const tests = fse.readJSONSync(path.resolve(__dirname, './../../fixtures/jfn/jfn-tests/function.spec.json'))
 
 describe('jfn/function', () => {
   tests.forEach(({ title, functions, evaluateFunction, exp, throws }) => {
     it(title, () => {
-      functions.forEach(({ name, definition }) => {
-        jfn.add_function(name, definition)
+      executeJfnTestCase({
+        functions,
+        evaluateFunction,
+        exp,
+        throws
       })
-      const {
-        name, parameters
-      } = evaluateFunction
-
-      if (throws === true) {
-        expect(() => {
-          jfn.evaluateFunction(name, parameters)
-        }).to.throw()
-      } else {
-        const act = jfn.evaluateFunction(name, parameters)
-        expect(act).to.deep.equal(exp)
-      }
     })
   })
 })
