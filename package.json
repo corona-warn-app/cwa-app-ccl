@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:clean && npm run build:jfn-test-cases && npm run build:ccl-test-cases && npm run build:ccl-configuration",
+    "build": "npm run build:clean && npm run build:jfn-test-cases && npm run build:ccl-test-cases && npm run build:ccl-configuration && npm run test:dist",
     "build:clean": "rimraf dist",
     "build:ccl-test-cases": "node scripts/export-ccl-test-cases.js --json-target dist/ccl-test-cases.gen.json",
     "build:ccl-configuration": "node scripts/export-ccl-configuration.js --json-target dist/ccl-configuration.json --cbor-target dist/ccl-configuration.bin",
