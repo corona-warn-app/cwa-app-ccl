@@ -3,15 +3,12 @@
 'use strict'
 
 const { expect } = require('chai')
-const moment = require('moment')
 const jp = require('jsonpath')
-const path = require('path')
-const fse = require('fs-extra')
-const yaml = require('js-yaml')
 
 const ccl = require('../../../../lib/ccl')
 
 const cclUtil = require('../../../util/ccl-util')
+const fixtures = require('../../../util/fixtures')
 const dcc = require('../../../util/dcc/dcc-main')
 
 const expectTextToMatch = (textDescriptor, expDescriptor, { timeUnderTest }) => {
@@ -24,66 +21,26 @@ const expectTextToMatch = (textDescriptor, expDescriptor, { timeUnderTest }) => 
 }
 
 describe('ccl/functions/getDccWalletInfo', async () => {
-  const filenames = [
-    'dcc-series-sample.yaml',
-    'dcc-series-janssen.yaml',
-    'dcc-series-recovery.yaml',
-    'dcc-series-standard-vaccination.yaml',
-    'dcc-series-tests-only.yaml'
-  ]
-  const presets = filenames.reduce((allPresets, filename) => {
-    const filepath = path.resolve(__dirname, `./../../../fixtures/ccl/${filename}`)
-    const presetsStr = fse.readFileSync(filepath)
-    const presets = yaml.load(presetsStr)
-      .map(preset => {
-        return {
-          ...preset,
-          filename
-        }
-      })
-    allPresets.push(...presets)
-    return allPresets
-  }, [])
+  const allDccSeries = fixtures.readAllDccSeriesSync()
 
-  presets.forEach(preset => {
-    const _context = preset.only === true ? context.only : preset.skip === true ? context.skip : context
-    _context(`${preset.filename} - ${preset.description}`, () => {
-      const t0 = moment.utc('2022-01-01')
-      let series
-
-      const resolveCertRefToBarcodeData = certRef => {
-        const certificate = series
-          .find(it => {
-            return it.vc === certRef ||
-              it.rc === certRef ||
-              it.tc === certRef
-          })
-        if (!certificate) return null
-        return certificate.barcodeData
-      }
-
-      const resolveBarcodeDataToCertRef = barcodeData => {
-        const certificate = series.find(it => {
-          return it.barcodeData === barcodeData
-        })
-        if (!certificate) return null
-        return certificate.vc ||
-          certificate.rc ||
-          certificate.tc
-      }
+  allDccSeries.forEach(seriesDescriptor => {
+    const _context = seriesDescriptor.only === true ? context.only : seriesDescriptor.skip === true ? context.skip : context
+    _context(`${seriesDescriptor.filename} - ${seriesDescriptor.description}`, () => {
+      let resolveCertNameToBarcodeData
+      let resolveBarcodeDataToCertName
+      let parseSeriesTestCase
+      let resolveSeriesTime
 
       before(async () => {
-        const defaultDccDescriptor = {
-          dccPiiSeed: preset.description || preset.name
-        }
-        series = await dcc.series.parseSeries({
-          series: preset.series,
-          t0,
-          defaultDccDescriptor
-        })
+        ({
+          resolveCertNameToBarcodeData,
+          resolveBarcodeDataToCertName,
+          parseSeriesTestCase,
+          resolveSeriesTime
+        } = await dcc.series.parseSeriesDescriptor({ seriesDescriptor }))
       })
 
-      preset.testCases.forEach((testCase, idx) => {
+      seriesDescriptor.testCases.forEach((testCase, idx) => {
         const _context = testCase.only === true ? context.only : context
         const testCaseDescription = `test case #${idx + 1} at ${testCase.time}`
         _context(testCaseDescription, () => {
@@ -91,9 +48,10 @@ describe('ccl/functions/getDccWalletInfo', async () => {
           let input, output
 
           before(async () => {
-            timeUnderTest = dcc.series.resolveTime(testCase.time, -1, series, t0)
-            seriesUnderTest = series
-              .filter(it => it.time.isSameOrBefore(timeUnderTest))
+            ({
+              timeUnderTest,
+              seriesUnderTest
+            } = parseSeriesTestCase(testCase))
 
             input = {
               os: 'android',
@@ -173,8 +131,8 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             has('mostRelevantCertificate') &&
             it('check mostRelevantCertificate', () => {
               const expCertRef = assertions.mostRelevantCertificate
-              const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
-              const actCertRef = resolveBarcodeDataToCertRef(output.mostRelevantCertificate.certificateRef.barcodeData)
+              const expBarcodeData = resolveCertNameToBarcodeData(expCertRef)
+              const actCertRef = resolveBarcodeDataToCertName(output.mostRelevantCertificate.certificateRef.barcodeData)
 
               expect(output).to.have.nested.property(
                 'mostRelevantCertificate.certificateRef.barcodeData',
@@ -193,7 +151,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             has('vaccinationValidFrom') &&
             it('check vaccinationValidFrom', () => {
-              const expValidFromMoment = dcc.series.resolveTime(assertions.vaccinationValidFrom, -1, series, t0)
+              const expValidFromMoment = resolveSeriesTime(assertions.vaccinationValidFrom)
               const expValidFrom = expValidFromMoment.utc().toISOString()
               expect(output).to.have.property(
                 'vaccinationValidFrom',
@@ -204,8 +162,8 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             has('mostRecentVaccination') &&
             it('check mostRecentVaccination', () => {
               const expCertRef = assertions.mostRecentVaccination
-              const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
-              const actCertRef = resolveBarcodeDataToCertRef(output.mostRecentVaccination.certificateRef.barcodeData)
+              const expBarcodeData = resolveCertNameToBarcodeData(expCertRef)
+              const actCertRef = resolveBarcodeDataToCertName(output.mostRecentVaccination.certificateRef.barcodeData)
 
               expect(output).to.have.nested.property(
                 'mostRecentVaccination.certificateRef.barcodeData',
@@ -231,9 +189,9 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               assertions.verificationCertificates.forEach((it, idx) => {
                 const act = output.verification.certificates[idx]
 
-                const expBarcodeData = resolveCertRefToBarcodeData(it.certificate)
-                const expCertRef = resolveBarcodeDataToCertRef(expBarcodeData)
-                const actCertRef = resolveBarcodeDataToCertRef(act.certificateRef.barcodeData)
+                const expBarcodeData = resolveCertNameToBarcodeData(it.certificate)
+                const expCertRef = resolveBarcodeDataToCertName(expBarcodeData)
+                const actCertRef = resolveBarcodeDataToCertName(act.certificateRef.barcodeData)
 
                 expect(act).to.have.nested.property(
                   'certificateRef.barcodeData',
@@ -344,10 +302,10 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                     .filter(it => it.certificate)
                     .forEach(({ certificate }, idx) => {
                       const expCertRef = certificate
-                      const expBarcodeData = resolveCertRefToBarcodeData(expCertRef)
+                      const expBarcodeData = resolveCertNameToBarcodeData(expCertRef)
                       const actCertificate = actVerification.certificates[idx]
                       const actBarcodeData = actCertificate.certificateRef.barcodeData
-                      const actCertRef = resolveBarcodeDataToCertRef(actBarcodeData)
+                      const actCertRef = resolveBarcodeDataToCertName(actBarcodeData)
 
                       expect(actCertificate).to.have.nested.property(
                         'certificateRef.barcodeData',

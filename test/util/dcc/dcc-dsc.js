@@ -2,7 +2,7 @@
 
 const crypto = require('crypto')
 
-const load = async () => {
+const load = () => {
   const keyPair = crypto.generateKeyPairSync('ec', {
     namedCurve: 'P-256'
   })

@@ -122,7 +122,7 @@ const generate = async ({
   const iat = _iat.valueOf() / 1000
   const _exp = deriveMomentOrDefault(cwtExp, moment(_iat).add(1, 'year'))
   const exp = _exp.valueOf() / 1000
-  const dsc = await dccDsc.load()
+  const dsc = dccDsc.load()
 
   const coseBuffer = await dccSignature.sign({
     dcc: dcc,

@@ -1,6 +1,7 @@
 - id: 1
   name: recovery-biontech-booster2/1-test
   description: recovery + biontech 1/1 + booster 2/1
+  t0: '2022-01-01'
   series:
     - time: t0
       rc: rc1

@@ -146,7 +146,64 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
   return dccDescriptors
 }
 
+const parseSeriesDescriptor = async ({ seriesDescriptor }) => {
+  const t0 = moment.utc(seriesDescriptor.t0)
+  const defaultDccDescriptor = {
+    dccPiiSeed: seriesDescriptor.description || seriesDescriptor.name
+  }
+  const series = await parseSeries({
+    series: seriesDescriptor.series,
+    t0,
+    defaultDccDescriptor
+  })
+
+  const resolveCertNameToBarcodeData = certName => {
+    const certificate = series
+      .find(it => {
+        return it.vc === certName ||
+          it.rc === certName ||
+          it.tc === certName
+      })
+    if (!certificate) return null
+    return certificate.barcodeData
+  }
+
+  const resolveBarcodeDataToCertName = barcodeData => {
+    const certificate = series.find(it => {
+      return it.barcodeData === barcodeData
+    })
+    if (!certificate) return null
+    return certificate.vc ||
+      certificate.rc ||
+      certificate.tc
+  }
+
+  const parseSeriesTestCase = testCase => {
+    const timeUnderTest = resolveTime(testCase.time, -1, series, t0)
+    const seriesUnderTest = series
+      .filter(it => it.time.isSameOrBefore(timeUnderTest))
+    return {
+      ...testCase,
+      timeUnderTest,
+      seriesUnderTest
+    }
+  }
+
+  const resolveSeriesTime = time => resolveTime(time, -1, series, t0)
+
+  return {
+    ...seriesDescriptor,
+    t0,
+    series,
+    resolveCertNameToBarcodeData,
+    resolveBarcodeDataToCertName,
+    parseSeriesTestCase,
+    resolveSeriesTime
+  }
+}
+
 module.exports = {
   resolveTime,
-  parseSeries
+  parseSeries,
+  parseSeriesDescriptor
 }

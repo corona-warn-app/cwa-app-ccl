@@ -1,6 +1,7 @@
 - id: 1
   name: tests-only
   description: A person who only has PCR and RAT tests and no vaccination or recovery certificate
+  t0: '2022-01-01'
   series:
     - time: t0
       tc: rat1
@@ -92,6 +93,7 @@
 - id: 2
   name: rat-test-priority
   description: The most recent RAT test has priority
+  t0: '2022-01-01'
   series:
     - time: t0
       tc: rat1
@@ -119,6 +121,7 @@
 - id: 3
   name: pcr-test-priority
   description: The most recent PCR test has priority
+  t0: '2022-01-01'
   series:
     - time: t0
       tc: pcr1
