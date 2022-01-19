@@ -23,4 +23,12 @@ describe('dist/json-schema-checks', () => {
       })
     }
   })
+  context('check dist/ccl-de-0001.json', () => {
+    const configuration = require('./../../dist/ccl-de-0001.json')
+
+    it('matches schema', async () => {
+      const { errors } = await ccl.schema.validate(configuration, 'https://ccl.coronawarn.app/ccl-configuration.json')
+      expect(errors).to.be.empty
+    })
+  })
 })

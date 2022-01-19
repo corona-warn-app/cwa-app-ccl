@@ -1,5 +1,6 @@
 'use strict'
 
+const async = require('async')
 const chalk = require('chalk')
 const cbor = require('cbor')
 const fse = require('fs-extra')
@@ -14,6 +15,9 @@ const argv = yargs(hideBin(process.argv))
     string: true
   })
   .option('json-target', {
+    string: true
+  })
+  .option('json-rule-target-dir', {
     string: true
   })
   .argv
@@ -46,6 +50,17 @@ const main = async () => {
     await fse.ensureFile(targetFilepath)
     await fse.writeJSON(targetFilepath, cclConfigurations)
     console.log(`Created JSON target ${chalk.cyan(argv.jsonTarget)}`)
+  }
+
+  if (argv.jsonRuleTargetDir) {
+    await async.forEach(cclConfigurations, async config => {
+      const filename = `${config.Identifier.toLowerCase()}.json`
+      const target = path.join(argv.jsonRuleTargetDir, filename)
+      const targetFilepath = path.resolve(process.cwd(), target)
+      await fse.ensureFile(targetFilepath)
+      await fse.writeJSON(targetFilepath, config)
+      console.log(`Created JSON rule target ${chalk.cyan(target)}`)
+    })
   }
 
   if (argv.cborTarget) {
