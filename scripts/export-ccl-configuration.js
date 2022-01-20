@@ -23,9 +23,7 @@ const argv = yargs(hideBin(process.argv))
   .argv
 
 const main = async () => {
-  const functionDescriptors = ccl.getFunctionDescriptors()
-  const allDescriptors = functionDescriptors
-    .map(it => it.getDescriptor())
+  const allDescriptors = ccl.getFunctionDescriptors()
 
   const cclConfiguration = {
     Identifier: 'CCL-DE-0001',
