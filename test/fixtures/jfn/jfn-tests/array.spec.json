@@ -1016,23 +1016,20 @@
     "exp": null
   },
   {
-    "title": "push - adds an element to the end of an array",
+    "title": "push - adds an element to the end of an array and returns it",
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1058,25 +1055,22 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            },
-            {
-              "var": "value2"
-            },
-            6,
-            7,
-            8
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                },
+                {
+                  "var": "value2"
+                },
+                6,
+                7,
+                8
+              ]
             }
           ]
         }
@@ -1107,29 +1101,26 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            "hello",
-            1,
-            true,
-            false,
-            [
-              1,
-              2,
-              3
-            ],
-            {
-              "var": "obj"
-            },
-            null
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                "hello",
+                1,
+                true,
+                false,
+                [
+                  1,
+                  2,
+                  3
+                ],
+                {
+                  "var": "obj"
+                },
+                null
+              ]
             }
           ]
         }
@@ -1158,23 +1149,97 @@
     ]
   },
   {
-    "title": "push - data types - if first parameter is a string, throws an exception",
+    "title": "push - using it in an if statement requires assign",
     "logic": {
       "script": [
         {
-          "push": [
+          "if": [
+            { "var": "someConditionA" },
             {
-              "var": "arr"
-            },
+              "assign": [
+                "arr",
+                {
+                  "push": [
+                    { "var": "arr" },
+                    "a"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "if": [
+            { "var": "someConditionB" },
             {
-              "var": "value"
+              "assign": [
+                "arr",
+                {
+                  "push": [
+                    { "var": "arr" },
+                    "b"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "if": [
+            { "var": "someConditionC" },
+            {
+              "assign": [
+                "arr",
+                {
+                  "push": [
+                    { "var": "arr" },
+                    "c"
+                  ]
+                }
+              ]
             }
           ]
         },
         {
           "return": [
+            { "var": "arr" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "arr": [
+        1,
+        2,
+        3
+      ],
+      "someConditionA": true,
+      "someConditionB": false,
+      "someConditionC": true
+    },
+    "exp": [
+      1,
+      2,
+      3,
+      "a",
+      "c"
+    ]
+  },
+  {
+    "title": "push - data types - if first parameter is a string, throws an exception",
+    "logic": {
+      "script": [
+        {
+          "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1191,19 +1256,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1220,19 +1282,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1249,19 +1308,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1278,19 +1334,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1307,19 +1360,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1336,19 +1386,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1367,19 +1414,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1398,19 +1442,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1429,19 +1470,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1460,19 +1498,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1499,19 +1534,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }
@@ -1534,19 +1566,16 @@
     "logic": {
       "script": [
         {
-          "push": [
-            {
-              "var": "arr"
-            },
-            {
-              "var": "value"
-            }
-          ]
-        },
-        {
           "return": [
             {
-              "var": "arr"
+              "push": [
+                {
+                  "var": "arr"
+                },
+                {
+                  "var": "value"
+                }
+              ]
             }
           ]
         }

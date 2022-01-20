@@ -19,6 +19,7 @@
     "test:unit": "mocha test/unit --recursive --color",
     "prepare": "husky install",
     "watch:ccl": "mocha test/unit/ccl --recursive --color --watch --extension js,json,yaml",
+    "watch:jfn": "mocha test/unit/jfn --recursive --color --watch --extension js,json,yaml",
     "watch:unit": "mocha test/unit --recursive --color --watch --extension js,json,yaml"
   },
   "repository": {
