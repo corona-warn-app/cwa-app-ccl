@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+const bnrFilenamePattern = /^bnr.*\.json$/
 const dccSeriesFilenamePattern = /^dcc-series.*\.yaml$/
 const fixturesDirectoryPath = path.resolve(__dirname, './../fixtures')
 
@@ -31,6 +32,22 @@ const readAllDccSeriesSync = () => {
   return series
 }
 
+const readAllBoosterNotificationRulesSync = () => {
+  const directoryPath = path.resolve(fixturesDirectoryPath, 'ccl')
+  const filenames = fse.readdirSync(directoryPath)
+    .filter(filename => bnrFilenamePattern.test(filename))
+
+  const allBNRs = filenames.reduce((allBNRs, filename) => {
+    const filepath = path.resolve(directoryPath, filename)
+    const bnr = fse.readJSONSync(filepath)
+    allBNRs.push(bnr)
+    return allBNRs
+  }, [])
+
+  return allBNRs
+}
+
 export default {
-  readAllDccSeriesSync
+  readAllDccSeriesSync,
+  readAllBoosterNotificationRulesSync
 }

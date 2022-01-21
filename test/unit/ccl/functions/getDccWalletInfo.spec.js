@@ -23,6 +23,7 @@ const expectTextToMatch = (textDescriptor, textAssertionDescriptor, { timeUnderT
 
 describe('ccl/functions/getDccWalletInfo', async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
+  const allBNRs = fixtures.readAllBoosterNotificationRulesSync()
 
   allDccSeries.forEach(seriesDescriptor => {
     const _context = seriesDescriptor.only === true ? context.only : seriesDescriptor.skip === true ? context.skip : context
@@ -63,7 +64,7 @@ describe('ccl/functions/getDccWalletInfo', async () => {
                   validityState: 'VALID'
                 })
               }),
-              boosterNotificationRules: []
+              boosterNotificationRules: allBNRs
             }
 
             // output = ccl.evaluateFunction('__analyzeDccWallet', input)
@@ -89,6 +90,9 @@ ${timeUnderTest.toISOString()}
 
 ${chalk.cyan('Series under test')} (${dccData.length} certificates)
 ${terminal.yaml(dccData)}
+
+${chalk.cyan('Booster Notification Rules')} (${allBNRs.length} BNRs)
+${terminal.yaml(allBNRs)}
 
 ${chalk.cyan('Output of the operation')}
 ${terminal.yaml(output)}
@@ -328,6 +332,53 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                         { timeUnderTest }
                       )
                     })
+                })
+              })
+
+              context('boosterNotification', () => {
+                const {
+                  boosterNotification: expBoosterNotification
+                } = expWalletInfo
+
+                has('boosterNotification.visible') &&
+                it('check boosterNotification.visible', () => {
+                  expect(output).to.have.nested.property(
+                    'boosterNotification.visible',
+                    expBoosterNotification.visible
+                  )
+                })
+
+                has('boosterNotification.identifier') &&
+                it('check boosterNotification.identifier', () => {
+                  expect(output).to.have.nested.property(
+                    'boosterNotification.identifier',
+                    expBoosterNotification.identifier
+                  )
+                })
+
+                const boosterNotificationTexts = [
+                  'titleText', 'subtitleText', 'longText'
+                ]
+                boosterNotificationTexts.forEach(textAttribute => {
+                  has(`boosterNotification.${textAttribute}`) &&
+                  it(`check boosterNotification.${textAttribute}`, () => {
+                    expect(output).to.have.nested.property(`boosterNotification.${textAttribute}`)
+                    const actTextDescriptor = output.boosterNotification[textAttribute]
+                    const textAssertionDescriptor = expBoosterNotification[textAttribute]
+                    expectTextToMatch(
+                      actTextDescriptor,
+                      textAssertionDescriptor,
+                      { timeUnderTest }
+                    )
+                  })
+                })
+
+                has('boosterNotification.faqAnchor') &&
+                it('check boosterNotification.faqAnchor', () => {
+                  expect(output).to.have.nested.property(
+                    'boosterNotification.faqAnchor',
+                    expBoosterNotification.faqAnchor
+                  )
                 })
               })
             })

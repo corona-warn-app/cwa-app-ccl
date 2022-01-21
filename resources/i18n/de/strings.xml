@@ -74,4 +74,9 @@
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_TEST_CERTIFICATE">"Testzertifikat"</string>
 
+  <!-- XHED: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_TITLE_TEXT">"Booster"</string>
+  <!-- XTXT: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"Empfehlung einer Booster Impfung"</string>
+
 </resources>
