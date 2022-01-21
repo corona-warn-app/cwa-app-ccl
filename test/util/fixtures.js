@@ -31,6 +31,13 @@ const readAllDccSeriesSync = () => {
   return series
 }
 
+const readAllBoosterNotificationRulesSync = () => {
+  const filepath = path.resolve(fixturesDirectoryPath, 'bnrs.gen.json')
+  const data = fse.readJsonSync(filepath)
+  return data.bnrs
+}
+
 export default {
-  readAllDccSeriesSync
+  readAllDccSeriesSync,
+  readAllBoosterNotificationRulesSync
 }
