@@ -21,6 +21,7 @@ const argv = yargs(hideBin(process.argv))
 
 const main = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
+  const allFunctions = require('./../dist/ccl-de-0001.json').Logic.JfnDescriptors
 
   const allTestCases = []
 
@@ -53,7 +54,7 @@ const main = async () => {
 
       const testCaseDescriptor = {
         title: `${seriesDescription} - ${testCaseDescription}`,
-        functions: [],
+        functions: allFunctions,
         useDefaultCCLConfiguration: true,
         evaluateFunction: {
           name: 'getDccWalletInfo',
