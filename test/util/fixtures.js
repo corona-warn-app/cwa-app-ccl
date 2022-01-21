@@ -1,8 +1,10 @@
-'use strict'
+import fse from 'fs-extra'
+import path from 'path'
+import yaml from 'js-yaml'
+import { fileURLToPath } from 'url'
 
-const fse = require('fs-extra')
-const path = require('path')
-const yaml = require('js-yaml')
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const dccSeriesFilenamePattern = /^dcc-series.*\.yaml$/
 const fixturesDirectoryPath = path.resolve(__dirname, './../fixtures')
@@ -29,6 +31,6 @@ const readAllDccSeriesSync = () => {
   return series
 }
 
-module.exports = {
+export default {
   readAllDccSeriesSync
 }

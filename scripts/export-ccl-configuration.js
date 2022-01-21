@@ -1,14 +1,12 @@
-'use strict'
+import async from 'async'
+import chalk from 'chalk'
+import cbor from 'cbor'
+import fse from 'fs-extra'
+import path from 'path'
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
 
-const async = require('async')
-const chalk = require('chalk')
-const cbor = require('cbor')
-const fse = require('fs-extra')
-const path = require('path')
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
-
-const ccl = require('./../lib/ccl')
+import ccl from './../lib/ccl/index.js'
 
 const argv = yargs(hideBin(process.argv))
   .option('cbor-target', {

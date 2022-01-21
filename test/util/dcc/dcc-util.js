@@ -1,5 +1,3 @@
-'use strict'
-
 const getKID = (protectedHeader, unprotectedHeader) => {
   const fallback = new Map().set(4, null)
   return [protectedHeader, unprotectedHeader, fallback]
@@ -7,6 +5,6 @@ const getKID = (protectedHeader, unprotectedHeader) => {
     .get(4)
 }
 
-module.exports = {
+export default {
   getKID
 }

@@ -1,15 +1,16 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
+import jp from 'jsonpath'
 
-const { expect } = require('chai')
-const jp = require('jsonpath')
+import chalk from 'chalk'
+import terminal from '../../../util/terminal.js'
 
-const ccl = require('../../../../lib/ccl')
+import ccl from '../../../../lib/ccl/index.js'
 
-const cclTestUtil = require('../../../util/ccl-util')
-const dcc = require('../../../util/dcc/dcc-main')
-const fixtures = require('../../../util/fixtures')
+import cclTestUtil from '../../../util/ccl-util.js'
+import dcc from '../../../util/dcc/dcc-main.js'
+import fixtures from '../../../util/fixtures.js'
 
 const expectTextToMatch = (textDescriptor, textAssertionDescriptor, { timeUnderTest }) => {
   Object.entries(textAssertionDescriptor)
@@ -76,9 +77,6 @@ describe('ccl/functions/getDccWalletInfo', async () => {
 
           it('log series', () => {
             if (testCase.debug !== true) return
-
-            const chalk = require('chalk')
-            const terminal = require('../../../util/terminal')
 
             const prefix = `${chalk.magenta('[DEBUG]')} `
 

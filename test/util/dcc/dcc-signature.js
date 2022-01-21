@@ -1,9 +1,7 @@
-'use strict'
-
-const assert = require('assert')
-const cbor = require('cbor')
-const cose = require('cose-js')
-const moment = require('moment')
+import assert from 'assert'
+import cbor from 'cbor'
+import cose from 'cose-js'
+import moment from 'moment'
 
 const sign = async ({
   dcc,
@@ -42,6 +40,6 @@ const sign = async ({
   return signedCoseBuffer
 }
 
-module.exports = {
+export default {
   sign
 }

@@ -1,8 +1,6 @@
-'use strict'
-
-const moment = require('moment')
-const transliteration = require('transliteration')
-const chanceFactory = require('../chance')
+import moment from 'moment'
+import transliteration from 'transliteration'
+import chanceFactory from '../chance.js'
 
 const VC_MP_JOHNSON_JOHNSON = 'EU/1/20/1525'
 const VC_MP_ASTRA = 'EU/1/21/1529'
@@ -153,7 +151,7 @@ const generateRecoveryCertificate = ({ seed, now = moment(), piiSeed } = {}) => 
   return dcc
 }
 
-module.exports = {
+export default {
   generateTestCertificate,
   generateVaccinationCertificate,
   generateRecoveryCertificate,

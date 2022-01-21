@@ -1,9 +1,7 @@
-'use strict'
+import Chance from 'chance'
+import moment from 'moment'
 
-const Chance = require('chance')
-const moment = require('moment')
-
-module.exports = seed => {
+export default seed => {
   const chance = seed ? new Chance(seed) : new Chance()
 
   chance.mixin({

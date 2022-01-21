@@ -1,8 +1,6 @@
-'use strict'
-
 const isoStr = inp => inp
 
-module.exports = [
+export default [
   {
     title: 'plusTime - adds seconds',
     logic: {

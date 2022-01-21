@@ -1,11 +1,13 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
 
-const { expect } = require('chai')
-const executeJfnTestCase = require('./../util/execute-jfn-test-case')({ expect })
+import executeJfnTestCaseFactory from './../util/execute-jfn-test-case.js'
 
-const { testCases } = require('../../dist/ccl-test-cases.gen.json')
+import testCaseFile from '../../dist/ccl-test-cases.gen.json'
+const executeJfnTestCase = executeJfnTestCaseFactory({ expect })
+
+const { testCases } = testCaseFile
 
 describe('dist/ccl-test-cases', () => {
   testCases.forEach(({ title, functions, evaluateFunction, logic, data, exp, throws }) => {

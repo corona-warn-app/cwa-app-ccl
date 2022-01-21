@@ -1,3 +1,2 @@
-'use strict'
-
-module.exports = require('./dcc-main')
+import dccMain from './dcc-main.js'
+export default dccMain

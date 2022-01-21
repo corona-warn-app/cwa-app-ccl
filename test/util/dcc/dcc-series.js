@@ -1,9 +1,7 @@
-'use strict'
+import async from 'async'
+import moment from 'moment'
 
-const async = require('async')
-const moment = require('moment')
-
-const generate = require('./dcc-generate')
+import generate from './dcc-generate.js'
 
 const vaccineShortNamesByMedicalProduct = {
   'EU/1/20/1525': ['jj', 'johnson', 'janssen'],
@@ -202,7 +200,7 @@ const parseSeriesDescriptor = async ({ seriesDescriptor }) => {
   }
 }
 
-module.exports = {
+export default {
   resolveTime,
   parseSeries,
   parseSeriesDescriptor
