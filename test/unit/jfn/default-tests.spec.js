@@ -5,9 +5,14 @@
 
 const assert = require('assert')
 
-const jfn = require('../../../lib/jfn/jfn-main')
+const jfnFactory = require('../../../lib/jfn/jfn-main').factory
 
 describe('default tests', () => {
+
+  let jfn
+  beforeEach(() => {
+    jfn = jfnFactory()
+  })
 
   it.skip( "logging", () => {
     var last_console;

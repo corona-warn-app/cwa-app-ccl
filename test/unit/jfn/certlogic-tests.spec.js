@@ -6,7 +6,7 @@ const { expect } = require('chai')
 const fse = require('fs-extra')
 const path = require('path')
 
-const jfn = require('../../../lib/jfn/jfn-main')
+const jfnFactory = require('../../../lib/jfn/jfn-main').factory
 
 const directory = path.resolve(__dirname, './../../fixtures/jfn/certlogic-tests')
 const testSuites = fse.readdirSync(directory)
@@ -22,6 +22,7 @@ describe('jfn/certlogic', () => {
         context(name, () => {
           assertions.forEach(({ data, expected }) => {
             it(`with ${JSON.stringify(data)} returns ${JSON.stringify(expected)}`, () => {
+              const jfn = jfnFactory()
               const act = jfn.apply(certLogicExpression, data)
               expect(act).to.deep.equal(expected)
             })
