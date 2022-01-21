@@ -13,7 +13,6 @@ import fixtures from '../../../util/fixtures.js'
 
 describe('ccl/functions/__analyzeDccWallet', async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
-  const boosterNotificationRules = fixtures.readAllBoosterNotificationRulesSync()
 
   allDccSeries.forEach(seriesDescriptor => {
     const _context = seriesDescriptor.only === true ? context.only : seriesDescriptor.skip === true ? context.skip : context
@@ -54,7 +53,7 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
                   validityState: 'VALID'
                 })
               }),
-              boosterNotificationRules: boosterNotificationRules
+              boosterNotificationRules: []
             }
 
             output = ccl.evaluateFunction('__analyzeDccWallet', input)
