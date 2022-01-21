@@ -4,9 +4,9 @@
       "collectionName": "cwa-app-ccl",
       "folders": [
         {
-          "startingFolderPath": "**/i18n/**",
+          "startingFolderPath": "**/i18n/de/**",
           "sourceFilters": [
-            "strings-de.xml"
+            "strings.xml"
           ],
           "targetFolderPath": "../[langCode]"
         }
@@ -14,8 +14,8 @@
     }
   ],
   "defaultConfiguration": {
-    "pseudoLocFolderPath": "../values-2Q",
-    "oneQFolderPath": "../values-1Q",
+    "pseudoLocFolderPath": "../2Q",
+    "oneQFolderPath": "../1Q",
     "targetFileNamingConvention": "[filename].[extension]"
   }
 }
