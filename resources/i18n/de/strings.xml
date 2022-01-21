@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
-  <!-- XHEX: Admission State - Card Title -->
+  <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Status-Nachweis"</string>
 
   <!-- XTXT: Admission State - 2G_PLUS_BOOSTER Badge Text -->
@@ -46,7 +46,7 @@
   <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
   <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
 
-  <!-- XHEX: Vaccination State - Card Title -->
+  <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Impfstatus"</string>
   <!-- XTXT: Vaccination State - Card Subtitle -->
   <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
