@@ -1,8 +1,35 @@
 diff --git a/node_modules/json-logic-js/logic.js b/node_modules/json-logic-js/logic.js
-index 2767087..04be299 100644
+index 2767087..0ad3247 100644
 --- a/node_modules/json-logic-js/logic.js
 +++ b/node_modules/json-logic-js/logic.js
-@@ -189,6 +189,8 @@ http://ricostacruz.com/cheatsheets/umdjs.html
+@@ -7,7 +7,7 @@ http://ricostacruz.com/cheatsheets/umdjs.html
+   if (typeof define === "function" && define.amd) {
+     define(factory);
+   } else if (typeof exports === "object") {
+-    module.exports = factory();
++    module.exports = factory;
+   } else {
+     root.jsonLogic = factory();
+   }
+@@ -137,7 +137,16 @@ http://ricostacruz.com/cheatsheets/umdjs.html
+           return not_found;
+         }
+       }
+-      return data;
++
++      // return as value and not as reference
++      // for compatibility with iOS/Swift
++      if (Array.isArray(data)) {
++        return [ ...data ]
++      } else if (typeof data === 'object' && data !== null) {
++        return { ...data }
++      } else {
++        return data
++      }
+     },
+     "missing": function() {
+       /*
+@@ -189,6 +198,8 @@ http://ricostacruz.com/cheatsheets/umdjs.html
    jsonLogic.truthy = function(value) {
      if (Array.isArray(value) && value.length === 0) {
        return false;
@@ -11,7 +38,7 @@ index 2767087..04be299 100644
      }
      return !! value;
    };
-@@ -227,6 +229,10 @@ http://ricostacruz.com/cheatsheets/umdjs.html
+@@ -227,6 +238,10 @@ http://ricostacruz.com/cheatsheets/umdjs.html
        values = [values];
      }
  
@@ -22,7 +49,7 @@ index 2767087..04be299 100644
      // 'if', 'and', and 'or' violate the normal rule of depth-first calculating consequents, let each manage recursion as needed.
      if (op === "if" || op == "?:") {
        /* 'if' should be called with a odd number of parameters, 3 or greater
-@@ -471,5 +477,35 @@ http://ricostacruz.com/cheatsheets/umdjs.html
+@@ -471,5 +486,35 @@ http://ricostacruz.com/cheatsheets/umdjs.html
      return false;
    };
  
@@ -40,7 +67,7 @@ index 2767087..04be299 100644
 +    const definition = functions[name]
 +
 +    if (!definition) {
-+      throw new Error('No such function')
++      throw new Error(`No such function ${name}`)
 +    }
 +
 +    const scopedData = definition.parameters.reduce((scopedData, param) => {

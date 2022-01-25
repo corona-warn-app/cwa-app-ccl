@@ -1,7 +1,7 @@
-'use strict'
-
-const moment = require('moment')
-const jfn = require('./../../lib/jfn')
+import moment from 'moment'
+import {
+  factory as jfnFactory
+} from '../../lib/jfn/jfn-main.js'
 
 const execute = ({ expect }) => ({
   functions,
@@ -11,6 +11,7 @@ const execute = ({ expect }) => ({
   exp,
   throws
 }) => {
+  const jfn = jfnFactory()
   if (Array.isArray(functions)) {
     functions.forEach(({ name, definition }) => {
       jfn.add_function(name, definition)
@@ -45,4 +46,4 @@ const execute = ({ expect }) => ({
   }
 }
 
-module.exports = execute
+export default execute

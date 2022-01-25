@@ -1,13 +1,19 @@
 /* eslint-disable */
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import assert from 'assert'
+import {
+  factory as jfnFactory
+} from '../../../lib/jfn/jfn-main.js'
 
-const assert = require('assert')
-
-const jfn = require('../../../lib/jfn/jfn-main')
+import allTests from './../../fixtures/jfn/json-logic-tests/tests.json'
 
 describe('default tests', () => {
+
+  let jfn
+  beforeEach(() => {
+    jfn = jfnFactory()
+  })
 
   it.skip( "logging", () => {
     var last_console;
@@ -188,7 +194,7 @@ describe('default tests', () => {
   });
 
   context('tests from tests.json', () => {
-    const tests = require('./../../fixtures/jfn/json-logic-tests/tests.json')
+    const tests = allTests
       .filter(function(test) {
         return typeof test !== "string";
       })

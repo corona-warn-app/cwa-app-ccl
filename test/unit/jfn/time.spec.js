@@ -1,11 +1,11 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
 
-const { expect } = require('chai')
-const executeJfnTestCase = require('./../../util/execute-jfn-test-case')({ expect })
+import executeJfnTestCaseFactory from './../../util/execute-jfn-test-case.js'
 
-const dynamicTests = require('./../../fixtures/jfn/jfn-tests/time.moment.spec.js')
+import dynamicTests from './../../fixtures/jfn/jfn-tests/time.moment.spec.js'
+const executeJfnTestCase = executeJfnTestCaseFactory({ expect })
 
 describe('jfn/time', () => {
   dynamicTests.forEach(({ title, logic, data, exp, throws }) => {

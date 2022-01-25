@@ -1,8 +1,6 @@
-'use strict'
-
-const assert = require('assert')
-const base45 = require('base45')
-const zlib = require('pako')
+import assert from 'assert'
+import base45 from 'base45'
+import zlib from 'pako'
 
 const toBarcodeData = coseBuffer => {
   assert.ok(Buffer.isBuffer(coseBuffer), 'coseBuffer must be a buffer')
@@ -12,6 +10,6 @@ const toBarcodeData = coseBuffer => {
   return barcodeData
 }
 
-module.exports = {
+export default {
   toBarcodeData
 }

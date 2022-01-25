@@ -1,15 +1,16 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
+import jp from 'jsonpath'
 
-const { expect } = require('chai')
-const jp = require('jsonpath')
+import chalk from 'chalk'
+import terminal from '../../../util/terminal.js'
 
-const ccl = require('../../../../lib/ccl')
+import ccl from '../../../../lib/ccl/index.js'
 
-const cclTestUtil = require('../../../util/ccl-util')
-const dcc = require('../../../util/dcc/dcc-main')
-const fixtures = require('../../../util/fixtures')
+import cclTestUtil from '../../../util/ccl-util.js'
+import dcc from '../../../util/dcc/dcc-main.js'
+import fixtures from '../../../util/fixtures.js'
 
 const expectTextToMatch = (textDescriptor, textAssertionDescriptor, { timeUnderTest }) => {
   Object.entries(textAssertionDescriptor)
@@ -22,6 +23,7 @@ const expectTextToMatch = (textDescriptor, textAssertionDescriptor, { timeUnderT
 
 describe('ccl/functions/getDccWalletInfo', async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
+  const allBNRs = fixtures.readAllBoosterNotificationRulesSync()
 
   allDccSeries.forEach(seriesDescriptor => {
     const _context = seriesDescriptor.only === true ? context.only : seriesDescriptor.skip === true ? context.skip : context
@@ -62,7 +64,7 @@ describe('ccl/functions/getDccWalletInfo', async () => {
                   validityState: 'VALID'
                 })
               }),
-              boosterNotificationRules: []
+              boosterNotificationRules: allBNRs
             }
 
             // output = ccl.evaluateFunction('__analyzeDccWallet', input)
@@ -77,9 +79,6 @@ describe('ccl/functions/getDccWalletInfo', async () => {
           it('log series', () => {
             if (testCase.debug !== true) return
 
-            const chalk = require('chalk')
-            const terminal = require('../../../util/terminal')
-
             const prefix = `${chalk.magenta('[DEBUG]')} `
 
             const dccData = seriesUnderTest.map(it => it.dcc)
@@ -91,6 +90,9 @@ ${timeUnderTest.toISOString()}
 
 ${chalk.cyan('Series under test')} (${dccData.length} certificates)
 ${terminal.yaml(dccData)}
+
+${chalk.cyan('Booster Notification Rules')} (${allBNRs.length} BNRs)
+${terminal.yaml(allBNRs)}
 
 ${chalk.cyan('Output of the operation')}
 ${terminal.yaml(output)}
@@ -330,6 +332,53 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                         { timeUnderTest }
                       )
                     })
+                })
+              })
+
+              context('boosterNotification', () => {
+                const {
+                  boosterNotification: expBoosterNotification
+                } = expWalletInfo
+
+                has('boosterNotification.visible') &&
+                it('check boosterNotification.visible', () => {
+                  expect(output).to.have.nested.property(
+                    'boosterNotification.visible',
+                    expBoosterNotification.visible
+                  )
+                })
+
+                has('boosterNotification.identifier') &&
+                it('check boosterNotification.identifier', () => {
+                  expect(output).to.have.nested.property(
+                    'boosterNotification.identifier',
+                    expBoosterNotification.identifier
+                  )
+                })
+
+                const boosterNotificationTexts = [
+                  'titleText', 'subtitleText', 'longText'
+                ]
+                boosterNotificationTexts.forEach(textAttribute => {
+                  has(`boosterNotification.${textAttribute}`) &&
+                  it(`check boosterNotification.${textAttribute}`, () => {
+                    expect(output).to.have.nested.property(`boosterNotification.${textAttribute}`)
+                    const actTextDescriptor = output.boosterNotification[textAttribute]
+                    const textAssertionDescriptor = expBoosterNotification[textAttribute]
+                    expectTextToMatch(
+                      actTextDescriptor,
+                      textAssertionDescriptor,
+                      { timeUnderTest }
+                    )
+                  })
+                })
+
+                has('boosterNotification.faqAnchor') &&
+                it('check boosterNotification.faqAnchor', () => {
+                  expect(output).to.have.nested.property(
+                    'boosterNotification.faqAnchor',
+                    expBoosterNotification.faqAnchor
+                  )
                 })
               })
             })

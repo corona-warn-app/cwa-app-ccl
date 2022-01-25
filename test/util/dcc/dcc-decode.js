@@ -1,9 +1,7 @@
-'use strict'
-
-const assert = require('assert')
-const base45 = require('base45')
-const cbor = require('cbor')
-const zlib = require('pako')
+import assert from 'assert'
+import base45 from 'base45'
+import cbor from 'cbor'
+import zlib from 'pako'
 
 const coseBufferFromBase45 = base45Str => {
   assert.strictEqual(typeof base45Str, 'string', 'base45Str must be a string')
@@ -71,6 +69,6 @@ const fromCoseBuffer = coseBuffer => {
   return { ...cwt, cose: coseBuffer }
 }
 
-module.exports = {
+export default {
   fromBarcodeData
 }

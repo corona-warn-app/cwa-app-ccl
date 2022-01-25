@@ -1,21 +1,19 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
+import ccl from '../../lib/ccl/ccl-main.js'
 
-const { expect } = require('chai')
-
-const ccl = require('../../lib/ccl/ccl-main')
+import cclConfiguration from './../../dist/ccl-configuration.json'
+import cclDe0001 from './../../dist/ccl-de-0001.json'
 
 describe('dist/json-schema-checks', () => {
   context('check dist/ccl-configuration.json', () => {
-    const configuration = require('./../../dist/ccl-configuration.json')
-
     it('is array', () => {
-      expect(configuration).to.be.an('array')
+      expect(cclConfiguration).to.be.an('array')
     })
 
-    if (Array.isArray(configuration)) {
-      configuration.forEach((entry, idx) => {
+    if (Array.isArray(cclConfiguration)) {
+      cclConfiguration.forEach((entry, idx) => {
         it(`entry ${idx + 1} matches schema`, async () => {
           const { errors } = await ccl.schema.validate(entry, 'https://ccl.coronawarn.app/ccl-configuration.json')
           expect(errors).to.be.empty
@@ -24,10 +22,8 @@ describe('dist/json-schema-checks', () => {
     }
   })
   context('check dist/ccl-de-0001.json', () => {
-    const configuration = require('./../../dist/ccl-de-0001.json')
-
     it('matches schema', async () => {
-      const { errors } = await ccl.schema.validate(configuration, 'https://ccl.coronawarn.app/ccl-configuration.json')
+      const { errors } = await ccl.schema.validate(cclDe0001, 'https://ccl.coronawarn.app/ccl-configuration.json')
       expect(errors).to.be.empty
     })
   })

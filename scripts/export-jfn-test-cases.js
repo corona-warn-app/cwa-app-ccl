@@ -1,19 +1,22 @@
-'use strict'
+import chalk from 'chalk'
+import fse from 'fs-extra'
+import path from 'path'
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
+import { fileURLToPath } from 'url'
 
-const chalk = require('chalk')
-const fse = require('fs-extra')
-const path = require('path')
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
+import dynamicTests from './../test/fixtures/jfn/jfn-tests/time.moment.spec.js'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const argv = yargs(hideBin(process.argv))
   .option('json-target', {
     string: true
   })
   .argv
-
 const testCasesInJavaScript = [
-  'time.moment.spec.js'
+  dynamicTests
 ]
 
 const convertJsonLogicTestCases = tests => {
@@ -87,7 +90,8 @@ const getJsonFunctionsTestCases = async () => {
 
 const getJavaScriptTestCases = async () => {
   return testCasesInJavaScript
-    .map(it => require(`./../test/fixtures/jfn/jfn-tests/${it}`))
+    // .map(it => require(`./../test/fixtures/jfn/jfn-tests/${it}`))
+    .map(it => it)
     .flat(1)
 }
 
@@ -143,6 +147,7 @@ const main = async () => {
     const targetFilepath = path.resolve(process.cwd(), argv.jsonTarget)
     await fse.ensureFile(targetFilepath)
     await fse.writeJSON(targetFilepath, data, { spaces: 2 })
+    // await fse.writeJSON('/Users/d053370/workspaces/github/corona-warn-app/json-functions-swift/Tests/jsonfunctionsTests/jfn-common-test-cases.json', data, { spaces: 2 })
     console.log(`Created JSON target ${chalk.cyan(argv.jsonTarget)}`)
   }
 }

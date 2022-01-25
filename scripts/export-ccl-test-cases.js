@@ -1,17 +1,17 @@
-'use strict'
+import async from 'async'
+import chalk from 'chalk'
+import fse from 'fs-extra'
+import path from 'path'
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
 
-const async = require('async')
-const chalk = require('chalk')
-const fse = require('fs-extra')
-const path = require('path')
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
+import ccl from './../lib/ccl/index.js'
 
-const ccl = require('./../lib/ccl')
+import cclTestUtil from './../test/util/ccl-util.js'
+import dcc from './../test/util/dcc/dcc-main.js'
+import fixtures from './../test/util/fixtures.js'
 
-const cclTestUtil = require('./../test/util/ccl-util')
-const dcc = require('./../test/util/dcc/dcc-main')
-const fixtures = require('./../test/util/fixtures')
+import cclConfiguration from './../dist/ccl-de-0001.json'
 
 const argv = yargs(hideBin(process.argv))
   .option('json-target', {
@@ -21,6 +21,7 @@ const argv = yargs(hideBin(process.argv))
 
 const main = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
+  const allFunctions = cclConfiguration.Logic.JfnDescriptors
 
   const allTestCases = []
 
@@ -53,7 +54,7 @@ const main = async () => {
 
       const testCaseDescriptor = {
         title: `${seriesDescription} - ${testCaseDescription}`,
-        functions: [],
+        functions: allFunctions,
         useDefaultCCLConfiguration: true,
         evaluateFunction: {
           name: 'getDccWalletInfo',
@@ -74,6 +75,7 @@ const main = async () => {
     const targetFilepath = path.resolve(process.cwd(), argv.jsonTarget)
     await fse.ensureFile(targetFilepath)
     await fse.writeJSON(targetFilepath, data, { spaces: 2 })
+    await fse.writeJSON('/Users/d053370/workspaces/github/corona-warn-app/json-functions-swift/Tests/jsonfunctionsTests/jfn-common-test-cases.json', data, { spaces: 2 })
     console.log(`Created JSON target ${chalk.cyan(argv.jsonTarget)}`)
   }
 }

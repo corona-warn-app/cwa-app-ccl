@@ -1,13 +1,13 @@
-'use strict'
+import dccData from './dcc-data.js'
+import dccDecode from './dcc-decode.js'
+import dccEncode from './dcc-encode.js'
+import dccUtil from './dcc-util.js'
+import dccSignature from './dcc-signature.js'
+import dccDsc from './dcc-dsc.js'
+import dccGenerate from './dcc-generate.js'
+import dccSeries from './dcc-series.js'
 
-const dccData = require('./dcc-data')
-const dccDecode = require('./dcc-decode')
-const dccEncode = require('./dcc-encode')
-const dccUtil = require('./dcc-util')
-const dccSignature = require('./dcc-signature')
-const dccDsc = require('./dcc-dsc')
-
-module.exports = {
+export default {
   data: { ...dccData },
   decode: {
     ...dccDecode
@@ -16,8 +16,8 @@ module.exports = {
   encode: {
     ...dccEncode
   },
-  generate: require('./dcc-generate'),
-  series: require('./dcc-series'),
+  generate: dccGenerate,
+  series: dccSeries,
   signature: {
     ...dccSignature
   },

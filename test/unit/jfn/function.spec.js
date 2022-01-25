@@ -1,13 +1,11 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
 
-const { expect } = require('chai')
-const fse = require('fs-extra')
-const path = require('path')
-const executeJfnTestCase = require('./../../util/execute-jfn-test-case')({ expect })
+import executeJfnTestCaseFactory from './../../util/execute-jfn-test-case.js'
 
-const tests = fse.readJSONSync(path.resolve(__dirname, './../../fixtures/jfn/jfn-tests/function.spec.json'))
+import tests from './../../fixtures/jfn/jfn-tests/function.spec.json'
+const executeJfnTestCase = executeJfnTestCaseFactory({ expect })
 
 describe('jfn/function', () => {
   tests.forEach(({ title, functions, evaluateFunction, exp, throws }) => {

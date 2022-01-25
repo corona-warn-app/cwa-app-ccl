@@ -1,14 +1,18 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
+import fse from 'fs-extra'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-const { expect } = require('chai')
-const fse = require('fs-extra')
-const path = require('path')
+import {
+  factory as jfnFactory
+} from '../../../lib/jfn/jfn-main.js'
 
-const jfn = require('../../../lib/jfn/jfn-main')
-
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const directory = path.resolve(__dirname, './../../fixtures/jfn/certlogic-tests')
+
 const testSuites = fse.readdirSync(directory)
   .filter(filepath => filepath.endsWith('.json'))
   .filter(filepath => !filepath.includes('extract'))
@@ -22,6 +26,7 @@ describe('jfn/certlogic', () => {
         context(name, () => {
           assertions.forEach(({ data, expected }) => {
             it(`with ${JSON.stringify(data)} returns ${JSON.stringify(expected)}`, () => {
+              const jfn = jfnFactory()
               const act = jfn.apply(certLogicExpression, data)
               expect(act).to.deep.equal(expected)
             })

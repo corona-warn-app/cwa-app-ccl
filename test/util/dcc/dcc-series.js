@@ -1,9 +1,7 @@
-'use strict'
+import async from 'async'
+import moment from 'moment'
 
-const async = require('async')
-const moment = require('moment')
-
-const generate = require('./dcc-generate')
+import generate from './dcc-generate.js'
 
 const vaccineShortNamesByMedicalProduct = {
   'EU/1/20/1525': ['jj', 'johnson', 'janssen'],
@@ -122,14 +120,20 @@ const parseSeriesEntryAsTC = (dccShortDescriptor, time) => {
 
 const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
   defaultDccDescriptor = defaultDccDescriptor || {}
+  defaultDccDescriptor.dccOverwrites = defaultDccDescriptor.dccOverwrites || []
   defaultDccDescriptor.dccPiiSeed = defaultDccDescriptor.dccPiiSeed || '42'
   const dccDescriptors = await async.mapSeries(series, async it => {
     const idx = series.indexOf(it)
     const time = resolveTime(it.time, idx, series, t0)
     const partialDccDescriptor = parseSeriesEntry(it, time)
+    partialDccDescriptor.dccOverwrites = partialDccDescriptor.dccOverwrites || []
     const dccDescriptor = {
       ...defaultDccDescriptor,
-      ...partialDccDescriptor
+      ...partialDccDescriptor,
+      dccOverwrites: [
+        ...defaultDccDescriptor.dccOverwrites,
+        ...partialDccDescriptor.dccOverwrites
+      ]
     }
     const {
       dcc,
@@ -149,6 +153,7 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
 const parseSeriesDescriptor = async ({ seriesDescriptor }) => {
   const t0 = moment.utc(seriesDescriptor.t0)
   const defaultDccDescriptor = {
+    ...(seriesDescriptor.defaultDccDescriptor || {}),
     dccPiiSeed: seriesDescriptor.description || seriesDescriptor.name
   }
   const series = await parseSeries({
@@ -202,7 +207,7 @@ const parseSeriesDescriptor = async ({ seriesDescriptor }) => {
   }
 }
 
-module.exports = {
+export default {
   resolveTime,
   parseSeries,
   parseSeriesDescriptor

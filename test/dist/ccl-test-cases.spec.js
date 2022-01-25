@@ -1,25 +1,17 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
 
-const { expect } = require('chai')
-const jfn = require('../../lib/jfn/jfn-main')
-const executeJfnTestCase = require('./../util/execute-jfn-test-case')({ expect })
+import executeJfnTestCaseFactory from './../util/execute-jfn-test-case.js'
 
-const { testCases } = require('../../dist/ccl-test-cases.gen.json')
+import testCaseFile from '../../dist/ccl-test-cases.gen.json'
+const executeJfnTestCase = executeJfnTestCaseFactory({ expect })
+
+const { testCases } = testCaseFile
 
 describe('dist/ccl-test-cases', () => {
-  testCases.forEach(({ title, functions, useDefaultCCLConfiguration, evaluateFunction, logic, data, exp, throws }) => {
+  testCases.forEach(({ title, functions, evaluateFunction, logic, data, exp, throws }) => {
     it(title, () => {
-      if (useDefaultCCLConfiguration === true) {
-        const def = require('../../dist/ccl-configuration.json')
-        def.forEach(it => {
-          it.Logic.JfnDescriptors.forEach(it => {
-            jfn.add_function(it.name, it.definition)
-          })
-        })
-      }
-
       executeJfnTestCase({
         functions,
         evaluateFunction,

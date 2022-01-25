@@ -1,13 +1,15 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-'use strict'
+import { expect } from 'chai'
+import path from 'path'
+import fse from 'fs-extra'
+import yaml from 'js-yaml'
+import { fileURLToPath } from 'url'
 
-const { expect } = require('chai')
-const path = require('path')
-const fse = require('fs-extra')
-const yaml = require('js-yaml')
+import ccl from '../../../../lib/ccl/index.js'
 
-const ccl = require('../../../../lib/ccl')
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 describe('ccl/functions/__i18n.getTextDescriptor', () => {
   const filenames = [

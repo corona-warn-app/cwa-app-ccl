@@ -1,0 +1,85 @@
+- id: 1
+  name: bnr-test-vc-only
+  description: BNRs are calculated based on the most recent VC
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra1/2
+    - time: +P6W
+      vc: astra2/2
+    - time: +P6W
+      vc: astra3/3
+  testCases:
+    - time: astra1/2
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: false
+    - time: astra2/2
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: true
+            identifier: 'BNR-TX-0001'
+            titleText:
+              de: Booster
+            subtitleText:
+              de: Empfehlung einer Booster Impfung
+            longText:
+              de: BNR-TX-0001 Langtext
+            faqAnchor: test
+    - time: astra3/3
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: false
+- id: 2
+  name: bnr-test-vc-with-rc
+  description: BNRs consider the most recent RC
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra1/2
+    - time: +P6W
+      rc: rc1
+    - time: +P6W
+      vc: astra2/2
+    - time: +P6W
+      vc: astra3/3
+    - time: +P6W
+      rc: rc2
+  testCases:
+    - time: astra1/2
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: false
+    - time: rc1
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: true
+            identifier: 'BNR-TX-0002'
+            longText:
+              de: BNR-TX-0002 Langtext
+    - time: astra2/2
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: true
+            identifier: 'BNR-TX-0001'
+            longText:
+              de: BNR-TX-0001 Langtext
+    - time: astra3/3
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: false
+    - time: rc2
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: true
+            identifier: 'BNR-TX-0002'
+            longText:
+              de: BNR-TX-0002 Langtext

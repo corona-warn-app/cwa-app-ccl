@@ -1,6 +1,4 @@
-'use strict'
-
-const crypto = require('crypto')
+import crypto from 'crypto'
 
 const load = () => {
   const keyPair = crypto.generateKeyPairSync('ec', {
@@ -18,6 +16,6 @@ const load = () => {
   return { signer, kid, alg }
 }
 
-module.exports = {
+export default {
   load
 }

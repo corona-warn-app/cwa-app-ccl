@@ -1,8 +1,6 @@
-'use strict'
-
-const chalk = require('chalk')
-const stripAnsi = require('strip-ansi')
-const yaml = require('js-yaml')
+import chalk from 'chalk'
+import stripAnsi from 'strip-ansi'
+import yaml from 'js-yaml'
 
 const repeat = (n, c) => Array.from(new Array(n)).map(() => c).join('')
 const indent = (n, str) => str.split('\n').map(s => `${repeat(n, ' ')}${s}`).join('\n')
@@ -18,7 +16,7 @@ const prefixLine = (str, prefix) => {
     .join('\n')
 }
 
-module.exports = {
+export default {
   repeat,
   indent,
   title,

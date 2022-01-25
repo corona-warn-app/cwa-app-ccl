@@ -1,6 +1,4 @@
-'use strict'
-
-const dcc = require('./dcc')
+import dcc from './dcc/index.js'
 
 const mapBarcodeDataToCertificate = (barcodeData, { validityState }) => {
   const {
@@ -23,6 +21,6 @@ const mapBarcodeDataToCertificate = (barcodeData, { validityState }) => {
   }
 }
 
-module.exports = {
+export default {
   mapBarcodeDataToCertificate
 }

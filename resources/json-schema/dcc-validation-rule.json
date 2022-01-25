@@ -4,7 +4,6 @@
   "title": "EU DCC Validation Rule",
   "description": "Rule to validate an issued EU Digital Covid Certificate.",
   "type": "object",
-  "additionalProperties": false,
   "required": [
     "AffectedFields",
     "Country",

@@ -1,12 +1,10 @@
-'use strict'
+import jp from 'jsonpath'
+import moment from 'moment'
 
-const jp = require('jsonpath')
-const moment = require('moment')
-
-const dccData = require('./dcc-data')
-const dccDsc = require('./dcc-dsc')
-const dccEncode = require('./dcc-encode')
-const dccSignature = require('./dcc-signature')
+import dccData from './dcc-data.js'
+import dccDsc from './dcc-dsc.js'
+import dccEncode from './dcc-encode.js'
+import dccSignature from './dcc-signature.js'
 
 const parseRelativeDateStr = str => {
   if (!str) return [0, 'seconds']
@@ -142,4 +140,4 @@ const generate = async ({
   }
 }
 
-module.exports = generate
+export default generate

@@ -584,6 +584,82 @@
     "exp": null
   },
   {
+    "title": "declare - when set to a variable from an object and altered afterwards, leaves the original object unchanged (copy-by-value/for iOS compatibility)",
+    "androidOptional": true,
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "new",
+            { "var": "original" }
+          ]
+        },
+        {
+          "assign": [
+            "new.greeting",
+            "hi"
+          ]
+        },
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                "new", { "var": "new" },
+                "original", { "var": "original" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "original": { "greeting": "hello" } },
+    "exp": {
+      "new": {
+        "greeting": "hi"
+      },
+      "original": {
+        "greeting": "hello"
+      }
+    }
+  },
+  {
+    "title": "declare - when set to a variable from an array and altered afterwards, leaves the original array unchanged (copy-by-value/for iOS compatibility)",
+    "androidOptional": true,
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "new",
+            { "var": "original" }
+          ]
+        },
+        {
+          "assign": [
+            "new.0",
+            "hi"
+          ]
+        },
+        {
+          "return": [
+            {
+              "init": [
+                "object",
+                "new", { "var": "new" },
+                "original", { "var": "original" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "data": { "original": ["hello"] },
+    "exp": {
+      "new": ["hi"],
+      "original": ["hello"]
+    }
+  },
+  {
     "title": "assign - can be used in a script",
     "logic": {
       "script": [
