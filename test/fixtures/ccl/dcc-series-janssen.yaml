@@ -102,7 +102,7 @@
     # Booster vaccination is immedeately valid and prioritized
     - time: biontech2/1
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -113,7 +113,7 @@
     # Additional valid PCR test changes admission state
     - time: pcr1
       assertions:
-        admissionState: 2G_PLUS_PCR
+        admissionState: 1G_PLUS_PCR
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -124,7 +124,7 @@
           - certificate: pcr1
         walletInfo:
           admissionState:
-            value: 2G_PLUS_PCR
+            value: 1G_PLUS_PCR
             visible: true
             badgeText:
               de: 2G+
@@ -143,7 +143,7 @@
     # Additional PCR test older than 72h does not change admission state
     - time: pcr1+P3DT1S
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -154,7 +154,7 @@
     # Additional valid RAT test changes admission state
     - time: rat1
       assertions:
-        admissionState: 2G_PLUS_RAT
+        admissionState: 1G_PLUS_RAT
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -165,7 +165,7 @@
           - certificate: rat1
         walletInfo:
           admissionState:
-            value: 2G_PLUS_RAT
+            value: 1G_PLUS_RAT
             visible: true
             badgeText:
               de: 2G+
@@ -177,7 +177,7 @@
     # Additional RAT test older than 48h does not change admission state
     - time: rat1+P2DT1S
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -203,7 +203,7 @@
     # Booster vaccination is immedeately valid, but not yet prioritized
     - time: biontech2/2
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -214,7 +214,7 @@
     # Booster vaccination is valid and prioritized after 15 days
     - time: biontech2/2+P15DT1S
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -227,7 +227,7 @@
       # debug: true
     
       assertions:
-        admissionState: 2G_PLUS_PCR
+        admissionState: 1G_PLUS_PCR
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -239,7 +239,7 @@
     # Additional PCR test older than 72h does not change admission state
     - time: pcr1+P3DT1S
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -250,7 +250,7 @@
     # Additional valid RAT test changes admission state
     - time: rat1
       assertions:
-        admissionState: 2G_PLUS_RAT
+        admissionState: 1G_PLUS_RAT
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
@@ -262,7 +262,7 @@
     # Additional RAT test older than 48h does not change admission state
     - time: rat1+P2DT1S
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1+P15D
