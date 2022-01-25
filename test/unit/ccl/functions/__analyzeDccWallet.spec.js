@@ -99,8 +99,10 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             has('admissionState') &&
             it('check admissionState', () => {
-              expect(output)
-                .to.have.property('admissionState', assertions.admissionState.value || assertions.admissionState)
+              expect(output).to.have.nested.property(
+                'admissionState',
+                assertions.admissionState
+              )
             })
 
             has('mostRelevantCertificate') &&
@@ -118,8 +120,10 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             has('vaccinationState') &&
             it('check vaccinationState', () => {
-              expect(output)
-                .to.have.property('vaccinationState', assertions.vaccinationState.value || assertions.vaccinationState)
+              expect(output).to.have.nested.property(
+                'vaccinationState',
+                assertions.vaccinationState
+              )
             })
 
             has('vaccinationValidFrom') &&
