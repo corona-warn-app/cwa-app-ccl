@@ -127,11 +127,11 @@
             value: 1G_PLUS_PCR
             visible: true
             badgeText:
-              de: 2G+
+              de: 1G+
             subtitleText:
-              de: 2G\+ PCR-Test
+              de: 1G\+ PCR-Test
             longText:
-              de: erfüllen die 2G-Plus-Regel
+              de: erfüllen die 1G-Plus-Regel
             faqAnchor: 'test'
           verification:
             - certificate: biontech2/1
@@ -168,11 +168,11 @@
             value: 1G_PLUS_RAT
             visible: true
             badgeText:
-              de: 2G+
+              de: 1G+
             subtitleText:
-              de: 2G\+ Schnelltest
+              de: 1G\+ Schnelltest
             longText:
-              de: erfüllen die 2G-Plus-Regel, es sei denn, es wird ein PCR-Test
+              de: erfüllen die 1G-Plus-Regel, es sei denn, es wird ein PCR-Test
             faqAnchor: 'test'
     # Additional RAT test older than 48h does not change admission state
     - time: rat1+P2DT1S
