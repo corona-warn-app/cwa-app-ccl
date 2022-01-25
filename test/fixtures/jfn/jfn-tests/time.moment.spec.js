@@ -50,38 +50,6 @@ export default [
     exp: isoStr('2021-12-12T01:00:00Z')
   },
   {
-    title: 'plusTime - adds hours and considers daylight saving time',
-    logic: {
-      plusTime: [
-        {
-          var: 'timestamp'
-        },
-        2,
-        'hour'
-      ]
-    },
-    data: {
-      timestamp: isoStr('2022-03-27T01:00:00+01:00')
-    },
-    exp: isoStr('2022-03-27T04:00:00+02:00')
-  },
-  {
-    title: 'plusTime - adds hours and considers standard time',
-    logic: {
-      plusTime: [
-        {
-          var: 'timestamp'
-        },
-        2,
-        'hour'
-      ]
-    },
-    data: {
-      timestamp: isoStr('2022-10-30T02:00:00+02:00')
-    },
-    exp: isoStr('2022-10-30T03:00:00+01:00')
-  },
-  {
     title: 'plusTime - adds days',
     logic: {
       plusTime: [
