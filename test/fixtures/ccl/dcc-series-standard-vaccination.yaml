@@ -7,12 +7,16 @@
       vc: biontech1/2
     - time: +P6W
       vc: biontech2/2
-    - time: +P5M
-      vc: biontech3/3
-    - time: +P4W
+    - time: +P3W
       tc: pcr1
-    - time: +P4W
+    - time: +P1W
       tc: rat1
+    - time: +P4M
+      vc: biontech3/3
+    - time: +P3W
+      tc: pcr2
+    - time: +P1W
+      tc: rat2
   testCases:
     # vaccination not yet complete
     - time: biontech1/2
@@ -58,10 +62,56 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+    # Additional valid PCR test changes admission state
+    - time: pcr1
+      assertions:
+        admissionState: 2G_PLUS_PCR
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+          - certificate: pcr1
+    # Additional PCR test older than 72h does not change admission state
+    - time: pcr1+P3DT1S
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+    # Additional valid RAT test changes admission state
+    - time: rat1
+      assertions:
+        admissionState: 2G_PLUS_RAT
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+          - certificate: rat1
+    # Additional RAT test older than 48h does not change admission state
+    - time: rat1+P2DT1S
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2          
     # Booster vaccination is immedeately valid
     - time: biontech3/3
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech3/3
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
@@ -70,9 +120,9 @@
         verificationCertificates:
           - certificate: biontech3/3
     # Additional valid PCR test changes admission state
-    - time: pcr1
+    - time: pcr2
       assertions:
-        admissionState: 2G_PLUS_PCR
+        admissionState: 1G_PLUS_PCR
         mostRelevantCertificate: biontech3/3
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
@@ -80,11 +130,11 @@
         hasBooster: true
         verificationCertificates:
           - certificate: biontech3/3
-          - certificate: pcr1
+          - certificate: pcr2
     # Additional PCR test older than 72h does not change admission state
-    - time: pcr1+P3DT1S
+    - time: pcr2+P3DT1S
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech3/3
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
@@ -93,9 +143,9 @@
         verificationCertificates:
           - certificate: biontech3/3
     # Additional valid RAT test changes admission state
-    - time: rat1
+    - time: rat2
       assertions:
-        admissionState: 2G_PLUS_RAT
+        admissionState: 1G_PLUS_RAT
         mostRelevantCertificate: biontech3/3
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
@@ -103,11 +153,11 @@
         hasBooster: true
         verificationCertificates:
           - certificate: biontech3/3
-          - certificate: rat1
+          - certificate: rat2
     # Additional RAT test older than 48h does not change admission state
-    - time: rat1+P2DT1S
+    - time: rat2+P2DT1S
       assertions:
-        admissionState: 2G_PLUS_BOOSTER
+        admissionState: 1G
         mostRelevantCertificate: biontech3/3
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
