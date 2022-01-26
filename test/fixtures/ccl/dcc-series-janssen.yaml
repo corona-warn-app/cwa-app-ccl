@@ -115,8 +115,8 @@
         verificationCertificates:
           - certificate: janssen1/1
           - certificate: pcr1
-    # Additional PCR test older than 72h does not change admission state
-    - time: pcr1+P3DT1S
+    # Additional PCR test older than 48h does not change admission state
+    - time: pcr1+P2DT1S
       assertions:
         admissionState: 2G
         mostRelevantCertificate: janssen1/1
@@ -138,8 +138,8 @@
         verificationCertificates:
           - certificate: janssen1/1
           - certificate: rat1
-    # Additional RAT test older than 48h does not change admission state
-    - time: rat1+P2DT1S
+    # Additional RAT test older than 24h does not change admission state
+    - time: rat1+P1DT1S
       assertions:
         admissionState: 2G
         mostRelevantCertificate: janssen1/1
@@ -190,8 +190,8 @@
             - certificate: pcr2
               buttonText:
                 de: Testzertifikat
-    # Additional PCR test older than 72h does not change admission state
-    - time: pcr2+P3DT1S
+    # Additional PCR test older than 48h does not change admission state
+    - time: pcr2+P2DT1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: biontech2/1
@@ -224,8 +224,8 @@
             longText:
               de: erfüllen die 1G-Plus-Regel, es sei denn, es wird ein PCR-Test
             faqAnchor: 'test'
-    # Additional RAT test older than 48h does not change admission state
-    - time: rat2+P2DT1S
+    # Additional RAT test older than 24h does not change admission state
+    - time: rat2+P1DT1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: biontech2/1
@@ -286,8 +286,8 @@
         verificationCertificates:
           - certificate: biontech2/2
           - certificate: pcr1
-    # Additional PCR test older than 72h does not change admission state
-    - time: pcr1+P3DT1S
+    # Additional PCR test older than 48h does not change admission state
+    - time: pcr1+P2DT1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: biontech2/2
@@ -309,8 +309,8 @@
         verificationCertificates:
           - certificate: biontech2/2
           - certificate: rat1
-    # Additional RAT test older than 48h does not change admission state
-    - time: rat1+P2DT1S
+    # Additional RAT test older than 24h does not change admission state
+    - time: rat1+P1DT1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: biontech2/2
