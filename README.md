@@ -15,6 +15,11 @@ Common Covid Logic (CCL) describes a layer of common logic - especially regardin
 
 The logic in CCL is described in JSON format. An engine processes the logic on the client against a defined input structure (e.g. the set of DCCs) and can expect a defined output structure. The client can update the JSON regularly from a server. This facilitates updates to CCL independent of client releases, e.g. in order to respond to legal or regulatory pandemic-related changes on short notice.
 
+The respective engine - JsonFunctions - is available as library:
+
+- [corona-warn-app/cwa-kotlin-jfn](https://github.com/corona-warn-app/cwa-kotlin-jfn) for Android
+- [corona-warn-app/json-functions-swift](https://github.com/corona-warn-app/json-functions-swift) for iOS
+
 ## Support and Feedback
 
 The following channels are available for discussions, feedback, and support requests:
