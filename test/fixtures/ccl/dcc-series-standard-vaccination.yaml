@@ -41,7 +41,7 @@
         verificationCertificates:
           - certificate: biontech2/2
     # Complete vaccination still not valid after 14 days
-    - time: biontech2/2+14DT1S
+    - time: biontech2/2+P14DT1S
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: biontech2/2
