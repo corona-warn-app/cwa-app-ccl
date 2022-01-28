@@ -92,7 +92,6 @@
           - certificate: rc1
     # Complete vaccination immedeately valid after first vaccination
     - time: biontech1/1
-      debug: true
       assertions:
         admissionState: 1G
         mostRelevantCertificate: biontech1/1
