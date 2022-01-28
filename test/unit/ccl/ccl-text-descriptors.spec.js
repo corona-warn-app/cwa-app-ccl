@@ -14,7 +14,7 @@ const filepath = path.resolve(__dirname, './../../fixtures/ccl/ccl-text-descript
 const testCasesStr = fse.readFileSync(filepath, 'utf-8')
 const testCases = yaml.load(testCasesStr)
 
-describe.only('ccl/ccl-util#formatText', () => {
+describe('ccl/ccl-util#formatText', () => {
   testCases.forEach(testCase => {
     it(testCase.description, () => {
       testCase.assertions.forEach(({ languageCode, text }) => {

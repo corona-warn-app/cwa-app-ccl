@@ -47,6 +47,7 @@ const resolveTimeRef = (timeRef, series, t0) => {
   }
 }
 
+const durationPattern = /^P(?!$)(\d+Y)?(\d+M)?(\d+W)?(\d+D)?(T(?=\d+[HMS])(\d+H)?(\d+M)?(\d+S)?)?$/
 const resolveTime = (time, idx, series, t0) => {
   if (time instanceof Date) {
     return moment.utc(time)
@@ -56,6 +57,9 @@ const resolveTime = (time, idx, series, t0) => {
 
   const [timeRef, ...durationChunks] = time.split('+')
   const duration = durationChunks.join('+')
+  if (duration && !durationPattern.test(duration)) {
+    throw new Error(`Duration '${duration} not valid'`)
+  }
   const anchor = resolveTimeRef(timeRef || `t${idx - 1}`, series, t0)
   return anchor.clone().add(duration)
 }

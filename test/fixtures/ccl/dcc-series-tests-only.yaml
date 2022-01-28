@@ -5,14 +5,15 @@
   series:
     - time: t0
       tc: rat1
-    - time: +P1D
+    - time: +PT2H
       tc: pcr1
-    - time: +P1D
+    - time: +PT2H
       tc: rat2
     - time: +P1D
       tc: rat3
   testCases:
     - time: rat1
+      description: RAT leads to 3G_WITH_RAT
       assertions:
         admissionState: 3G_WITH_RAT
         mostRelevantCertificate: rat1
@@ -31,6 +32,7 @@
           vaccinationState:
             visible: false
     - time: pcr1
+      description: PCR supersedes valid RAT
       assertions:
         admissionState: 3G_WITH_PCR
         mostRelevantCertificate: pcr1
@@ -46,6 +48,7 @@
             longText:
               de: erfüllen die 3G-Plus-Regel
     - time: rat2
+      description: Valid PCR even supersedes a newer RAT
       assertions:
         admissionState: 3G_WITH_PCR
         mostRelevantCertificate: pcr1
@@ -75,7 +78,8 @@
               de: 3G+
             longText:
               de: erfüllen die 3G-Plus-Regel
-    - time: pcr1+P3DT1S
+    - time: pcr1+P2DT1S
+      description: RAT supersedes PCR once it becomes invalid
       assertions:
         admissionState: 3G_WITH_RAT
         mostRelevantCertificate: rat3
