@@ -14,14 +14,12 @@ const filepath = path.resolve(__dirname, './../../fixtures/ccl/ccl-text-descript
 const testCasesStr = fse.readFileSync(filepath, 'utf-8')
 const testCases = yaml.load(testCasesStr)
 
-describe('ccl/ccl-util#formatText', () => {
+describe.only('ccl/ccl-util#formatText', () => {
   testCases.forEach(testCase => {
     it(testCase.description, () => {
-      testCase.assertions.forEach(({ languageCode, text, quantity, quantityParameterIndex }) => {
-        if (typeof quantity === 'number') testCase.textDescriptor.quantity = quantity
-        if (typeof quantityParameterIndex === 'number') testCase.textDescriptor.quantityParameterIndex = quantityParameterIndex
+      testCase.assertions.forEach(({ languageCode, text }) => {
         const act = ccl.util.formatText(testCase.textDescriptor, languageCode, {})
-        expect(act, `text for ${languageCode} (quantity=${quantity}, quantityParameterIndex=${quantityParameterIndex})`).to.equal(text)
+        expect(act, `text for ${languageCode}`).to.equal(text)
       })
     })
   })
