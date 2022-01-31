@@ -11,8 +11,13 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const argv = yargs(hideBin(process.argv))
-  .option('json-target', {
-    string: true
+  .option('target', {
+    alias: 't',
+    string: true,
+    default: 'dist'
+  })
+  .option('json-filename', {
+    default: 'jfn-test-cases.gen.json'
   })
   .argv
 const testCasesInJavaScript = [
@@ -21,7 +26,7 @@ const testCasesInJavaScript = [
 
 const convertJsonLogicTestCases = tests => {
   return tests
-    .filter(it => typeof it !== 'string') // comments
+    .filter(it => typeof it !== 'string') // filter out comments
     .reduce((allTestCases, [rule, data, expected], idx) => {
       allTestCases.push({
         title: `test case ${idx} - ${JSON.stringify(rule)} - ${JSON.stringify(data)} - ${JSON.stringify(expected)}`,
@@ -143,12 +148,12 @@ const main = async () => {
     testCases: allTestCases
   }
 
-  if (argv.jsonTarget) {
-    const targetFilepath = path.resolve(process.cwd(), argv.jsonTarget)
+  if (argv.jsonFilename) {
+    const filepath = path.join(argv.target, argv.jsonFilename)
+    const targetFilepath = path.resolve(process.cwd(), filepath)
     await fse.ensureFile(targetFilepath)
     await fse.writeJSON(targetFilepath, data, { spaces: 2 })
-    // await fse.writeJSON('/Users/d053370/workspaces/github/corona-warn-app/json-functions-swift/Tests/jsonfunctionsTests/jfn-common-test-cases.json', data, { spaces: 2 })
-    console.log(`Created JSON target ${chalk.cyan(argv.jsonTarget)}`)
+    console.log(`Created JSON target ${chalk.cyan(filepath)}`)
   }
 }
 

@@ -14,8 +14,13 @@ import fixtures from './../test/util/fixtures.js'
 import cclConfiguration from './../dist/ccl-de-0001.json'
 
 const argv = yargs(hideBin(process.argv))
-  .option('json-target', {
-    string: true
+  .option('target', {
+    alias: 't',
+    string: true,
+    default: 'dist'
+  })
+  .option('test-case-filename', {
+    default: 'ccl-test-cases.gen.json'
   })
   .argv
 
@@ -66,17 +71,17 @@ const main = async () => {
     })
   })
 
-  if (argv.jsonTarget) {
+  if (argv.testCaseFilename) {
     const data = {
       $comment: `Generated at ${new Date().toString()}`,
       testCases: allTestCases
     }
 
-    const targetFilepath = path.resolve(process.cwd(), argv.jsonTarget)
+    const filepath = path.join(argv.target, argv.testCaseFilename)
+    const targetFilepath = path.resolve(process.cwd(), filepath)
     await fse.ensureFile(targetFilepath)
     await fse.writeJSON(targetFilepath, data, { spaces: 2 })
-    await fse.writeJSON('/Users/d053370/workspaces/github/corona-warn-app/json-functions-swift/Tests/jsonfunctionsTests/jfn-common-test-cases.json', data, { spaces: 2 })
-    console.log(`Created JSON target ${chalk.cyan(argv.jsonTarget)}`)
+    console.log(`Created JSON target ${chalk.cyan(filepath)}`)
   }
 }
 
