@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename)
 const bnrFilenamePattern = /^bnr.*\.json$/
 const dccSeriesFilenamePattern = /^dcc-series.*\.yaml$/
 const fixturesDirectoryPath = path.resolve(__dirname, './../fixtures')
+const distDirectoryPath = path.resolve(__dirname, './../../dist')
 
 const readAllDccSeriesSync = () => {
   const directoryPath = path.resolve(fixturesDirectoryPath, 'ccl')
@@ -45,6 +46,15 @@ const readAllBoosterNotificationRulesSync = () => {
   }, [])
 
   return allBNRs
+}
+
+export const dist = {
+  findAllSync: pattern => {
+    const relativeFilepaths = fse.readdirSync(distDirectoryPath)
+      .filter(filename => pattern.test(filename))
+      .map(filename => `dist/${filename}`)
+    return relativeFilepaths
+  }
 }
 
 export default {

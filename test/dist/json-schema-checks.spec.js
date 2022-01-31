@@ -3,6 +3,9 @@
 import { expect } from 'chai'
 import ccl from '../../lib/ccl/ccl-main.js'
 import { readJsonSync } from './../../lib/util/local-file.js'
+import {
+  dist as distFixtures
+} from './../util/fixtures.js'
 
 describe('dist/json-schema-checks', () => {
   context('check dist/ccl-configuration.json', () => {
@@ -20,11 +23,16 @@ describe('dist/json-schema-checks', () => {
       })
     }
   })
-  context('check dist/ccl-de-0001.json', () => {
-    const cclDe0001 = readJsonSync('dist/ccl-de-0001.json')
-    it('matches schema', async () => {
-      const { errors } = await ccl.schema.validate(cclDe0001, 'https://ccl.coronawarn.app/ccl-configuration.json')
-      expect(errors).to.be.empty
+
+  distFixtures
+    .findAllSync(/ccl-de-\d+.json$/)
+    .forEach(relativeFilepath => {
+      context(`check ${relativeFilepath}`, () => {
+        const cclDe0001 = readJsonSync(relativeFilepath)
+        it('matches schema', async () => {
+          const { errors } = await ccl.schema.validate(cclDe0001, 'https://ccl.coronawarn.app/ccl-configuration.json')
+          expect(errors).to.be.empty
+        })
+      })
     })
-  })
 })

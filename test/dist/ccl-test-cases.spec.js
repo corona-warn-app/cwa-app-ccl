@@ -1,24 +1,18 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
-import { expect } from 'chai'
-import { readJsonSync } from './../../lib/util/local-file.js'
-
-import executeJfnTestCaseFactory from './../util/execute-jfn-test-case.js'
-
-const executeJfnTestCase = executeJfnTestCaseFactory({ expect })
-const { testCases } = readJsonSync('dist/ccl-test-cases.gen.json')
+import {
+  executeFromFile
+} from './../util/execute-jfn-test-case.js'
+import {
+  dist as distFixtures
+} from './../util/fixtures.js'
 
 describe('dist/ccl-test-cases', () => {
-  testCases.forEach(({ title, functions, evaluateFunction, logic, data, exp, throws }) => {
-    it(title, () => {
-      executeJfnTestCase({
-        functions,
-        evaluateFunction,
-        logic,
-        data,
-        exp,
-        throws
+  distFixtures
+    .findAllSync(/ccl-test-cases.gen.json$/)
+    .forEach(relativeFilepath => {
+      executeFromFile(relativeFilepath, {
+        transform: data => data.testCases
       })
     })
-  })
 })
