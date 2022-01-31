@@ -6,12 +6,11 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
 import ccl from './../lib/ccl/index.js'
+import { readJson } from './../lib/util/local-file.js'
 
 import cclTestUtil from './../test/util/ccl-util.js'
 import dcc from './../test/util/dcc/dcc-main.js'
 import fixtures from './../test/util/fixtures.js'
-
-import cclConfiguration from './../dist/ccl-de-0001.json'
 
 const argv = yargs(hideBin(process.argv))
   .option('target', {
@@ -26,7 +25,8 @@ const argv = yargs(hideBin(process.argv))
 
 const main = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
-  const allFunctions = cclConfiguration.Logic.JfnDescriptors
+  const cclDe0001 = await readJson('./dist/ccl-de-0001.json')
+  const allFunctions = cclDe0001.Logic.JfnDescriptors
 
   const allTestCases = []
 

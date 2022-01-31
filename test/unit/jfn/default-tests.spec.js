@@ -6,9 +6,23 @@ import {
   factory as jfnFactory
 } from '../../../lib/jfn/jfn-main.js'
 
-import allTests from './../../fixtures/jfn/json-logic-tests/tests.json'
+import { executeFromFile } from './../../util/execute-jfn-test-case.js'
 
 describe('default tests', () => {
+  executeFromFile('test/fixtures/jfn/json-logic-tests/tests.json', {
+    transform: data => data
+      .filter(it => typeof it !== 'string') // filter out comments
+      .reduce((testCases, test, idx) => {
+        testCases.push({
+          title: `test case ${idx} - ${JSON.stringify(test[0])} - ${JSON.stringify(test[1])} - ${JSON.stringify(test[2])}`,
+          logic: test[0],
+          data: test[1],
+          exp: test[2]
+        })
+        return testCases
+      }, [])
+    }
+  )
 
   let jfn
   beforeEach(() => {
@@ -192,28 +206,4 @@ describe('default tests', () => {
     jfn.apply({"or": [{"pushTest": [true]}, {"pushTest": [true]}]});
     assert.deepEqual(i, [true]);
   });
-
-  context('tests from tests.json', () => {
-    const tests = allTests
-      .filter(function(test) {
-        return typeof test !== "string";
-      })
-    
-    tests.forEach((test, idx) => {
-      it(`test case ${idx} - ${JSON.stringify(test[0])} - ${JSON.stringify(test[1])} - ${JSON.stringify(test[2])}`, () => {
-        var rule = test[0];
-        var data = test[1];
-        var expected = test[2];
-    
-        assert.deepEqual(
-          jfn.apply(rule, data),
-          expected,
-          "jfn.apply("+ JSON.stringify(rule) +"," +
-            JSON.stringify(data) +") === " +
-            JSON.stringify(expected)
-        );
-      })
-    })
-
-  })
 })
