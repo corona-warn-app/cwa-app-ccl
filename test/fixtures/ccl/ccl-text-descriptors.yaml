@@ -25,7 +25,7 @@
       de: Hallo %d
     parameters:
       - type: number
-        value: 3.1415
+        value: 3
   assertions:
     - languageCode: de
       text: Hallo 3
@@ -36,7 +36,7 @@
       de: Hallo %d
     parameters:
       - type: number
-        value: 3.1415
+        value: 3
   assertions:
     - languageCode: de
       text: Hallo 3
