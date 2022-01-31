@@ -9,14 +9,16 @@ import { hideBin } from 'yargs/helpers'
 import ccl from './../lib/ccl/index.js'
 
 const argv = yargs(hideBin(process.argv))
-  .option('cbor-target', {
-    string: true
+  .option('target', {
+    alias: 't',
+    string: true,
+    default: 'dist'
   })
-  .option('json-target', {
-    string: true
+  .option('cbor-filename', {
+    default: 'ccl-configuration.bin'
   })
-  .option('json-rule-target-dir', {
-    string: true
+  .option('json-filename', {
+    default: 'ccl-configuration.json'
   })
   .argv
 
@@ -41,17 +43,18 @@ const main = async () => {
     cclConfiguration
   ]
 
-  if (argv.jsonTarget) {
-    const targetFilepath = path.resolve(process.cwd(), argv.jsonTarget)
+  if (argv.jsonFilename) {
+    const filepath = path.join(argv.target, argv.jsonFilename)
+    const targetFilepath = path.resolve(process.cwd(), filepath)
     await fse.ensureFile(targetFilepath)
     await fse.writeJSON(targetFilepath, cclConfigurations)
-    console.log(`Created JSON target ${chalk.cyan(argv.jsonTarget)}`)
+    console.log(`Created JSON target ${chalk.cyan(filepath)}`)
   }
 
-  if (argv.jsonRuleTargetDir) {
+  if (argv.target) {
     await async.forEach(cclConfigurations, async config => {
       const filename = `${config.Identifier.toLowerCase()}.json`
-      const target = path.join(argv.jsonRuleTargetDir, filename)
+      const target = path.join(argv.target, filename)
       const targetFilepath = path.resolve(process.cwd(), target)
       await fse.ensureFile(targetFilepath)
       await fse.writeJSON(targetFilepath, config)
@@ -59,13 +62,14 @@ const main = async () => {
     })
   }
 
-  if (argv.cborTarget) {
-    const asBuffer = cbor.encode(cclConfigurations)
+  if (argv.cborFilename) {
+    const asBuffer = await cbor.encodeAsync(cclConfigurations)
 
-    const targetFilepath = path.resolve(process.cwd(), argv.cborTarget)
+    const filepath = path.join(argv.target, argv.cborFilename)
+    const targetFilepath = path.resolve(process.cwd(), filepath)
     await fse.ensureFile(targetFilepath)
     await fse.writeFile(targetFilepath, asBuffer)
-    console.log(`Created CBOR target ${chalk.cyan(argv.cborTarget)}`)
+    console.log(`Created CBOR target ${chalk.cyan(filepath)}`)
   }
 }
 

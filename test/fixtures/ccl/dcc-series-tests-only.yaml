@@ -24,9 +24,9 @@
           admissionState:
             visible: true
             badgeText:
-              de: 3G
+              de: ^3G$
             subtitleText:
-              de: 3G
+              de: ^3G$
             longText:
               de: erfüllen die 3G-Regel
           vaccinationState:
@@ -42,9 +42,9 @@
           admissionState:
             visible: true
             badgeText:
-              de: 3G+
+              de: ^3G\+$
             subtitleText:
-              de: 3G+
+              de: ^3G\+$
             longText:
               de: erfüllen die 3G-Plus-Regel
     - time: rat2
@@ -58,9 +58,9 @@
           admissionState:
             visible: true
             badgeText:
-              de: 3G+
+              de: ^3G\+$
             subtitleText:
-              de: 3G+
+              de: ^3G\+$
             longText:
               de: erfüllen die 3G-Plus-Regel
     - time: rat3
@@ -73,9 +73,9 @@
           admissionState:
             visible: true
             badgeText:
-              de: 3G+
+              de: ^3G\+$
             subtitleText:
-              de: 3G+
+              de: ^3G\+$
             longText:
               de: erfüllen die 3G-Plus-Regel
     - time: pcr1+P2DT1S
@@ -89,9 +89,9 @@
           admissionState:
             visible: true
             badgeText:
-              de: 3G
+              de: ^3G$
             subtitleText:
-              de: 3G
+              de: ^3G$
             longText:
               de: erfüllen die 3G-Regel
 - id: 2

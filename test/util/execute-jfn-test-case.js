@@ -1,7 +1,12 @@
+/* eslint-env mocha */
+import { expect } from 'chai'
 import moment from 'moment'
 import {
   factory as jfnFactory
 } from '../../lib/jfn/jfn-main.js'
+import {
+  readJsonSync
+} from './../../lib/util/local-file.js'
 
 const execute = ({ expect }) => ({
   functions,
@@ -47,3 +52,21 @@ const execute = ({ expect }) => ({
 }
 
 export default execute
+
+export const executeFromFile = (filepathFromRoot, { transform } = {}) => {
+  transform = transform || (data => data)
+  const _execute = execute({ expect })
+  const testCases = transform(readJsonSync(filepathFromRoot))
+  testCases.forEach(({ title, functions, evaluateFunction, logic, data, exp, throws }) => {
+    it(title, () => {
+      _execute({
+        functions,
+        evaluateFunction,
+        logic,
+        data,
+        exp,
+        throws
+      })
+    })
+  })
+}
