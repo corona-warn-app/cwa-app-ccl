@@ -91,11 +91,11 @@
             value: 2G
             visible: true
             badgeText:
-              de: 2G
+              de: ^2G$
             titleText:
               de: Status-Nachweis
             subtitleText:
-              de: 2G
+              de: ^2G$
             longText:
               de: erfüllen die 2G-Regel
             faqAnchor: 'test'
@@ -148,7 +148,7 @@
         mostRecentVaccination: janssen1/1
         hasBooster: false
         verificationCertificates:
-          - certificate: janssen1/1          
+          - certificate: janssen1/1
     # Booster vaccination is immedeately valid and prioritized
     - time: biontech2/1
       assertions:
@@ -177,9 +177,9 @@
             value: 1G_PLUS_PCR
             visible: true
             badgeText:
-              de: 1G+
+              de: ^1G\+$
             subtitleText:
-              de: 1G\+ PCR-Test
+              de: ^1G\+ PCR-Test$
             longText:
               de: erfüllen die 1G-Plus-Regel
             faqAnchor: 'test'
@@ -218,9 +218,9 @@
             value: 1G_PLUS_RAT
             visible: true
             badgeText:
-              de: 1G+
+              de: ^1G\+$
             subtitleText:
-              de: 1G\+ Schnelltest
+              de: ^1G\+ Schnelltest$
             longText:
               de: erfüllen die 1G-Plus-Regel, es sei denn, es wird ein PCR-Test
             faqAnchor: 'test'
