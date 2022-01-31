@@ -104,12 +104,12 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
           it('input matches JSON schema', async function () {
             const results = await ccl.schema.functions.getDccWalletInfo.input.validate(input)
-            expect(results.errors, JSON.stringify(results.errors, null, '  ')).to.be.empty
+            expect(results.errors, results.errors.map(it => it.stack).join('\n')).to.be.empty
           })
 
           it('output matches JSON schema', async function () {
             const results = await ccl.schema.functions.getDccWalletInfo.output.validate(output)
-            expect(results.errors, JSON.stringify(results.errors, null, '  ')).to.be.empty
+            expect(results.errors, results.errors.map(it => it.stack).join('\n')).to.be.empty
           })
 
           context('assertions', () => {
