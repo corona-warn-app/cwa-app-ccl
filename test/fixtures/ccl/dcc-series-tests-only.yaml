@@ -9,7 +9,7 @@
       tc: pcr1
     - time: +PT2H
       tc: rat2
-    - time: +P1D
+    - time: +P2D
       tc: rat3
   testCases:
     - time: rat1
@@ -78,7 +78,7 @@
               de: ^3G\+$
             longText:
               de: erfüllen die 3G-Plus-Regel
-    - time: pcr1+P2DT1S
+    - time: pcr1+P3DT1S
       description: RAT supersedes PCR once it becomes invalid
       assertions:
         admissionState: 3G_WITH_RAT
@@ -101,7 +101,7 @@
   series:
     - time: t0
       tc: rat1
-    - time: +PT1H
+    - time: +PT2H
       tc: rat2
   testCases:
     - time: rat1
