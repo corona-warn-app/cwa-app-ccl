@@ -44,7 +44,7 @@ describe('ccl/functions/getDccWalletInfo', async () => {
 
       seriesDescriptor.testCases.forEach((testCase, idx) => {
         const _context = testCase.only === true ? context.only : context
-        const testCaseDescription = `test case #${idx + 1} at ${testCase.time}`
+        const testCaseDescription = `test case #${idx + 1} at ${testCase.time} - ${testCase.description || ''}`
         _context(testCaseDescription, () => {
           let timeUnderTest, seriesUnderTest
           let input, output
