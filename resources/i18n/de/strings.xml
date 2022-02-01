@@ -1,4 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
+  <!-- XHED: Admission State - Card Title -->
+  <string name="ADMISSION_STATE_TITLE_TEXT">"Status-Nachweis"</string>
+
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Badge Text -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_BADGE_TEXT">"1G+"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_SUBTITLE_TEXT">"1G+ PCR-Test"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Body -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_LONG_TEXT">"Ihre Zertifikate erfüllen die 1G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Badge Text -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_BADGE_TEXT">"1G+"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_SUBTITLE_TEXT">"1G+ Schnelltest"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Body -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_LONG_TEXT">"Ihre Zertifikate erfüllen die 1G-Plus-Regel, es sei denn, es wird ein PCR-Test benötigt. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+
+  <!-- XTXT: Admission State - 1G Badge Text -->
+  <string name="ADMISSION_STATE_1G_BADGE_TEXT">"1G"</string>
+  <!-- XTXT: Admission State - 1G Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_SUBTITLE_TEXT">"1G"</string>
+  <!-- XTXT: Admission State - 1G Card Body -->
+  <string name="ADMISSION_STATE_1G_LONG_TEXT">"Ihre Zertifikate erfüllen die 1G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_SUBTITLE_TEXT">"2G+ PCR-Test"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_SUBTITLE_TEXT">"2G+ Schnelltest"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Plus-Regel, es sei denn, es wird ein PCR-Test benötigt. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+
+  <!-- XTXT: Admission State - 2G Badge Text -->
+  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
+  <!-- XTXT: Admission State - 2G Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_SUBTITLE_TEXT">"2G"</string>
+  <!-- XTXT: Admission State - 2G Card Body -->
+  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+
+  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_SUBTITLE_TEXT">"3G+"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+
+  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_SUBTITLE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
+
+  <!-- XHED: Vaccination State - Card Title -->
+  <string name="VACCINATION_STATE_TITLE_TEXT">"Impfstatus"</string>
+  <!-- XTXT: Vaccination State - Card Subtitle -->
+  <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
+    <item quantity="zero">"Letzte Impfung heute"</item>
+    <item quantity="one">"Letzte Impfung vor %1$d Tag"</item>
+    <item quantity="two">"Letzte Impfung vor %1$d Tagen"</item>
+    <item quantity="few">"Letzte Impfung vor %1$d Tagen"</item>
+    <item quantity="many">"Letzte Impfung vor %1$d Tagen"</item>
+    <item quantity="other">"Letzte Impfung vor %1$d Tagen"</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Subtitle -->
+  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
+    <item quantity="zero">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tagen vollständig.</item>
+    <item quantity="one">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tag vollständig.</item>
+    <item quantity="two">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tagen vollständig.</item>
+    <item quantity="few">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tagen vollständig.</item>
+    <item quantity="many">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tagen vollständig.</item>
+    <item quantity="other">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tagen vollständig.</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Sie haben nun alle derzeit geplanten Impfungen erhalten. Ihr Impfschutz ist vollständig."</string>
+  
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="PERSON_VIEW_2G_CERTIFICATE">"2G-Zertifikat"</string>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="PERSON_VIEW_TEST_CERTIFICATE">"Testzertifikat"</string>
+
+  <!-- XHED: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_TITLE_TEXT">"Hinweis zur Auffrischimpfung"</string>
+  <!-- XTXT: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"auf Grundlage Ihrer gespeicherten Zertifikate"</string>
+
 </resources>
