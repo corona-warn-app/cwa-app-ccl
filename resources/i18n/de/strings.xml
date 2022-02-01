@@ -89,8 +89,8 @@
   <string name="PERSON_VIEW_TEST_CERTIFICATE">"Testzertifikat"</string>
 
   <!-- XHED: Booster Notification - Card Title -->
-  <string name="BOOSTER_NOTIFICATION_TITLE_TEXT">"Booster"</string>
+  <string name="BOOSTER_NOTIFICATION_TITLE_TEXT">"Hinweis zur Auffrischimpfung"</string>
   <!-- XTXT: Booster Notification - Card Title -->
-  <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"Empfehlung einer Booster Impfung"</string>
+  <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"auf Grundlage Ihrer gespeicherten Zertifikate"</string>
 
 </resources>

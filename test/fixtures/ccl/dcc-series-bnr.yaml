@@ -22,9 +22,9 @@
             visible: true
             identifier: 'BNR-TX-0001'
             titleText:
-              de: Booster
+              de: Hinweis zur Auffrischimpfung
             subtitleText:
-              de: Empfehlung einer Booster Impfung
+              de: auf Grundlage Ihrer gespeicherten Zertifikate
             longText:
               de: BNR-TX-0001 Langtext
             faqAnchor: test
