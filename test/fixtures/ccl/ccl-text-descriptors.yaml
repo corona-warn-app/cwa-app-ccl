@@ -25,7 +25,7 @@
       de: Hallo %d
     parameters:
       - type: number
-        value: 3.1415
+        value: 3
   assertions:
     - languageCode: de
       text: Hallo 3
@@ -36,7 +36,7 @@
       de: Hallo %d
     parameters:
       - type: number
-        value: 3.1415
+        value: 3
   assertions:
     - languageCode: de
       text: Hallo 3
@@ -113,7 +113,7 @@
         value: 2022-01-02T00:30:00+01:00
   assertions:
     - languageCode: de
-      text: Gültig ab 02.01.2022, 00:30 Uhr
+      text: Gültig ab 02.01.2022, 00:30
 - description: placeholder of type utcDate
   textDescriptor:
     type: string
@@ -135,7 +135,7 @@
         value: 2022-01-02T00:30:00+01:00
   assertions:
     - languageCode: de
-      text: Gültig ab 01.01.2022, 23:30 Uhr
+      text: Gültig ab 01.01.2022, 23:30
 - description: plural simple hello world (quantity 0)
   textDescriptor:
     type: plural

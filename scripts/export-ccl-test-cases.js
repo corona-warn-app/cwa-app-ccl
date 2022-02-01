@@ -1,11 +1,13 @@
 import async from 'async'
-import chalk from 'chalk'
-import fse from 'fs-extra'
 import path from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
 import ccl from './../lib/ccl/index.js'
+import {
+  fileWriterFactory,
+  hashJson
+} from './util/dist.js'
 import { readJson } from './../lib/util/local-file.js'
 
 import cclTestUtil from './../test/util/ccl-util.js'
@@ -25,7 +27,7 @@ const argv = yargs(hideBin(process.argv))
 
 const main = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
-  const cclDe0001 = await readJson('./dist/ccl-de-0001.json')
+  const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
   const allFunctions = cclDe0001.Logic.JfnDescriptors
 
   const allTestCases = []
@@ -71,17 +73,20 @@ const main = async () => {
     })
   })
 
+  const fileWriter = fileWriterFactory({
+    target: path.resolve(process.cwd(), argv.target)
+  })
+
   if (argv.testCaseFilename) {
     const data = {
       $comment: `Generated at ${new Date().toString()}`,
+      sourceHash: hashJson(allTestCases),
       testCases: allTestCases
     }
 
-    const filepath = path.join(argv.target, argv.testCaseFilename)
-    const targetFilepath = path.resolve(process.cwd(), filepath)
-    await fse.ensureFile(targetFilepath)
-    await fse.writeJSON(targetFilepath, data, { spaces: 2 })
-    console.log(`Created JSON target ${chalk.cyan(filepath)}`)
+    await fileWriter.fanOutToOS(ctx => {
+      return ctx.writeJSON(argv.testCaseFilename, data, { spaces: 2 })
+    })
   }
 }
 

@@ -1,12 +1,11 @@
 import async from 'async'
-import chalk from 'chalk'
 import cbor from 'cbor'
-import fse from 'fs-extra'
 import path from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
 import ccl from './../lib/ccl/index.js'
+import { fileWriterFactory } from './util/dist.js'
 
 const argv = yargs(hideBin(process.argv))
   .option('target', {
@@ -43,33 +42,32 @@ const main = async () => {
     cclConfiguration
   ]
 
+  const fileWriter = fileWriterFactory({
+    target: path.resolve(process.cwd(), argv.target)
+  })
+
+  // export CCL Configuration as JSON
   if (argv.jsonFilename) {
-    const filepath = path.join(argv.target, argv.jsonFilename)
-    const targetFilepath = path.resolve(process.cwd(), filepath)
-    await fse.ensureFile(targetFilepath)
-    await fse.writeJSON(targetFilepath, cclConfigurations)
-    console.log(`Created JSON target ${chalk.cyan(filepath)}`)
+    await fileWriter.writeJSON(argv.jsonFilename, cclConfigurations, { spaces: 2 })
   }
 
-  if (argv.target) {
-    await async.forEach(cclConfigurations, async config => {
-      const filename = `${config.Identifier.toLowerCase()}.json`
-      const target = path.join(argv.target, filename)
-      const targetFilepath = path.resolve(process.cwd(), target)
-      await fse.ensureFile(targetFilepath)
-      await fse.writeJSON(targetFilepath, config)
-      console.log(`Created JSON rule target ${chalk.cyan(target)}`)
-    })
-  }
-
+  // export CCL Configuration as CBOR
   if (argv.cborFilename) {
     const asBuffer = await cbor.encodeAsync(cclConfigurations)
 
-    const filepath = path.join(argv.target, argv.cborFilename)
-    const targetFilepath = path.resolve(process.cwd(), filepath)
-    await fse.ensureFile(targetFilepath)
-    await fse.writeFile(targetFilepath, asBuffer)
-    console.log(`Created CBOR target ${chalk.cyan(filepath)}`)
+    await fileWriter.fanOutToOS(ctx => {
+      return ctx.writeFile(argv.cborFilename, asBuffer)
+    })
+  }
+
+  // export CCL Configuration as rules
+  if (argv.target) {
+    await async.forEach(cclConfigurations, async config => {
+      await fileWriter.fanOutToRuleDistribution(ctx => {
+        const filename = `${config.Identifier.toLowerCase()}.json`
+        return ctx.writeJSON(filename, config)
+      })
+    })
   }
 }
 

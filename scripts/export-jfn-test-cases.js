@@ -1,4 +1,3 @@
-import chalk from 'chalk'
 import fse from 'fs-extra'
 import path from 'path'
 import yargs from 'yargs'
@@ -6,6 +5,11 @@ import { hideBin } from 'yargs/helpers'
 import { fileURLToPath } from 'url'
 
 import dynamicTests from './../test/fixtures/jfn/jfn-tests/time.moment.spec.js'
+
+import {
+  fileWriterFactory,
+  hashJson
+} from './util/dist.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -145,15 +149,26 @@ const main = async () => {
     })
   const data = {
     $comment: `Generated at ${new Date().toString()}`,
+    sourceHash: hashJson(allTestCases),
     testCases: allTestCases
   }
 
+  const fileWriter = fileWriterFactory({
+    target: path.resolve(process.cwd(), argv.target)
+  })
+
   if (argv.jsonFilename) {
-    const filepath = path.join(argv.target, argv.jsonFilename)
-    const targetFilepath = path.resolve(process.cwd(), filepath)
-    await fse.ensureFile(targetFilepath)
-    await fse.writeJSON(targetFilepath, data, { spaces: 2 })
-    console.log(`Created JSON target ${chalk.cyan(filepath)}`)
+    await fileWriter.fanOutToOS((ctx, { prefix: os }) => {
+      const targetData = {
+        ...data,
+        testCases: data.testCases.filter(it => {
+          if (os === 'android' && it.androidOptional === true) return false
+          if (os === 'ios' && it.iosOptional === true) return false
+          return true
+        })
+      }
+      return ctx.writeJSON(argv.jsonFilename, targetData, { spaces: 2 })
+    })
   }
 }
 

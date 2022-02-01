@@ -18,9 +18,9 @@
     "postinstall": "patch-package",
     "test": "npm run test:unit",
     "test:ccl": "mocha test/unit/ccl --recursive --color",
-    "test:dist": "mocha test/dist --recursive --color",
+    "test:dist": "mocha test/dist --recursive --color --forbid-only",
     "test:jfn": "mocha test/unit/jfn --recursive --color",
-    "test:unit": "mocha test/unit --recursive --color",
+    "test:unit": "mocha test/unit --recursive --color --forbid-only",
     "watch:ccl": "nodemon -w lib -w resources -w test -e 'js json yaml' --exec 'npx mocha test/unit/ccl --recursive --color'",
     "watch:jfn": "nodemon -w lib -w resources -w test -e 'js json yaml' --exec 'npx mocha test/unit/jfn --recursive --color'",
     "watch:unit": "nodemon -w lib -w resources -w test -e 'js json yaml' --exec 'npx mocha test/unit --recursive --color'"

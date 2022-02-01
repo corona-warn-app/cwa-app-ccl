@@ -7,13 +7,15 @@ const vaccineShortNamesByMedicalProduct = {
   'EU/1/20/1525': ['jj', 'johnson', 'janssen'],
   'EU/1/21/1529': ['astra', 'astrazeneca'],
   'EU/1/20/1528': ['biontech'],
-  'EU/1/20/1507': ['moderna']
+  'EU/1/20/1507': ['moderna'],
+  'EU/1/21/1618': ['nova', 'novavax']
 }
 const vaccineMetadataByMedicalProduct = {
   'EU/1/20/1525': { ma: 'ORG-100001417', vp: '1119305005' },
   'EU/1/21/1529': { ma: 'ORG-100001699', vp: '1119305005' },
   'EU/1/20/1528': { ma: 'ORG-100030215', vp: '1119349007' },
-  'EU/1/20/1507': { ma: 'ORG-100031184', vp: '1119349007' }
+  'EU/1/20/1507': { ma: 'ORG-100031184', vp: '1119349007' },
+  'EU/1/21/1618': { ma: 'ORG-100032020', vp: '1119305005' /* tbd */ }
 }
 const vaccineShortNames = Object.entries(vaccineShortNamesByMedicalProduct)
   .reduce((vaccineShortNames, [mp, shortNames]) => {
