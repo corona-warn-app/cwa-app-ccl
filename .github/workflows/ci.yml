@@ -16,3 +16,41 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - name: write commit to dist
+        run: |
+          git rev-parse HEAD > dist/commit.txt
+          date -u +"%Y-%m-%dT%H:%M:%SZ" >> dist/commit.txt
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: |
+            dist/*
+      - uses: actions/upload-artifact@v2
+        with:
+          name: rule-distribution
+          path: |
+            dist/rule-distribution*
+      - uses: actions/upload-artifact@v2
+        with:
+          name: android-test-cases
+          path: |
+            dist/commit.txt
+            dist/android*test-cases*
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ios-test-cases
+          path: |
+            dist/commit.txt
+            dist/ios*test-cases*
+      - uses: actions/upload-artifact@v2
+        with:
+          name: android-default-ccl-configuration
+          path: |
+            dist/commit.txt
+            dist/android-ccl-configuration.bin
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ios-default-ccl-configuration
+          path: |
+            dist/commit.txt
+            dist/ios-ccl-configuration.bin
