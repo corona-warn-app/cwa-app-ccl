@@ -248,7 +248,7 @@
     - time: +P4W
       tc: pcr1
     - time: +P4W
-      tc: rat1      
+      tc: rat1
   testCases:
     # Second vaccination is immedeately valid, but not yet prioritized
     - time: biontech2/2
