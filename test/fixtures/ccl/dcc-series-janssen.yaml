@@ -331,19 +331,8 @@
     - time: +P4W
       vc: janssen2/2
   testCases:
-    # 2nd vaccination is immedeately valid, but not yet prioritized
+    # 2nd vaccination is immedeately valid and prioritized
     - time: janssen2/2
-      assertions:
-        admissionState: 1G
-        mostRelevantCertificate: janssen2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
-        mostRecentVaccination: janssen2/2
-        hasBooster: true
-        verificationCertificates:
-          - certificate: janssen2/2
-    # Booster vaccination is valid and prioritized after 15 days
-    - time: janssen2/2+P15DT1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: janssen2/2
