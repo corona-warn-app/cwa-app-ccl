@@ -15,6 +15,12 @@
         walletInfo:
           boosterNotification:
             visible: false
+    - time: astra1/2+P2D
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: true
+            identifier: 'BNR-TX-0003'
     - time: astra2/2
       assertions:
         walletInfo:

@@ -16,3 +16,16 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - uses: richardsimko/update-tag@v1
+        with:
+          tag_name: latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          prerelease: true
+          name: latest
+          tag_name: latest
+          files: |
+            dist/**/*
