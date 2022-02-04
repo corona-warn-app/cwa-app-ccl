@@ -15,7 +15,7 @@ jobs:
           node-version: 16.x
       - run: npm ci
       - run: npm test
-      - run: npm run build
+      - run: CCL_TREEISH=$(git rev-parse --short HEAD) npm run build
       - uses: richardsimko/update-tag@v1
         with:
           tag_name: latest

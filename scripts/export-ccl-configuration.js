@@ -35,6 +35,7 @@ const main = async () => {
     ValidFrom: '2022-01-01T00:00:00Z',
     ValidTo: '2030-12-31T00:00:00Z',
     Logic: {
+      Treeish: process.env.CCL_TREEISH || 'unknown',
       JfnDescriptors: allDescriptors
     }
   }
