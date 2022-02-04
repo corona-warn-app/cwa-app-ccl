@@ -2211,5 +2211,48 @@
       }
     },
     "exp": [ false, true ]
+  },
+  {
+    "title": "script - creates a new data context that prevents using it properly in an if statement (copy-by-value/for iOS compatibility)",
+    "androidOptional": true,
+    "logic": {
+      "script": [
+        {
+          "declare": [
+            "target",
+            {
+              "init": [
+                "object",
+                "key", "val"
+              ]
+            }
+          ]
+        },
+        {
+          "if": [
+            { "var": "someBoolean" },
+            {
+              "script": [
+                {
+                  "assign": [
+                    "target.key",
+                    "hello"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "return": [
+            { "var": "target" }
+          ]
+        }
+      ]
+    },
+    "data": { "someBoolean": "true" },
+    "exp": {
+      "key": "val"
+    }
   }
 ]
