@@ -1,0 +1,24 @@
+[
+  {
+    "title": "double-bang (!!) - can be used in an or-statement",
+    "logic": {
+      "or": [
+        {
+          "!!": [
+            { "var": "emptyArray" }
+          ]
+        },
+        {
+          "!!": [
+            { "var": "nonEmptyArray" }
+          ]
+        }
+      ]
+    },
+    "data": {
+      "emptyArray": [],
+      "nonEmptyArray": [ 1, 2]
+    },
+    "exp": true
+  }
+]
