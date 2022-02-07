@@ -40,6 +40,18 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+        walletInfo:
+          admissionState:
+            visible: false
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung heute
+            longText:
+              de: in 15 Tagen vollständig
+            faqAnchor: test
     # Complete vaccination still not valid after 14 days
     - time: biontech2/2+P14DT1S
       assertions:
@@ -51,6 +63,18 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+        walletInfo:
+          admissionState:
+            visible: false
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung vor 14 Tagen
+            longText:
+              de: in 1 Tag vollständig
+            faqAnchor: test
     # Complete vaccination valid after 15 days
     - time: biontech2/2+P15DT1S
       assertions:
@@ -62,6 +86,23 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+        walletInfo:
+          admissionState:
+            value: 2G
+            visible: true
+            badgeText:
+              de: ^2G$
+            titleText:
+              de: Status-Nachweis
+            subtitleText:
+              de: ^2G$
+            longText:
+              de: erfüllen die 2G-Regel
+            faqAnchor: 'test'
+          vaccinationState:
+            value: COMPLETE_IMMUNIZATION
+            longText:
+              de: Ihr Impfschutz ist vollständig
     # Additional valid PCR test changes admission state
     - time: pcr1
       assertions:
