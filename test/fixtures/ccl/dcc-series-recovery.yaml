@@ -1,6 +1,6 @@
 - id: 1
-  name: recovery-test-booster--test
-  description: recovery + biontech 1/1
+  name: recovery-test-vaccination-test-booster
+  description: recovery + biontech 1/1 + biontech 2/2
   t0: '2022-01-01'
   series:
     - time: t0
@@ -15,6 +15,8 @@
       tc: pcr2
     - time: +P6W
       tc: rat2
+    - time: +P2M
+      vc: biontech2/2
   testCases:  
     # recovery invalid if < 29 Tage after positive PCR test
     - time: rc1+P28D
@@ -147,7 +149,52 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech1/1
+    # Booster vaccination immedeately valid after first vaccination, not yet prioritized
+    - time: biontech2/2
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech1/1
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech1/1
+    # Booster vaccination prioritized after 14 days
+    - time: biontech2/2+P15D
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech1/1
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2          
 - id: 2
+  name: recovery-vaccination-booster21
+  description: recovery + biontech 1/1 + biontech 2/1
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P2M
+      vc: biontech1/1
+    - time: +P2M
+      vc: biontech2/1
+  testCases:  
+    # Booster vaccination 1/2 immedeately valid after first vaccination and prioritized
+    - time: biontech2/1
+      assertions:
+        admissionState: 1G
+        mostRelevantCertificate: biontech2/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech1/1
+        mostRecentVaccination: biontech2/1
+        hasBooster: true
+        verificationCertificates:
+          - certificate: biontech2/1
+- id: 3
   name: vaccination-recovery
   description: vaccination + recovery
   t0: '2022-01-01'
@@ -158,12 +205,20 @@
       vc: biontech2/2
     - time: +P3M
       rc: rc1
-    - time: +P5W
-      tc: pcr1
-    - time: +P6W
-      tc: rat1
   testCases:  
-    - time: rc1
+    # recovery invalid if < 29 Tage after positive PCR test
+    - time: rc1+P28D
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+    # recovery leads to 1G after 29 days
+    - time: rc1+P29D1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: rc1
@@ -173,53 +228,18 @@
         hasBooster: true
         verificationCertificates:
           - certificate: rc1
-    # Additional valid PCR test changes admission state
-    - time: pcr1
+    # recovery invalid 91 days after positive PCR test
+    - time: rc1+P91D
       assertions:
-        admissionState: 1G_PLUS_PCR
-        mostRelevantCertificate: rc1
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
-          - certificate: rc1
-          - certificate: pcr1
-    # Additional PCR test older than 48h does not change admission state
-    - time: pcr1+P2DT1S
-      assertions:
-        admissionState: 1G
-        mostRelevantCertificate: rc1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: biontech2/2+P15D
-        mostRecentVaccination: biontech2/2
-        hasBooster: true
-        verificationCertificates:
-          - certificate: rc1
-    # Additional valid RAT test changes admission state
-    - time: rat1
-      assertions:
-        admissionState: 1G_PLUS_RAT
-        mostRelevantCertificate: rc1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: biontech2/2+P15D
-        mostRecentVaccination: biontech2/2
-        hasBooster: true
-        verificationCertificates:
-          - certificate: rc1
-          - certificate: rat1
-    # Additional RAT test older than 24h does not change admission state
-    - time: rat1+P1DT1S
-      assertions:
-        admissionState: 1G
-        mostRelevantCertificate: rc1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: biontech2/2+P15D
-        mostRecentVaccination: biontech2/2
-        hasBooster: true
-        verificationCertificates:
-          - certificate: rc1
-- id: 3
+          - certificate: biontech2/2          
+- id: 4
   name: recovery-boosterJJ
   description: recovery + J&J
   t0: '2022-01-01'
