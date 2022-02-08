@@ -16,7 +16,7 @@ jobs:
           node-version: 16.x
       - run: npm ci
       - run: npm test
-      - run: CCL_VERSION=${{ env.GITHUB_REF_NAME }} npm run build
+      - run: CCL_VERSION=$(echo $GITHUB_REF_NAME) npm run build
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
