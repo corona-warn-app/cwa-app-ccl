@@ -342,3 +342,26 @@
         hasBooster: true
         verificationCertificates:
           - certificate: janssen2/2
+# Reissuance of 2/2 as 2/1 with both DCCs in the wallet
+- description: J&J vaccination + J&J booster 2/2 + reissuance as 2/1
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen1/1
+    - time: t0+P4W
+      vc: janssen2/2
+    - time: t0+P4W
+      vc: janssen2/1
+      cwtIat: t0+P6W
+  testCases:
+    # 2nd vaccination is immedeately valid and prioritized
+    - time: janssen2/2
+      assertions:
+        admissionState: 1G
+        mostRelevantCertificate: janssen2/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1+P15D
+        mostRecentVaccination: janssen2/1
+        hasBooster: true
+        verificationCertificates:
+          - certificate: janssen2/1
