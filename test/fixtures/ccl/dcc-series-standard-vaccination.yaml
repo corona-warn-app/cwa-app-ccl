@@ -29,6 +29,18 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech1/2
+        walletInfo:
+          admissionState:
+            visible: false
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung heute
+            longText:
+              de: noch nicht vollständig
+            faqAnchor: test
     # Complete vaccination not yet valid
     - time: biontech2/2
       assertions:
