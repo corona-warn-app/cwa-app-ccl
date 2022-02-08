@@ -156,7 +156,8 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
       time,
       dccDescriptor: mergedDccDescriptor,
       dcc,
-      barcodeData
+      barcodeData,
+      validityState: it.validityState || 'VALID'
     }
   })
   return dccDescriptors

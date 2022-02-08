@@ -51,7 +51,7 @@ const main = async () => {
         now: ccl.util.mapMomentToNow(timeUnderTest),
         certificates: seriesUnderTest.map(it => {
           return cclTestUtil.mapBarcodeDataToCertificate(it.barcodeData, {
-            validityState: 'VALID'
+            validityState: it.validityState
           })
         }),
         boosterNotificationRules: []
