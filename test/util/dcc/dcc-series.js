@@ -133,6 +133,9 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
     const time = resolveTime(it.time, idx, series, t0)
     const partialDccDescriptor = parseSeriesEntry(it, time)
     partialDccDescriptor.dccOverwrites = partialDccDescriptor.dccOverwrites || []
+    partialDccDescriptor.cwtIat = it.cwtIat
+      ? resolveTime(it.cwtIat, idx, series, t0)
+      : time
     const dccDescriptor = {
       ...defaultDccDescriptor,
       ...partialDccDescriptor,
