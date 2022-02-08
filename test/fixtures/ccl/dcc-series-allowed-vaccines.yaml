@@ -1,0 +1,100 @@
+- description: biontech 1/2 + biontech 2/2
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech1/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: biontech1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: biontech1/2
+    - time: biontech2/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        verificationCertificates:
+          - certificate: biontech2/2
+    - time: biontech2/2+P15D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+- description: moderna 1/2 + moderna 2/2
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: moderna1/2
+    - time: +P6W
+      vc: moderna2/2
+  testCases:
+    - time: moderna1/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: moderna1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: moderna1/2
+    - time: moderna2/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: moderna2/2
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        verificationCertificates:
+          - certificate: moderna2/2
+    - time: moderna2/2+P15D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+- description: astra 1/2 + astra 2/2
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra1/2
+    - time: +P6W
+      vc: astra2/2
+  testCases:
+    - time: astra1/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: astra1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: astra1/2
+    - time: astra2/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: astra2/2
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        verificationCertificates:
+          - certificate: astra2/2
+    - time: astra2/2+P15D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+- description: novavax 1/2 + novavax 2/2
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: novavax1/2
+    - time: +P6W
+      vc: novavax2/2
+  testCases:
+    - time: novavax1/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: novavax1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: novavax1/2
+    - time: novavax2/2
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: novavax2/2
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        verificationCertificates:
+          - certificate: novavax2/2
+    - time: novavax2/2+P15D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION

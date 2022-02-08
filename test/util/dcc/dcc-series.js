@@ -5,10 +5,10 @@ import generate from './dcc-generate.js'
 
 const vaccineShortNamesByMedicalProduct = {
   'EU/1/20/1525': ['jj', 'johnson', 'janssen'],
-  'EU/1/21/1529': ['astra', 'astrazeneca'],
+  'EU/1/21/1529': ['astrazeneca', 'astra'],
   'EU/1/20/1528': ['biontech'],
   'EU/1/20/1507': ['moderna'],
-  'EU/1/21/1618': ['nova', 'novavax']
+  'EU/1/21/1618': ['novavax', 'nova']
 }
 const vaccineMetadataByMedicalProduct = {
   'EU/1/20/1525': { ma: 'ORG-100001417', vp: '1119305005' },
