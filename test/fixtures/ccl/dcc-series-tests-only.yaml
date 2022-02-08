@@ -150,3 +150,37 @@
         mostRelevantCertificate: pcr2
         verificationCertificates:
           - certificate: pcr2
+- id: 4
+  name: positive-pcr-test
+  description: A positive PCR test is ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: pcr1
+      dccDescriptor:
+        dccOverwrites:
+          - 't.0.tr=260373001'
+  testCases:
+    - time: pcr1
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: pcr1
+        verificationCertificates:
+          - certificate: pcr1
+- id: 5
+  name: positive-rat-test
+  description: A positive RAT test is ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: rat1
+      dccDescriptor:
+        dccOverwrites:
+          - 't.0.tr=260373001'
+  testCases:
+    - time: rat1
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: rat1
+        verificationCertificates:
+          - certificate: rat1

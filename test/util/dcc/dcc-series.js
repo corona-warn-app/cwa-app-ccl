@@ -131,27 +131,30 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
   const dccDescriptors = await async.mapSeries(series, async it => {
     const idx = series.indexOf(it)
     const time = resolveTime(it.time, idx, series, t0)
+    const dccDescriptor = it.dccDescriptor || {}
     const partialDccDescriptor = parseSeriesEntry(it, time)
     partialDccDescriptor.dccOverwrites = partialDccDescriptor.dccOverwrites || []
     partialDccDescriptor.cwtIat = it.cwtIat
       ? resolveTime(it.cwtIat, idx, series, t0)
       : time
-    const dccDescriptor = {
+    const mergedDccDescriptor = {
       ...defaultDccDescriptor,
       ...partialDccDescriptor,
+      ...dccDescriptor,
       dccOverwrites: [
         ...defaultDccDescriptor.dccOverwrites,
-        ...partialDccDescriptor.dccOverwrites
+        ...partialDccDescriptor.dccOverwrites,
+        ...(dccDescriptor.dccOverwrites || [])
       ]
     }
     const {
       dcc,
       barcodeData
-    } = await generate(dccDescriptor)
+    } = await generate(mergedDccDescriptor)
     return {
       ...it,
       time,
-      dccDescriptor,
+      dccDescriptor: mergedDccDescriptor,
       dcc,
       barcodeData
     }
