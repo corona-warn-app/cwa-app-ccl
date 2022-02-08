@@ -1,6 +1,6 @@
 - id: 1
   name: recovery-test-booster--test
-  description: recovery + biontech 1/1 + booster 2/1
+  description: recovery + biontech 1/1
   t0: '2022-01-01'
   series:
     - time: t0
@@ -93,58 +93,58 @@
     # Complete vaccination immedeately valid after first vaccination
     - time: biontech1/1
       assertions:
-        admissionState: 1G
+        admissionState: 2G
         mostRelevantCertificate: biontech1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech1/1
         mostRecentVaccination: biontech1/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech1/1
     # Additional valid PCR test changes admission state
     - time: pcr2
       assertions:
-        admissionState: 1G_PLUS_PCR
+        admissionState: 2G_PLUS_PCR
         mostRelevantCertificate: biontech1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech1/1
         mostRecentVaccination: biontech1/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech1/1
           - certificate: pcr2
     # Additional PCR test older than 72h does not change admission state
     - time: pcr2+P3DT1S
       assertions:
-        admissionState: 1G
+        admissionState: 2G
         mostRelevantCertificate: biontech1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech1/1
         mostRecentVaccination: biontech1/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech1/1
     # Additional valid RAT test changes admission state
     - time: rat2
       assertions:
-        admissionState: 1G_PLUS_RAT
+        admissionState: 2G_PLUS_RAT
         mostRelevantCertificate: biontech1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech1/1
         mostRecentVaccination: biontech1/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech1/1
           - certificate: rat2
     # Additional RAT test older than 24h does not change admission state
     - time: rat2+P1DT1S
       assertions:
-        admissionState: 1G
+        admissionState: 2G
         mostRelevantCertificate: biontech1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech1/1
         mostRecentVaccination: biontech1/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech1/1
 - id: 2
@@ -219,3 +219,46 @@
         hasBooster: true
         verificationCertificates:
           - certificate: rc1
+- id: 3
+  name: recovery-boosterJJ
+  description: recovery + J&J
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P2M
+      vc: janssen1/1
+  testCases:        
+    # Vaccination not immedeately valid after first vaccination with J&J
+    - time: janssen1/1
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: rc1
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: janssen1/1+P15D
+        mostRecentVaccination: janssen1/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: rc1
+    # Complete J&J vaccination still not valid after 14 days
+    - time: janssen1/1
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: rc1
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: janssen1/1+P15D
+        mostRecentVaccination: janssen1/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: rc1
+    # Complete J&J vaccination valid after 15 days
+    - time: janssen1/1+P15D
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: janssen1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1+P15D
+        mostRecentVaccination: janssen1/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: janssen1/1      
