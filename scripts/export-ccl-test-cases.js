@@ -51,7 +51,7 @@ const main = async () => {
         now: ccl.util.mapMomentToNow(timeUnderTest),
         certificates: seriesUnderTest.map(it => {
           return cclTestUtil.mapBarcodeDataToCertificate(it.barcodeData, {
-            validityState: 'VALID'
+            validityState: it.validityState
           })
         }),
         boosterNotificationRules: []
@@ -81,6 +81,7 @@ const main = async () => {
     const data = {
       $comment: `Generated at ${new Date().toString()}`,
       sourceHash: hashJson(allTestCases),
+      sourceTreeish: process.env.CCL_TREEISH || 'unknown',
       testCases: allTestCases
     }
 

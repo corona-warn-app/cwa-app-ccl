@@ -15,7 +15,7 @@ jobs:
           node-version: 16.x
       - run: npm ci
       - run: npm test
-      - run: npm run build
+      - run: CCL_TREEISH=$(git rev-parse --short HEAD) npm run build
       - uses: richardsimko/update-tag@v1
         with:
           tag_name: latest
@@ -23,7 +23,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: softprops/action-gh-release@v1
         with:
-          draft: true
           prerelease: true
           name: latest
           tag_name: latest

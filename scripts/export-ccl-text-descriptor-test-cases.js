@@ -28,6 +28,7 @@ const main = async () => {
   if (argv.jsonFilename) {
     const data = {
       $comment: `Generated at ${new Date().toString()}`,
+      sourceTreeish: process.env.CCL_TREEISH || 'unknown',
       testCases: testCases
     }
 

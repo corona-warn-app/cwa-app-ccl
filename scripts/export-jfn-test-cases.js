@@ -150,6 +150,7 @@ const main = async () => {
   const data = {
     $comment: `Generated at ${new Date().toString()}`,
     sourceHash: hashJson(allTestCases),
+    sourceTreeish: process.env.CCL_TREEISH || 'unknown',
     testCases: allTestCases
   }
 

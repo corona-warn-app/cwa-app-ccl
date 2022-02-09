@@ -5,10 +5,10 @@ import generate from './dcc-generate.js'
 
 const vaccineShortNamesByMedicalProduct = {
   'EU/1/20/1525': ['jj', 'johnson', 'janssen'],
-  'EU/1/21/1529': ['astra', 'astrazeneca'],
+  'EU/1/21/1529': ['astrazeneca', 'astra'],
   'EU/1/20/1528': ['biontech'],
   'EU/1/20/1507': ['moderna'],
-  'EU/1/21/1618': ['nova', 'novavax']
+  'EU/1/21/1618': ['novavax', 'nova']
 }
 const vaccineMetadataByMedicalProduct = {
   'EU/1/20/1525': { ma: 'ORG-100001417', vp: '1119305005' },
@@ -131,26 +131,33 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
   const dccDescriptors = await async.mapSeries(series, async it => {
     const idx = series.indexOf(it)
     const time = resolveTime(it.time, idx, series, t0)
+    const dccDescriptor = it.dccDescriptor || {}
     const partialDccDescriptor = parseSeriesEntry(it, time)
     partialDccDescriptor.dccOverwrites = partialDccDescriptor.dccOverwrites || []
-    const dccDescriptor = {
+    partialDccDescriptor.cwtIat = it.cwtIat
+      ? resolveTime(it.cwtIat, idx, series, t0)
+      : time
+    const mergedDccDescriptor = {
       ...defaultDccDescriptor,
       ...partialDccDescriptor,
+      ...dccDescriptor,
       dccOverwrites: [
         ...defaultDccDescriptor.dccOverwrites,
-        ...partialDccDescriptor.dccOverwrites
+        ...partialDccDescriptor.dccOverwrites,
+        ...(dccDescriptor.dccOverwrites || [])
       ]
     }
     const {
       dcc,
       barcodeData
-    } = await generate(dccDescriptor)
+    } = await generate(mergedDccDescriptor)
     return {
       ...it,
       time,
-      dccDescriptor,
+      dccDescriptor: mergedDccDescriptor,
       dcc,
-      barcodeData
+      barcodeData,
+      validityState: it.validityState || 'VALID'
     }
   })
   return dccDescriptors

@@ -849,5 +849,125 @@ export default [
       right: isoStr('2000-11-12T00:00:00Z')
     },
     throws: true
+  },
+  {
+    title: 'after - returns false if one is not a date (1)',
+    logic: {
+      after: [
+        {
+          var: 'left'
+        },
+        null
+      ]
+    },
+    data: {
+      left: isoStr('2021-11-12T10:59:00Z')
+    },
+    exp: false
+  },
+  {
+    title: 'after - returns false if one is not a date (2)',
+    logic: {
+      after: [
+        null,
+        {
+          var: 'left'
+        }
+      ]
+    },
+    data: {
+      left: isoStr('2021-11-12T10:59:00Z')
+    },
+    exp: false
+  },
+  {
+    title: 'before - returns false if one is not a date (1)',
+    logic: {
+      before: [
+        {
+          var: 'left'
+        },
+        null
+      ]
+    },
+    data: {
+      left: isoStr('2021-11-12T10:59:00Z')
+    },
+    exp: false
+  },
+  {
+    title: 'before - returns false if one is not a date (2)',
+    logic: {
+      before: [
+        null,
+        {
+          var: 'left'
+        }
+      ]
+    },
+    data: {
+      left: isoStr('2021-11-12T10:59:00Z')
+    },
+    exp: false
+  },
+  {
+    title: 'not-after - returns true if one is not a date (1)',
+    logic: {
+      'not-after': [
+        {
+          var: 'left'
+        },
+        null
+      ]
+    },
+    data: {
+      left: isoStr('2021-11-12T10:59:00Z')
+    },
+    exp: true
+  },
+  {
+    title: 'not-after - returns true if one is not a date (2)',
+    logic: {
+      'not-after': [
+        null,
+        {
+          var: 'left'
+        }
+      ]
+    },
+    data: {
+      left: isoStr('2021-11-12T10:59:00Z')
+    },
+    exp: true
+  },
+  {
+    title: 'not-before - returns true if one is not a date (1)',
+    logic: {
+      'not-before': [
+        {
+          var: 'left'
+        },
+        null
+      ]
+    },
+    data: {
+      left: isoStr('2021-11-12T10:59:00Z')
+    },
+    exp: true
+  },
+  {
+    title: 'not-before - returns true if one is not a date (2)',
+    logic: {
+      'not-before': [
+        null,
+        {
+          var: 'left'
+        }
+      ]
+    },
+    data: {
+      left: isoStr('2021-11-12T10:59:00Z')
+    },
+    exp: true
   }
 ]

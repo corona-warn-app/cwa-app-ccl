@@ -50,7 +50,7 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
               now: ccl.util.mapMomentToNow(timeUnderTest),
               certificates: seriesUnderTest.map(it => {
                 return cclTestUtil.mapBarcodeDataToCertificate(it.barcodeData, {
-                  validityState: 'VALID'
+                  validityState: it.validityState
                 })
               }),
               boosterNotificationRules: []
@@ -109,10 +109,11 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             it('check mostRelevantCertificate', () => {
               const expCertName = assertions.mostRelevantCertificate
               const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
-              const actCertName = resolveBarcodeDataToCertName(output.mostRelevantCertificate.certificateRef.barcodeData)
+              const actBarcodeData = output.mostRelevantCertificate.barcodeData
+              const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
 
               expect(output).to.have.nested.property(
-                'mostRelevantCertificate.certificateRef.barcodeData',
+                'mostRelevantCertificate.barcodeData',
                 expBarcodeData,
                 `expected reference to ${expCertName} but got ${actCertName}`
               )
@@ -139,10 +140,11 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             it('check mostRecentVaccination', () => {
               const expCertName = assertions.mostRecentVaccination
               const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
-              const actCertName = resolveBarcodeDataToCertName(output.mostRecentVaccination.certificateRef.barcodeData)
+              const actBarcodeData = output.mostRecentVaccination.barcodeData
+              const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
 
               expect(output).to.have.nested.property(
-                'mostRecentVaccination.certificateRef.barcodeData',
+                'mostRecentVaccination.barcodeData',
                 expBarcodeData,
                 `expected reference to ${expCertName} but got ${actCertName}`
               )
@@ -157,20 +159,19 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
             has('verificationCertificates') &&
             it('check verificationCertificates', () => {
               expect(output.verificationCertificates)
-                .to.be.an('object')
-                .and.to.have.property('certificates')
-              expect(output.verificationCertificates.certificates, 'length of verificationCertificates.certificates')
+                .to.be.an('array')
+              expect(output.verificationCertificates, 'length of verificationCertificates')
                 .to.be.an('array')
                 .and.to.have.lengthOf(assertions.verificationCertificates.length)
               assertions.verificationCertificates.forEach((it, idx) => {
-                const act = output.verificationCertificates.certificates[idx]
+                const act = output.verificationCertificates[idx]
+                const actBarcodeData = act.barcodeData
+                const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
 
                 const expCertName = it.certificate
                 const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
-                const actCertName = resolveBarcodeDataToCertName(act.certificateRef.barcodeData)
 
-                expect(act).to.have.nested.property(
-                  'certificateRef.barcodeData',
+                expect(actBarcodeData).to.equal(
                   expBarcodeData,
                   `expected reference to ${expCertName} but got ${actCertName}`
                 )

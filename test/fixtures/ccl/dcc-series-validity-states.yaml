@@ -1,0 +1,240 @@
+- description: VC with validity state VALID are considered
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+      validityState: VALID
+  testCases:
+    - time: biontech2/2
+      assertions:
+        mostRelevantCertificate: biontech2/2
+- description: VC with validity state EXPIRING_SOON are considered
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+      validityState: EXPIRING_SOON
+  testCases:
+    - time: biontech2/2
+      assertions:
+        mostRelevantCertificate: biontech2/2
+- description: VC with validity state EXPIRED are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+      validityState: EXPIRED
+  testCases:
+    - time: biontech2/2
+      assertions:
+        mostRelevantCertificate: biontech1/2
+- description: VC with validity state INVALID are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+      validityState: INVALID
+  testCases:
+    - time: biontech2/2
+      assertions:
+        mostRelevantCertificate: biontech1/2
+- description: VC with validity state BLOCKED are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+      validityState: INVALID
+  testCases:
+    - time: biontech2/2
+      assertions:
+        mostRelevantCertificate: biontech1/2
+- description: RC with validity state VALID are considered
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P6W
+      rc: rc2
+      validityState: VALID
+  testCases:
+    - time: rc2+P45D
+      assertions:
+        mostRelevantCertificate: rc2
+- description: RC with validity state EXPIRING_SOON are considered
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P6W
+      rc: rc2
+      validityState: EXPIRING_SOON
+  testCases:
+    - time: rc2+P45D
+      assertions:
+        mostRelevantCertificate: rc2
+- description: RC with validity state INVALID are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P2D
+      rc: rc2
+      validityState: INVALID
+  testCases:
+    - time: rc2+P45D
+      assertions:
+        mostRelevantCertificate: rc1
+- description: RC with validity state EXPIRED are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P2D
+      rc: rc2
+      validityState: EXPIRED
+  testCases:
+    - time: rc2+P45D
+      assertions:
+        mostRelevantCertificate: rc1
+- description: RC with validity state BLOCKED are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P2D
+      rc: rc2
+      validityState: BLOCKED
+  testCases:
+    - time: rc2+P45D
+      assertions:
+        mostRelevantCertificate: rc1
+- description: RAT TC with validity state VALID are considered
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: rat1
+    - time: +PT1H
+      tc: rat2
+      validityState: VALID
+  testCases:
+    - time: rat2
+      assertions:
+        mostRelevantCertificate: rat2
+- description: RAT TC with validity state EXPIRING_SOON are considered
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: rat1
+    - time: +PT1H
+      tc: rat2
+      validityState: EXPIRING_SOON
+  testCases:
+    - time: rat2
+      assertions:
+        mostRelevantCertificate: rat2
+- description: RAT TC with validity state EXPIRED are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: rat1
+    - time: +PT1H
+      tc: rat2
+      validityState: EXPIRED
+  testCases:
+    - time: rat2
+      assertions:
+        mostRelevantCertificate: rat1
+- description: RAT TC with validity state INVALID are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: rat1
+    - time: +PT1H
+      tc: rat2
+      validityState: INVALID
+  testCases:
+    - time: rat2
+      assertions:
+        mostRelevantCertificate: rat1
+- description: RAT TC with validity state BLOCKED are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: rat1
+    - time: +PT1H
+      tc: rat2
+      validityState: INVALID
+  testCases:
+    - time: rat2
+      assertions:
+        mostRelevantCertificate: rat1
+- description: PCR TC with validity state VALID are considered
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: pcr1
+    - time: +PT1H
+      tc: pcr2
+      validityState: VALID
+  testCases:
+    - time: pcr2
+      assertions:
+        mostRelevantCertificate: pcr2
+- description: PCR TC with validity state EXPIRING_SOON are considered
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: pcr1
+    - time: +PT1H
+      tc: pcr2
+      validityState: EXPIRING_SOON
+  testCases:
+    - time: pcr2
+      assertions:
+        mostRelevantCertificate: pcr2
+- description: PCR TC with validity state EXPIRED are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: pcr1
+    - time: +PT1H
+      tc: pcr2
+      validityState: EXPIRED
+  testCases:
+    - time: pcr2
+      assertions:
+        mostRelevantCertificate: pcr1
+- description: PCR TC with validity state INVALID are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: pcr1
+    - time: +PT1H
+      tc: pcr2
+      validityState: INVALID
+  testCases:
+    - time: pcr2
+      assertions:
+        mostRelevantCertificate: pcr1
+- description: PCR TC with validity state BLOCKED are ignored
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: pcr1
+    - time: +PT1H
+      tc: pcr2
+      validityState: INVALID
+  testCases:
+    - time: pcr2
+      assertions:
+        mostRelevantCertificate: pcr1

@@ -29,6 +29,18 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech1/2
+        walletInfo:
+          admissionState:
+            visible: false
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung heute
+            longText:
+              de: noch nicht vollständig
+            faqAnchor: test
     # Complete vaccination not yet valid
     - time: biontech2/2
       assertions:
@@ -40,6 +52,18 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+        walletInfo:
+          admissionState:
+            visible: false
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung heute
+            longText:
+              de: in 15 Tagen vollständig
+            faqAnchor: test
     # Complete vaccination still not valid after 14 days
     - time: biontech2/2+P14DT1S
       assertions:
@@ -51,6 +75,18 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+        walletInfo:
+          admissionState:
+            visible: false
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung vor 14 Tagen
+            longText:
+              de: in 1 Tag vollständig
+            faqAnchor: test
     # Complete vaccination valid after 15 days
     - time: biontech2/2+P15DT1S
       assertions:
@@ -62,6 +98,23 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+        walletInfo:
+          admissionState:
+            value: 2G
+            visible: true
+            badgeText:
+              de: ^2G$
+            titleText:
+              de: Status-Nachweis
+            subtitleText:
+              de: ^2G$
+            longText:
+              de: erfüllen die 2G-Regel
+            faqAnchor: 'test'
+          vaccinationState:
+            value: COMPLETE_IMMUNIZATION
+            longText:
+              de: Ihr Impfschutz ist vollständig
     # Additional valid PCR test changes admission state
     - time: pcr1
       assertions:
@@ -74,8 +127,8 @@
         verificationCertificates:
           - certificate: biontech2/2
           - certificate: pcr1
-    # Additional PCR test older than 48h does not change admission state
-    - time: pcr1+P2DT1S
+    # Additional PCR test older than 72h does not change admission state
+    - time: pcr1+P3DT1S
       assertions:
         admissionState: 2G
         mostRelevantCertificate: biontech2/2
@@ -97,8 +150,8 @@
         verificationCertificates:
           - certificate: biontech2/2
           - certificate: rat1
-    # Additional RAT test older than 24h does not change admission state
-    - time: rat1+P1DT1S
+    # Additional RAT test older than 48h does not change admission state
+    - time: rat1+P2DT1S
       assertions:
         admissionState: 2G
         mostRelevantCertificate: biontech2/2
@@ -131,8 +184,8 @@
         verificationCertificates:
           - certificate: biontech3/3
           - certificate: pcr2
-    # Additional PCR test older than 48h does not change admission state
-    - time: pcr2+P2DT1S
+    # Additional PCR test older than 72h does not change admission state
+    - time: pcr2+P3DT1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: biontech3/3
@@ -154,8 +207,8 @@
         verificationCertificates:
           - certificate: biontech3/3
           - certificate: rat2
-    # Additional RAT test older than 24h does not change admission state
-    - time: rat2+P1DT1S
+    # Additional RAT test older than 48h does not change admission state
+    - time: rat2+P2DT1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: biontech3/3

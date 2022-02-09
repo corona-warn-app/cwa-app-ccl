@@ -71,7 +71,7 @@
     <item quantity="many">"Letzte Impfung vor %1$d Tagen"</item>
     <item quantity="other">"Letzte Impfung vor %1$d Tagen"</item>
   </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Subtitle -->
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
     <item quantity="zero">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tagen vollständig.</item>
     <item quantity="one">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tag vollständig.</item>
@@ -80,8 +80,10 @@
     <item quantity="many">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tagen vollständig.</item>
     <item quantity="other">Sie haben nun alle derzeit geplanten Impfungen erhalten. Allerdings ist der Impfschutz erst in %1$d Tagen vollständig.</item>
   </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Sie haben nun alle derzeit geplanten Impfungen erhalten. Ihr Impfschutz ist vollständig."</string>
+  <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Sie haben noch nicht alle derzeit geplanten Impfungen erhalten. Daher ist Ihr Impfschutz noch nicht vollständig."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"2G-Zertifikat"</string>

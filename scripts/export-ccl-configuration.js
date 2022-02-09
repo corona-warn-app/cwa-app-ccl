@@ -24,17 +24,22 @@ const argv = yargs(hideBin(process.argv))
 const main = async () => {
   const allDescriptors = ccl.getFunctionDescriptors()
 
+  const version = process.env.CCL_VERSION
+    ? process.env.CCL_VERSION.trim().replace('v', '')
+    : '1.0.0'
+
   const cclConfiguration = {
     Identifier: 'CCL-DE-0001',
     Type: 'CCLConfiguration',
     Country: 'DE',
-    Version: '1.0.0',
+    Version: version,
     SchemaVersion: '1.0.0',
     Engine: 'JsonFunctions',
     EngineVersion: '1.0.0',
     ValidFrom: '2022-01-01T00:00:00Z',
     ValidTo: '2030-12-31T00:00:00Z',
     Logic: {
+      Treeish: process.env.CCL_TREEISH || 'unknown',
       JfnDescriptors: allDescriptors
     }
   }
