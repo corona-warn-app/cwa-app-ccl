@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+  <!-- XHED: Admission State - Card Title -->
+  <string name="ADMISSION_STATE_TITLE_TEXT">"Dowód statusu"</string>
+
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Badge Text -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_BADGE_TEXT">"1G+"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_SUBTITLE_TEXT">"1G+ test PCR"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Body -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 1G plus. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i pokaż kod QR w przeglądzie certyfikatów."</string>
+
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Badge Text -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_BADGE_TEXT">"1G+"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_SUBTITLE_TEXT">"1G+ szybki test"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Body -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 1G plus, o ile nie jest wymagany test PCR. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
+
+  <!-- XTXT: Admission State - 1G Badge Text -->
+  <string name="ADMISSION_STATE_1G_BADGE_TEXT">"1G"</string>
+  <!-- XTXT: Admission State - 1G Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_SUBTITLE_TEXT">"1G"</string>
+  <!-- XTXT: Admission State - 1G Card Body -->
+  <string name="ADMISSION_STATE_1G_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 1G. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i pokaż kod QR w przeglądzie certyfikatów."</string>
+
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_SUBTITLE_TEXT">"2G+ test PCR"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 2G plus. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
+
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_SUBTITLE_TEXT">"2G+ szybki test"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 2G plus, o ile nie jest wymagany test PCR. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
+
+  <!-- XTXT: Admission State - 2G Badge Text -->
+  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
+  <!-- XTXT: Admission State - 2G Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_SUBTITLE_TEXT">"2G"</string>
+  <!-- XTXT: Admission State - 2G Card Body -->
+  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 2G. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
+
+  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_SUBTITLE_TEXT">"3G+"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 3G plus. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i pokaż kod QR w przeglądzie certyfikatów."</string>
+
+  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_SUBTITLE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 3G. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i pokaż kod QR w przeglądzie certyfikatów."</string>
+
+  <!-- XHED: Vaccination State - Card Title -->
+  <string name="VACCINATION_STATE_TITLE_TEXT">"Status zaszczepienia"</string>
+  <!-- XTXT: Vaccination State - Card Subtitle -->
+  <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
+    <item quantity="zero">"Ostatnie szczepienie dzisiaj"</item>
+    <item quantity="one">"Ostatnie szczepienie %1$d dzień temu"</item>
+    <item quantity="two">"Ostatnie szczepienie %1$d dni temu"</item>
+    <item quantity="few">"Ostatnie szczepienie %1$d dni temu"</item>
+    <item quantity="many">"Ostatnie szczepienie %1$d dni temu"</item>
+    <item quantity="other">"Ostatnie szczepienie %1$d dnia temu"</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
+    <item quantity="zero">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni."</item>
+    <item quantity="one">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dzień."</item>
+    <item quantity="two">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni."</item>
+    <item quantity="few">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni."</item>
+    <item quantity="many">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni."</item>
+    <item quantity="other">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dnia."</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Otrzymałeś(-aś) wszystkie aktualnie zaplanowane szczepienia. Masz pełną ochronę poszczepienną."</string>
+  <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nie otrzymałeś(-aś) jeszcze wszystkich zaplanowanych szczepień. W związku z tym Twoja ochrona poszczepienna nie jest jeszcze pełna."</string>
+  
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="PERSON_VIEW_2G_CERTIFICATE">"Certyfikat 2G"</string>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="PERSON_VIEW_TEST_CERTIFICATE">"Certyfikat testu"</string>
+
+  <!-- XHED: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_TITLE_TEXT">"Uwaga dotycząca szczepienia przypominającego"</string>
+  <!-- XTXT: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"na podstawie Twoich zapisanych certyfikatów"</string>
+
+</resources>
