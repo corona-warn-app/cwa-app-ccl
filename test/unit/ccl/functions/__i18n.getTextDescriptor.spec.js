@@ -37,6 +37,10 @@ describe('ccl/functions/__i18n.getTextDescriptor', () => {
         exp
       } = testCase
       const act = ccl.evaluateFunction(functionName, parameters)
+
+      // ignore languages other than DE for deep equal
+      if (act.localizedText) act.localizedText = { de: act.localizedText.de }
+
       expect(act).to.deep.equal(exp)
     })
   })
