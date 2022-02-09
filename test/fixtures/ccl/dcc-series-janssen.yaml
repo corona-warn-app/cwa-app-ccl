@@ -38,7 +38,6 @@
               de: Letzte Impfung heute
             longText:
               de: in 15 Tagen vollständig
-            faqAnchor: test
     # next 14 days until vaccination is valid
     - time: janssen1/1+P1D
       assertions:
@@ -98,7 +97,7 @@
               de: ^2G$
             longText:
               de: erfüllen die 2G-Regel
-            faqAnchor: 'test'
+            faqAnchor: admission_policy
           vaccinationState:
             value: COMPLETE_IMMUNIZATION
             longText:
@@ -182,7 +181,7 @@
               de: ^1G\+ PCR-Test$
             longText:
               de: erfüllen die 1G-Plus-Regel
-            faqAnchor: 'test'
+            faqAnchor: admission_policy
           verification:
             - certificate: biontech2/1
               buttonText:
@@ -223,7 +222,7 @@
               de: ^1G\+ Schnelltest$
             longText:
               de: erfüllen die 1G-Plus-Regel, es sei denn, es wird ein PCR-Test
-            faqAnchor: 'test'
+            faqAnchor: admission_policy
     # Additional RAT test older than 48h does not change admission state
     - time: rat2+P2DT1S
       assertions:

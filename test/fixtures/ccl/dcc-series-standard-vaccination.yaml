@@ -40,7 +40,6 @@
               de: Letzte Impfung heute
             longText:
               de: noch nicht vollständig
-            faqAnchor: test
     # Complete vaccination not yet valid
     - time: biontech2/2
       assertions:
@@ -63,7 +62,6 @@
               de: Letzte Impfung heute
             longText:
               de: in 15 Tagen vollständig
-            faqAnchor: test
     # Complete vaccination still not valid after 14 days
     - time: biontech2/2+P14DT1S
       assertions:
@@ -86,7 +84,6 @@
               de: Letzte Impfung vor 14 Tagen
             longText:
               de: in 1 Tag vollständig
-            faqAnchor: test
     # Complete vaccination valid after 15 days
     - time: biontech2/2+P15DT1S
       assertions:
@@ -110,7 +107,7 @@
               de: ^2G$
             longText:
               de: erfüllen die 2G-Regel
-            faqAnchor: 'test'
+            faqAnchor: admission_policy
           vaccinationState:
             value: COMPLETE_IMMUNIZATION
             longText:
