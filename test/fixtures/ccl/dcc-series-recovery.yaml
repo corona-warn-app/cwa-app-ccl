@@ -15,7 +15,7 @@
       tc: pcr2
     - time: +P6W
       tc: rat2
-    - time: +P1M
+    - time: +P2M
       vc: biontech2/1
   testCases:  
     # recovery invalid if < 29 Tage after positive PCR test
@@ -181,6 +181,17 @@
     - time: +P1M
       vc: biontech2/2
   testCases:
+    - time: biontech1/1
+      description: vaccination valid immediately (2G) and prioritized
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech1/1
+        mostRecentVaccination: biontech1/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech1/1
     - time: biontech2/2
       description: booster vaccination valid immediately (2G), but not yet prioritized as indistinguishable from regular 2/2
       assertions:
@@ -230,6 +241,18 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+    - time: rc1+P28D
+      description: recovery invalid if < 29 Tage after positive PCR test
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+    # recovery leads to 1G after 29 days
     - time: rc1+P29D
       assertions:
         admissionState: 1G
@@ -308,6 +331,38 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
+- id: 4
+  name: recovery-boosterJJ
+  description: recovery + J&J
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P2M
+      vc: janssen1/1
+  testCases:
+    # Vaccination not immedeately valid after first vaccination with J&J
+    - time: janssen1/1
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: rc1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1
+        mostRecentVaccination: janssen1/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: rc1
+    # Complete J&J vaccination valid after 15 days
+    - time: janssen1/1+P15D
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: janssen1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1
+        mostRecentVaccination: janssen1/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: janssen1/1
 - id: 4
   name: incomplete-vaccination-recovery-booster
   description: incomplete vaccination + recovery + booster once RC is invalid
