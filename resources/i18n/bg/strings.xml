@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+  <!-- XHED: Admission State - Card Title -->
+  <string name="ADMISSION_STATE_TITLE_TEXT">"Доказателство за статус"</string>
+
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Badge Text -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_BADGE_TEXT">"1G+"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_SUBTITLE_TEXT">"1G+ PCR тест"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Body -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_LONG_TEXT">"Вашите сертификати отговарят на 1G plus правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Badge Text -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_BADGE_TEXT">"1G+"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_SUBTITLE_TEXT">"1G+ бърз тест"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Body -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_LONG_TEXT">"Вашите сертификати отговарят на 1G plus правилото, освен ако не Ви се изисква PCR тест. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+
+  <!-- XTXT: Admission State - 1G Badge Text -->
+  <string name="ADMISSION_STATE_1G_BADGE_TEXT">"1G"</string>
+  <!-- XTXT: Admission State - 1G Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_SUBTITLE_TEXT">"1G"</string>
+  <!-- XTXT: Admission State - 1G Card Body -->
+  <string name="ADMISSION_STATE_1G_LONG_TEXT">"Вашите сертификати отговарят на 1G правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_SUBTITLE_TEXT">"2G+ PCR тест"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_LONG_TEXT">"Вашите сертификати отговарят на 2G plus правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_SUBTITLE_TEXT">"2G+ бърз тест"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_LONG_TEXT">"Вашите сертификати отговарят на 2G plus правилото, освен ако не Ви се изисква PCR тест. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+
+  <!-- XTXT: Admission State - 2G Badge Text -->
+  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
+  <!-- XTXT: Admission State - 2G Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_SUBTITLE_TEXT">"2G"</string>
+  <!-- XTXT: Admission State - 2G Card Body -->
+  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Вашите сертификати отговарят на 2G правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+
+  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_SUBTITLE_TEXT">"3G+"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Вашите сертификати отговарят на 3G plus правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+
+  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_SUBTITLE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Вашите сертификати отговарят на 3G правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+
+  <!-- XHED: Vaccination State - Card Title -->
+  <string name="VACCINATION_STATE_TITLE_TEXT">"Ваксинационен статус"</string>
+  <!-- XTXT: Vaccination State - Card Subtitle -->
+  <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
+    <item quantity="zero">"Последна ваксинация днес"</item>
+    <item quantity="one">"Последна ваксинация преди %1$d ден"</item>
+    <item quantity="two">"Последна ваксинация преди %1$d дена"</item>
+    <item quantity="few">"Последна ваксинация преди %1$d дена"</item>
+    <item quantity="many">"Последна ваксинация преди %1$d дена"</item>
+    <item quantity="other">"Последна ваксинация преди %1$d дена"</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
+    <item quantity="zero">"Получихте всички планирани за момента ваксинации, но ваксинационната Ви защита ще е пълна едва след %1$d дена."</item>
+    <item quantity="one">"Получихте всички планирани за момента ваксинации, но ваксинационната Ви защита ще е пълна след %1$d ден."</item>
+    <item quantity="two">"Получихте всички планирани за момента ваксинации, но ваксинационната Ви защита ще е пълна едва след %1$d дена."</item>
+    <item quantity="few">"Получихте всички планирани за момента ваксинации, но ваксинационната Ви защита ще е пълна едва след %1$d дена."</item>
+    <item quantity="many">"Получихте всички планирани за момента ваксинации, но ваксинационната Ви защита ще е пълна едва след %1$d дена."</item>
+    <item quantity="other">"Получихте всички планирани за момента ваксинации, но ваксинационната Ви защита ще е пълна едва след %1$d дена."</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Получили сте всички планирани за момента ваксинации. Ваксинационната Ви защита е пълна."</string>
+  <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Не сте получили всички планирани за момента ваксинации – Вашата ваксинационна защита все още не е пълна."</string>
+  
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="PERSON_VIEW_2G_CERTIFICATE">"2G Сертификат"</string>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="PERSON_VIEW_TEST_CERTIFICATE">"Сертификат за тестване"</string>
+
+  <!-- XHED: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_TITLE_TEXT">"Бележка за бустерни дози"</string>
+  <!-- XTXT: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"На база на Вашите запазени сертификати"</string>
+
+</resources>

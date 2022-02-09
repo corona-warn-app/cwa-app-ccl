@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+  <!-- XHED: Admission State - Card Title -->
+  <string name="ADMISSION_STATE_TITLE_TEXT">"Durum Kanıtı"</string>
+
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Badge Text -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_BADGE_TEXT">"1G+"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_SUBTITLE_TEXT">"1G+ PCR testi"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Body -->
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_LONG_TEXT">"Sertifikalarınız 1G plus kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
+
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Badge Text -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_BADGE_TEXT">"1G+"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_SUBTITLE_TEXT">"1G+ hızlı testi"</string>
+  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Body -->
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_LONG_TEXT">"PCR testi gerekmiyorsa sertifikalarınız 1G plus kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
+
+  <!-- XTXT: Admission State - 1G Badge Text -->
+  <string name="ADMISSION_STATE_1G_BADGE_TEXT">"1G"</string>
+  <!-- XTXT: Admission State - 1G Card Subtitle -->
+  <string name="ADMISSION_STATE_1G_SUBTITLE_TEXT">"1G"</string>
+  <!-- XTXT: Admission State - 1G Card Body -->
+  <string name="ADMISSION_STATE_1G_LONG_TEXT">"Sertifikalarınız 1G kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
+
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_SUBTITLE_TEXT">"2G+ PCR testi"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_LONG_TEXT">"Sertifikalarınız 2G plus kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
+
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_SUBTITLE_TEXT">"2G+ hızlı testi"</string>
+  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_LONG_TEXT">"PCR testi gerekmiyorsa sertifikalarınız 2G plus kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
+
+  <!-- XTXT: Admission State - 2G Badge Text -->
+  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
+  <!-- XTXT: Admission State - 2G Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_SUBTITLE_TEXT">"2G"</string>
+  <!-- XTXT: Admission State - 2G Card Body -->
+  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Sertifikalarınız 2G kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
+
+  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_SUBTITLE_TEXT">"3G+"</string>
+  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Sertifikalarınız 3G plus kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
+
+  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Subtitle -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_SUBTITLE_TEXT">"3G"</string>
+  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
+  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Sertifikalarınız 3G kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
+
+  <!-- XHED: Vaccination State - Card Title -->
+  <string name="VACCINATION_STATE_TITLE_TEXT">"Aşı Durumu"</string>
+  <!-- XTXT: Vaccination State - Card Subtitle -->
+  <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
+    <item quantity="zero">"Son aşı bugün yapıldı"</item>
+    <item quantity="one">"Son aşı %1$d gün önce yapıldı"</item>
+    <item quantity="two">"Son aşı %1$d gün önce yapıldı"</item>
+    <item quantity="few">"Son aşı %1$d gün önce yapıldı"</item>
+    <item quantity="many">"Son aşı %1$d gün önce yapıldı"</item>
+    <item quantity="other">"Son aşı %1$d gün önce yapıldı"</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
+    <item quantity="zero">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
+    <item quantity="one">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
+    <item quantity="two">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
+    <item quantity="few">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
+    <item quantity="many">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
+    <item quantity="other">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Geçerli olarak planlanan tüm aşıları yaptırdınız. Aşı korumanız tamamlandı."</string>
+  <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Henüz şu anda tüm planlanan aşıları olmadınız. Dolayısıyla aşı korumanız henüz tamamlanmadı."</string>
+  
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="PERSON_VIEW_2G_CERTIFICATE">"2G Sertifikası"</string>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
+  <string name="PERSON_VIEW_TEST_CERTIFICATE">"Test Sertifikası"</string>
+
+  <!-- XHED: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_TITLE_TEXT">"Hatırlatma Aşısıyla İlgili Not"</string>
+  <!-- XTXT: Booster Notification - Card Title -->
+  <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"kayıtlı sertifikalarınız temelinde"</string>
+
+</resources>
