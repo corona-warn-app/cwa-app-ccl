@@ -45,8 +45,8 @@
         verificationCertificates:
           - certificate: rc1
           - certificate: pcr1
-    # Additional PCR test older than 48h does not change admission state
-    - time: pcr1+P2DT1S
+    # Additional PCR test older than 72h does not change admission state
+    - time: pcr1+P3DT1S
       assertions:
         admissionState: 2G
         mostRelevantCertificate: rc1
@@ -62,8 +62,8 @@
         verificationCertificates:
           - certificate: rc1
           - certificate: rat1
-    # Additional RAT test older than 24h does not change admission state
-    - time: rat1+P1DT1S
+    # Additional RAT test older than 48h does not change admission state
+    - time: rat1+P2DT1S
       assertions:
         admissionState: 2G
         mostRelevantCertificate: rc1
@@ -138,8 +138,8 @@
         verificationCertificates:
           - certificate: biontech1/1
           - certificate: rat2
-    # Additional RAT test older than 24h does not change admission state
-    - time: rat2+P1DT1S
+    # Additional RAT test older than 48h does not change admission state
+    - time: rat2+P2DT1S
       assertions:
         admissionState: 2G
         mostRelevantCertificate: biontech1/1
@@ -153,7 +153,7 @@
     - time: biontech2/2
       assertions:
         admissionState: 2G
-        mostRelevantCertificate: biontech2/2
+        mostRelevantCertificate: biontech1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech1/1
         mostRecentVaccination: biontech2/2
@@ -218,7 +218,7 @@
         verificationCertificates:
           - certificate: biontech2/2
     # recovery leads to 1G after 29 days
-    - time: rc1+P29D1S
+    - time: rc1+P29DT1S
       assertions:
         admissionState: 1G
         mostRelevantCertificate: rc1
@@ -254,8 +254,8 @@
       assertions:
         admissionState: 2G
         mostRelevantCertificate: rc1
-        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1
         mostRecentVaccination: janssen1/1
         hasBooster: false
         verificationCertificates:
@@ -265,8 +265,8 @@
       assertions:
         admissionState: 2G
         mostRelevantCertificate: rc1
-        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1
         mostRecentVaccination: janssen1/1
         hasBooster: false
         verificationCertificates:
@@ -277,7 +277,7 @@
         admissionState: 2G
         mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: janssen1/1
         mostRecentVaccination: janssen1/1
         hasBooster: false
         verificationCertificates:
