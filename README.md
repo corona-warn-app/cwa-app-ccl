@@ -20,6 +20,47 @@ The respective engine - JsonFunctions - is available as library:
 - [corona-warn-app/cwa-kotlin-jfn](https://github.com/corona-warn-app/cwa-kotlin-jfn) for Android
 - [corona-warn-app/json-functions-swift](https://github.com/corona-warn-app/json-functions-swift) for iOS
 
+## Development
+
+### Requirements
+
+You need the Node.js >=16 version of [Node.js](https://nodejs.org/en/) (which includes npm).
+
+### Test and Build
+
+To run the automated tests, execute the following command in the root directory of the project:
+
+```bash
+npm test
+```
+
+To build the artifacts, execute the following command in the root directory of the project:
+
+```bash
+npm run build
+```
+
+The artifacts are placed in the `dist` directory (created if not existing yet).
+
+### Important Files and Directories
+
+- `lib/ccl/functions` contains the JsonFunction descriptions. Note that when a new function is added, it also needs to be registered in `lib/ccl/ccl-jfn.js`
+
+- `lib/jfn` contains an implementation of JsonFunctions
+
+- `resources/i18n/de` contains the leading UI texts. The texts of other languages are generated via the translation system and should not be changed manually.
+
+- `resources/json-schema` contains various JSON schema definitions
+
+- `scripts` contains scripts for building and packaging CCL
+
+- `test/dist` contains tests that are executed after `npm run build` on the resulting artifacts
+
+- `test/fixtures` contains test data for automated tests
+
+- `test/fixtures/ccl/dcc-series-*.yaml` describe series of DCCs and how they should be interpreted by CCL
+
+
 ## Support and Feedback
 
 The following channels are available for discussions, feedback, and support requests:
