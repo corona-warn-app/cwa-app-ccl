@@ -6,9 +6,10 @@
   "type": "module",
   "exports": "./index.js",
   "scripts": {
-    "build": "npm run build:clean && npm run build:ccl-configuration && npm run build:jfn-test-cases && npm run build:ccl-test-cases && npm run test:dist",
+    "build": "npm run build:clean && npm run build:ccl-configuration && npm run build:jfn-test-cases && npm run build:ccl-test-cases && npm run build:ccl-text-descriptor-test-cases && npm run test:dist",
     "build:clean": "rimraf dist",
-    "build:ccl-test-cases": "node scripts/export-ccl-test-cases.js ",
+    "build:ccl-test-cases": "node scripts/export-ccl-test-cases.js",
+    "build:ccl-text-descriptor-test-cases": "node scripts/export-ccl-text-descriptor-test-cases.js",
     "build:ccl-configuration": "node scripts/export-ccl-configuration.js",
     "build:jfn-test-cases": "node scripts/export-jfn-test-cases.js",
     "fix": "standard 'lib/**/*.js' 'test/**/*.js' 'scripts/**/*.js' --fix --verbose | snazzy",
