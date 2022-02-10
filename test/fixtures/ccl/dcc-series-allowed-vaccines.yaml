@@ -8,14 +8,12 @@
   testCases:
     - time: biontech1/2
       assertions:
-        admissionState: OTHER
         mostRelevantCertificate: biontech1/2
         vaccinationState: PARTIAL_IMMUNIZATION
         verificationCertificates:
           - certificate: biontech1/2
     - time: biontech2/2
       assertions:
-        admissionState: OTHER
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         verificationCertificates:
@@ -33,14 +31,12 @@
   testCases:
     - time: moderna1/2
       assertions:
-        admissionState: OTHER
         mostRelevantCertificate: moderna1/2
         vaccinationState: PARTIAL_IMMUNIZATION
         verificationCertificates:
           - certificate: moderna1/2
     - time: moderna2/2
       assertions:
-        admissionState: OTHER
         mostRelevantCertificate: moderna2/2
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         verificationCertificates:
@@ -58,14 +54,12 @@
   testCases:
     - time: astra1/2
       assertions:
-        admissionState: OTHER
         mostRelevantCertificate: astra1/2
         vaccinationState: PARTIAL_IMMUNIZATION
         verificationCertificates:
           - certificate: astra1/2
     - time: astra2/2
       assertions:
-        admissionState: OTHER
         mostRelevantCertificate: astra2/2
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         verificationCertificates:
