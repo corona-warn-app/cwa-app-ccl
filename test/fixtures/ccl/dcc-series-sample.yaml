@@ -1,6 +1,4 @@
-- id: 1
-  name: sample-series
-  description: Sample series to illustrate the syntax
+- description: Sample series to illustrate the syntax
   t0: '2022-01-01'
   series:
     # values for `time` attribute:

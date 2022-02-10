@@ -1,6 +1,4 @@
-- id: 1
-  name: bnr-test-vc-only
-  description: BNRs are calculated based on the most recent VC
+- description: BNRs are calculated based on the most recent VC
   t0: '2022-01-01'
   series:
     - time: t0
@@ -39,9 +37,7 @@
         walletInfo:
           boosterNotification:
             visible: false
-- id: 2
-  name: bnr-test-vc-with-rc
-  description: BNRs consider the most recent RC
+- description: BNRs consider the most recent RC
   t0: '2022-01-01'
   series:
     - time: t0

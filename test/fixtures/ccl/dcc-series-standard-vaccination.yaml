@@ -1,6 +1,4 @@
-- id: 1
-  name: biontech-booster-test
-  description: biontech vaccination + biontech booster
+- description: biontech vaccination + biontech booster
   t0: '2022-01-01'
   series:
     - time: t0

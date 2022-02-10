@@ -1,6 +1,4 @@
-- id: 1
-  name: tests-only
-  description: A person who only has PCR and RAT tests and no vaccination or recovery certificate
+- description: A person who only has PCR and RAT tests and no vaccination or recovery certificate
   t0: '2022-01-01'
   series:
     - time: t0
@@ -94,9 +92,7 @@
               de: ^3G$
             longText:
               de: erfüllen die 3G-Regel
-- id: 2
-  name: rat-test-priority
-  description: The most recent RAT test has priority
+- description: The most recent RAT test has priority
   t0: '2022-01-01'
   series:
     - time: t0
@@ -122,9 +118,7 @@
         mostRelevantCertificate: rat2
         verificationCertificates:
           - certificate: rat2
-- id: 3
-  name: pcr-test-priority
-  description: The most recent PCR test has priority
+- description: The most recent PCR test has priority
   t0: '2022-01-01'
   series:
     - time: t0
@@ -150,9 +144,7 @@
         mostRelevantCertificate: pcr2
         verificationCertificates:
           - certificate: pcr2
-- id: 4
-  name: positive-pcr-test
-  description: A positive PCR test is ignored
+- description: A positive PCR test is ignored
   t0: '2022-01-01'
   series:
     - time: t0
@@ -167,9 +159,7 @@
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
-- id: 5
-  name: positive-rat-test
-  description: A positive RAT test is ignored
+- description: A positive RAT test is ignored
   t0: '2022-01-01'
   series:
     - time: t0

@@ -1,6 +1,4 @@
-- id: 1
-  name: janssen-booster2/1-test
-  description: J&J vaccination + biontech booster 2/1
+- description: J&J vaccination + biontech booster 2/1
   t0: '2022-01-01'
   series:
     - time: t0
@@ -235,9 +233,7 @@
         verificationCertificates:
           - certificate: biontech2/1
 # Same testcases like above, but with second vaccination issued as 2/2 instead of 2/1. This does not lead to a booster
-- id: 2
-  name: janssen-booster2/2-pcr
-  description: J&J vaccination + biontech booster 2/2 + test
+- description: J&J vaccination + biontech booster 2/2 + test
   t0: '2022-01-01'
   series:
     - time: t0
@@ -320,9 +316,7 @@
         verificationCertificates:
           - certificate: biontech2/2
 # Booster with J&J
-- id: 3
-  name: janssen-janssen
-  description: J&J vaccination + J&J booster 2/2 + test
+- description: J&J vaccination + J&J booster 2/2 + test
   t0: '2022-01-01'
   series:
     - time: t0
