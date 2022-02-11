@@ -4,56 +4,56 @@
   <string name="ADMISSION_STATE_TITLE_TEXT">"Proof of Status"</string>
 
   <!-- XTXT: Admission State - 1G_PLUS_PCR Badge Text -->
-  <string name="ADMISSION_STATE_1G_PLUS_PCR_BADGE_TEXT">"1G+"</string>
+  <string name="ADMISSION_STATE_1G_PLUS_PCR_BADGE_TEXT">"I G+"</string>
   <!-- XTXT: Admission State - 1G_PLUS_PCR Card Subtitle -->
   <string name="ADMISSION_STATE_1G_PLUS_PCR_SUBTITLE_TEXT">"1G+ PCR test"</string>
   <!-- XTXT: Admission State - 1G_PLUS_PCR Card Body -->
   <string name="ADMISSION_STATE_1G_PLUS_PCR_LONG_TEXT">"Your certificates satisfy the 1G plus rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
 
   <!-- XTXT: Admission State - 1G_PLUS_RAT Badge Text -->
-  <string name="ADMISSION_STATE_1G_PLUS_RAT_BADGE_TEXT">"1G+"</string>
+  <string name="ADMISSION_STATE_1G_PLUS_RAT_BADGE_TEXT">"I G+"</string>
   <!-- XTXT: Admission State - 1G_PLUS_RAT Card Subtitle -->
   <string name="ADMISSION_STATE_1G_PLUS_RAT_SUBTITLE_TEXT">"1G+ rapid test"</string>
   <!-- XTXT: Admission State - 1G_PLUS_RAT Card Body -->
   <string name="ADMISSION_STATE_1G_PLUS_RAT_LONG_TEXT">"Your certificates satisfy the 1G plus rule, unless a PCR test is required. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
 
   <!-- XTXT: Admission State - 1G Badge Text -->
-  <string name="ADMISSION_STATE_1G_BADGE_TEXT">"1G"</string>
+  <string name="ADMISSION_STATE_1G_BADGE_TEXT">"I G"</string>
   <!-- XTXT: Admission State - 1G Card Subtitle -->
   <string name="ADMISSION_STATE_1G_SUBTITLE_TEXT">"1G"</string>
   <!-- XTXT: Admission State - 1G Card Body -->
   <string name="ADMISSION_STATE_1G_LONG_TEXT">"Your certificates satisfy the 1G rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
 
   <!-- XTXT: Admission State - 2G_PLUS_PCR Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"2G+"</string>
+  <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"II G+"</string>
   <!-- XTXT: Admission State - 2G_PLUS_PCR Card Subtitle -->
   <string name="ADMISSION_STATE_2G_PLUS_PCR_SUBTITLE_TEXT">"2G+ PCR test"</string>
   <!-- XTXT: Admission State - 2G_PLUS_PCR Card Body -->
   <string name="ADMISSION_STATE_2G_PLUS_PCR_LONG_TEXT">"Your certificates satisfy the 2G plus rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
 
   <!-- XTXT: Admission State - 2G_PLUS_RAT Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_RAT_BADGE_TEXT">"2G+"</string>
+  <string name="ADMISSION_STATE_2G_PLUS_RAT_BADGE_TEXT">"II G+"</string>
   <!-- XTXT: Admission State - 2G_PLUS_RAT Card Subtitle -->
   <string name="ADMISSION_STATE_2G_PLUS_RAT_SUBTITLE_TEXT">"2G+ rapid test"</string>
   <!-- XTXT: Admission State - 2G_PLUS_RAT Card Body -->
   <string name="ADMISSION_STATE_2G_PLUS_RAT_LONG_TEXT">"Your certificates satisfy the 2G plus rule, unless a PCR test is required. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
 
   <!-- XTXT: Admission State - 2G Badge Text -->
-  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
+  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"II G"</string>
   <!-- XTXT: Admission State - 2G Card Subtitle -->
   <string name="ADMISSION_STATE_2G_SUBTITLE_TEXT">"2G"</string>
   <!-- XTXT: Admission State - 2G Card Body -->
   <string name="ADMISSION_STATE_2G_LONG_TEXT">"Your certificates satisfy the 2G rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
 
   <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
+  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"III G+"</string>
   <!-- XTXT: Admission State - 3G_WITH_PCR Card Subtitle -->
   <string name="ADMISSION_STATE_3G_WITH_PCR_SUBTITLE_TEXT">"3G+"</string>
   <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
   <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Your certificates satisfy the 3G plus rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
 
   <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
+  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"III G"</string>
   <!-- XTXT: Admission State - 3G_WITH_RAT Card Subtitle -->
   <string name="ADMISSION_STATE_3G_WITH_RAT_SUBTITLE_TEXT">"3G"</string>
   <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
