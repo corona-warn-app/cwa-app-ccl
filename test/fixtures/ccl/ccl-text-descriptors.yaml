@@ -29,17 +29,6 @@
   assertions:
     - languageCode: de
       text: Hallo 3
-- description: placeholder %f
-  textDescriptor:
-    type: string
-    localizedText:
-      de: "Hallo %.4f"
-    parameters:
-      - type: number
-        value: 3.1415
-  assertions:
-    - languageCode: de
-      text: Hallo 3.1415
 - description: multiple placeholders
   textDescriptor:
     type: string
