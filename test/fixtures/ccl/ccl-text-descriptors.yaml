@@ -102,7 +102,7 @@
         value: 2022-01-02T00:30:00+01:00
   assertions:
     - languageCode: de
-      text: Gültig ab 02.01.2022
+      text: Gültig ab 02.01.22
 - description: placeholder of type localDateTime
   textDescriptor:
     type: string
@@ -113,7 +113,7 @@
         value: 2022-01-02T00:30:00+01:00
   assertions:
     - languageCode: de
-      text: Gültig ab 02.01.2022, 00:30
+      text: Gültig ab 02.01.22, 00:30
 - description: placeholder of type utcDate
   textDescriptor:
     type: string
@@ -124,7 +124,7 @@
         value: 2022-01-02T00:30:00+01:00
   assertions:
     - languageCode: de
-      text: Gültig ab 01.01.2022
+      text: Gültig ab 01.01.22
 - description: placeholder of type utcDateTime
   textDescriptor:
     type: string
@@ -135,7 +135,7 @@
         value: 2022-01-02T00:30:00+01:00
   assertions:
     - languageCode: de
-      text: Gültig ab 01.01.2022, 23:30
+      text: Gültig ab 01.01.22, 23:30
 - description: plural simple hello world (quantity 0)
   textDescriptor:
     type: plural
