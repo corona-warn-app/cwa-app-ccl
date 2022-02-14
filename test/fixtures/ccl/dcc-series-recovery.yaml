@@ -355,17 +355,17 @@
     - time: +P2M
       vc: janssen1/1
   testCases:
-    # Vaccination not immedeately valid after first vaccination with J&J
+    # Vaccination immediately valid after first vaccination with J&J
     - time: janssen1/1
       assertions:
         admissionState: 2G
-        mostRelevantCertificate: rc1
+        mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: janssen1/1
         mostRecentVaccination: janssen1/1
         hasBooster: false
         verificationCertificates:
-          - certificate: rc1
+          - certificate: janssen1/1
     # Complete J&J vaccination valid after 15 days
     - time: janssen1/1+P15D
       assertions:

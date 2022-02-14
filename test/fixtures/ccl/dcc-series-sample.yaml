@@ -41,7 +41,7 @@
   testCases:
     - time: janssen1/1
       assertions:
-        admissionState: OTHER
+        admissionState: 2G
         mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         vaccinationValidFrom: janssen1/1+P15D
@@ -50,7 +50,7 @@
           - certificate: janssen1/1
     - time: janssen1/1+P2W
       assertions:
-        admissionState: OTHER
+        admissionState: 2G
         mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         vaccinationValidFrom: janssen1/1+P15D
