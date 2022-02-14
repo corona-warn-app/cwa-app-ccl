@@ -336,6 +336,17 @@
         hasBooster: true
         verificationCertificates:
           - certificate: rc1
+    # recovery still valid after 2 years (unlimited) --> 1G
+    - time: rc1+P2Y
+      assertions:
+        admissionState: 1G
+        mostRelevantCertificate: rc1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: true
+        verificationCertificates:
+          - certificate: rc1
 - description: recovery + J&J
   t0: '2022-01-01'
   series:
