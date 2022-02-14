@@ -7,7 +7,7 @@
       tc: pcr1
     - time: +P6W
       tc: rat1
-    - time: +P2M
+    - time: rc1+P7M
       vc: biontech1/1
     - time: +P5W
       tc: pcr2
@@ -336,17 +336,28 @@
         hasBooster: true
         verificationCertificates:
           - certificate: rc1
-    # recovery still valid after 2 years (unlimited) --> 1G
-    - time: rc1+P2Y
+    # recovery still valid after 181 days, but vc is prioritized
+    - time: rc1+P181D
       assertions:
         admissionState: 1G
-        mostRelevantCertificate: rc1
+        mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: true
         verificationCertificates:
-          - certificate: rc1
+          - certificate: biontech2/2
+    # recovery still valid after 2 years (unlimited) --> 1G
+    - time: rc1+P2Y
+      assertions:
+        admissionState: 1G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: true
+        verificationCertificates:
+          - certificate: biontech2/2
 - description: recovery + J&J
   t0: '2022-01-01'
   series:
@@ -509,7 +520,7 @@
       vc: biontech1/2
     - time: +P3M
       rc: rc1
-    - time: +P40D # must be between 29 and 90 days after rc1
+    - time: +P40D # must be between 29 and 180 days after rc1
       vc: biontech2/2
   testCases:  
     - time: biontech2/2
