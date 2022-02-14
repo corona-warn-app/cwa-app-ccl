@@ -14,10 +14,10 @@
     - time: +P4W
       tc: rat2
   testCases:
-    # Complete J&J vaccination not yet valid
+    # Complete J&J vaccination immediately leads to 2G
     - time: janssen1/1
       assertions:
-        admissionState: OTHER
+        admissionState: 2G
         mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         vaccinationValidFrom: janssen1/1+P15D
@@ -61,10 +61,10 @@
               de: Letzte Impfung vor 14 Tagen
             longText:
               de: in 1 Tag vollständig
-    # Complete J&J vaccination still not valid after 14 days
+    # Complete J&J vaccination still no complete immunization after 14 days
     - time: janssen1/1
       assertions:
-        admissionState: OTHER
+        admissionState: 2G
         mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         vaccinationValidFrom: janssen1/1+P15D
