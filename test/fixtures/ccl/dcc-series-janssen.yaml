@@ -16,6 +16,7 @@
   testCases:
     # Complete J&J vaccination immediately leads to 2G
     - time: janssen1/1
+      description: Janssen 1/1 immediately leads to 2G as it could be a recovery vaccination
       assertions:
         admissionState: 2G
         mostRelevantCertificate: janssen1/1
@@ -27,7 +28,7 @@
           - certificate: janssen1/1
         walletInfo:
           admissionState:
-            visible: false
+            visible: true
           vaccinationState:
             visible: true
             titleText:
@@ -62,7 +63,7 @@
             longText:
               de: in 1 Tag vollständig
     # Complete J&J vaccination still no complete immunization after 14 days
-    - time: janssen1/1
+    - time: janssen1/1+P14D
       assertions:
         admissionState: 2G
         mostRelevantCertificate: janssen1/1
