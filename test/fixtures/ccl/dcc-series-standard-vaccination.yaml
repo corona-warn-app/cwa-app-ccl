@@ -99,16 +99,16 @@
           - certificate: biontech2/2
         walletInfo:
           admissionState:
-            value: 2G
+            value: 1G
             visible: true
             badgeText:
-              de: ^2G$
+              de: ^1G$
             titleText:
               de: Status-Nachweis
             subtitleText:
-              de: ^2G$
+              de: ^1G$
             longText:
-              de: erfüllen die 2G-Regel
+              de: erfüllen die 1G-Regel
             faqAnchor: admission_policy
           vaccinationState:
             value: COMPLETE_IMMUNIZATION
