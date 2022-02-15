@@ -35,7 +35,7 @@
     - time: astra2/2+P15D
       description: vaccination gets priority after 15 days
       assertions:
-        admissionState: 2G
+        admissionState: 1G
         mostRelevantCertificate: astra2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         verificationCertificates:
