@@ -88,7 +88,7 @@
       de: Gültig ab %s
     parameters:
       - type: localDate
-        value: 2022-01-02T00:30:00+01:00
+        value: '2022-01-02T00:30:00+01:00'
   assertions:
     - languageCode: de
       text: Gültig ab 02.01.22
@@ -99,7 +99,7 @@
       de: Gültig ab %s
     parameters:
       - type: localDateTime
-        value: 2022-01-02T00:30:00+01:00
+        value: '2022-01-02T00:30:00+01:00'
   assertions:
     - languageCode: de
       text: Gültig ab 02.01.22, 00:30
@@ -110,7 +110,7 @@
       de: Gültig ab %s
     parameters:
       - type: utcDate
-        value: 2022-01-02T00:30:00+01:00
+        value: '2022-01-02T00:30:00+01:00'
   assertions:
     - languageCode: de
       text: Gültig ab 01.01.22
@@ -121,7 +121,7 @@
       de: Gültig ab %s
     parameters:
       - type: utcDateTime
-        value: 2022-01-02T00:30:00+01:00
+        value: '2022-01-02T00:30:00+01:00'
   assertions:
     - languageCode: de
       text: Gültig ab 01.01.22, 23:30
