@@ -56,3 +56,13 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         verificationCertificates:
           - certificate: janssen1/1
+- description: EXPOSUREAPP-11853 - nova1/1 is a recovery vaccination and valid immediately
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: nova1/1
+  testCases:
+    - time: nova1/1
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: nova1/1
