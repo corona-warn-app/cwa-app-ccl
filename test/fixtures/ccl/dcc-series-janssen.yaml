@@ -258,7 +258,7 @@
         verificationCertificates:
           - certificate: janssen1/1
     # Booster vaccination is valid and prioritized after 15 days
-    - time: biontech2/2+P15DT1S
+    - time: biontech2/2+P15D
       assertions:
         admissionState: 2G
         mostRelevantCertificate: biontech2/2

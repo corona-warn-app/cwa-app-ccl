@@ -61,7 +61,7 @@
             longText:
               de: in 15 Tagen vollständig
     # Complete vaccination still not valid after 14 days
-    - time: biontech2/2+P14DT1S
+    - time: biontech2/2+P14D
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: biontech2/2
@@ -83,7 +83,7 @@
             longText:
               de: in 1 Tag vollständig
     # Complete vaccination valid after 15 days
-    - time: biontech2/2+P15DT1S
+    - time: biontech2/2+P15D
       assertions:
         admissionState: 2G
         mostRelevantCertificate: biontech2/2
