@@ -270,8 +270,6 @@
           - certificate: biontech2/2
     # Additional valid PCR test changes admission state
     - time: pcr1
-      # debug: true
-    
       assertions:
         admissionState: 1G_PLUS_PCR
         mostRelevantCertificate: biontech2/2
