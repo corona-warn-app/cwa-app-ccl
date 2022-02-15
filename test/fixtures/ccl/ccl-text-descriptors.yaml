@@ -81,7 +81,7 @@
   assertions:
     - languageCode: de
       text: Hallo Doe, John oder John Doe
-- description: placeholder of type localDate
+- description: placeholder of type localDate (without milliseconds)
   textDescriptor:
     type: string
     localizedText:
@@ -89,6 +89,17 @@
     parameters:
       - type: localDate
         value: '2022-01-02T00:30:00+01:00'
+  assertions:
+    - languageCode: de
+      text: Gültig ab 02.01.22
+- description: placeholder of type localDate (with milliseconds)
+  textDescriptor:
+    type: string
+    localizedText:
+      de: Gültig ab %s
+    parameters:
+      - type: localDate
+        value: '2022-01-02T00:30:00.000+01:00'
   assertions:
     - languageCode: de
       text: Gültig ab 02.01.22
