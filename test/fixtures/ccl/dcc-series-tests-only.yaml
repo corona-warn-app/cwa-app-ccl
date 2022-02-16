@@ -18,17 +18,6 @@
         hasBooster: false
         verificationCertificates:
           - certificate: rat1
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^3G$
-            subtitleText:
-              de: ^3G$
-            longText:
-              de: erfüllen die 3G-Regel
-          vaccinationState:
-            visible: false
     - time: pcr1
       description: PCR supersedes valid RAT
       assertions:
@@ -36,15 +25,6 @@
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^3G\+$
-            subtitleText:
-              de: ^3G\+$
-            longText:
-              de: erfüllen die 3G-Plus-Regel
     - time: rat2
       description: Valid PCR even supersedes a newer RAT
       assertions:
@@ -52,30 +32,12 @@
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^3G\+$
-            subtitleText:
-              de: ^3G\+$
-            longText:
-              de: erfüllen die 3G-Plus-Regel
     - time: rat3
       assertions:
         admissionState: 3G_WITH_PCR
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^3G\+$
-            subtitleText:
-              de: ^3G\+$
-            longText:
-              de: erfüllen die 3G-Plus-Regel
     - time: pcr1+P3DT1S
       description: RAT supersedes PCR once it becomes invalid
       assertions:
@@ -83,15 +45,6 @@
         mostRelevantCertificate: rat3
         verificationCertificates:
           - certificate: rat3
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^3G$
-            subtitleText:
-              de: ^3G$
-            longText:
-              de: erfüllen die 3G-Regel
 - description: The most recent RAT test has priority
   t0: '2022-01-01'
   series:

@@ -31,17 +31,6 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech1/2
-        walletInfo:
-          admissionState:
-            visible: false
-          vaccinationState:
-            visible: true
-            titleText:
-              de: Impfstatus
-            subtitleText:
-              de: Letzte Impfung heute
-            longText:
-              de: noch nicht vollständig
     # Complete vaccination not yet valid
     - time: biontech2/2
       assertions:
@@ -53,17 +42,6 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
-        walletInfo:
-          admissionState:
-            visible: false
-          vaccinationState:
-            visible: true
-            titleText:
-              de: Impfstatus
-            subtitleText:
-              de: Letzte Impfung heute
-            longText:
-              de: in 15 Tagen vollständig
     # Complete vaccination still not valid after 14 days
     - time: biontech2/2+P14D
       assertions:
@@ -75,17 +53,6 @@
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
-        walletInfo:
-          admissionState:
-            visible: false
-          vaccinationState:
-            visible: true
-            titleText:
-              de: Impfstatus
-            subtitleText:
-              de: Letzte Impfung vor 14 Tagen
-            longText:
-              de: in 1 Tag vollständig
     # Complete vaccination valid after 15 days counts as 1G for 90 days
     - time: biontech2/2+P15D
       assertions:
@@ -98,23 +65,6 @@
         hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
-        walletInfo:
-          admissionState:
-            value: 1G
-            visible: true
-            badgeText:
-              de: ^1G$
-            titleText:
-              de: Status-Nachweis
-            subtitleText:
-              de: ^1G$
-            longText:
-              de: erfüllen die 1G-Regel
-            faqAnchor: admission_policy
-          vaccinationState:
-            value: COMPLETE_IMMUNIZATION
-            longText:
-              de: Ihr Impfschutz ist vollständig
     # Additional valid PCR test changes admission state
     - time: pcr1
       assertions:
