@@ -25,9 +25,6 @@
         hasBooster: false
         verificationCertificates:
           - certificate: rc1
-        walletInfo:
-          vaccinationState:
-            visible: false
     # recovery valid from day 29 after positive PCR Test
     - time: rc1+P29D
       assertions:
