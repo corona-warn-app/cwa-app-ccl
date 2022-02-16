@@ -95,6 +95,7 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
         walletInfo:
@@ -123,6 +124,7 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
           - certificate: pcr1
@@ -146,6 +148,7 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
           - certificate: rat1
@@ -158,16 +161,19 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
     # on the 90th days, 2/2 is still 1G
     - time: biontech2/2+P90D
       assertions:
         admissionState: 1G
+        hasBoosterEquivalent: true
     # after 90 days, 2/2 is not 1G anymore but only 2G
     - time: biontech2/2+P91D
       assertions:
         admissionState: 2G
+        hasBoosterEquivalent: false
     # PCR or RAT change admission state to 2G+
     - time: pcr2
       assertions:
@@ -184,6 +190,7 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
         hasBooster: true
+        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech3/3
     # Additional valid PCR test changes admission state
