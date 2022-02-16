@@ -1,0 +1,40 @@
+- description: walletInfo for 3G_WITH_RAT
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: rat1
+  testCases:
+    - time: rat1
+      assertions:
+        admissionState: 3G_WITH_RAT
+        walletInfo:
+          admissionState:
+            visible: true
+            badgeText:
+              de: ^3G$
+            subtitleText:
+              de: ^3G$
+            longText:
+              de: erfüllen die 3G-Regel
+          vaccinationState:
+            visible: false
+- description: walletInfo for 3G_WITH_PCR
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: pcr1
+  testCases:
+    - time: pcr1
+      assertions:
+        admissionState: 3G_WITH_PCR
+        walletInfo:
+          admissionState:
+            visible: true
+            badgeText:
+              de: ^3G\+$
+            subtitleText:
+              de: ^3G\+$
+            longText:
+              de: erfüllen die 3G-Plus-Regel
+          vaccinationState:
+            visible: false

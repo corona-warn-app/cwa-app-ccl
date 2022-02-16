@@ -26,42 +26,6 @@
         hasBooster: false
         verificationCertificates:
           - certificate: janssen1/1
-        walletInfo:
-          admissionState:
-            visible: true
-          vaccinationState:
-            visible: true
-            titleText:
-              de: Impfstatus
-            subtitleText:
-              de: Letzte Impfung heute
-            longText:
-              de: in 15 Tagen vollständig
-    # next 14 days until vaccination is valid
-    - time: janssen1/1+P1D
-      assertions:
-        walletInfo:
-          vaccinationState:
-            subtitleText:
-              de: Letzte Impfung vor 1 Tag
-            longText:
-              de: in 14 Tagen vollständig
-    - time: janssen1/1+P2D
-      assertions:
-        walletInfo:
-          vaccinationState:
-            subtitleText:
-              de: Letzte Impfung vor 2 Tagen
-            longText:
-              de: in 13 Tagen vollständig
-    - time: janssen1/1+P14D
-      assertions:
-        walletInfo:
-          vaccinationState:
-            subtitleText:
-              de: Letzte Impfung vor 14 Tagen
-            longText:
-              de: in 1 Tag vollständig
     # Complete J&J vaccination still no complete immunization after 14 days
     - time: janssen1/1+P14D
       assertions:
@@ -84,23 +48,6 @@
         hasBooster: false
         verificationCertificates:
           - certificate: janssen1/1
-        walletInfo:
-          admissionState:
-            value: 2G
-            visible: true
-            badgeText:
-              de: ^2G$
-            titleText:
-              de: Status-Nachweis
-            subtitleText:
-              de: ^2G$
-            longText:
-              de: erfüllen die 2G-Regel
-            faqAnchor: admission_policy
-          vaccinationState:
-            value: COMPLETE_IMMUNIZATION
-            longText:
-              de: Ihr Impfschutz ist vollständig
     # Additional valid PCR test changes admission state
     - time: pcr1
       assertions:
@@ -170,24 +117,6 @@
         verificationCertificates:
           - certificate: biontech2/1
           - certificate: pcr2
-        walletInfo:
-          admissionState:
-            value: 1G_PLUS_PCR
-            visible: true
-            badgeText:
-              de: ^1G\+$
-            subtitleText:
-              de: ^1G\+ PCR-Test$
-            longText:
-              de: erfüllen die 1G-Plus-Regel
-            faqAnchor: admission_policy
-          verification:
-            - certificate: biontech2/1
-              buttonText:
-                de: 2G-Zertifikat
-            - certificate: pcr2
-              buttonText:
-                de: Testzertifikat
     # Additional PCR test older than 72h does not change admission state
     - time: pcr2+P3DT1S
       assertions:
@@ -211,17 +140,6 @@
         verificationCertificates:
           - certificate: biontech2/1
           - certificate: rat2
-        walletInfo:
-          admissionState:
-            value: 1G_PLUS_RAT
-            visible: true
-            badgeText:
-              de: ^1G\+$
-            subtitleText:
-              de: ^1G\+ Schnelltest$
-            longText:
-              de: erfüllen die 1G-Plus-Regel, es sei denn, es wird ein PCR-Test
-            faqAnchor: admission_policy
     # Additional RAT test older than 48h does not change admission state
     - time: rat2+P2DT1S
       assertions:
