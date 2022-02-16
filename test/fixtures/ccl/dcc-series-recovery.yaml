@@ -233,6 +233,7 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
+        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech2/2
     - time: rc1+P28D
@@ -244,6 +245,7 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
+        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech2/2
     # recovery leads to 1G after 29 days
@@ -254,7 +256,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: rc1
     # Additional valid PCR test changes admission state
@@ -265,7 +268,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: rc1
           - certificate: pcr1
@@ -277,7 +281,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: rc1
     # Additional valid RAT test changes admission state
@@ -288,7 +293,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: rc1
           - certificate: rat1
@@ -300,7 +306,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: rc1
     # recovery still valid after 90 days --> 1G
@@ -311,7 +318,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: rc1
     # recovery still valid after 91 days, but vc is prioritized
@@ -322,7 +330,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
     # recovery still valid after 181 days, but vc is prioritized
@@ -333,7 +342,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
     # recovery still valid after 2 years (unlimited) --> 1G
@@ -344,7 +354,8 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
 - description: recovery + J&J
