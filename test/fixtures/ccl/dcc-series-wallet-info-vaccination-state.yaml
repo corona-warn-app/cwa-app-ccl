@@ -1,0 +1,174 @@
+- description: biontech 1/2 + biontech 2/2 (same for moderna, astra, and nova)
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech1/2
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung heute
+            longText:
+              de: noch nicht vollständig
+    - time: biontech1/2+P1D
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 1 Tag
+    - time: biontech1/2+P2D
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 2 Tagen
+    - time: biontech2/2
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        walletInfo:
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung heute
+            longText:
+              de: in 15 Tagen vollständig
+    - time: biontech2/2+P1D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 1 Tag
+            longText:
+              de: in 14 Tagen vollständig
+    - time: biontech2/2+P14D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 14 Tag
+            longText:
+              de: in 1 Tag vollständig
+    - time: biontech2/2+P15D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung vor 15 Tage
+            longText:
+              de: Ihr Impfschutz ist vollständig
+    - time: biontech2/2+P16D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 16 Tage
+            longText:
+              de: Ihr Impfschutz ist vollständig
+- description: biontech 1/1 (recovery vaccination; same for moderna, astra, and nova)
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+  testCases:
+    - time: biontech1/1
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung heute
+            longText:
+              de: Ihr Impfschutz ist vollständig
+    - time: biontech1/1+P1D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 1 Tag
+    - time: biontech1/1+P2D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 2 Tagen
+- description: janssen 1/1
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen1/1
+  testCases:
+    - time: janssen1/1
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        walletInfo:
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung heute
+            longText:
+              de: in 15 Tagen vollständig
+    - time: janssen1/1+P1D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 1 Tag
+            longText:
+              de: in 14 Tagen vollständig
+    - time: janssen1/1+P14D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 14 Tag
+            longText:
+              de: in 1 Tag vollständig
+    - time: janssen1/1+P15D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            visible: true
+            titleText:
+              de: Impfstatus
+            subtitleText:
+              de: Letzte Impfung vor 15 Tage
+            longText:
+              de: Ihr Impfschutz ist vollständig
+    - time: janssen1/1+P16D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+        walletInfo:
+          vaccinationState:
+            subtitleText:
+              de: Letzte Impfung vor 16 Tage
+            longText:
+              de: Ihr Impfschutz ist vollständig

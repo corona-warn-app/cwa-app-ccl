@@ -29,39 +29,6 @@
         walletInfo:
           admissionState:
             visible: true
-          vaccinationState:
-            visible: true
-            titleText:
-              de: Impfstatus
-            subtitleText:
-              de: Letzte Impfung heute
-            longText:
-              de: in 15 Tagen vollständig
-    # next 14 days until vaccination is valid
-    - time: janssen1/1+P1D
-      assertions:
-        walletInfo:
-          vaccinationState:
-            subtitleText:
-              de: Letzte Impfung vor 1 Tag
-            longText:
-              de: in 14 Tagen vollständig
-    - time: janssen1/1+P2D
-      assertions:
-        walletInfo:
-          vaccinationState:
-            subtitleText:
-              de: Letzte Impfung vor 2 Tagen
-            longText:
-              de: in 13 Tagen vollständig
-    - time: janssen1/1+P14D
-      assertions:
-        walletInfo:
-          vaccinationState:
-            subtitleText:
-              de: Letzte Impfung vor 14 Tagen
-            longText:
-              de: in 1 Tag vollständig
     # Complete J&J vaccination still no complete immunization after 14 days
     - time: janssen1/1+P14D
       assertions:
@@ -97,10 +64,6 @@
             longText:
               de: erfüllen die 2G-Regel
             faqAnchor: admission_policy
-          vaccinationState:
-            value: COMPLETE_IMMUNIZATION
-            longText:
-              de: Ihr Impfschutz ist vollständig
     # Additional valid PCR test changes admission state
     - time: pcr1
       assertions:
