@@ -3,255 +3,305 @@
   series:
     - time: t0
       vc: janssen1/1
-    - time: +P3W
-      tc: pcr1
-    - time: +P1W
-      tc: rat1
     - time: +P4W
       vc: biontech2/1
+    - time: +P4M
+      tc: pcr
     - time: +P4W
-      tc: pcr2
-    - time: +P4W
-      tc: rat2
+      tc: rat
   testCases:
-    # Complete J&J vaccination immediately leads to 2G
+    # J&J 1/1 vaccination is incomplete
     - time: janssen1/1
-      description: Janssen 1/1 immediately leads to 2G as it could be a recovery vaccination
+      description: J&J 1/1 vaccination is incomplete
       assertions:
-        admissionState: 2G
+        admissionState: OTHER
         mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationState: PARTIAL_IMMUNIZATION
+        vaccinationValidFrom: 
         mostRecentVaccination: janssen1/1
         hasBooster: false
         verificationCertificates:
           - certificate: janssen1/1
-    # Complete J&J vaccination still no complete immunization after 14 days
-    - time: janssen1/1+P14D
-      assertions:
-        admissionState: 2G
-        mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
-        vaccinationValidFrom: janssen1/1+P15D
-        mostRecentVaccination: janssen1/1
-        hasBooster: false
-        verificationCertificates:
-          - certificate: janssen1/1
-    # Complete J&J vaccination valid after 15 days
-    - time: janssen1/1+P15D
-      assertions:
-        admissionState: 2G
-        mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
-        mostRecentVaccination: janssen1/1
-        hasBooster: false
-        verificationCertificates:
-          - certificate: janssen1/1
-    # Additional valid PCR test changes admission state
-    - time: pcr1
-      assertions:
-        admissionState: 2G_PLUS_PCR
-        mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
-        mostRecentVaccination: janssen1/1
-        hasBooster: false
-        verificationCertificates:
-          - certificate: janssen1/1
-          - certificate: pcr1
-    # Additional PCR test older than 72h does not change admission state
-    - time: pcr1+P3DT1S
-      assertions:
-        admissionState: 2G
-        mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
-        mostRecentVaccination: janssen1/1
-        hasBooster: false
-        verificationCertificates:
-          - certificate: janssen1/1
-    # Additional valid RAT test changes admission state
-    - time: rat1
-      assertions:
-        admissionState: 2G_PLUS_RAT
-        mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
-        mostRecentVaccination: janssen1/1
-        hasBooster: false
-        verificationCertificates:
-          - certificate: janssen1/1
-          - certificate: rat1
-    # Additional RAT test older than 48h does not change admission state
-    - time: rat1+P2DT1S
-      assertions:
-        admissionState: 2G
-        mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
-        mostRecentVaccination: janssen1/1
-        hasBooster: false
-        verificationCertificates:
-          - certificate: janssen1/1
-    # Booster vaccination is immedeately valid and prioritized
+    # Complete vaccination is not yet valid
     - time: biontech2/1
       assertions:
-        admissionState: 1G
+        admissionState: OTHER
+        mostRelevantCertificate: biontech2/1
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: biontech2/1+P15D
+        mostRecentVaccination: biontech2/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/1
+    # Complete vaccination still not valid after 14 days
+    - time: biontech2/1+P14D
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: biontech2/1
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: biontech2/1+P15D
+        mostRecentVaccination: biontech2/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/1
+    # Complete vaccination valid after 15 days counts as 2G+ for 90 days
+    - time: biontech2/1+P15D
+      assertions:
+        admissionState: 2G_PLUS
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: true
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: biontech2/1
+    # Admission state still 2G+ after 90 days
+    - time: biontech2/1+P90D
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: biontech2/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/1+P15D
+        mostRecentVaccination: biontech2/1
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: biontech2/1
+    # Admission state changes after 91 days
+    - time: biontech2/1+P91D
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/1+P15D
+        mostRecentVaccination: biontech2/1
+        hasBooster: false
+        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech2/1
     # Additional valid PCR test changes admission state
-    - time: pcr2
+    - time: pcr
       assertions:
-        admissionState: 1G_PLUS_PCR
+        admissionState: 2G_PLUS_PCR
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/1
-          - certificate: pcr2
+          - certificate: pcr
     # Additional PCR test older than 72h does not change admission state
-    - time: pcr2+P3DT1S
+    - time: pcr+P3DT1S
       assertions:
-        admissionState: 1G
+        admissionState: 2G
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/1
     # Additional valid RAT test changes admission state
-    - time: rat2
+    - time: rat
       assertions:
-        admissionState: 1G_PLUS_RAT
+        admissionState: 2G_PLUS_RAT
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/1
-          - certificate: rat2
+          - certificate: rat
     # Additional RAT test older than 48h does not change admission state
-    - time: rat2+P2DT1S
+    - time: rat+P2DT1S
       assertions:
-        admissionState: 1G
+        admissionState: 2G
         mostRelevantCertificate: biontech2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/1
-# Same testcases like above, but with second vaccination issued as 2/2 instead of 2/1. This does not lead to a booster
-- description: J&J vaccination + biontech booster 2/2 + test
+# Same testcases like above, but with second vaccination issued as 2/2 instead of 2/1. 
+- description: J&J vaccination + biontech booster 2/1
   t0: '2022-01-01'
   series:
     - time: t0
       vc: janssen1/1
     - time: +P4W
       vc: biontech2/2
+    - time: +P4M
+      tc: pcr
     - time: +P4W
-      tc: pcr1
-    - time: +P4W
-      tc: rat1
+      tc: rat
   testCases:
-    # Second vaccination is immedeately valid, but not yet prioritized
+    # Complete vaccination is not yet valid
     - time: biontech2/2
       assertions:
-        admissionState: 2G
-        mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        admissionState: OTHER
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
         verificationCertificates:
-          - certificate: janssen1/1
-    # Booster vaccination is valid and prioritized after 15 days
-    - time: biontech2/2+P15D
+          - certificate: biontech2/2
+    # Complete vaccination still not valid after 14 days
+    - time: biontech2/2+P14D
       assertions:
-        admissionState: 1G
+        admissionState: OTHER
         mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/2
+    # Complete vaccination valid after 15 days counts as 2G+ for 90 days
+    - time: biontech2/2+P15D
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: biontech2/2
+    # Admission state still 2G+ after 90 days
+    - time: biontech2/2+P90D
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: biontech2/2
+    # Admission state changes after 91 days
+    - time: biontech2/2+P91D
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech2/2
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/2+P15D
+        mostRecentVaccination: biontech2/2
+        hasBooster: false
+        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech2/2
     # Additional valid PCR test changes admission state
-    - time: pcr1
+    - time: pcr
       assertions:
-        admissionState: 1G_PLUS_PCR
+        admissionState: 2G_PLUS_PCR
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
-          - certificate: pcr1
+          - certificate: pcr
     # Additional PCR test older than 72h does not change admission state
-    - time: pcr1+P3DT1S
+    - time: pcr+P3DT1S
       assertions:
-        admissionState: 1G
+        admissionState: 2G
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
     # Additional valid RAT test changes admission state
-    - time: rat1
+    - time: rat
       assertions:
-        admissionState: 1G_PLUS_RAT
+        admissionState: 2G_PLUS_RAT
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
-          - certificate: rat1
+          - certificate: rat
     # Additional RAT test older than 48h does not change admission state
-    - time: rat1+P2DT1S
+    - time: rat+P2DT1S
       assertions:
-        admissionState: 1G
+        admissionState: 2G
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
-# Booster with J&J
-- description: J&J vaccination + J&J booster 2/2 + test
+
+# 2/1 only 
+- description: J&J vaccination 2/1 only treated as complete vaccination
   t0: '2022-01-01'
   series:
     - time: t0
-      vc: janssen1/1
-    - time: +P4W
-      vc: janssen2/2
+      vc: janssen2/1
   testCases:
-    # 2nd vaccination is immedeately valid and prioritized
-    - time: janssen2/2
+    # Complete vaccination is not yet valid
+    - time: biontech2/1
       assertions:
-        admissionState: 2G
-        mostRelevantCertificate: janssen2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
-        mostRecentVaccination: janssen2/2
+        admissionState: OTHER
+        mostRelevantCertificate: biontech2/1
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: biontech2/1+P15D
+        mostRecentVaccination: biontech2/1
         hasBooster: false
         verificationCertificates:
-          - certificate: janssen2/2
+          - certificate: biontech2/1
+    # Complete vaccination still not valid after 14 days
+    - time: biontech2/1+P14D
+      assertions:
+        admissionState: OTHER
+        mostRelevantCertificate: biontech2/1
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        vaccinationValidFrom: biontech2/1+P15D
+        mostRecentVaccination: biontech2/1
+        hasBooster: false
+        verificationCertificates:
+          - certificate: biontech2/1
+    # Complete vaccination valid after 15 days counts as 2G+ for 90 days
+    - time: biontech2/1+P15D
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: biontech2/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech2/1+P15D
+        mostRecentVaccination: biontech2/1
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: biontech2/1
+# 2Booster on J&J
+- description: Vaccination 3/1 treated as booster immedeately
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+  testCases:
+    - time: biontech3/1
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: biontech3/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech3/1
+        mostRecentVaccination: biontech3/1
+        hasBooster: true
+        verificationCertificates:
+          - certificate: biontech3/1
 # Reissuance of 2/2 as 2/1 with both DCCs in the wallet
 - description: J&J vaccination + J&J booster 2/2 + reissuance as 2/1
   t0: '2022-01-01'
@@ -264,14 +314,14 @@
       vc: janssen2/1
       cwtIat: t0+P6W
   testCases:
-    # 2nd vaccination is immedeately valid and prioritized
+    # 2nd vaccination is in pending state
     - time: janssen2/2
       assertions:
-        admissionState: 1G
+        admissionState: OTHER
         mostRelevantCertificate: janssen2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen1/1+P15D
+        vaccinationValidFrom: janssen2/1+P15D
         mostRecentVaccination: janssen2/1
-        hasBooster: true
+        hasBooster: false
         verificationCertificates:
           - certificate: janssen2/1
