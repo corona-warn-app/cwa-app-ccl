@@ -156,6 +156,12 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 .to.have.property('hasBooster', assertions.hasBooster)
             })
 
+            has('hasBoosterEquivalent') &&
+            it('check hasBoosterEquivalent', () => {
+              expect(output)
+                .to.have.property('hasBoosterEquivalent', assertions.hasBoosterEquivalent)
+            })
+
             has('verificationCertificates') &&
             it('check verificationCertificates', () => {
               expect(output.verificationCertificates)
