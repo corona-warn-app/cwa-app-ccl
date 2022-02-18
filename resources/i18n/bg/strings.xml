@@ -3,12 +3,12 @@
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Доказателство за статус"</string>
 
-  <!-- XTXT: Admission State - 2G_PLUS_PCR Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Subtitle -->
-  <string name="ADMISSION_STATE_2G_PLUS_PCR_SUBTITLE_TEXT">"2G+ PCR тест"</string>
-  <!-- XTXT: Admission State - 2G_PLUS_PCR Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_PCR_LONG_TEXT">"Вашите сертификати отговарят на 2G plus правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
+  <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
+  <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
+  <!-- XTXT: Admission State - 2G_PLUS Card Subtitle -->
+  <string name="ADMISSION_STATE_2G_PLUS_SUBTITLE_TEXT">"2G+ PCR тест"</string>
+  <!-- XTXT: Admission State - 2G_PLUS Card Body -->
+  <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Вашите сертификати отговарят на 2G plus правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
 
   <!-- XTXT: Admission State - 2G Badge Text -->
   <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
