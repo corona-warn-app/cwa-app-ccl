@@ -3,27 +3,6 @@
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Dowód statusu"</string>
 
-  <!-- XTXT: Admission State - 1G_PLUS_PCR Badge Text -->
-  <string name="ADMISSION_STATE_1G_PLUS_PCR_BADGE_TEXT">"1G+"</string>
-  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Subtitle -->
-  <string name="ADMISSION_STATE_1G_PLUS_PCR_SUBTITLE_TEXT">"1G+ test PCR"</string>
-  <!-- XTXT: Admission State - 1G_PLUS_PCR Card Body -->
-  <string name="ADMISSION_STATE_1G_PLUS_PCR_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 1G plus. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i pokaż kod QR w przeglądzie certyfikatów."</string>
-
-  <!-- XTXT: Admission State - 1G_PLUS_RAT Badge Text -->
-  <string name="ADMISSION_STATE_1G_PLUS_RAT_BADGE_TEXT">"1G+"</string>
-  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Subtitle -->
-  <string name="ADMISSION_STATE_1G_PLUS_RAT_SUBTITLE_TEXT">"1G+ szybki test"</string>
-  <!-- XTXT: Admission State - 1G_PLUS_RAT Card Body -->
-  <string name="ADMISSION_STATE_1G_PLUS_RAT_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 1G plus, o ile nie jest wymagany test PCR. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
-
-  <!-- XTXT: Admission State - 1G Badge Text -->
-  <string name="ADMISSION_STATE_1G_BADGE_TEXT">"1G"</string>
-  <!-- XTXT: Admission State - 1G Card Subtitle -->
-  <string name="ADMISSION_STATE_1G_SUBTITLE_TEXT">"1G"</string>
-  <!-- XTXT: Admission State - 1G Card Body -->
-  <string name="ADMISSION_STATE_1G_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 1G. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i pokaż kod QR w przeglądzie certyfikatów."</string>
-
   <!-- XTXT: Admission State - 2G_PLUS_PCR Badge Text -->
   <string name="ADMISSION_STATE_2G_PLUS_PCR_BADGE_TEXT">"2G+"</string>
   <!-- XTXT: Admission State - 2G_PLUS_PCR Card Subtitle -->
