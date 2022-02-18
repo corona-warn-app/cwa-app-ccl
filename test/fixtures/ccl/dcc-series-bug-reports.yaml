@@ -13,29 +13,32 @@
     - time: astra2/2
       description: older booster notation and thus 2G; complete immunization but not prioritized for the next 15 days as indistinguishable
       assertions:
-        admissionState: 2G
+        admissionState: 2G_PLUS
         mostRelevantCertificate: astra2/2
         vaccinationState: COMPLETE_IMMUNIZATION
+        hasBooster: true
         verificationCertificates:
           - certificate: astra2/2
     - time: pcr1
       description: PCR test gets priority while vaccination is prioritized
       assertions:
         admissionState: 2G_PLUS_PCR
-        mostRelevantCertificate: pcr1
+        mostRelevantCertificate: astra2/2
         verificationCertificates:
+          - certificate: astra2/2
           - certificate: pcr1
     - time: rat1
       description: RAT test gets priority while vaccination is prioritized
       assertions:
         admissionState: 2G_PLUS_RAT
-        mostRelevantCertificate: rat1
+        mostRelevantCertificate: astra2/2
         verificationCertificates:
+          - certificate: astra2/2
           - certificate: rat1
     - time: astra2/2+P15D
       description: vaccination gets priority after 15 days
       assertions:
-        admissionState: 1G
+        admissionState: 2G_PLUS
         mostRelevantCertificate: astra2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         verificationCertificates:
@@ -51,11 +54,11 @@
     - time: biontech1/2
       description: a 1/2 does not supersede a previous 1/1
       assertions:
-        admissionState: 2G
-        mostRelevantCertificate: janssen1/1
-        vaccinationState: COMPLETE_IMMUNIZATION
+        admissionState: OTHER
+        mostRelevantCertificate: biontech1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
         verificationCertificates:
-          - certificate: janssen1/1
+          - certificate: biontech1/2
 - description: EXPOSUREAPP-11853 - nova1/1 is a recovery vaccination and valid immediately
   t0: '2022-01-01'
   series:
