@@ -11,13 +11,6 @@
   <!-- XTXT: Admission State - 2G_PLUS_PCR Card Body -->
   <string name="ADMISSION_STATE_2G_PLUS_PCR_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
 
-  <!-- XTXT: Admission State - 2G_PLUS_RAT Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_RAT_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Subtitle -->
-  <string name="ADMISSION_STATE_2G_PLUS_RAT_SUBTITLE_TEXT">"2G+ Schnelltest"</string>
-  <!-- XTXT: Admission State - 2G_PLUS_RAT Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_RAT_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Plus-Regel, es sei denn, es wird ein PCR-Test benötigt. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
   <!-- XTXT: Admission State - 2G Badge Text -->
   <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
   <!-- XTXT: Admission State - 2G Card Subtitle -->
