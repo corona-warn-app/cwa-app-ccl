@@ -273,8 +273,20 @@
         hasBooster: false
         verificationCertificates:
           - certificate: janssen2/1
-    # Complete vaccination valid after 15 days counts as 2G+ for 90 days
+    # Complete vaccination valid after 15 days counts as 2G+
     - time: janssen2/1+P15D
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: janssen2/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen2/1+P15D
+        mostRecentVaccination: janssen2/1
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: janssen2/1
+    # Admission State still 2G+ after 91 days (because this could be a vacc. after recovery vacc. 
+    - time: janssen2/1+P91D
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: janssen2/1
