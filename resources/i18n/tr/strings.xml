@@ -5,29 +5,21 @@
 
   <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
   <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS Card Subtitle -->
-  <string name="ADMISSION_STATE_2G_PLUS_SUBTITLE_TEXT">"2G+ PCR testi"</string>
   <!-- XTXT: Admission State - 2G_PLUS Card Body -->
   <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Sertifikalarınız 2G plus kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
 
   <!-- XTXT: Admission State - 2G Badge Text -->
   <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
-  <!-- XTXT: Admission State - 2G Card Subtitle -->
-  <string name="ADMISSION_STATE_2G_SUBTITLE_TEXT">"2G"</string>
   <!-- XTXT: Admission State - 2G Card Body -->
   <string name="ADMISSION_STATE_2G_LONG_TEXT">"Sertifikalarınız 2G kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
 
   <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
   <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR Card Subtitle -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_SUBTITLE_TEXT">"3G+"</string>
   <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
   <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Sertifikalarınız 3G plus kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
 
   <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
   <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT Card Subtitle -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_SUBTITLE_TEXT">"3G"</string>
   <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
   <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Sertifikalarınız 3G kuralına uygun. Güncel durumunuzu kanıtlamanız gerekiyorsa bu görünümünü kapatın ve sertifikaya genel bakış bölümündeki QR kodu gösterin."</string>
 
