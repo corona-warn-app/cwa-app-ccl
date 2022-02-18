@@ -459,12 +459,12 @@
     # vaccination valid immedeately, but wouldn't be prioritized over rc1 if it was still valid
     - time: biontech2/2
       assertions:
-        admissionState: 2G
+        admissionState: 2G_PLUS
         mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2 
         mostRecentVaccination: biontech2/2
-        hasBooster: false    #should be a booster, but as the certificate is 2/2, its not treated as booster
+        hasBooster: true
         verificationCertificates:
           - certificate: biontech2/2
 - description: incomplete vaccination + recovery + booster while RC is still valid
@@ -485,7 +485,7 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2
         mostRecentVaccination: biontech2/2
-        hasBooster: false    #should be a booster, but as the certificate is 2/2, its not treated as booster
+        hasBooster: true
         verificationCertificates:
           - certificate: biontech2/2
     - time: biontech2/2+P15D
@@ -496,7 +496,7 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2 
         mostRecentVaccination: biontech2/2
-        hasBooster: false
+        hasBooster: true
         verificationCertificates:
           - certificate: biontech2/2
 - description: incomplete vaccination + recovery + booster 2/1
