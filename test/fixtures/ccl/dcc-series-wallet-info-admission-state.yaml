@@ -82,7 +82,7 @@
             subtitleText:
               de: ^2G\+$
             longText:
-              de: erfüllen die 2G-Plus-Regel, es sei denn
+              de: erfüllen die 2G-Plus-Regel
             faqAnchor: admission_policy
           verification:
             - certificate: biontech2/2
