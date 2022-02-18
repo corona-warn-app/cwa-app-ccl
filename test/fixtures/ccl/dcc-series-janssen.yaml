@@ -254,35 +254,12 @@
     # Complete vaccination is not yet valid
     - time: janssen2/1
       assertions:
-        admissionState: OTHER
-        mostRelevantCertificate: janssen2/1
-        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
-        vaccinationValidFrom: janssen2/1+P15D
-        mostRecentVaccination: janssen2/1
-        hasBooster: false
-        verificationCertificates:
-          - certificate: janssen2/1
-    # Complete vaccination still not valid after 14 days
-    - time: janssen2/1+P14D
-      assertions:
-        admissionState: OTHER
-        mostRelevantCertificate: janssen2/1
-        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
-        vaccinationValidFrom: janssen2/1+P15D
-        mostRecentVaccination: janssen2/1
-        hasBooster: false
-        verificationCertificates:
-          - certificate: janssen2/1
-    # Complete vaccination valid after 15 days counts as 2G+
-    - time: janssen2/1+P15D
-      assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: janssen2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen2/1+P15D
+        vaccinationValidFrom: janssen2/1
         mostRecentVaccination: janssen2/1
-        hasBooster: false
-        hasBoosterEquivalent: true
+        hasBooster: true # we assume the better result for 2/1 if in doubt
         verificationCertificates:
           - certificate: janssen2/1
     # Admission State still 2G+ after 91 days (because this could be a vacc. after recovery vacc. 
@@ -291,10 +268,10 @@
         admissionState: 2G_PLUS
         mostRelevantCertificate: janssen2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: janssen2/1+P15D
+        vaccinationValidFrom: janssen2/1
         mostRecentVaccination: janssen2/1
-        hasBooster: false
-        hasBoosterEquivalent: true
+        hasBooster: true # we assume the better result for 2/1 if in doubt
+        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: janssen2/1
 # 2Booster on J&J
