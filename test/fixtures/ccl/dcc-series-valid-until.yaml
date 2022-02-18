@@ -1,0 +1,27 @@
+- description: validUntil is midnight local time of the next day
+  t0: '2022-01-01'
+  series:
+    - time: '2022-01-01T00:00:00Z'
+      vc: biontech2/2
+    - time: '2022-01-20T08:00:00Z'
+      tc: rat1
+    - time: '2022-02-20T08:00:00Z'
+      tc: pcr1
+  testCases:
+    - time: '2022-01-01T00:00:00Z'
+      description: midnight local time if calculation was triggered at midnight
+      assertions:
+        validUntil: '2022-01-02T00:00:00Z'
+    - time: '2022-01-01T08:00:00Z'
+      description: still midnight local time if calculation was triggered during the day
+      assertions:
+        validUntil: '2022-01-02T00:00:00Z'
+    - time: rat1+PT44H
+      description: is restricted by the end of the validity of the RAT test (48h)
+      assertions:
+        validUntil: rat1+PT48H
+    - time: pcr1+PT68H
+      description: is restricted by the end of the validity of the PCR test (72h)
+      assertions:
+        validUntil: pcr1+PT72H
+      

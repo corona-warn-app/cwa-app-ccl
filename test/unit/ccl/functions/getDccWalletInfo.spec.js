@@ -156,6 +156,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               )
             })
 
+            has('validUntil') &&
+            it('check validUntil', () => {
+              const expValidUntilMoment = resolveSeriesTime(assertions.validUntil)
+              const expValidUntil = expValidUntilMoment.utc().toISOString()
+              expect(output)
+                .to.have.property('validUntil', expValidUntil)
+            })
+
             has('mostRecentVaccination') &&
             it('check mostRecentVaccination', () => {
               const expCertName = assertions.mostRecentVaccination
