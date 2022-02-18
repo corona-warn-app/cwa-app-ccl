@@ -9,7 +9,7 @@
       tc: rat1
     - time: rc1+P7M
       vc: biontech1/1
-    - time: +P5W
+    - time: +P4M
       tc: pcr2
     - time: +P6W
       tc: rat2
@@ -99,14 +99,40 @@
     # Complete vaccination immedeately valid after first vaccination
     - time: biontech1/1
       assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: biontech1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech1/1
+        mostRecentVaccination: biontech1/1
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: biontech1/1
+    # Still 2G+ after 90 days
+    - time: biontech1/1+P90D
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: biontech1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech1/1
+        mostRecentVaccination: biontech1/1
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: biontech1/1
+    # 2G after 91 days
+    - time: biontech1/1+P91D
+      assertions:
         admissionState: 2G
         mostRelevantCertificate: biontech1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech1/1
         mostRecentVaccination: biontech1/1
         hasBooster: false
+        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech1/1
+          
     # Additional valid PCR test changes admission state
     - time: pcr2
       assertions:
@@ -171,7 +197,7 @@
       rc: rc1
     - time: +P2M
       vc: biontech1/1
-    - time: +P1M
+    - time: +P4M
       vc: biontech2/2
   testCases:
     - time: biontech1/1
@@ -183,8 +209,34 @@
         vaccinationValidFrom: biontech1/1
         mostRecentVaccination: biontech1/1
         hasBooster: false
+        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech1/1
+    # Still 2G+ after 90 days
+    - time: biontech1/1+P90D
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: biontech1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech1/1
+        mostRecentVaccination: biontech1/1
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: biontech1/1
+    # 2G after 91 days
+    - time: biontech1/1+P91D
+      assertions:
+        admissionState: 2G
+        mostRelevantCertificate: biontech1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: biontech1/1
+        mostRecentVaccination: biontech1/1
+        hasBooster: false
+        hasBoosterEquivalent: false
+        verificationCertificates:
+          - certificate: biontech1/1
+    # Booster results in 2G+
     - time: biontech2/2
       description: booster vaccination valid immediately (2G+)
       assertions:
@@ -355,6 +407,30 @@
     # Vaccination immediately valid after first vaccination with J&J
     - time: janssen1/1
       assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: janssen1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1
+        mostRecentVaccination: janssen1/1
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: janssen1/1
+    # Still 2G+ after 90 days
+    - time: janssen1/1+P90D
+      assertions:
+        admissionState: 2G_PLUS
+        mostRelevantCertificate: janssen1/1
+        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationValidFrom: janssen1/1
+        mostRecentVaccination: janssen1/1
+        hasBooster: false
+        hasBoosterEquivalent: true
+        verificationCertificates:
+          - certificate: janssen1/1
+    # Vaccination immediately valid after first vaccination with J&J
+    - time: janssen1/1+P91D
+      assertions:
         admissionState: 2G
         mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION
@@ -456,40 +532,8 @@
         hasBooster: false
         verificationCertificates:
           - certificate: rc1
-    # vaccination valid immedeately, but wouldn't be prioritized over rc1 if it was still valid
+    # vaccination valid immedeately
     - time: biontech2/2
-      assertions:
-        admissionState: 2G_PLUS
-        mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: biontech2/2 
-        mostRecentVaccination: biontech2/2
-        hasBooster: true
-        verificationCertificates:
-          - certificate: biontech2/2
-- description: incomplete vaccination + recovery + booster while RC is still valid
-  t0: '2022-01-01'
-  series:
-    - time: t0
-      vc: biontech1/2
-    - time: +P3M
-      rc: rc1
-    - time: +P40D # must be between 29 and 180 days after rc1
-      vc: biontech2/2
-  testCases:  
-    - time: biontech2/2
-      description: vaccination valid immediately and prioritized, despite not valid by itself
-      assertions:
-        admissionState: 2G_PLUS
-        mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: biontech2/2
-        mostRecentVaccination: biontech2/2
-        hasBooster: true
-        verificationCertificates:
-          - certificate: biontech2/2
-    - time: biontech2/2+P15D
-      description: vaccination still prioritized after 15 days
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: biontech2/2
@@ -520,7 +564,7 @@
         hasBooster: true
         verificationCertificates:
           - certificate: biontech2/1
-- description: biontech 1/1 + booster 2/2
+- description: biontech 1/1 + booster 2/2 treated as recovery vaccination
   t0: '2022-01-01'
   series:
     - time: t0
@@ -567,7 +611,7 @@
         hasBooster: false
         verificationCertificates:
           - certificate: rc1
-    # recovery still valid after 91 days
+    # recovery still valid after 91 days, but 2G only
     - time: rc1+P91D
       assertions:
         admissionState: 2G

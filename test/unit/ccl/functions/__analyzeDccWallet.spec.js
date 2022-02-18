@@ -82,6 +82,16 @@ ${terminal.yaml(dccData)}
 ${chalk.cyan('Output of the operation')}
 ${terminal.yaml(output)}
 
+${chalk.cyan('Relevant output')}
+${terminal.yaml(output.__allRelevantVCsAndRCsAnnotatedWithContext.map(it => {
+  const {
+    barcodeData, cose, cwt, ...rest
+  } = it
+  delete rest.hcert.nam
+  delete rest.hcert.dob
+  return rest
+}))}
+
 End of debugging: ${chalk.magenta(testCaseDescription)}`
 
             console.log(terminal.prefixLine(debugLog, prefix))
