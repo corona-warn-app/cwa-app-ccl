@@ -252,39 +252,39 @@
       vc: janssen2/1
   testCases:
     # Complete vaccination is not yet valid
-    - time: biontech2/1
+    - time: janssen2/1
       assertions:
         admissionState: OTHER
-        mostRelevantCertificate: biontech2/1
+        mostRelevantCertificate: janssen2/1
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
-        vaccinationValidFrom: biontech2/1+P15D
-        mostRecentVaccination: biontech2/1
+        vaccinationValidFrom: janssen2/1+P15D
+        mostRecentVaccination: janssen2/1
         hasBooster: false
         verificationCertificates:
-          - certificate: biontech2/1
+          - certificate: janssen2/1
     # Complete vaccination still not valid after 14 days
-    - time: biontech2/1+P14D
+    - time: janssen2/1+P14D
       assertions:
         admissionState: OTHER
-        mostRelevantCertificate: biontech2/1
+        mostRelevantCertificate: janssen2/1
         vaccinationState: COMPLETE_IMMUNIZATION_PENDING
-        vaccinationValidFrom: biontech2/1+P15D
-        mostRecentVaccination: biontech2/1
+        vaccinationValidFrom: janssen2/1+P15D
+        mostRecentVaccination: janssen2/1
         hasBooster: false
         verificationCertificates:
-          - certificate: biontech2/1
+          - certificate: janssen2/1
     # Complete vaccination valid after 15 days counts as 2G+ for 90 days
-    - time: biontech2/1+P15D
+    - time: janssen2/1+P15D
       assertions:
         admissionState: 2G_PLUS
-        mostRelevantCertificate: biontech2/1
+        mostRelevantCertificate: janssen2/1
         vaccinationState: COMPLETE_IMMUNIZATION
-        vaccinationValidFrom: biontech2/1+P15D
-        mostRecentVaccination: biontech2/1
+        vaccinationValidFrom: janssen2/1+P15D
+        mostRecentVaccination: janssen2/1
         hasBooster: false
         hasBoosterEquivalent: true
         verificationCertificates:
-          - certificate: biontech2/1
+          - certificate: janssen2/1
 # 2Booster on J&J
 - description: Vaccination 3/1 treated as booster immedeately
   t0: '2022-01-01'
@@ -319,7 +319,7 @@
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: janssen2/1
-        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         vaccinationValidFrom: janssen2/1+P15D
         mostRecentVaccination: janssen2/1
         hasBooster: false
