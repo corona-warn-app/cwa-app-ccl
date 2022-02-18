@@ -50,7 +50,7 @@
             titleText:
               de: Status-Nachweis
             subtitleText:
-              de: ^2G\+ PCR-Test$
+              de: ^2G\+$
             longText:
               de: erfüllen die 2G-Plus-Regel
             faqAnchor: admission_policy
@@ -80,9 +80,9 @@
             titleText:
               de: Status-Nachweis
             subtitleText:
-              de: ^2G\+ Schnelltest$
+              de: ^2G\+$
             longText:
-              de: erfüllen die 2G-Plus-Regel, es sei denn
+              de: erfüllen die 2G-Plus-Regel
             faqAnchor: admission_policy
           verification:
             - certificate: biontech2/2
@@ -91,7 +91,7 @@
             - certificate: rat1
               buttonText:
                 de: Testzertifikat
-- description: walletInfo for 1G
+- description: walletInfo for 2G_PLUS
   t0: '2022-01-01'
   series:
     - time: t0
@@ -99,76 +99,16 @@
   testCases:
     - time: biontech2/2+P20D
       assertions:
-        admissionState: 1G
+        admissionState: 2G_PLUS
         walletInfo:
           admissionState:
             visible: true
             badgeText:
-              de: ^1G$
+              de: ^2G\+$
             titleText:
               de: Status-Nachweis
             subtitleText:
-              de: ^1G$
+              de: ^2G\+$
             longText:
-              de: erfüllen die 1G-Regel
+              de: erfüllen die 2G-Plus-Regel
             faqAnchor: admission_policy
-- description: walletInfo for 1G_PLUS_PCR
-  t0: '2022-01-01'
-  series:
-    - time: t0
-      vc: biontech2/2
-    - time: +P20D
-      tc: pcr1
-  testCases:
-    - time: pcr1
-      assertions:
-        admissionState: 1G_PLUS_PCR
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^1G\+$
-            titleText:
-              de: Status-Nachweis
-            subtitleText:
-              de: ^1G\+ PCR-Test$
-            longText:
-              de: erfüllen die 1G-Plus-Regel
-            faqAnchor: admission_policy
-          verification:
-            - certificate: biontech2/2
-              buttonText:
-                de: 2G-Zertifikat
-            - certificate: pcr1
-              buttonText:
-                de: Testzertifikat
-- description: walletInfo for 1G_PLUS_RAT
-  t0: '2022-01-01'
-  series:
-    - time: t0
-      vc: biontech2/2
-    - time: +P20D
-      tc: rat1
-  testCases:
-    - time: rat1
-      assertions:
-        admissionState: 1G_PLUS_RAT
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^1G\+$
-            titleText:
-              de: Status-Nachweis
-            subtitleText:
-              de: ^1G\+ Schnelltest$
-            longText:
-              de: erfüllen die 1G-Plus-Regel, es sei denn
-            faqAnchor: admission_policy
-          verification:
-            - certificate: biontech2/2
-              buttonText:
-                de: 2G-Zertifikat
-            - certificate: rat1
-              buttonText:
-                de: Testzertifikat

@@ -1,5 +1,6 @@
 - description: Sample series to illustrate the syntax
   t0: '2022-01-01'
+  skip: true
   series:
     # values for `time` attribute:
     #   t0 - a random point in time
