@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
+  <!-- XHED: Admission Scenario - Card Title -->
+  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Status für folgendes Bundesland"</string>
+  <!-- XTXT: Admission Scenario - Card Title -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Ihr Bundesland"</string>
+
+  <!-- XTXT: Admission Scenario - BW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Württemberg"</string>
+  <!-- XTXT: Admission Scenario - BW Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BW_SUBTITLE_TEXT">""</string>
+
+  <!-- XTXT: Admission Scenario - HH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Hamburg"</string>
+  <!-- XTXT: Admission Scenario - HH Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HH_SUBTITLE_TEXT">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
+
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Status-Nachweis"</string>
 
