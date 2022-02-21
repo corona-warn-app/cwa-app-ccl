@@ -5,7 +5,6 @@ import fse from 'fs-extra'
 import path from 'path'
 import yaml from 'js-yaml'
 import { fileURLToPath } from 'url'
-import jp from 'jsonpath'
 
 import chalk from 'chalk'
 import terminal from '../../../util/terminal.js'
@@ -60,6 +59,7 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
         console.log(terminal.prefixLine(debugLog, prefix))
       })
 
+      // TODO: input & output schemas not found (fix)
       it('input matches JSON schema', async function () {
         const results = await ccl.schema.functions.getDccAdmissionCheckScenarios.input.validate(input)
         expect(results.errors, results.errors.map(it => it.stack).join('\n')).to.be.empty
@@ -77,136 +77,103 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
 
         has('labelText') &&
         it('check labelText', () => {
-          expect(output).to.have.property(
-            'labelText',
-            assertions.labelText
+          const actLabelTextDescriptor = output.labelText
+          const labelTextAssertionDescriptor = assertions.labelText
+
+          expect(output).to.have.property('labelText')
+          expectTextToMatch(
+            actLabelTextDescriptor,
+            labelTextAssertionDescriptor
           )
         })
 
-        has('scenarioSelectionItems') &&
-        it('check scenarioSelectionItems', () => {
+        has('scenarioSelection') &&
+        it('check scenarioSelection.titleText', () => {
+          const actScenarioSelection = output.scenarioSelection
+          const actTitleTextDescriptor = actScenarioSelection.titleText
+          const titleTextAssertionDescriptor = assertions.scenarioSelection.titleText
+
+          expect(actScenarioSelection).to.have.property('titleText')
+          expectTextToMatch(
+            actTitleTextDescriptor,
+            titleTextAssertionDescriptor
+          )
+        })
+
+        has('scenarioSelection') &&
+        it('check scenarioSelection.items[]', () => {
           expect(output.scenarioSelection)
             .to.be.an('object')
             .and.to.have.property('items')
-          expect(output.scenarioSelection.items, 'length of scenarioSelection.items')
+          expect(output.scenarioSelection.items)
             .to.be.an('array')
-            .and.to.have.lengthOf(assertions.scenarioSelectionItems.length)
-          assertions.scenarioSelectionItems.forEach((it, idx) => {
-            const expIdentifierName = it.identifier
-            const actScenarioSelectionItem = output.scenarioSelection.items[idx]
-            const actIdentifierName = actScenarioSelectionItem.identifier
-
-            expect(actScenarioSelectionItem).to.have.nested.property(
-              'identifier',
-              expIdentifierName,
-              `expected ${expIdentifierName} but got ${actIdentifierName}`
-            )
-          })
+            .and.to.have.lengthOf(assertions.scenarioSelection.items.length)
         })
 
-        context('admissionCheckScenarios', () => {
-          const expAdmissionCheckScenarios = assertions.scenarioSelectionItems || {}
-          const has = pathExpression => jp.query(expAdmissionCheckScenarios, `$..${pathExpression}`)
-            .filter(it => it !== null)
-            .length > 0
+        has('scenarioSelection') &&
+        it('check scenarioSelection.items[].identifier', () => {
+          assertions.scenarioSelection.items
+            .filter(it => it.identifier)
+            .forEach(({ identifier }, idx) => {
+              const expIdentifierName = identifier
+              const actScenarioSelectionItem = output.scenarioSelection.items[idx]
+              const actIdentifierName = actScenarioSelectionItem.identifier.value
 
-          context('scenarioSelection', () => {
-            const {
-              scenarioSelection: expScenarioSelection
-            } = expAdmissionCheckScenarios
+              expect(actScenarioSelectionItem).to.have.nested.property(
+                'identifier.value',
+                expIdentifierName,
+                `expected ${expIdentifierName} but got ${actIdentifierName}`
+              )
+            })
+        })
 
-            has('scenarioSelection') &&
-            it('check scenarioSelection.titleText', () => {
-              const actScenarioSelection = output.scenarioSelection
-
-              expScenarioSelection.filter(it => it.titleText)
-              const titleTextAssertionDescriptor = expScenarioSelection.titleText
-              const actTitleTextDescriptor = actScenarioSelection.titleText
+        has('scenarioSelection') &&
+        it('check scenarioSelection.items[].titleText', () => {
+          assertions.scenarioSelection.items
+            .filter(it => it.titleText)
+            .forEach(({ titleText }, idx) => {
+              const titleTextAssertionDescriptor = titleText
+              const actScenarioSelectionItem = output.scenarioSelection.items[idx]
+              const actTitleTextDescriptor = actScenarioSelectionItem.titleText
 
               expectTextToMatch(
                 actTitleTextDescriptor,
                 titleTextAssertionDescriptor
               )
             })
+        })
 
-            has('scenarioSelection') &&
-            it('check scenarioSelection.items[]', () => {
-              expect(output).to.have.nested.property('scenarioSelection.items')
-              expect(output.scenarioSelection.items, 'length of scenarioSelection.items')
-                .to.be.an('array')
-                .and.to.have.lengthOf(expScenarioSelection.length)
+        has('scenarioSelection') &&
+        it('check scenarioSelection.items[].subtitleText', () => {
+          assertions.scenarioSelection.items
+            .filter(it => it.subtitleText)
+            .forEach(({ subtitleText }, idx) => {
+              const subtitleTextAssertionDescriptor = subtitleText
+              const actScenarioSelectionItem = output.scenarioSelection.items[idx]
+              const actSubtitleTextDescriptor = actScenarioSelectionItem.subtitleText
+
+              expectTextToMatch(
+                actSubtitleTextDescriptor,
+                subtitleTextAssertionDescriptor
+              )
             })
+        })
 
-            has('scenarioSelection') &&
-            it('check scenarioSelection.items[].identifier', () => {
-              const actScenarioSelection = output.scenarioSelection
+        has('scenarioSelection') &&
+        it('check scenarioSelection.items[].enabled', () => {
+          assertions.scenarioSelection.items
+            .filter(it => it.enabled)
+            .forEach(({ enabled }, idx) => {
+              const expEnabledStatus = enabled
+              const actScenarioSelectionItem = output.scenarioSelection.items[idx]
+              const actEnabledStatus = actScenarioSelectionItem.enabled.value
 
-              expScenarioSelection
-                .filter(it => it.identifier)
-                .forEach(({ identifier }, idx) => {
-                  const expIdentifierName = identifier
-                  const actScenarioSelectionItem = actScenarioSelection.items[idx]
-                  const actIdentifierName = actScenarioSelectionItem.identifier
-
-                  expect(actScenarioSelectionItem).to.have.nested.property(
-                    'identifier',
-                    expIdentifierName,
-                    `expected reference to ${expIdentifierName} but got ${actIdentifierName}`
-                  )
-                })
+              expect(actScenarioSelectionItem).to.have.nested.property(
+                'enabled.value',
+                expEnabledStatus,
+                `expected ${expEnabledStatus} but got ${actEnabledStatus}`
+              )
             })
-
-            has('scenarioSelection') &&
-            it('check scenarioSelection.items[].titleText', () => {
-              const actScenarioSelection = output.scenarioSelection
-
-              expScenarioSelection
-                .filter(it => it.titleText)
-                .forEach(({ titleText }, idx) => {
-                  const titleTextAssertionDescriptor = titleText
-                  const actScenarioSelectionItem = actScenarioSelection.items[idx]
-                  const actTitleTextDescriptor = actScenarioSelectionItem.titleText
-
-                  expectTextToMatch(
-                    actTitleTextDescriptor,
-                    titleTextAssertionDescriptor
-                  )
-                })
-            })
-
-            has('scenarioSelection') &&
-            it('check scenarioSelection.items[].subtitleText', () => {
-              const actScenarioSelection = output.scenarioSelection
-
-              expScenarioSelection
-                .filter(it => it.subtitleText)
-                .forEach(({ subtitleText }, idx) => {
-                  const subtitleTextAssertionDescriptor = subtitleText
-                  const actScenarioSelectionItem = actScenarioSelection.items[idx]
-                  const actSubtitleTextDescriptor = actScenarioSelectionItem.subtitleText
-
-                  expectTextToMatch(
-                    actSubtitleTextDescriptor,
-                    subtitleTextAssertionDescriptor
-                  )
-                })
-            })
-
-            has('scenarioSelection') &&
-            it('check scenarioSelection.items[].enabled', () => {
-              const actScenarioSelection = output.scenarioSelection
-
-              expScenarioSelection
-                .filter(it => it.enabled)
-                .forEach(({ enabled }, idx) => {
-                  const expEnabledStatus = enabled
-                  const actScenarioSelectionItem = actScenarioSelection.items[idx]
-                  const actEnabledStatus = actScenarioSelectionItem.enabled
-
-                  expect(actEnabledStatus).to.equal(expEnabledStatus)
-                })
-            })
-          })
         })
       })
     })

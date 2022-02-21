@@ -1,4 +1,4 @@
-- description: scenarios info for identifier BW and languageCode DE
+- description: scenarios info for identifiers BW, HH and languageCode DE
   assertions:
     labelText:
       de: Status für folgendes Bundesland
