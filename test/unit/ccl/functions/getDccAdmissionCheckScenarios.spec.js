@@ -146,16 +146,17 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
         has('scenarioSelection') &&
         it('check scenarioSelection.items[].subtitleText', () => {
           assertions.scenarioSelection.items
-            .filter(it => it.subtitleText)
-            .forEach(({ subtitleText }, idx) => {
-              const subtitleTextAssertionDescriptor = subtitleText
-              const actScenarioSelectionItem = output.scenarioSelection.items[idx]
-              const actSubtitleTextDescriptor = actScenarioSelectionItem.subtitleText
+            .forEach((it, idx) => {
+              if (it.subtitleText) {
+                const subtitleTextAssertionDescriptor = it.subtitleText
+                const actScenarioSelectionItem = output.scenarioSelection.items[idx]
+                const actSubtitleTextDescriptor = actScenarioSelectionItem.subtitleText
 
-              expectTextToMatch(
-                actSubtitleTextDescriptor,
-                subtitleTextAssertionDescriptor
-              )
+                expectTextToMatch(
+                  actSubtitleTextDescriptor,
+                  subtitleTextAssertionDescriptor
+                )
+              }
             })
         })
 
