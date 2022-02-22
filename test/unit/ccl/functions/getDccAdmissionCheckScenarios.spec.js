@@ -117,10 +117,10 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
             .forEach(({ identifier }, idx) => {
               const expIdentifierName = identifier
               const actScenarioSelectionItem = output.scenarioSelection.items[idx]
-              const actIdentifierName = actScenarioSelectionItem.identifier.value
+              const actIdentifierName = actScenarioSelectionItem.identifier
 
               expect(actScenarioSelectionItem).to.have.nested.property(
-                'identifier.value',
+                'identifier',
                 expIdentifierName,
                 `expected ${expIdentifierName} but got ${actIdentifierName}`
               )
@@ -167,10 +167,10 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
             .forEach(({ enabled }, idx) => {
               const expEnabledStatus = enabled
               const actScenarioSelectionItem = output.scenarioSelection.items[idx]
-              const actEnabledStatus = actScenarioSelectionItem.enabled.value
+              const actEnabledStatus = actScenarioSelectionItem.enabled
 
               expect(actScenarioSelectionItem).to.have.nested.property(
-                'enabled.value',
+                'enabled',
                 expEnabledStatus,
                 `expected ${expEnabledStatus} but got ${actEnabledStatus}`
               )

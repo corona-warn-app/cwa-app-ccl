@@ -9,7 +9,7 @@
   <!-- XTXT: Admission Scenario - BW Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Wurttemberg"</string>
   <!-- XTXT: Admission Scenario - BW Subtitle Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_BW_SUBTITLE_TEXT">""</string>
+  <!-- <string name="ADMISSION_SCENARIO_SELECTION_BW_SUBTITLE_TEXT">""</string> -->
 
   <!-- XTXT: Admission Scenario - HH Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Hamburg"</string>
