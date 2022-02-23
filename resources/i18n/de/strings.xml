@@ -59,4 +59,11 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"auf Grundlage Ihrer gespeicherten Zertifikate"</string>
 
+  <!-- XHED: DCC Reissuance - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT">"Zertifikat aktualisieren"</string>
+  <!-- XTXT: DCC Reissuance - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Neuausstellung direkt über die App vornehmen."</string>
+  <!-- XTXT: DCC Reissuance - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT">"Die Spezifikationen der EU für Booster-Impfzertifikate wurden geändert. Dieses Zertifikat entspricht nicht den aktuellen Spezifikationen. Das Impfzertifikat ist zwar weiterhin gültig, es kann jedoch sein, dass bei einer Prüfung die Booster-Impfung nicht erkannt wird. Bitte lassen Sie sich daher ein neues Impfzertifikat ausstellen.\n\nSie können ein neues Impfzertifikat direkt kostenlos über die App anfordern. Hierfür ist Ihr Einverständnis erforderlich."</string>
+
 </resources>
