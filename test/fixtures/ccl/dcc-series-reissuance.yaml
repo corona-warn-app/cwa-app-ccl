@@ -55,8 +55,8 @@
         certificateReissuance:
           certificateToReissue: biontech2/2
           accompanyingCertificates:
-            - janssen1/1
             - rc1
+            - janssen1/1
 - description: once a VC 2/2 has been replaced with 2/1, it is not eligible anymore
   t0: '2022-01-01'
   series:
@@ -70,7 +70,7 @@
   testCases:
     - time: biontech2/2
       assertions:
-        certificateReissuance:
+        certificateReissuance: false
 - description: a regular VC 2/2 is not eligible
   t0: '2022-01-01'
   series:
@@ -79,4 +79,4 @@
   testCases:
     - time: biontech2/2
       assertions:
-        certificateReissuance:
+        certificateReissuance: false

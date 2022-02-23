@@ -235,7 +235,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   const actBarcodeData = act.barcodeData
                   const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
 
-                  const expCertName = it.certificate
+                  const expCertName = it
                   const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
 
                   expect(actBarcodeData).to.equal(
