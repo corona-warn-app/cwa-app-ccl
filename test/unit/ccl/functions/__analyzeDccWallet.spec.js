@@ -1,6 +1,7 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
 import { expect } from 'chai'
+import jp from 'jsonpath'
 
 import chalk from 'chalk'
 import terminal from '../../../util/terminal.js'
@@ -104,8 +105,9 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
           context('assertions', () => {
             const { assertions } = testCase
-            const has = prop => Object.prototype.hasOwnProperty.call(assertions, prop) &&
-              (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
+            const has = pathExpression => jp.query(assertions, `$.${pathExpression}`)
+              .filter(it => it !== null && it !== undefined && (!it.trim || it.trim().length > 0))
+              .length > 0
 
             has('admissionState') &&
             it('check admissionState', () => {
