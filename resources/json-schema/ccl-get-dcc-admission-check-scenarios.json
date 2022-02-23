@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://ccl.coronawarn.app/functions/getDCCAdmissionCheckScenarios",
+  "$id": "https://ccl.coronawarn.app/functions/getDccAdmissionCheckScenarios",
   "title": "CCL - Get DCC Admission Check Scenarios",
   "description": "Common Covid Logic (CCL) - Get DCC Admission Check Scenarios",
   "oneOf": [
