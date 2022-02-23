@@ -389,6 +389,82 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   )
                 })
               })
+
+              context('certificateReissuance', () => {
+                const {
+                  certificateReissuance: expCertificateReissuance
+                } = expWalletInfo
+
+                has('certificateReissuance') &&
+                it('check certificateReissuance', () => {
+                  if (expCertificateReissuance) {
+                    expect(output).to.have.nested.property('certificateReissuance')
+                  } else {
+                    expect(output).not.to.have.nested.property('certificateReissuance')
+                  }
+                })
+
+                has('certificateReissuance.reissuanceDivision.visible') &&
+                it('check certificateReissuance.visible', () => {
+                  expect(output).to.have.nested.property(
+                    'certificateReissuance.reissuanceDivision.visible',
+                    expCertificateReissuance.reissuanceDivision.visible
+                  )
+                })
+
+                const certificateReissuanceTexts = [
+                  'titleText', 'subtitleText', 'longText'
+                ]
+                certificateReissuanceTexts.forEach(textAttribute => {
+                  has(`certificateReissuance.reissuanceDivision.${textAttribute}`) &&
+                  it(`check certificateReissuance.reissuanceDivision.${textAttribute}`, () => {
+                    expect(output).to.have.nested.property(`certificateReissuance.reissuanceDivision.${textAttribute}`)
+                    const actTextDescriptor = output.certificateReissuance.reissuanceDivision[textAttribute]
+                    const textAssertionDescriptor = expCertificateReissuance.reissuanceDivision[textAttribute]
+                    expectTextToMatch(
+                      actTextDescriptor,
+                      textAssertionDescriptor,
+                      { timeUnderTest }
+                    )
+                  })
+                })
+
+                has('certificateReissuance.certificateToReissue') &&
+                it('check certificateReissuance.certificateToReissue', () => {
+                  const expCertName = expCertificateReissuance.certificateToReissue
+                  const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+                  const actBarcodeData = output.certificateReissuance.certificateToReissue.certificateRef.barcodeData
+                  const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                  expect(output).to.have.nested.property(
+                    'certificateReissuance.certificateToReissue.certificateRef.barcodeData',
+                    expBarcodeData,
+                    `expected reference to ${expCertName} but got ${actCertName}`
+                  )
+                })
+
+                has('certificateReissuance.accompanyingCertificates') &&
+                it('check certificateReissuance.accompanyingCertificates', () => {
+                  expect(output.certificateReissuance.accompanyingCertificates)
+                    .to.be.an('array')
+                  expect(output.certificateReissuance.accompanyingCertificates, 'length of certificateReissuance.accompanyingCertificates')
+                    .to.be.an('array')
+                    .and.to.have.lengthOf(expCertificateReissuance.accompanyingCertificates.length)
+                  expCertificateReissuance.accompanyingCertificates.forEach((it, idx) => {
+                    const act = output.certificateReissuance.accompanyingCertificates[idx]
+                    const actBarcodeData = act.certificateRef.barcodeData
+                    const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                    const expCertName = it
+                    const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                    expect(actBarcodeData).to.equal(
+                      expBarcodeData,
+                      `expected reference to ${expCertName} but got ${actCertName}`
+                    )
+                  })
+                })
+              })
             })
           })
         })
