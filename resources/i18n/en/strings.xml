@@ -6,6 +6,11 @@
   <!-- XTXT: Admission Scenario - Card Title -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Your federal state"</string>
 
+  <!-- XTXT: Admission Scenario - DE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Federal rules"</string>
+  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Rules in your federal state may differ"</string>
+
   <!-- XTXT: Admission Scenario - BW Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Wurttemberg"</string>
   <!-- XTXT: Admission Scenario - BW Subtitle Text -->

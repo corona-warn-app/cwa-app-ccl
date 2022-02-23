@@ -5,6 +5,7 @@ import fse from 'fs-extra'
 import path from 'path'
 import yaml from 'js-yaml'
 import { fileURLToPath } from 'url'
+import moment from 'moment'
 
 import chalk from 'chalk'
 import terminal from '../../../util/terminal.js'
@@ -37,10 +38,9 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
         input = {
           os: 'android',
           language: 'en',
-          now: Date.now()
+          now: ccl.util.mapMomentToNow(moment.now())
         }
 
-        // output = ccl.evaluateFunction('__analyzeDccAdmissionCheckScenario', input)
         output = ccl.api.getDccAdmissionCheckScenarios(input)
       })
 
@@ -59,7 +59,6 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
         console.log(terminal.prefixLine(debugLog, prefix))
       })
 
-      // TODO: input & output schemas not found (fix)
       it('input matches JSON schema', async function () {
         const results = await ccl.schema.functions.getDccAdmissionCheckScenarios.input.validate(input)
         expect(results.errors, results.errors.map(it => it.stack).join('\n')).to.be.empty
