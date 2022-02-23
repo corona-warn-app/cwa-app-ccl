@@ -118,7 +118,7 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
               const actScenarioSelectionItem = output.scenarioSelection.items[idx]
               const actIdentifierName = actScenarioSelectionItem.identifier
 
-              expect(actScenarioSelectionItem).to.have.nested.property(
+              expect(actScenarioSelectionItem).to.have.property(
                 'identifier',
                 expIdentifierName,
                 `expected ${expIdentifierName} but got ${actIdentifierName}`
@@ -146,15 +146,17 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
         it('check scenarioSelection.items[].subtitleText', () => {
           assertions.scenarioSelection.items
             .forEach((it, idx) => {
+              const actScenarioSelectionItem = output.scenarioSelection.items[idx]
               if (it.subtitleText) {
                 const subtitleTextAssertionDescriptor = it.subtitleText
-                const actScenarioSelectionItem = output.scenarioSelection.items[idx]
                 const actSubtitleTextDescriptor = actScenarioSelectionItem.subtitleText
 
                 expectTextToMatch(
                   actSubtitleTextDescriptor,
                   subtitleTextAssertionDescriptor
                 )
+              } else {
+                expect(actScenarioSelectionItem).to.not.have.property('subtitleText')
               }
             })
         })
@@ -168,7 +170,7 @@ describe('ccl/functions/getDccAdmissionCheckScenarios', async () => {
               const actScenarioSelectionItem = output.scenarioSelection.items[idx]
               const actEnabledStatus = actScenarioSelectionItem.enabled
 
-              expect(actScenarioSelectionItem).to.have.nested.property(
+              expect(actScenarioSelectionItem).to.have.property(
                 'enabled',
                 expEnabledStatus,
                 `expected ${expEnabledStatus} but got ${actEnabledStatus}`
