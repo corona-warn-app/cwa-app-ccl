@@ -165,6 +165,51 @@
         "validUntil": {
           "type": "string",
           "format": "date-time"
+        },
+        "certificateReissuance": {
+          "type": "object",
+          "required": [
+            "reissuanceDivision",
+            "certificateToReissue",
+            "accompanyingCertificates"
+          ],
+          "properties": {
+            "reissuanceDivision": {
+              "oneOf": [
+                {
+                  "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/invisibleDivision"
+                },
+                {
+                  "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/visibleDivision"
+                }
+              ]
+            },
+            "certificateToReissue": {
+              "type": "object",
+              "required": [
+                "certificateRef"
+              ],
+              "properties": {
+                "certificateRef": {
+                  "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
+                }
+              }
+            },
+            "accompanyingCertificates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "certificateRef"
+                ],
+                "properties": {
+                  "certificateRef": {
+                    "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
