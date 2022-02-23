@@ -1,0 +1,82 @@
+- description: a VC 2/2 after Janssen 1/1 is eligible for reissuance
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen1/1
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance:
+          certificateToReissue: biontech2/2
+          accompanyingCertificates:
+            - janssen1/1
+- description: a Janssen 2/2 after Janssen 1/1 is eligible for reissuance
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen1/1
+    - time: +P6W
+      vc: janssen2/2
+  testCases:
+    - time: janssen2/2
+      assertions:
+        certificateReissuance:
+          certificateToReissue: janssen2/2
+          accompanyingCertificates:
+            - janssen1/1
+- description: a VC 2/2 after a recovery vaccination is eligible for reissuance
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance:
+          certificateToReissue: biontech2/2
+          accompanyingCertificates:
+            - biontech1/1
+- description: a VC 2/2 after a recovery vaccination with Janssen is eligible for reissuance
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P95D
+      vc: janssen1/1
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance:
+          certificateToReissue: biontech2/2
+          accompanyingCertificates:
+            - janssen1/1
+            - rc1
+- description: once a VC 2/2 has been replaced with 2/1, it is not eligible anymore
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen1/1
+    - time: t0+P4W
+      vc: biontech2/2
+    - time: t0+P4W
+      vc: biontech2/1
+      cwtIat: t0+P6W
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance:
+- description: a regular VC 2/2 is not eligible
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance:
