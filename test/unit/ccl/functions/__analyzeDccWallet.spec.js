@@ -204,9 +204,9 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               has('certificateReissuance') &&
               it('check certificateReissuance', () => {
                 if (expCertificateReissuance) {
-                  expect(output).to.have.nested.property('certificateReissuance')
+                  expect(output).to.have.property('certificateReissuance')
                 } else {
-                  expect(output).not.to.have.nested.property('certificateReissuance')
+                  expect(output).not.to.have.property('certificateReissuance')
                 }
               })
 
