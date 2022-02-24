@@ -1,6 +1,7 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
 import { expect } from 'chai'
+import jp from 'jsonpath'
 
 import chalk from 'chalk'
 import terminal from '../../../util/terminal.js'
@@ -104,8 +105,9 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
           context('assertions', () => {
             const { assertions } = testCase
-            const has = prop => Object.prototype.hasOwnProperty.call(assertions, prop) &&
-              (typeof assertions[prop] === 'string' ? assertions[prop].trim().length > 0 : assertions[prop] !== null)
+            const has = pathExpression => jp.query(assertions, `$.${pathExpression}`)
+              .filter(it => it !== null && it !== undefined && (!it.trim || it.trim().length > 0))
+              .length > 0
 
             has('admissionState') &&
             it('check admissionState', () => {
@@ -191,6 +193,56 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   expBarcodeData,
                   `expected reference to ${expCertName} but got ${actCertName}`
                 )
+              })
+            })
+
+            context('certificateReissuance', () => {
+              const {
+                certificateReissuance: expCertificateReissuance
+              } = assertions
+
+              has('certificateReissuance') &&
+              it('check certificateReissuance', () => {
+                if (expCertificateReissuance) {
+                  expect(output).to.have.property('certificateReissuance')
+                } else {
+                  expect(output).not.to.have.property('certificateReissuance')
+                }
+              })
+
+              has('certificateReissuance.certificateToReissue') &&
+              it('check certificateReissuance.certificateToReissue', () => {
+                const expCertName = expCertificateReissuance.certificateToReissue
+                const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+                const actBarcodeData = output.certificateReissuance.certificateToReissue
+                const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                expect(output).to.have.nested.property(
+                  'certificateReissuance.certificateToReissue.barcodeData',
+                  expBarcodeData,
+                  `expected reference to ${expCertName} but got ${actCertName}`
+                )
+              })
+              has('certificateReissuance.accompanyingCertificates') &&
+              it('check certificateReissuance.accompanyingCertificates', () => {
+                expect(output.certificateReissuance.accompanyingCertificates)
+                  .to.be.an('array')
+                expect(output.certificateReissuance.accompanyingCertificates, 'length of certificateReissuance.accompanyingCertificates')
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(expCertificateReissuance.accompanyingCertificates.length)
+                expCertificateReissuance.accompanyingCertificates.forEach((it, idx) => {
+                  const act = output.certificateReissuance.accompanyingCertificates[idx]
+                  const actBarcodeData = act.barcodeData
+                  const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                  const expCertName = it
+                  const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                  expect(actBarcodeData).to.equal(
+                    expBarcodeData,
+                    `expected reference to ${expCertName} but got ${actCertName}`
+                  )
+                })
               })
             })
           })
