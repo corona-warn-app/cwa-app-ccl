@@ -3,7 +3,7 @@
 
   <!-- XHED: Admission Scenario - Card Title -->
   <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Status für folgendes Bundesland"</string>
-  <!-- XTXT: Admission Scenario - Card Title -->
+  <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Ihr Bundesland"</string>
 
   <!-- XTXT: Admission Scenario - DE Title Text -->

@@ -3,7 +3,7 @@
   <!-- TODO: adapt to the correct i18n texts decided by UX -->
   <!-- XHED: Admission Scenario - Card Title -->
   <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Status for the following federal state"</string>
-  <!-- XTXT: Admission Scenario - Card Title -->
+  <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Your federal state"</string>
 
   <!-- XTXT: Admission Scenario - DE Title Text -->
