@@ -100,8 +100,23 @@
     - time: biontech2/2
       assertions:
         certificateReissuance: false
-      walletInfo:
+        walletInfo:
+          certificateReissuance: false
+- description: a VC 2/2 is  not eligible if there is already a 3/1 present
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen1/1
+    - time: +P4W
+      vc: biontech2/2
+    - time: +P6W
+      vc: biontech3/1
+  testCases:
+    - time: biontech3/1
+      assertions:
         certificateReissuance: false
+        walletInfo:
+          certificateReissuance: false
 - description: a regular VC 2/2 is not eligible
   t0: '2022-01-01'
   series:
@@ -111,5 +126,18 @@
     - time: biontech2/2
       assertions:
         certificateReissuance: false
-      walletInfo:
+        walletInfo:
+          certificateReissuance: false
+- description: a regular VC 2/2 with a previous 1/2 is not eligible
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
         certificateReissuance: false
+        walletInfo:
+          certificateReissuance: false
