@@ -1,0 +1,24 @@
+- description: scenarios info for identifiers DE, BW, HH and languageCode DE
+  assertions:
+    labelText:
+      de: Status für folgendes Bundesland
+    scenarioSelection:
+      titleText:
+        de: Ihr Bundesland
+      items:
+        - identifier: DE
+          titleText:
+            de: Regeln des Bundes
+          subtitleText:
+            de: Regeln in Ihrem Bundesland können davon abweichen
+          enabled: true
+        - identifier: BW
+          titleText:
+            de: Baden-Württemberg
+          enabled: true
+        - identifier: HH
+          titleText:
+            de: Hamburg
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor 
+          enabled: false
