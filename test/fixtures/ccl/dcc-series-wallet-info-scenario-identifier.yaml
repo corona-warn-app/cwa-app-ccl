@@ -1,0 +1,39 @@
+- description: walletInfo for 2G
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2+P100D
+      description: does not change admissionState subtitleText without scenarioIdentifier
+      assertions:
+        walletInfo:
+          admissionState:
+            visible: true
+            subtitleText:
+              de: ^2G$
+    - time: biontech2/2+P100D
+      description: returns the scenarioIdentifier as admissionState
+      scenarioIdentifier: DE
+      assertions:
+        walletInfo:
+          admissionState:
+            visible: true
+            subtitleText:
+              de: ^DE$
+    - time: biontech2/2+P100D
+      scenarioIdentifier: BW
+      assertions:
+        walletInfo:
+          admissionState:
+            visible: true
+            subtitleText:
+              de: ^BW$
+    - time: biontech2/2+P100D
+      scenarioIdentifier: HH
+      assertions:
+        walletInfo:
+          admissionState:
+            visible: true
+            subtitleText:
+              de: ^HH$
