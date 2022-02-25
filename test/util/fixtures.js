@@ -11,6 +11,27 @@ const dccSeriesFilenamePattern = /^dcc-series.*\.yaml$/
 const fixturesDirectoryPath = path.resolve(__dirname, './../fixtures')
 const distDirectoryPath = path.resolve(__dirname, './../../dist')
 
+const readAllAdmissionCheckScenariosSync = () => {
+  const directoryPath = path.resolve(fixturesDirectoryPath, 'ccl')
+  const filenames = ['ccl-admission-check-scenarios.yaml']
+
+  const data = filenames.reduce((allData, filename) => {
+    const filepath = path.resolve(directoryPath, filename)
+    const dataStr = fse.readFileSync(filepath)
+    const data = yaml.load(dataStr)
+      .map(it => {
+        return {
+          ...it,
+          filename
+        }
+      })
+    allData.push(...data)
+    return allData
+  }, [])
+
+  return data
+}
+
 const readAllDccSeriesSync = () => {
   const directoryPath = path.resolve(fixturesDirectoryPath, 'ccl')
   const filenames = fse.readdirSync(directoryPath)
@@ -58,6 +79,7 @@ export const dist = {
 }
 
 export default {
+  readAllAdmissionCheckScenariosSync,
   readAllDccSeriesSync,
   readAllBoosterNotificationRulesSync
 }
