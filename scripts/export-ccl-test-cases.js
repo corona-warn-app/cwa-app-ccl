@@ -25,7 +25,7 @@ const argv = yargs(hideBin(process.argv))
   })
   .argv
 
-const main = async () => {
+const getTestCasesForGetDccWalletInfo = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
   const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
   const allFunctions = cclDe0001.Logic.JfnDescriptors
@@ -72,6 +72,14 @@ const main = async () => {
       allTestCases.push(testCaseDescriptor)
     })
   })
+
+  return allTestCases
+}
+
+const main = async () => {
+  const allTestCases = [
+    ...(await getTestCasesForGetDccWalletInfo())
+  ]
 
   const fileWriter = fileWriterFactory({
     target: path.resolve(process.cwd(), argv.target)
