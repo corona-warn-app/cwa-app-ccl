@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccl.coronawarn.app/functions/getDccAdmissionCheckScenarios",
+  "title": "CCL - Get DCC Admission Check Scenarios",
+  "description": "Common Covid Logic (CCL) - Get DCC Admission Check Scenarios",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/input"
+    },
+    {
+      "$ref": "#/$defs/output"
+    }
+  ],
+  "$defs": {
+    "input": {
+      "title": "CCL - Get DCC Admission Check Scenarios - Input",
+      "description": "Common Covid Logic (CCL) - Input of Get DCC Admission Check Scenarios",
+      "type": "object",
+      "required": [
+        "os",
+        "language",
+        "now"
+      ],
+      "properties": {
+        "os": {
+          "type": "string",
+          "enum": [
+            "android",
+            "ios"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "now": {
+          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/systemTime"
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "labelText",
+        "scenarioSelection"
+      ],
+      "properties": {
+        "labelText": {
+          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+        },
+        "scenarioSelection": {
+          "type": "object",
+          "required": [
+            "titleText",
+            "items"
+          ],
+          "properties": {
+            "titleText": {
+              "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "identifier",
+                  "titleText",
+                  "enabled"
+                ],
+                "properties": {
+                  "identifier": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "titleText": {
+                    "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                  },
+                  "subtitleText": {
+                    "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
