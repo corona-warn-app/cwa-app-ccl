@@ -10,6 +10,8 @@
         walletInfo:
           admissionState:
             visible: true
+            badgeText:
+              de: ^2G$
             subtitleText:
               de: ^2G$
     - time: biontech2/2+P100D
@@ -19,6 +21,8 @@
         walletInfo:
           admissionState:
             visible: true
+            badgeText:
+              de: ^DE-2G$
             subtitleText:
               de: ^DE$
     - time: biontech2/2+P100D
@@ -27,6 +31,8 @@
         walletInfo:
           admissionState:
             visible: true
+            badgeText:
+              de: ^BW-2G$
             subtitleText:
               de: ^BW$
     - time: biontech2/2+P100D
@@ -35,5 +41,7 @@
         walletInfo:
           admissionState:
             visible: true
+            badgeText:
+              de: ^HH-2G$
             subtitleText:
               de: ^HH$
