@@ -49,6 +49,9 @@
           "items": {
             "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/validationRule"
           }
+        },
+        "scenarioIdentifier": {
+          "type": "string"
         }
       }
     },
