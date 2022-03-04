@@ -58,4 +58,11 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"pe baza certificatelod dvs. salvate"</string>
 
+  <!-- XHED: DCC Reissuance - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT">"Actualizare certificat"</string>
+  <!-- XTXT: DCC Reissuance - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Solicitați reemiterea direct din aplicație."</string>
+  <!-- XTXT: DCC Reissuance - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT">"Prevederile UE pentru certificatele care presupun vaccinarea cu doza booster s-au modificat. Acest certificat nu corespunde cu specificațiile curente. Deși certificatul de vaccinare rămâne valabil, este posibil ca, la verificări, vaccinarea cu doza booster să nu fie identificată. Astfel, solicitați emiterea unui nou certificat de vaccinare.\n\nPuteți solicita un certificat de vaccinare nou din aplicație, direct și gratuit. Pentru aceasta, este necesar consimțământul dvs."</string>
+
 </resources>

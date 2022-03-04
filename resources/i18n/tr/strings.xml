@@ -58,4 +58,11 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"kayıtlı sertifikalarınız temelinde"</string>
 
+  <!-- XHED: DCC Reissuance - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT">"Sertifikayı Güncelleme"</string>
+  <!-- XTXT: DCC Reissuance - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Doğrudan uygulama içinde yeniden düzenleme talebi oluşturun."</string>
+  <!-- XTXT: DCC Reissuance - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT">"Hatırlatma aşılarını içeren sertifikalara ilişkin AB spesifikasyonları değişti. Bu sertifika güncel spesifikasyonları karşılamamaktadır. Aş sertifikası geçerliliğini korusa da kontroller sırasında hatırlatma aşısı tanınmayabilir. Bu nedenle lütfen yeni bir aşı sertifikasının düzenlenmesi için talep oluşturun.\n\nYeni aşı sertifikası talebini doğrudan ve ücretsiz olarak uygulama içinde oluşturabilirsiniz. Bunun için izniniz gereklidir."</string>
+
 </resources>

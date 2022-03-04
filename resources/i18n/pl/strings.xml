@@ -58,4 +58,11 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"na podstawie Twoich zapisanych certyfikatów"</string>
 
+  <!-- XHED: DCC Reissuance - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT">"Aktualizuj certyfikat"</string>
+  <!-- XTXT: DCC Reissuance - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Poproś o ponowne wydanie bezpośrednio w aplikacji."</string>
+  <!-- XTXT: DCC Reissuance - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT">"Zmieniły się specyfikacje UE dla certyfikatów dotyczących szczepień przypominających. Niniejszy certyfikat nie jest zgodny z aktualnymi specyfikacjami. Mimo że certyfikat szczepienia zachowuje ważność, szczepienie przypominające może nie zostać zidentyfikowane podczas kontroli. Z tego względu poproś o wystawienie nowego certyfikatu szczepienia.\n\nNowy certyfikat szczepienia możesz zamówić bezpośrednio i bezpłatnie w aplikacji. Wymagana jest do tego Twoja zgoda."</string>
+
 </resources>
