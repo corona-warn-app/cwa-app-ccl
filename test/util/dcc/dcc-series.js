@@ -49,7 +49,7 @@ const resolveTimeRef = (timeRef, series, t0) => {
   }
 }
 
-const durationPattern = /^P(?!$)(\d+Y)?(\d+M)?(\d+W)?(\d+D)?(T(?=\d+[HMS])(\d+H)?(\d+M)?(\d+S)?)?$/
+const durationPattern = /^P(?!$)(-?\d+Y)?(-?\d+M)?(-?\d+W)?(-?\d+D)?(T(?=-?\d+[HMS])(-?\d+H)?(-?\d+M)?(-?\d+S)?)?$/
 const resolveTime = (time, idx, series, t0) => {
   if (time instanceof Date) {
     return moment.utc(time)
@@ -137,6 +137,8 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
     partialDccDescriptor.cwtIat = it.cwtIat
       ? resolveTime(it.cwtIat, idx, series, t0)
       : time
+    if (it.cwtExp) partialDccDescriptor.cwtExp = resolveTime(it.cwtExp, idx, series, t0)
+
     const mergedDccDescriptor = {
       ...defaultDccDescriptor,
       ...partialDccDescriptor,

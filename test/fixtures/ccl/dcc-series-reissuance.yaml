@@ -170,3 +170,22 @@
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - janssen1/1
+- description: a recovery vaccination may be expired and still serve as accompanying certificate
+  t0: '2022-01-01'
+  series:
+    - time: t0+P-400D
+      rc: rc1
+      cwtExp: t0+P-35D
+      validityState: EXPIRED
+    - time: t0+P95D
+      vc: janssen1/1
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance:
+          certificateToReissue: biontech2/2
+          accompanyingCertificates:
+            - rc1
+            - janssen1/1
