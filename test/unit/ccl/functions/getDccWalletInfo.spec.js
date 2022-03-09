@@ -226,7 +226,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 })
 
                 const admissionStateTexts = [
-                  'badgeText', 'titleText', 'subtitleText', 'longText'
+                  'badgeText', 'titleText', 'subtitleText', 'longText', 'stateChangeNotificationText'
                 ]
                 admissionStateTexts.forEach(textAttribute => {
                   has(`admissionState.${textAttribute}`) &&
@@ -247,6 +247,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   expect(output).to.have.nested.property(
                     'admissionState.faqAnchor',
                     expAdmissionState.faqAnchor
+                  )
+                })
+
+                has('admissionState.identifier') &&
+                it('check admissionState.identifier', () => {
+                  expect(output).to.have.nested.property(
+                    'admissionState.identifier',
+                    expAdmissionState.identifier
                   )
                 })
               })

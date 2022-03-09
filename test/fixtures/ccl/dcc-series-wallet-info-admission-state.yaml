@@ -31,6 +31,9 @@
             longText:
               de: erfüllen die 2G-Regel
             faqAnchor: admission_policy
+            stateChangeNotificationText:
+              de: geändert.*jetzt die 2G-Regel
+            identifier: 2G
 - description: walletInfo for 2G_PLUS_PCR
   t0: '2022-01-01'
   series:
@@ -54,6 +57,9 @@
             longText:
               de: erfüllen die 2G-Plus-Regel
             faqAnchor: admission_policy
+            stateChangeNotificationText:
+              de: geändert.*jetzt die 2G-Plus-Regel
+            identifier: 2G_PLUS
           verification:
             - certificate: biontech2/2
               buttonText:
@@ -84,6 +90,9 @@
             longText:
               de: erfüllen die 2G-Plus-Regel
             faqAnchor: admission_policy
+            stateChangeNotificationText:
+              de: geändert.*jetzt die 2G-Plus-Regel
+            identifier: 2G_PLUS
           verification:
             - certificate: biontech2/2
               buttonText:
@@ -112,3 +121,6 @@
             longText:
               de: erfüllen die 2G-Plus-Regel
             faqAnchor: admission_policy
+            stateChangeNotificationText:
+              de: geändert.*jetzt die 2G-Plus-Regel
+            identifier: 2G_PLUS
