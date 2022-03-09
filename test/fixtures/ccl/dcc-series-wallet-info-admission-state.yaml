@@ -9,7 +9,19 @@
         admissionState: OTHER
         walletInfo:
           admissionState:
-            visible: false
+            visible: true
+            badgeText:
+              de: ^$
+            titleText:
+              de: Status-Nachweis
+            subtitleText:
+              de: ^$
+            longText:
+              de: erfüllen derzeit keine Regel
+            faqAnchor: admission_policy
+            stateChangeNotificationText:
+              de: erfüllen derzeit keine Regel
+            identifier: OTHER
 - description: walletInfo for 2G
   t0: '2022-01-01'
   series:
