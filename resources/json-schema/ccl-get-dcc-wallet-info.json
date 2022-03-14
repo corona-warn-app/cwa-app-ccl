@@ -76,11 +76,19 @@
                 {
                   "type": "object",
                   "required": [
-                    "badgeText"
+                    "badgeText",
+                    "stateChangeNotificationText",
+                    "identifier"
                   ],
                   "properties": {
                     "badgeText": {
                       "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                    },
+                    "stateChangeNotificationText": {
+                      "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                    },
+                    "identifier": {
+                      "type": "string"
                     }
                   }
                 }
