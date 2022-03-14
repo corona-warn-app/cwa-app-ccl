@@ -8,23 +8,9 @@
   testCases:
     - time: biontech2/2
       assertions:
-        certificateReissuance:
-          certificateToReissue: biontech2/2
-          accompanyingCertificates:
-            - janssen1/1
+        certificateReissuance: false
         walletInfo:
-          certificateReissuance:
-            reissuanceDivision:
-              visible: true
-              titleText:
-                de: Zertifikat aktualisieren
-              subtitleText:
-                de: Neuausstellung direkt über die App
-              longText:
-                de: wurden geändert
-            certificateToReissue: biontech2/2
-            accompanyingCertificates:
-              - janssen1/1
+          certificateReissuance: false
 - description: a Janssen 2/2 after Janssen 1/1 is eligible for reissuance
   t0: '2022-01-01'
   series:
@@ -35,15 +21,9 @@
   testCases:
     - time: janssen2/2
       assertions:
-        certificateReissuance:
-          certificateToReissue: janssen2/2
-          accompanyingCertificates:
-            - janssen1/1
+        certificateReissuance: false
         walletInfo:
-          certificateReissuance:
-            certificateToReissue: janssen2/2
-            accompanyingCertificates:
-              - janssen1/1
+          certificateReissuance: false
 - description: a VC 2/2 after a recovery vaccination is eligible for reissuance
   t0: '2022-01-01'
   series:
@@ -54,15 +34,9 @@
   testCases:
     - time: biontech2/2
       assertions:
-        certificateReissuance:
-          certificateToReissue: biontech2/2
-          accompanyingCertificates:
-            - biontech1/1
+        certificateReissuance: false
         walletInfo:
-          certificateReissuance:
-            certificateToReissue: biontech2/2
-            accompanyingCertificates:
-              - biontech1/1
+          certificateReissuance: false
 - description: a VC 2/2 after a recovery vaccination with Janssen is eligible for reissuance
   t0: '2022-01-01'
   series:
@@ -75,17 +49,9 @@
   testCases:
     - time: biontech2/2
       assertions:
-        certificateReissuance:
-          certificateToReissue: biontech2/2
-          accompanyingCertificates:
-            - rc1
-            - janssen1/1
+        certificateReissuance: false
         walletInfo:
-          certificateReissuance:
-            certificateToReissue: biontech2/2
-            accompanyingCertificates:
-              - rc1
-              - janssen1/1
+          certificateReissuance: false
 - description: once a VC 2/2 has been replaced with 2/1, it is not eligible anymore
   t0: '2022-01-01'
   series:
@@ -154,6 +120,8 @@
     - time: biontech2/2
       assertions:
         certificateReissuance: false
+        walletInfo:
+          certificateReissuance: false
 - description: an accompanying DCC may be issued by a different country
   t0: '2022-01-01'
   series:
@@ -166,10 +134,9 @@
   testCases:
     - time: biontech2/2
       assertions:
-        certificateReissuance:
-          certificateToReissue: biontech2/2
-          accompanyingCertificates:
-            - janssen1/1
+        certificateReissuance: false
+        walletInfo:
+          certificateReissuance: false
 - description: a recovery vaccination may be expired and still serve as accompanying certificate
   t0: '2022-01-01'
   series:
@@ -184,8 +151,6 @@
   testCases:
     - time: biontech2/2
       assertions:
-        certificateReissuance:
-          certificateToReissue: biontech2/2
-          accompanyingCertificates:
-            - rc1
-            - janssen1/1
+        certificateReissuance: false
+        walletInfo:
+          certificateReissuance: false
