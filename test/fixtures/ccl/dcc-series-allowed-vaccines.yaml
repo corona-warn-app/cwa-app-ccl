@@ -99,3 +99,35 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         verificationCertificates:
           - certificate: novavax3/3
+- description: legacy novavax 1/2 + novavax 2/2 + novavax 3/3
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: legacyNovavax1/2
+    - time: +P6W
+      vc: legacyNovavax2/2
+    - time: +P6M
+      vc: legacyNovavax3/3
+  testCases:
+    - time: legacyNovavax1/2
+      assertions:
+        mostRelevantCertificate: legacyNovavax1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: legacyNovavax1/2
+    - time: legacyNovavax2/2
+      assertions:
+        mostRelevantCertificate: legacyNovavax2/2
+        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
+        verificationCertificates:
+          - certificate: legacyNovavax2/2
+    - time: legacyNovavax2/2+P15D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+    - time: legacyNovavax3/3
+      description: legacyNovavax 3/3 is valid immediately
+      assertions:
+        mostRelevantCertificate: legacyNovavax3/3
+        vaccinationState: COMPLETE_IMMUNIZATION
+        verificationCertificates:
+          - certificate: legacyNovavax3/3
