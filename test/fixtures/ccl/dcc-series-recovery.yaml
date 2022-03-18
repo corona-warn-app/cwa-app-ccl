@@ -611,14 +611,14 @@
         hasBooster: false
         verificationCertificates:
           - certificate: rc1
-    # recovery still valid after 91 days, but 2G only
+    # recovery still valid after 91 days, but 2G only and not prioritized anymore
     - time: rc1+P91D
       assertions:
         admissionState: 2G
-        mostRelevantCertificate: rc1
+        mostRelevantCertificate: janssen1/1
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: 
         mostRecentVaccination: janssen1/1
         hasBooster: false
         verificationCertificates:
-          - certificate: rc1
+          - certificate: janssen1/1
