@@ -525,13 +525,13 @@
     - time: rc1+P91D
       assertions:
         admissionState: 2G
-        mostRelevantCertificate: rc1
+        mostRelevantCertificate: biontech1/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: 
         mostRecentVaccination: biontech1/2
         hasBooster: false
         verificationCertificates:
-          - certificate: rc1
+          - certificate: biontech1/2
     # vaccination valid immedeately
     - time: biontech2/2
       assertions:
