@@ -348,7 +348,7 @@
         hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: rc1
-    # recovery still valid after 90 days --> 1G
+    # recovery still valid after 90 days --> 2G+
     - time: rc1+P90D
       assertions:
         admissionState: 2G_PLUS
@@ -360,42 +360,42 @@
         hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: rc1
-    # recovery still valid after 91 days and prioritized
+    # recovery still valid after 91 days but not prioritized anymore
     - time: rc1+P91D
       assertions:
         admissionState: 2G_PLUS
-        mostRelevantCertificate: rc1
+        mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
         hasBoosterEquivalent: true
         verificationCertificates:
-          - certificate: rc1
-    # recovery still valid after 181 days and prioritized
+          - certificate: biontech2/2
+    # recovery still valid after 181 days but not prioritized anymore
     - time: rc1+P181D
       assertions:
         admissionState: 2G_PLUS
-        mostRelevantCertificate: rc1
+        mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
         hasBoosterEquivalent: true
         verificationCertificates:
-          - certificate: rc1
+          - certificate: biontech2/2
     # recovery still valid after 2 years (unlimited) --> 2G_PLUS
     - time: rc1+P2Y
       assertions:
         admissionState: 2G_PLUS
-        mostRelevantCertificate: rc1
+        mostRelevantCertificate: biontech2/2
         vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
         hasBoosterEquivalent: true
         verificationCertificates:
-          - certificate: rc1
+          - certificate: biontech2/2
 - description: recovery + J&J
   t0: '2022-01-01'
   series:
