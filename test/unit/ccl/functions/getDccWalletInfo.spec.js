@@ -475,6 +475,32 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   })
                 })
               })
+
+              has('certificatesRevokedByInvalidationRules') &&
+              it('check certificatesRevokedByInvalidationRules', () => {
+                const {
+                  certificatesRevokedByInvalidationRules: expCertificatesRevokedByInvalidationRules
+                } = expWalletInfo
+
+                expect(output.certificatesRevokedByInvalidationRules)
+                  .to.be.an('array')
+                expect(output.certificatesRevokedByInvalidationRules, 'length of certificatesRevokedByInvalidationRules')
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(expCertificatesRevokedByInvalidationRules.length)
+                expCertificatesRevokedByInvalidationRules.forEach((it, idx) => {
+                  const act = output.certificatesRevokedByInvalidationRules[idx]
+                  const actBarcodeData = act.certificateRef.barcodeData
+                  const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                  const expCertName = it
+                  const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                  expect(actBarcodeData).to.equal(
+                    expBarcodeData,
+                    `expected reference to ${expCertName} but got ${actCertName}`
+                  )
+                })
+              })
             })
           })
         })
