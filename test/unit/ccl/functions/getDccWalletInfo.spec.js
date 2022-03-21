@@ -24,6 +24,7 @@ const expectTextToMatch = (textDescriptor, textAssertionDescriptor, { timeUnderT
 describe('ccl/functions/getDccWalletInfo', async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
   const allBNRs = fixtures.readAllBoosterNotificationRulesSync()
+  const allIRs = fixtures.readAllInvalidationRulesSync()
 
   allDccSeries.forEach(seriesDescriptor => {
     const _context = seriesDescriptor.only === true ? context.only : seriesDescriptor.skip === true ? context.skip : context
@@ -64,7 +65,8 @@ describe('ccl/functions/getDccWalletInfo', async () => {
                   validityState: it.validityState
                 })
               }),
-              boosterNotificationRules: allBNRs
+              boosterNotificationRules: allBNRs,
+              invalidationRules: allIRs
             }
 
             // output = ccl.evaluateFunction('__analyzeDccWallet', input)
