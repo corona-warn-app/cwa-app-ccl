@@ -66,7 +66,7 @@ describe('ccl/functions/getDccWalletInfo', async () => {
                 })
               }),
               boosterNotificationRules: allBNRs,
-              invalidationRules: allIRs
+              invalidationRules: seriesDescriptor.invalidationRules || allIRs
             }
 
             // output = ccl.evaluateFunction('__analyzeDccWallet', input)

@@ -93,3 +93,14 @@
       assertions:
         walletInfo:
           certificatesRevokedByInvalidationRules: []
+- description: empty invalidation rules lead to now matches
+  t0: '2022-01-01'
+  invalidationRules: []
+  series:
+    - time: t0
+      vc: astra1/2
+  testCases:
+    - time: astra1/2
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules: []
