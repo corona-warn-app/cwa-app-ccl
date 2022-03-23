@@ -1,0 +1,36 @@
+{
+  "Identifier": "IR-TX-0002",
+  "Type": "Invalidation",
+  "Country": "DE",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "1.0.0",
+  "CertificateType": "Vaccination",
+  "Description": [
+     {
+        "lang": "en",
+        "desc": "Vaccination Certificates may not be issued by \"Sonnen Apotheke\""
+     }
+  ],
+  "ValidFrom": "2021-07-01T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [],
+  "Logic": {
+     "!": [
+        {
+           "===": [
+              {
+                 "extractFromUVCI": [
+                    {
+                       "var": "payload.v.0.ci"
+                    },
+                    1
+                 ]
+              },
+              "sonnen-apotheke"
+           ]
+        }
+     ]
+  }
+}
