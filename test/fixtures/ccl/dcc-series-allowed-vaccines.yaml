@@ -96,6 +96,6 @@
       description: Novavax 3/3 is valid immediately
       assertions:
         mostRelevantCertificate: novavax3/3
-        vaccinationState: COMPLETE_IMMUNIZATION
+        vaccinationState: COMPLETE_BOOSTER
         verificationCertificates:
           - certificate: novavax3/3

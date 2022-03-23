@@ -25,7 +25,6 @@
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: biontech1/2
-        vaccinationState: PARTIAL_IMMUNIZATION
         vaccinationValidFrom: 
         mostRecentVaccination: biontech1/2
         hasBooster: false
@@ -36,7 +35,6 @@
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
@@ -47,7 +45,6 @@
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION_PENDING
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
@@ -58,7 +55,6 @@
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
@@ -70,7 +66,6 @@
       assertions:
         admissionState: 2G_PLUS_PCR
         mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
@@ -83,7 +78,6 @@
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
@@ -94,7 +88,6 @@
       assertions:
         admissionState: 2G_PLUS_RAT
         mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
@@ -107,7 +100,6 @@
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: biontech2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
@@ -136,7 +128,6 @@
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: biontech3/3
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
         hasBooster: true
@@ -148,7 +139,6 @@
       assertions:
         admissionState: 2G_PLUS_PCR
         mostRelevantCertificate: biontech3/3
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
         hasBooster: true
@@ -160,7 +150,6 @@
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: biontech3/3
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
         hasBooster: true
@@ -171,7 +160,6 @@
       assertions:
         admissionState: 2G_PLUS_RAT
         mostRelevantCertificate: biontech3/3
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
         hasBooster: true
@@ -183,7 +171,6 @@
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: biontech3/3
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
         hasBooster: true
