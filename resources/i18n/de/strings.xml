@@ -76,12 +76,12 @@
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam.</item>
-    <item quantity="one">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tag wirksam.</item>
-    <item quantity="two">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam.</item>
-    <item quantity="few">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam.</item>
-    <item quantity="many">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam.</item>
-    <item quantity="other">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam.</item>
+    <item quantity="zero">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
+    <item quantity="one">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tag wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
+    <item quantity="two">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
+    <item quantity="few">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
+    <item quantity="many">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
+    <item quantity="other">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Sie haben alle Impfungen der Grundimmunisierung erhalten. Ihr Impfschutz ist wirksam. Bitte informieren Sie sich aber auch über empfohlene Auffrischimpfungen."</string>
