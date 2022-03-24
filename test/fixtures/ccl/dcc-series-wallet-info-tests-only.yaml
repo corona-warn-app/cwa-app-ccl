@@ -19,8 +19,6 @@
             stateChangeNotificationText:
               de: geändert.*jetzt die 3G-Regel
             identifier: 3G_WITH_RAT
-          vaccinationState:
-            visible: false
 - description: walletInfo for 3G_WITH_PCR
   t0: '2022-01-01'
   series:
@@ -42,5 +40,3 @@
             stateChangeNotificationText:
               de: geändert.*jetzt die 3G-Plus-Regel
             identifier: 3G_WITH_PCR
-          vaccinationState:
-            visible: false

@@ -15,7 +15,6 @@
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: astra2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
         hasBooster: true
         verificationCertificates:
           - certificate: astra2/2
@@ -40,7 +39,6 @@
       assertions:
         admissionState: 2G_PLUS
         mostRelevantCertificate: astra2/2
-        vaccinationState: COMPLETE_IMMUNIZATION
         verificationCertificates:
           - certificate: astra2/2
 - description: EXPOSUREAPP-11833 - janssen1/1 + biontech1/2 (made-up scenario)
@@ -56,7 +54,6 @@
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: biontech1/2
-        vaccinationState: PARTIAL_IMMUNIZATION
         verificationCertificates:
           - certificate: biontech1/2
 - description: EXPOSUREAPP-11853 - nova1/1 is a recovery vaccination and valid immediately
@@ -67,5 +64,4 @@
   testCases:
     - time: nova1/1
       assertions:
-        vaccinationState: COMPLETE_IMMUNIZATION
         vaccinationValidFrom: nova1/1
