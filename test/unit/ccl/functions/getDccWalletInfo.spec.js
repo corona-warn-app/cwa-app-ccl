@@ -437,6 +437,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   })
                 })
 
+                has('certificateReissuance.reissuanceDivision.faqAnchor') &&
+                it('check certificateReissuance.faqAnchor', () => {
+                  expect(output).to.have.nested.property(
+                    'certificateReissuance.reissuanceDivision.faqAnchor',
+                    expCertificateReissuance.reissuanceDivision.faqAnchor
+                  )
+                })
+
                 has('certificateReissuance.certificateToReissue') &&
                 it('check certificateReissuance.certificateToReissue', () => {
                   const expCertName = expCertificateReissuance.certificateToReissue
