@@ -22,6 +22,7 @@
                 de: Neuausstellung direkt über die App
               longText:
                 de: wurden geändert
+              faqAnchor: dcc_replacement
             certificateToReissue: biontech2/2
             accompanyingCertificates:
               - janssen1/1
