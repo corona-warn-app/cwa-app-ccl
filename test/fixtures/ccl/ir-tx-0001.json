@@ -1,0 +1,70 @@
+{
+  "Identifier": "IR-TX-0001",
+  "Type": "Invalidation",
+  "Country": "TX",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "1.0.0",
+  "CertificateType": "General",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "IR-TX-0001 long text..."
+    },
+    {
+      "lang": "de",
+      "desc": "IR-TX-0001 Langtext..."
+    }
+  ],
+  "ValidFrom": "2021-10-07T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0.ci"
+      },
+      {
+        "if": [
+          {
+            "and": [
+              {
+                "in": [
+                  {
+                    "extractFromUVCI": [
+                      {
+                        "var": "payload.v.0.ci"
+                      },
+                      1
+                    ]
+                  },
+                  [
+                    "A123",
+                    "A789"
+                  ]
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "extractFromUVCI": [
+                      {
+                        "var": "payload.v.0.ci"
+                      },
+                      0
+                    ]
+                  },
+                  "01DE"
+                ]
+              }
+            ]
+          },
+          false,
+          true
+        ]
+      },
+      true
+    ]
+  }
+}

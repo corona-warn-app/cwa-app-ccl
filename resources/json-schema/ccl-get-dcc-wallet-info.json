@@ -49,6 +49,15 @@
           "items": {
             "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/validationRule"
           }
+        },
+        "scenarioIdentifier": {
+          "type": "string"
+        },
+        "invalidationRules": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/validationRule"
+          }
         }
       }
     },
@@ -215,6 +224,20 @@
                     "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
                   }
                 }
+              }
+            }
+          }
+        },
+        "certificatesRevokedByInvalidationRules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "certificateRef"
+            ],
+            "properties": {
+              "certificateRef": {
+                "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
               }
             }
           }

@@ -24,6 +24,7 @@ const expectTextToMatch = (textDescriptor, textAssertionDescriptor, { timeUnderT
 describe('ccl/functions/getDccWalletInfo', async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
   const allBNRs = fixtures.readAllBoosterNotificationRulesSync()
+  const allIRs = fixtures.readAllInvalidationRulesSync()
 
   allDccSeries.forEach(seriesDescriptor => {
     const _context = seriesDescriptor.only === true ? context.only : seriesDescriptor.skip === true ? context.skip : context
@@ -64,7 +65,8 @@ describe('ccl/functions/getDccWalletInfo', async () => {
                   validityState: it.validityState
                 })
               }),
-              boosterNotificationRules: allBNRs
+              boosterNotificationRules: allBNRs,
+              invalidationRules: seriesDescriptor.invalidationRules || allIRs
             }
 
             // output = ccl.evaluateFunction('__analyzeDccWallet', input)
@@ -471,6 +473,32 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                       `expected reference to ${expCertName} but got ${actCertName}`
                     )
                   })
+                })
+              })
+
+              has('certificatesRevokedByInvalidationRules') &&
+              it('check certificatesRevokedByInvalidationRules', () => {
+                const {
+                  certificatesRevokedByInvalidationRules: expCertificatesRevokedByInvalidationRules
+                } = expWalletInfo
+
+                expect(output.certificatesRevokedByInvalidationRules)
+                  .to.be.an('array')
+                expect(output.certificatesRevokedByInvalidationRules, 'length of certificatesRevokedByInvalidationRules')
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(expCertificatesRevokedByInvalidationRules.length)
+                expCertificatesRevokedByInvalidationRules.forEach((it, idx) => {
+                  const act = output.certificatesRevokedByInvalidationRules[idx]
+                  const actBarcodeData = act.certificateRef.barcodeData
+                  const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                  const expCertName = it
+                  const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                  expect(actBarcodeData).to.equal(
+                    expBarcodeData,
+                    `expected reference to ${expCertName} but got ${actCertName}`
+                  )
                 })
               })
             })

@@ -1,0 +1,106 @@
+- description: certificates that are blocked by an invalidation rule are returned via certificatesRevokedByInvalidationRules
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra1/2
+      dccDescriptor:
+        cwtIss: TX
+        dccOverwrites:
+          - 'v.0.ci=URN:UVCI:01DE/A123/ABC#T' # invalidated by IR-TX-0001
+    - time: +P6W
+      vc: astra2/2
+      dccDescriptor:
+        cwtIss: TX
+        dccOverwrites:
+          - 'v.0.ci=URN:UVCI:01DE/B456/ABC#T' # not invalidated
+  testCases:
+    - time: astra2/2
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules:
+            - astra1/2
+- description: empty if no certificate matches
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra1/2
+  testCases:
+    - time: astra1/2
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules: []
+- description: the issuer of certificate must match the invalidation rule
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra1/2
+      dccDescriptor:
+        cwtIss: FR # not invalidated
+        dccOverwrites:
+          - 'v.0.ci=URN:UVCI:01DE/A123/ABC#T'
+    - time: +P6W
+      vc: astra2/2
+      dccDescriptor:
+        cwtIss: TX
+        dccOverwrites:
+          - 'v.0.ci=URN:UVCI:01DE/A123/ABC#T' # invalidated by IR-TX-0001
+  testCases:
+    - time: astra2/2
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules:
+            - astra2/2
+- description: ValidFrom of the rule is taken into account
+  t0: '2021-10-01'
+  series:
+    - time: t0
+      vc: astra1/2
+      dccDescriptor:
+        cwtIss: TX
+        dccOverwrites:
+          - 'v.0.ci=URN:UVCI:01DE/A123/ABC#T' # invalidated by IR-TX-0001 as of 2021-10-07
+  testCases:
+    - time: astra1/2
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules: []
+    - time: '2021-10-07T00:00:00Z'
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules:
+            - astra1/2
+- description: ValidTo of the rule is taken into account
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra1/2
+      dccDescriptor:
+        cwtIss: TX
+        dccOverwrites:
+          - 'v.0.ci=URN:UVCI:01DE/A123/ABC#T' # invalidated by IR-TX-0001 until 2030-06-01T00:00:00Z
+  testCases:
+    - time: astra1/2
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules:
+            - astra1/2
+    - time: '2030-06-01T00:00:00Z'
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules:
+            - astra1/2
+    - time: '2030-06-01T00:00:01Z'
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules: []
+- description: empty invalidation rules lead to now matches
+  t0: '2022-01-01'
+  invalidationRules: []
+  series:
+    - time: t0
+      vc: astra1/2
+  testCases:
+    - time: astra1/2
+      assertions:
+        walletInfo:
+          certificatesRevokedByInvalidationRules: []
