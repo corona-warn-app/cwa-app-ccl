@@ -26,6 +26,14 @@
             certificateToReissue: biontech2/2
             accompanyingCertificates:
               - janssen1/1
+    - time: biontech2/2
+      description: text does not contain double-escaped line breaks
+      assertions:
+        walletInfo:
+          certificateReissuance:
+            reissuanceDivision:
+              longText:
+                de: '\.\n\nSie'
 - description: a Janssen 2/2 after Janssen 1/1 is eligible for reissuance
   t0: '2022-01-01'
   series:
