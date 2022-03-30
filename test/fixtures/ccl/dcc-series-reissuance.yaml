@@ -28,7 +28,6 @@
               - janssen1/1
     - time: biontech2/2
       description: text does not contain double-escaped line breaks
-      only: true
       assertions:
         walletInfo:
           certificateReissuance:
