@@ -40,6 +40,8 @@
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Aşı Durumu"</string>
+  <!-- XHED: Vaccination State - Card Subtitle if there are no vaccinations -->
+  <string name="VACCINATION_STATE_SUBTITLE_TEXT_NO_VACCINATION"/>
   <!-- XTXT: Vaccination State - Card Subtitle -->
   <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
     <item quantity="zero">"Son aşı bugün yapıldı"</item>
@@ -49,17 +51,41 @@
     <item quantity="many">"Son aşı %1$d gün önce yapıldı"</item>
     <item quantity="other">"Son aşı %1$d gün önce yapıldı"</item>
   </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Geçerli olarak önerilen tüm aşıları yaptırdınız. Aşı korumanız tamamlandı."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"Aşılarınıza ve enfeksiyon geçmişinize göre yeterli koruma altında olarak değerlendiriliyorsunuz. Şu anda önerilen başka aşı bulunmamaktadır."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
+    <item quantity="zero">"Aşılarınıza ve enfeksiyon geçmişinize göre yeterli koruma altında olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="one">"Aşılarınıza ve enfeksiyon geçmişinize göre yeterli koruma altında olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="two">"Aşılarınıza ve enfeksiyon geçmişinize göre yeterli koruma altında olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="few">"Aşılarınıza ve enfeksiyon geçmişinize göre yeterli koruma altında olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="many">"Aşılarınıza ve enfeksiyon geçmişinize göre yeterli koruma altında olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="other">"Aşılarınıza ve enfeksiyon geçmişinize göre yeterli koruma altında olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
-    <item quantity="one">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
-    <item quantity="two">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
-    <item quantity="few">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
-    <item quantity="many">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
-    <item quantity="other">"Şu anda planlanan tüm aşıları aldınız ancak aşı korumanız %1$d gün daha tamamlanmayacaktır."</item>
+    <item quantity="zero">"Şu anda temel bağışıklık için tüm aşıları aldınız. Ancak aşı korumanız %1$d gün daha etkili olmayacaktır. Lütfen önerilen hatırlatma aşıları hakkında bilgi edinin."</item>
+    <item quantity="one">"Şu anda temel bağışıklık için tüm aşıları aldınız. Ancak aşı korumanız %1$d gün daha etkili olmayacaktır. Lütfen önerilen hatırlatma aşıları hakkında bilgi edinin."</item>
+    <item quantity="two">"Şu anda temel bağışıklık için tüm aşıları aldınız. Ancak aşı korumanız %1$d gün daha etkili olmayacaktır. Lütfen önerilen hatırlatma aşıları hakkında bilgi edinin."</item>
+    <item quantity="few">"Şu anda temel bağışıklık için tüm aşıları aldınız. Ancak aşı korumanız %1$d gün daha etkili olmayacaktır. Lütfen önerilen hatırlatma aşıları hakkında bilgi edinin."</item>
+    <item quantity="many">"Şu anda temel bağışıklık için tüm aşıları aldınız. Ancak aşı korumanız %1$d gün daha etkili olmayacaktır. Lütfen önerilen hatırlatma aşıları hakkında bilgi edinin."</item>
+    <item quantity="other">"Şu anda temel bağışıklık için tüm aşıları aldınız. Ancak aşı korumanız %1$d gün daha etkili olmayacaktır. Lütfen önerilen hatırlatma aşıları hakkında bilgi edinin."</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
+    <item quantity="zero">"Aşınıza ve enfeksiyon geçmişinize göre temel bağışıklığa sahip olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="one">"Aşınıza ve enfeksiyon geçmişinize göre temel bağışıklığa sahip olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha etkili olmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="two">"Aşınıza ve enfeksiyon geçmişinize göre temel bağışıklığa sahip olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha etkili olmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="few">"Aşınıza ve enfeksiyon geçmişinize göre temel bağışıklığa sahip olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="many">"Aşınıza ve enfeksiyon geçmişinize göre temel bağışıklığa sahip olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
+    <item quantity="other">"Aşınıza ve enfeksiyon geçmişinize göre temel bağışıklığa sahip olarak değerlendiriliyorsunuz. Ancak bağışıklık korumanız %1$d gün daha tam koruma düzeyine ulaşmayacaktır. Lütfen hâlâ bulaştırıcı olabileceğinizi göz önünde bulundurun."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Geçerli olarak planlanan tüm aşıları yaptırdınız. Aşı korumanız tamamlandı."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Şu anda temel bağışıklık için tüm aşıları aldınız. Aşı korumanız etkin. Lütfen önerilen hatırlatma aşıları hakkında bilgi edinin."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Aşınıza ve enfeksiyon geçmişinize göre temel bağışıklığa sahip olarak değerlendiriliyorsunuz. Ancak lütfen önerilen hatırlatma aşıları hakkında da bilgi edinin."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
   <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Henüz şu anda tüm planlanan aşıları olmadınız. Dolayısıyla aşı korumanız henüz tamamlanmadı."</string>
   

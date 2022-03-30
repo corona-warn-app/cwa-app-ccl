@@ -40,6 +40,8 @@
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Status zaszczepienia"</string>
+  <!-- XHED: Vaccination State - Card Subtitle if there are no vaccinations -->
+  <string name="VACCINATION_STATE_SUBTITLE_TEXT_NO_VACCINATION"/>
   <!-- XTXT: Vaccination State - Card Subtitle -->
   <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
     <item quantity="zero">"Ostatnie szczepienie dzisiaj"</item>
@@ -49,17 +51,41 @@
     <item quantity="many">"Ostatnie szczepienie %1$d dni temu"</item>
     <item quantity="other">"Ostatnie szczepienie %1$d dnia temu"</item>
   </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Otrzymałeś(-aś) wszystkie aktualnie zalecane szczepienia. Masz pełną ochronę poszczepienną."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Obecnie nie zaleca się kolejnych szczepień."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
+    <item quantity="zero">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="one">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejny %1$d dzień. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="two">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="few">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="many">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="other">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dnia. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni."</item>
-    <item quantity="one">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dzień."</item>
-    <item quantity="two">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni."</item>
-    <item quantity="few">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni."</item>
-    <item quantity="many">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni."</item>
-    <item quantity="other">"Otrzymałeś(-aś) już wszystkie zaplanowane dotychczas szczepienia, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dnia."</item>
+    <item quantity="zero">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="one">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dzień. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="two">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="few">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="many">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="other">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dnia. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
+    <item quantity="zero">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="one">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejny %1$d dzień. Weź pod uwagę, że nadal możesz zarażać."</item>
+    <item quantity="two">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę, że nadal możesz zarażać."</item>
+    <item quantity="few">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="many">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="other">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dnia. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Otrzymałeś(-aś) wszystkie aktualnie zaplanowane szczepienia. Masz pełną ochronę poszczepienną."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności. Twoja ochrona poszczepienna jest skuteczna. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Prosimy jednak o zapoznanie się z zalecanymi szczepieniami przypominającymi."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
   <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nie otrzymałeś(-aś) jeszcze wszystkich zaplanowanych szczepień. W związku z tym Twoja ochrona poszczepienna nie jest jeszcze pełna."</string>
   

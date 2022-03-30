@@ -40,6 +40,8 @@
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Starea vaccinării"</string>
+  <!-- XHED: Vaccination State - Card Subtitle if there are no vaccinations -->
+  <string name="VACCINATION_STATE_SUBTITLE_TEXT_NO_VACCINATION"/>
   <!-- XTXT: Vaccination State - Card Subtitle -->
   <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
     <item quantity="zero">"Ultima vaccinare astăzi"</item>
@@ -49,17 +51,41 @@
     <item quantity="many">"Ultima vaccinare: acum %1$d zile"</item>
     <item quantity="other">"Ultima vaccinare: acum %1$d de zile"</item>
   </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Ați primit toate vaccinările recomandate în acest moment. Protecția prin vaccinare este completă."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. În prezent, nu se recomandă o altă vaccinare."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
+    <item quantity="zero">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="one">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zi. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="two">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="few">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="many">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="other">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d de zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"Acum ați efectuat toate vaccinările planificate curente. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile."</item>
-    <item quantity="one">"Acum ați efectuat toate vaccinările planificate curente. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zi."</item>
-    <item quantity="two">"Acum ați efectuat toate vaccinările planificate curente. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile."</item>
-    <item quantity="few">"Acum ați efectuat toate vaccinările planificate curente. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile."</item>
-    <item quantity="many">"Acum ați efectuat toate vaccinările planificate curente. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile."</item>
-    <item quantity="other">"Acum ați efectuat toate vaccinările planificate curente. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d de zile."</item>
+    <item quantity="zero">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="one">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zi. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="two">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="few">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="many">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d de zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="other">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
+    <item quantity="zero">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="one">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zi. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="two">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi eficientă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="few">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="many">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="other">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d de zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Ați primit toate vaccinările planificate în acest moment. Protecția prin vaccinare este completă."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Ați primit toate vaccinările pentru imunizarea de bază. Protecția dvs. prin vaccinare este eficientă. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
   <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nu ați primit încă toate vaccinările planificate curente. Astfel, protecția dvs. prin vaccinare nu este completă încă."</string>
   

@@ -40,6 +40,8 @@
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Vaccination Status"</string>
+  <!-- XHED: Vaccination State - Card Subtitle if there are no vaccinations -->
+  <string name="VACCINATION_STATE_SUBTITLE_TEXT_NO_VACCINATION"/>
   <!-- XTXT: Vaccination State - Card Subtitle -->
   <plurals name="VACCINATION_STATE_SUBTITLE_TEXT">
     <item quantity="zero">"Last vaccination today"</item>
@@ -49,17 +51,41 @@
     <item quantity="many">"Last vaccination %1$d days ago"</item>
     <item quantity="other">"Last vaccination %1$d days ago"</item>
   </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"You have received all currently recommended vaccinations. Your vaccination protection is complete."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"Based on your vaccinations and past infection, you are considered to have sufficient protection. No further vaccination is currently recommended."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
+    <item quantity="zero">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="one">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d day. Please consider that you could still be contagious."</item>
+    <item quantity="two">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="few">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="many">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="other">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"You have now received all the currently planned vaccinations, however, your vaccination protection will not be complete for another %1$d days."</item>
-    <item quantity="one">"You have now received all the currently planned vaccinations, however, your vaccination protection will not be complete for another %1$d day."</item>
-    <item quantity="two">"You have now received all the currently planned vaccinations, however, your vaccination protection will not be complete for another %1$d days."</item>
-    <item quantity="few">"You have now received all the currently planned vaccinations, however, your vaccination protection will not be complete for another %1$d days."</item>
-    <item quantity="many">"You have now received all the currently planned vaccinations, however, your vaccination protection will not be complete for another %1$d days."</item>
-    <item quantity="other">"You have now received all the currently planned vaccinations, however, your vaccination protection will not be complete for another %1$d days."</item>
+    <item quantity="zero">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
+    <item quantity="one">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d day. Please also find out about the recommended booster vaccinations."</item>
+    <item quantity="two">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
+    <item quantity="few">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
+    <item quantity="many">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
+    <item quantity="other">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
+  </plurals>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
+  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
+    <item quantity="zero">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="one">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be effective for another %1$d day. Please consider that you could still be contagious."</item>
+    <item quantity="two">"Based on your vaccination and past infection, you are deemed to have basic immunization. However, your immune protection will not be effective for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="few">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="many">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="other">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"You have received all currently planned vaccinations. Your vaccination protection is complete."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"You have received all vaccinations for basic immunization. Your vaccination protection is effective. Please also find out about the recommended booster vaccinations."</string>
+  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Based on your vaccination and past infection, you are considered to have basic immunization. However, please also find out about the recommended booster vaccinations."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
   <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"You have not yet received all the currently planned vaccinations. As such, your vaccination protection is not complete yet."</string>
   
