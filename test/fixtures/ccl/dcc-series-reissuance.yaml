@@ -42,6 +42,14 @@
             reissuanceDivision:
               longText:
                 de: '\n\n.*weitere Impf- oder Genesenenzertifikate.*Bitte scannen'
+    - time: biontech2/2
+      description: subtitle contains hints about next steps
+      assertions:
+        walletInfo:
+          certificateReissuance:
+            reissuanceDivision:
+              subtitleText:
+                de: 'erfahren Sie im nächsten Schritt'
 - description: a Janssen 2/2 after Janssen 1/1 is eligible for reissuance
   t0: '2022-01-01'
   series:
