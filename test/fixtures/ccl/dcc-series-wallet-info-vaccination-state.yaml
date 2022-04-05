@@ -544,3 +544,19 @@
               de: '' # empty string
             longText:
               de: noch nicht vollständig
+- description: EXPOSUREAPP-12623 - incorrect vaccination status for 1/2 + 2/2 + rc
+  t0: '2022-01-01'
+  series:
+    - time: t0+P-180D
+      vc: biontech1/2
+    - time: t0+P-130D
+      vc: biontech2/2
+    - time: t0+P-50D
+      rc: rc1
+  testCases:
+    - time: t0
+      assertions:
+        vaccinationState: COMPLETE_BOOSTER_RC
+        walletInfo:
+            longText:
+              de: Derzeit wird keine weitere Impfung empfohlen
