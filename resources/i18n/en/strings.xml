@@ -102,8 +102,8 @@
   <!-- XHED: DCC Reissuance - Card Title -->
   <string name="DCC_REISSUANCE_TITLE_TEXT">"Update Certificate"</string>
   <!-- XTXT: DCC Reissuance - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Request reissue directly in the app."</string>
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Request reissue directly in the app. You’ll find out how to do this in the next step."</string>
   <!-- XTXT: DCC Reissuance - Card Long Text -->
-  <string name="DCC_REISSUANCE_LONG_TEXT">"The EU specifications for certificates involving booster vaccinations have changed. This certificate does not match the current specifications. While the vaccination certificate remains valid, the booster vaccination may not be identified during checks. Therefore, please request the issue of a new vaccination certificate.\n\nYou can request a new vaccination certificate directly and free of charge in the app. Your consent is required for this."</string>
+  <string name="DCC_REISSUANCE_LONG_TEXT">"The EU specifications for certificates involving booster vaccinations have changed. This certificate does not match the current specifications. While the vaccination certificate remains valid, the booster vaccination may not be identified during checks. Therefore, please request the issue of a new vaccination certificate.\n\nDo you have other vaccination certificates or certificates of recovery that are not stored in the app yet? Please scan them now, so they can be considered in the checks.\n\nYou can request a new vaccination certificate directly and free of charge in the app. Your consent is required for this."</string>
 
 </resources>
