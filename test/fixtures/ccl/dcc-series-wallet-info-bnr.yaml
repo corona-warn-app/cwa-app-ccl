@@ -85,3 +85,22 @@
             identifier: 'BNR-TX-0002'
             longText:
               de: BNR-TX-0002 Langtext
+- description: EXPOSUREBACK-2232 - long text all languages of the BNR are exposed
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra1/2
+    - time: +P6W
+      vc: astra2/2
+  testCases:
+    - time: astra2/2
+      assertions:
+        walletInfo:
+          boosterNotification:
+            visible: true
+            identifier: 'BNR-TX-0001'
+            longText:
+              de: BNR-TX-0001 Langtext
+              en: BNR-TX-0001 long text
+              es: BNR-TX-0001 texto largo
+              tr: BNR-TX-0001 uzun metin
