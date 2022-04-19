@@ -242,3 +242,26 @@
           accompanyingCertificates:
             - rc1
             - janssen1/1
+- description: VCs with swapped first and last name are not eligible
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen1/1
+      dccDescriptor:
+        dccOverwrites:
+          - 'nam.gn=Erika'
+          - 'nam.gnt=ERIKA'
+          - 'nam.fn=Mustermann'
+          - 'nam.fnt=MUSTERMANN'
+    - time: +P6W
+      vc: biontech2/2
+      dccDescriptor:
+        dccOverwrites:
+          - 'nam.gn=Mustermann'
+          - 'nam.gnt=MUSTERMANN'
+          - 'nam.fn=Erika'
+          - 'nam.fnt=ERIKA'
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance: false
