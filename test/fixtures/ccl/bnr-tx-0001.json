@@ -15,6 +15,14 @@
     {
       "lang": "de",
       "desc": "BNR-TX-0001 Langtext"
+    },
+    {
+      "lang": "tr",
+      "desc": "BNR-TX-0001 uzun metin"
+    },
+    {
+      "lang": "es",
+      "desc": "BNR-TX-0001 texto largo"
     }
   ],
   "ValidFrom": "2021-10-07T00:00:00Z",
