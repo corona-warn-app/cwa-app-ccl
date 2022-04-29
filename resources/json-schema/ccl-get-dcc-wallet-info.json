@@ -202,6 +202,7 @@
               ]
             },
             "certificateToReissue": {
+              "deprecated": true,
               "type": "object",
               "required": [
                 "certificateRef"
@@ -213,6 +214,7 @@
               }
             },
             "accompanyingCertificates": {
+              "deprecated": true,
               "type": "array",
               "items": {
                 "type": "object",
@@ -222,6 +224,47 @@
                 "properties": {
                   "certificateRef": {
                     "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
+                  }
+                }
+              }
+            },
+            "certificates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "certificateToReissue",
+                  "accompanyingCertificates",
+                  "action"
+                ],
+                "properties": {
+                  "certificateToReissue": {
+                    "type": "object",
+                    "required": [
+                      "certificateRef"
+                    ],
+                    "properties": {
+                      "certificateRef": {
+                        "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
+                      }
+                    }
+                  },
+                  "accompanyingCertificates": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "certificateRef"
+                      ],
+                      "properties": {
+                        "certificateRef": {
+                          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/certificateReference"
+                        }
+                      }
+                    }
+                  },
+                  "action": {
+                    "type": "string"
                   }
                 }
               }
