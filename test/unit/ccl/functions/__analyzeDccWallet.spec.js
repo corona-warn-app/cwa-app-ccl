@@ -202,6 +202,9 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               const {
                 certificateReissuance: expCertificateReissuance
               } = assertions
+              const {
+                enableAssertionsForNewBatchAPI
+              } = expCertificateReissuance || {}
 
               has('certificateReissuance') &&
               it('check certificateReissuance', () => {
@@ -234,6 +237,61 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   .and.to.have.lengthOf(expCertificateReissuance.accompanyingCertificates.length)
                 expCertificateReissuance.accompanyingCertificates.forEach((it, idx) => {
                   const act = output.certificateReissuance.accompanyingCertificates[idx]
+                  const actBarcodeData = act.barcodeData
+                  const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                  const expCertName = it
+                  const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                  expect(actBarcodeData).to.equal(
+                    expBarcodeData,
+                    `expected reference to ${expCertName} but got ${actCertName}`
+                  )
+                })
+              })
+
+              enableAssertionsForNewBatchAPI &&
+              has('certificateReissuance.certificateToReissue') &&
+              it('check certificateReissuance.certificates[0].action', () => {
+                expect(output.certificateReissuance.certificates)
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(1)
+
+                expect(output).to.have.nested.property(
+                  'certificateReissuance.certificates[0].action',
+                  'renew'
+                )
+              })
+
+              enableAssertionsForNewBatchAPI &&
+              has('certificateReissuance.certificateToReissue') &&
+              it('check certificateReissuance.certificates[0].certificateToReissue', () => {
+                expect(output.certificateReissuance.certificates)
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(1)
+                const expCertName = expCertificateReissuance.certificateToReissue
+                const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+                const actBarcodeData = output.certificateReissuance.certificates[0].certificateToReissue
+                const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                expect(output).to.have.nested.property(
+                  'certificateReissuance.certificates[0].certificateToReissue.barcodeData',
+                  expBarcodeData,
+                  `expected reference to ${expCertName} but got ${actCertName}`
+                )
+              })
+
+              enableAssertionsForNewBatchAPI &&
+              has('certificateReissuance.accompanyingCertificates') &&
+              it('check certificateReissuance.certificates[0].accompanyingCertificates', () => {
+                expect(output.certificateReissuance.certificates)
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(1)
+                expect(output.certificateReissuance.certificates[0].accompanyingCertificates, 'length of certificateReissuance.accompanyingCertificates')
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(expCertificateReissuance.accompanyingCertificates.length)
+                expCertificateReissuance.accompanyingCertificates.forEach((it, idx) => {
+                  const act = output.certificateReissuance.certificates[0].accompanyingCertificates[idx]
                   const actBarcodeData = act.barcodeData
                   const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
 
