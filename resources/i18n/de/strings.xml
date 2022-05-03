@@ -107,4 +107,11 @@
   <!-- XTXT: DCC Reissuance - Card Long Text -->
   <string name="DCC_REISSUANCE_LONG_TEXT">"Die Spezifikationen der EU für Zertifikate von Auffrischimpfungen wurden geändert. Dieses Zertifikat entspricht nicht den aktuellen Spezifikationen. Das Impfzertifikat ist zwar weiterhin gültig, es kann jedoch sein, dass bei einer Prüfung eine Auffrischimpfung nicht als solche erkannt wird. Bitte lassen Sie sich daher ein neues Impfzertifikat ausstellen.\n\nHaben Sie noch weitere Impf- oder Genesenenzertifikate, die noch nicht in der App gespeichert sind? Bitte scannen Sie diese jetzt ein, damit sie berücksichtigt werden können.\n\nSie können ein neues Impfzertifikat direkt kostenlos über die App anfordern. Hierfür ist Ihr Einverständnis erforderlich."</string>
 
+  <!-- XHED: DCC Reissuance for extension - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Zertifikate erneuern"</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Erneuerung bis maximal 3 Monate nach Ablauf des Zertifikates direkt über die App vornehmen."</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"Für mindestens ein Zertifikat ist die Gültigkeit abgelaufen oder läuft in Kürze ab. Mit einem abgelaufenen Zertifikat können Sie Ihren Status nicht mehr nachweisen.\n\nIm Zeitraum von 28 Tagen vor Ablauf und bis zu 3 Monate nach Ablauf der Gültigkeit können Sie sich neue Zertifikate direkt kostenlos über die App ausstellen lassen. Hierfür ist Ihr Einverständnis erforderlich."</string>
+
 </resources>

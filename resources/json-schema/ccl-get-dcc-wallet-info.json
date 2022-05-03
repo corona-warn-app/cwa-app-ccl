@@ -58,6 +58,15 @@
           "items": {
             "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/validationRule"
           }
+        },
+        "features": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enableDCCReissuanceForExtension": {
+              "type": "boolean"
+            }
+          }
         }
       }
     },
