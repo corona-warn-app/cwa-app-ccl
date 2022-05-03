@@ -56,7 +56,12 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
                 })
               }),
               boosterNotificationRules: [],
-              invalidationRules: seriesDescriptor.invalidationRules || allIRs
+              invalidationRules: seriesDescriptor.invalidationRules || allIRs,
+              features: {
+                enableDCCReissuanceForExtension: Object.prototype.hasOwnProperty.call(testCase.features || {}, 'enableDCCReissuanceForExtension')
+                  ? testCase.features.enableDCCReissuanceForExtension
+                  : true
+              }
             }
 
             output = ccl.evaluateFunction('__analyzeDccWallet', input)
@@ -252,7 +257,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
               enableAssertionsForNewBatchAPI &&
               has('certificateReissuance.certificateToReissue') &&
-              it('check certificateReissuance.certificates[0].action', () => {
+              it('[COMPATIBILITY] check certificateReissuance.certificates[0].action', () => {
                 expect(output.certificateReissuance.certificates)
                   .to.be.an('array')
                   .and.to.have.lengthOf(1)
@@ -265,7 +270,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
               enableAssertionsForNewBatchAPI &&
               has('certificateReissuance.certificateToReissue') &&
-              it('check certificateReissuance.certificates[0].certificateToReissue', () => {
+              it('[COMPATIBILITY] check certificateReissuance.certificates[0].certificateToReissue', () => {
                 expect(output.certificateReissuance.certificates)
                   .to.be.an('array')
                   .and.to.have.lengthOf(1)
@@ -283,11 +288,11 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
 
               enableAssertionsForNewBatchAPI &&
               has('certificateReissuance.accompanyingCertificates') &&
-              it('check certificateReissuance.certificates[0].accompanyingCertificates', () => {
+              it('[COMPATIBILITY] check certificateReissuance.certificates[0].accompanyingCertificates', () => {
                 expect(output.certificateReissuance.certificates)
                   .to.be.an('array')
                   .and.to.have.lengthOf(1)
-                expect(output.certificateReissuance.certificates[0].accompanyingCertificates, 'length of certificateReissuance.accompanyingCertificates')
+                expect(output.certificateReissuance.certificates[0].accompanyingCertificates, 'length of certificateReissuance.certificates[0].accompanyingCertificates')
                   .to.be.an('array')
                   .and.to.have.lengthOf(expCertificateReissuance.accompanyingCertificates.length)
                 expCertificateReissuance.accompanyingCertificates.forEach((it, idx) => {
@@ -302,6 +307,58 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                     expBarcodeData,
                     `expected reference to ${expCertName} but got ${actCertName}`
                   )
+                })
+              })
+
+              has('certificateReissuance.certificates') &&
+              it('check certificateReissuance.certificates', () => {
+                expect(output.certificateReissuance.certificates, 'length of certificateReissuance.certificates')
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(expCertificateReissuance.certificates.length)
+              })
+
+              has('certificateReissuance.certificates') &&
+              expCertificateReissuance.certificates.forEach((exp, idx) => {
+                context(`certificateReissuance.certificates[${idx}]`, () => {
+                  it('check action', () => {
+                    expect(output).to.have.nested.property(
+                      `certificateReissuance.certificates[${idx}].action`,
+                      exp.action
+                    )
+                  })
+
+                  it('check certificateToReissue', () => {
+                    const act = output.certificateReissuance.certificates[idx].certificateToReissue
+                    const actBarcodeData = act.barcodeData
+                    const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                    const expCertName = exp.certificateToReissue
+                    const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                    expect(actBarcodeData).to.equal(
+                      expBarcodeData,
+                      `expected reference to ${expCertName} but got ${actCertName}`
+                    )
+                  })
+
+                  it('check accompanyingCertificates', () => {
+                    expect(output.certificateReissuance.certificates[idx].accompanyingCertificates, 'length of accompanyingCertificates')
+                      .to.be.an('array')
+                      .and.to.have.lengthOf(exp.accompanyingCertificates.length)
+                    exp.accompanyingCertificates.forEach((it, nestedIdx) => {
+                      const act = output.certificateReissuance.certificats[idx].accompanyingCertificates[nestedIdx]
+                      const actBarcodeData = act.barcodeData
+                      const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                      const expCertName = it
+                      const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                      expect(actBarcodeData).to.equal(
+                        expBarcodeData,
+                        `expected reference to ${expCertName} but got ${actCertName}`
+                      )
+                    })
+                  })
                 })
               })
             })

@@ -1,0 +1,848 @@
+- description: an RC is reissued for extension
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: t0+P1Y
+  testCases:
+    - time: rc1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: rc1+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+    - time: rc1+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+    - time: rc1+P1Y90D
+      assertions:
+        certificateReissuance: false
+- description: multiple RCs are reissued for extension
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: rc1+P1Y
+    - time: +P1D
+      rc: rc2
+      cwtExp: rc2+P1Y
+  testCases:
+    - time: t0+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: t0+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+    - time: t0+P1Y-27D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+            - action: extend
+              certificateToReissue: rc2
+              accompanyingCertificates: []
+    - time: t0+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+            - action: extend
+              certificateToReissue: rc2
+              accompanyingCertificates: []
+    - time: t0+P1Y91DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc2
+              accompanyingCertificates: []
+    - time: t0+P1Y91D
+      assertions:
+        certificateReissuance: false
+- description: a 3/3 booster is reissued for extension
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech3/3
+      cwtExp: t0+P1Y
+  testCases:
+    - time: biontech3/3+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/3+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+    - time: biontech3/3+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+    - time: biontech3/3+P1Y90D
+      assertions:
+        certificateReissuance: false
+- description: a 3/1 booster is reissued for extension
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+      cwtExp: t0+P1Y
+  testCases:
+    - time: biontech3/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/1
+              accompanyingCertificates: []
+    - time: biontech3/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/1
+              accompanyingCertificates: []
+    - time: biontech3/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+- description: a 2/1 booster is reissued for extension
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/1
+      cwtExp: t0+P1Y
+  testCases:
+    - time: biontech2/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/1
+              accompanyingCertificates: []
+    - time: biontech2/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/1
+              accompanyingCertificates: []
+    - time: biontech2/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+- description: a 1/1 recovery vaccination is reissued for extension
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+      cwtExp: t0+P1Y
+  testCases:
+    - time: biontech1/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech1/1
+              accompanyingCertificates: []
+    - time: biontech1/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech1/1
+              accompanyingCertificates: []
+    - time: biontech1/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+- description: a 2/2 vaccination is reissued for extension
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+      cwtExp: t0+P1Y
+  testCases:
+    - time: biontech2/2+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/2
+              accompanyingCertificates: []
+    - time: biontech2/2+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/2
+              accompanyingCertificates: []
+    - time: biontech2/2+P1Y90D
+      assertions:
+        certificateReissuance: false
+- description: NEGATIVE - a 2/2 vaccination is NOT reissued if there is a non-expired 3/3 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+      cwtExp: biontech2/2+P1Y
+    - time: +P4W
+      vc: biontech3/3
+      cwtExp: biontech3/3+P5Y
+  testCases:
+    - time: biontech2/2+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/3+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+- description: NEGATIVE - a 2/2 vaccination is NOT reissued if there is a non-expired 2/1 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+      cwtExp: biontech2/2+P1Y
+    - time: +P4W
+      vc: biontech2/1
+      cwtExp: biontech2/1+P5Y
+  testCases:
+    - time: biontech2/2+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/1
+              accompanyingCertificates: []
+- description: NEGATIVE - a 2/2 vaccination is NOT reissued if there is a non-expired 3/1 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+      cwtExp: biontech2/2+P1Y
+    - time: +P4W
+      vc: biontech3/1
+      cwtExp: biontech3/1+P5Y
+  testCases:
+    - time: biontech2/2+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/2+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/1
+              accompanyingCertificates: []
+- description: NEGATIVE - a 1/1 recovery vaccination is NOT reissued if there is a non-expired 3/3 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+      cwtExp: biontech1/1+P1Y
+    - time: +P4W
+      vc: biontech3/3
+      cwtExp: biontech3/3+P5Y
+  testCases:
+    - time: biontech1/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/3+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+- description: NEGATIVE - a 1/1 recovery vaccination is NOT reissued if there is a non-expired 2/1 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+      cwtExp: biontech1/1+P1Y
+    - time: +P4W
+      vc: biontech2/1
+      cwtExp: biontech2/1+P5Y
+  testCases:
+    - time: biontech1/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/1
+              accompanyingCertificates: []
+- description: NEGATIVE - a 1/1 recovery vaccination is NOT reissued if there is a non-expired 3/1 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+      cwtExp: biontech1/1+P1Y
+    - time: +P4W
+      vc: biontech3/1
+      cwtExp: biontech3/1+P5Y
+  testCases:
+    - time: biontech1/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech1/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/1
+              accompanyingCertificates: []
+- description: NEGATIVE - a 2/1 vaccination is NOT reissued if there is a non-expired 3/3 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/1
+      cwtExp: biontech2/1+P1Y
+    - time: +P4W
+      vc: biontech3/3
+      cwtExp: biontech3/3+P5Y
+  testCases:
+    - time: biontech2/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/3+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+- description: NEGATIVE - a 2/1 vaccination is NOT reissued if there is a non-expired 3/1 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/1
+      cwtExp: biontech2/1+P1Y
+    - time: +P4W
+      vc: biontech3/1
+      cwtExp: biontech3/1+P5Y
+  testCases:
+    - time: biontech2/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech2/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/1
+              accompanyingCertificates: []
+- description: NEGATIVE - a 3/3 vaccination is NOT reissued if there is a non-expired 4/4 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+    - time: +P4W
+      vc: biontech4/4
+      cwtExp: biontech4/4+P5Y
+  testCases:
+    - time: biontech3/3+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/3+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/3+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/3+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech4/4+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech4/4
+              accompanyingCertificates: []
+- description: NEGATIVE - an expired 3/3 vaccination is NOT reissued if there is an expired 4/4 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+      cwtExp: biontech3/1+P1Y
+    - time: +P1D
+      vc: biontech4/4
+      cwtExp: biontech4/4+P1Y
+  testCases:
+    - time: biontech3/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P1Y-27D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech4/4
+              accompanyingCertificates: []
+    - time: biontech3/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech4/4
+              accompanyingCertificates: []
+    - time: biontech3/1+P1Y91DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech4/4
+              accompanyingCertificates: []
+    - time: biontech3/1+P1Y91D
+      assertions:
+        certificateReissuance: false
+- description: NEGATIVE - a 3/1 vaccination is NOT reissued if there is a non-expired 4/1 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+      cwtExp: biontech3/1+P1Y
+    - time: +P4W
+      vc: biontech4/1
+      cwtExp: biontech4/1+P5Y
+  testCases:
+    - time: biontech3/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P1Y90D
+      assertions:
+        certificateReissuance: false
+    - time: biontech4/1+P5Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech4/1
+              accompanyingCertificates: []
+- description: NEGATIVE - an expired 3/1 vaccination is NOT reissued if there is an expired 4/1 booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+      cwtExp: biontech3/1+P1Y
+    - time: +P1D
+      vc: biontech4/1
+      cwtExp: biontech4/1+P1Y
+  testCases:
+    - time: biontech3/1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P1Y-28D
+      assertions:
+        certificateReissuance: false
+    - time: biontech3/1+P1Y-27D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech4/1
+              accompanyingCertificates: []
+    - time: biontech3/1+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech4/1
+              accompanyingCertificates: []
+    - time: biontech3/1+P1Y91DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech4/1
+              accompanyingCertificates: []
+    - time: biontech3/1+P1Y91D
+      assertions:
+        certificateReissuance: false
+- description: NEGATIVE - a expired test certificate is not reissued
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: pcr1
+      cwtExp: pcr1+P8M
+  testCases:
+    - time: pcr1+P8M-29D
+      assertions:
+        certificateReissuance: false
+    - time: pcr1+P8M-28D
+      assertions:
+        certificateReissuance: false
+    - time: pcr1+P8M90DT-1S
+      assertions:
+        certificateReissuance: false
+    - time: pcr1+P8M90D
+      assertions:
+        certificateReissuance: false
+- description: COMBO - an RC and booster are reissued together
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: t0+P1Y
+    - time: +P1D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+  testCases:
+    - time: rc1+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: rc1+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+    - time: rc1+P1Y-27D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+    - time: rc1+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+    - time: rc1+P1Y91DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+    - time: rc1+P1Y91D
+      assertions:
+        certificateReissuance: false
+- description: for U18, 1/2 and 2/2 are reissued if there is no booster
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+      cwtExp: t0+P1Y
+      dccDescriptor:
+        dccOverwrites:
+          - 'dob=2006-01-01' # 16 years
+    - time: +P1D
+      vc: biontech2/2
+      cwtExp: biontech2/2+P1Y
+      dccDescriptor:
+        dccOverwrites:
+          - 'dob=2006-01-01' # 16 years
+  testCases:
+    - time: t0+P1Y-29D
+      assertions:
+        certificateReissuance: false
+    - time: t0+P1Y-28D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech1/2
+              accompanyingCertificates: []
+    - time: t0+P1Y-27D
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech1/2
+              accompanyingCertificates: []
+            - action: extend
+              certificateToReissue: biontech2/2
+              accompanyingCertificates: []
+    - time: t0+P1Y90DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech1/2
+              accompanyingCertificates: []
+            - action: extend
+              certificateToReissue: biontech2/2
+              accompanyingCertificates: []
+    - time: t0+P1Y91DT-1S
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/2
+              accompanyingCertificates: []
+    - time: t0+P1Y91D
+      assertions:
+        certificateReissuance: false
+- description: NEGATIVE - RCs and VCs that were not issued by DE are not extended
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: rc1+P1Y
+      dccDescriptor:
+        cwtIss: FR
+    - time: +P1D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+      dccDescriptor:
+        cwtIss: FR
+  testCases:
+    - time: t0+P1Y
+      assertions:
+        certificateReissuance: false
+- description: NEGATIVE - RCs and VCs with validity state INVALID are not extended
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: rc1+P1Y
+      validityState: INVALID
+    - time: +P1D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+      validityState: INVALID
+  testCases:
+    - time: t0+P1Y
+      assertions:
+        certificateReissuance: false
+- description: NEGATIVE - RCs and VCs with validity state BLOCKED are not extended
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: rc1+P1Y
+      validityState: BLOCKED
+    - time: +P1D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+      validityState: BLOCKED
+  testCases:
+    - time: t0+P1Y
+      assertions:
+        certificateReissuance: false
+- description: NEGATIVE - RCs and VCs with validity state REVOKED are not extended
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: rc1+P1Y
+      validityState: REVOKED
+    - time: +P1D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+      validityState: REVOKED
+  testCases:
+    - time: t0+P1Y
+      assertions:
+        certificateReissuance: false
+- description: RCs and VCs with validity state EXPIRED are extended
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: rc1+P1Y
+      validityState: EXPIRED
+    - time: +P1D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+      validityState: EXPIRED
+  testCases:
+    - time: t0+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+        walletInfo:
+          certificateReissuance:
+            certificates:
+              - action: extend
+                certificateToReissue: rc1
+                accompanyingCertificates: []
+              - action: extend
+                certificateToReissue: biontech3/3
+                accompanyingCertificates: []
+- description: TEXTS - check for separate texts
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: rc1+P1Y
+    - time: +P1D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+  testCases:
+    - time: t0+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates: []
+        walletInfo:
+          certificateReissuance:
+            reissuanceDivision:
+              visible: true
+              titleText:
+                de: Zertifikate erneuern
+              subtitleText:
+                de: Erneuerung.*direkt über die App vornehmen
+              longText:
+                de: Zeitraum von 28 Tagen.*bis zu 3 Monate
+              faqAnchor: dcc_replacement
+- description: COMPATIBILITY - reissuance is ignored when feature.enableDCCReissuanceForExtension is not true
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: rc1+P1Y
+    - time: +P1D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+  testCases:
+    - time: t0+P1Y
+      features:
+        enableDCCReissuanceForExtension: false
+      assertions:
+        certificateReissuance: false
+        walletInfo:
+          certificateReissuance: false
