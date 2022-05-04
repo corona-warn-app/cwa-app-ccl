@@ -18,6 +18,7 @@ describe('dist/json-schema-checks', () => {
       cclConfiguration.forEach((entry, idx) => {
         it(`entry ${idx + 1} matches schema`, async () => {
           const { errors } = await ccl.schema.validate(entry, 'https://ccl.coronawarn.app/ccl-configuration.json')
+          console.log(errors)
           expect(errors).to.be.empty
         })
       })
@@ -31,6 +32,7 @@ describe('dist/json-schema-checks', () => {
         const cclDe0001 = readJsonSync(relativeFilepath)
         it('matches schema', async () => {
           const { errors } = await ccl.schema.validate(cclDe0001, 'https://ccl.coronawarn.app/ccl-configuration.json')
+          console.log(errors)
           expect(errors).to.be.empty
         })
       })

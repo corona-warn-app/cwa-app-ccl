@@ -56,12 +56,7 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
                 })
               }),
               boosterNotificationRules: [],
-              invalidationRules: seriesDescriptor.invalidationRules || allIRs,
-              features: {
-                enableDCCReissuanceForExtension: Object.prototype.hasOwnProperty.call(testCase.features || {}, 'enableDCCReissuanceForExtension')
-                  ? testCase.features.enableDCCReissuanceForExtension
-                  : true
-              }
+              invalidationRules: seriesDescriptor.invalidationRules || allIRs
             }
 
             output = ccl.evaluateFunction('__analyzeDccWallet', input)
@@ -211,6 +206,21 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 enableAssertionsForNewBatchAPI
               } = expCertificateReissuance || {}
 
+              if (enableAssertionsForNewBatchAPI === true &&
+                expCertificateReissuance &&
+                !expCertificateReissuance.certificates) {
+                console.log('applying expCertificateReissuance')
+                console.log('before: %j', expCertificateReissuance)
+                expCertificateReissuance.certificates = [{
+                  action: 'renew',
+                  certificateToReissue: expCertificateReissuance.certificateToReissue,
+                  accompanyingCertificates: expCertificateReissuance.accompanyingCertificates
+                }]
+                delete expCertificateReissuance.certificateToReissue
+                delete expCertificateReissuance.accompanyingCertificates
+                console.log('after: %j', expCertificateReissuance)
+              }
+
               has('certificateReissuance') &&
               it('check certificateReissuance', () => {
                 if (expCertificateReissuance) {
@@ -346,7 +356,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                       .to.be.an('array')
                       .and.to.have.lengthOf(exp.accompanyingCertificates.length)
                     exp.accompanyingCertificates.forEach((it, nestedIdx) => {
-                      const act = output.certificateReissuance.certificats[idx].accompanyingCertificates[nestedIdx]
+                      const act = output.certificateReissuance.certificates[idx].accompanyingCertificates[nestedIdx]
                       const actBarcodeData = act.barcodeData
                       const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
 

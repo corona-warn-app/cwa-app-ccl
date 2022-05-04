@@ -58,15 +58,6 @@
           "items": {
             "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/validationRule"
           }
-        },
-        "features": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "enableDCCReissuanceForExtension": {
-              "type": "boolean"
-            }
-          }
         }
       }
     },
@@ -195,9 +186,7 @@
         "certificateReissuance": {
           "type": "object",
           "required": [
-            "reissuanceDivision",
-            "certificateToReissue",
-            "accompanyingCertificates"
+            "reissuanceDivision"
           ],
           "properties": {
             "reissuanceDivision": {
@@ -206,7 +195,29 @@
                   "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/invisibleDivision"
                 },
                 {
-                  "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/visibleDivision"
+                  "allOf": [
+                    {
+                      "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/visibleDivision"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "identifier"
+                      ],
+                      "properties": {
+                        "identifier": {
+                          "type": "string"
+                        },
+                        "listTitleText": {
+                          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                        },
+                        "consentSubtitleText": {
+                          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                        }
+                      }
+                    }
+                    
+                  ]
                 }
               ]
             },
