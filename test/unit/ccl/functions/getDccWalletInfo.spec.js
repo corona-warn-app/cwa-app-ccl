@@ -411,8 +411,6 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 if (enableAssertionsForNewBatchAPI === true &&
                   expCertificateReissuance &&
                   !expCertificateReissuance.certificates) {
-                  console.log('applying expCertificateReissuance')
-                  console.log('before: %j', expCertificateReissuance)
                   expCertificateReissuance.certificates = [{
                     action: 'renew',
                     certificateToReissue: expCertificateReissuance.certificateToReissue,
@@ -420,7 +418,6 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   }]
                   delete expCertificateReissuance.certificateToReissue
                   delete expCertificateReissuance.accompanyingCertificates
-                  console.log('after: %j', expCertificateReissuance)
                 }
 
                 has('certificateReissuance') &&
