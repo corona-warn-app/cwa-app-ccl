@@ -237,6 +237,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               has('certificateReissuance.certificates') &&
               expCertificateReissuance.certificates.forEach((exp, idx) => {
                 context(`certificateReissuance.certificates[${idx}]`, () => {
+                  has(`certificateReissuance.certificates[${idx}].action`) &&
                   it('check action', () => {
                     expect(output).to.have.nested.property(
                       `certificateReissuance.certificates[${idx}].action`,
@@ -244,6 +245,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                     )
                   })
 
+                  has(`certificateReissuance.certificates[${idx}].certificateToReissue`) &&
                   it('check certificateToReissue', () => {
                     const act = output.certificateReissuance.certificates[idx].certificateToReissue
                     const actBarcodeData = act.barcodeData
@@ -258,6 +260,7 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                     )
                   })
 
+                  has(`certificateReissuance.certificates[${idx}].accompanyingCertificates`) &&
                   it('check accompanyingCertificates', () => {
                     expect(output.certificateReissuance.certificates[idx].accompanyingCertificates, 'length of accompanyingCertificates')
                       .to.be.an('array')

@@ -17,14 +17,14 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
     - time: rc1+P1Y90DT-1S
       assertions:
         certificateReissuance:
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
     - time: rc1+P1Y90D
       assertions:
         certificateReissuance: false
@@ -41,7 +41,7 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - multiple RCs are reissued for extension
   t0: '2022-01-01'
   series:
@@ -58,10 +58,10 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
             - action: extend
               certificateToReissue: rc2
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - a 1/1 recovery vaccination is reissued for extension
   t0: '2022-01-01'
   series:
@@ -75,7 +75,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech1/1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - a 1/1 recovery vaccination is NOT reissued for extension if there is a newer certificate
   t0: '2022-01-01'
   series:
@@ -102,7 +102,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech2/2
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - a 2/2 vaccination is NOT reissued for extension if there is a newer certificate
   t0: '2022-01-01'
   series:
@@ -129,7 +129,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech3/3
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - a 3/3 booster is NOT reissued for extension if there is a newer certificate
   t0: '2022-01-01'
   series:
@@ -156,7 +156,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech4/4
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - a 4/4 booster is NOT reissued for extension if there is a newer certificate
   t0: '2022-01-01'
   series:
@@ -183,7 +183,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech2/1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - a 2/1 booster is NOT reissued for extension if there is a newer certificate
   t0: '2022-01-01'
   series:
@@ -210,7 +210,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech3/1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - a 3/1 booster is NOT reissued for extension if there is a newer certificate
   t0: '2022-01-01'
   series:
@@ -237,7 +237,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech4/1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates - a 4/1 booster is NOT reissued for extension if there is a newer certificate
   t0: '2022-01-01'
   series:
@@ -279,7 +279,7 @@
           certificates:
             - action: extend
               certificateToReissue: rc2
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/iat - iat is considered when multiple RCs have the same date irrespective of the sequence
   t0: '2022-01-01'
   series:
@@ -298,7 +298,7 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/iat - iat is considered when multiple VCs have the same date
   t0: '2022-01-01'
   series:
@@ -317,7 +317,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech2/1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/iat - iat is considered when multiple VCs have the same date irrespective of the sequence
   t0: '2022-01-01'
   series:
@@ -336,7 +336,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech2/2
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/iat - iat is considered when multiple VCs have the same date irrespective of the schema
   t0: '2022-01-01'
   series:
@@ -355,7 +355,7 @@
           certificates:
             - action: extend
               certificateToReissue: biontech1/2
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/issuer - RCs and VCs that were issued by DE are extended
   t0: '2022-01-01'
   series:
@@ -376,10 +376,10 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
             - action: extend
               certificateToReissue: biontech3/3
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/issuer - RCs and VCs that were NOT issued by DE are not extended
   t0: '2022-01-01'
   series:
@@ -415,10 +415,10 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
             - action: extend
               certificateToReissue: biontech3/3
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/validity state - RCs and VCs with validity state EXPIRING_SOON are extended
   t0: '2022-01-01'
   series:
@@ -437,10 +437,10 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
             - action: extend
               certificateToReissue: biontech3/3
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/validity state - RCs and VCs with validity state EXPIRED are extended
   t0: '2022-01-01'
   series:
@@ -459,10 +459,10 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
             - action: extend
               certificateToReissue: biontech3/3
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
 - description: certificates/validity state - RCs and VCs with validity state INVALID are not extended
   t0: '2022-01-01'
   series:
@@ -524,10 +524,100 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
             - action: extend
               certificateToReissue: biontech3/3
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
+- description: certificates/accompanying - certificates are accompanied by previous RCs and VCs
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: t0+P1Y
+    - time: +P100D
+      vc: biontech1/2
+      cwtExp: biontech1/2+P1Y
+    - time: +P100D
+      vc: biontech2/2
+      cwtExp: biontech2/2+P1Y
+    - time: +P100D
+      rc: rc2
+      cwtExp: rc2+P1Y
+    - time: +P100D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+  testCases:
+    - time: rc2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc2
+              accompanyingCertificates:
+                - rc1
+                - biontech1/2
+                - biontech2/2
+    - time: biontech3/3+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates:
+                - rc1
+                - biontech1/2
+                - biontech2/2
+                - rc2
+- description: certificates/accompanying - multiple RCs and VCs for the same date are filtered out based on iat
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1a
+      cwtIat: t0+PT1H
+      cwtExp: t0+P1Y
+    - time: t0
+      rc: rc1b
+      cwtIat: t0+PT2H # issued after rc1a
+      cwtExp: t0+P1Y
+    - time: +P100D
+      vc: biontech1/2
+      cwtExp: biontech1/2+P1Y
+    - time: biontech1/2+P100D
+      vc: biontech2/2
+      cwtIat: biontech2/2+PT1H
+      cwtExp: biontech2/2+P1Y
+    - time: biontech1/2+P100D
+      vc: biontech2/1
+      cwtIat: biontech2/1+PT2H # issued after biontech2/2
+      cwtExp: biontech2/1+P1Y
+    - time: +P100D
+      rc: rc2
+      cwtExp: rc2+P1Y
+    - time: +P100D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+  testCases:
+    - time: rc2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc2
+              accompanyingCertificates:
+                - rc1b
+                - biontech1/2
+                - biontech2/1
+    - time: biontech3/3+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates:
+                - rc1b
+                - biontech1/2
+                - biontech2/1
+                - rc2
 - description: texts - check for separate texts
   t0: '2022-01-01'
   series:
@@ -544,10 +634,10 @@
           certificates:
             - action: extend
               certificateToReissue: rc1
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
             - action: extend
               certificateToReissue: biontech3/3
-              accompanyingCertificates: []
+              # accompanyingCertificates: []
         walletInfo:
           certificateReissuance:
             reissuanceDivision:
