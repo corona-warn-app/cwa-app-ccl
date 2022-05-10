@@ -261,6 +261,101 @@
     - time: pcr1+P8M
       assertions:
         certificateReissuance: false
+- description: certificates/iat - iat is considered when multiple RCs have the same date
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtIat: t0+PT1H
+      cwtExp: t0+P1Y
+    - time: t0
+      rc: rc2
+      cwtIat: t0+PT2H # issued after rc1
+      cwtExp: t0+P1Y
+  testCases:
+    - time: rc1+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc2
+              accompanyingCertificates: []
+- description: certificates/iat - iat is considered when multiple RCs have the same date irrespective of the sequence
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtIat: t0+PT3H # issued after rc2
+      cwtExp: t0+P1Y
+    - time: t0
+      rc: rc2
+      cwtIat: t0+PT2H
+      cwtExp: t0+P1Y
+  testCases:
+    - time: rc1+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
+- description: certificates/iat - iat is considered when multiple VCs have the same date
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+      cwtIat: t0+PT1H
+      cwtExp: t0+P1Y
+    - time: t0
+      vc: biontech2/1
+      cwtIat: t0+PT2H # issued after biontech2/2
+      cwtExp: t0+P1Y
+  testCases:
+    - time: biontech2/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/1
+              accompanyingCertificates: []
+- description: certificates/iat - iat is considered when multiple VCs have the same date irrespective of the sequence
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2 # issued after biontech2/1
+      cwtIat: t0+PT3H
+      cwtExp: t0+P1Y
+    - time: t0
+      vc: biontech2/1
+      cwtIat: t0+PT2H
+      cwtExp: t0+P1Y
+  testCases:
+    - time: biontech2/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/2
+              accompanyingCertificates: []
+- description: certificates/iat - iat is considered when multiple VCs have the same date irrespective of the schema
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/2 # issued after biontech3/3 but 'lower' priority (irrelevant)
+      cwtIat: t0+PT3H
+      cwtExp: t0+P1Y
+    - time: t0
+      vc: biontech3/3
+      cwtIat: t0+PT2H
+      cwtExp: t0+P1Y
+  testCases:
+    - time: biontech1/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech1/2
+              accompanyingCertificates: []
 - description: certificates/issuer - RCs and VCs that were issued by DE are extended
   t0: '2022-01-01'
   series:
