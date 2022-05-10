@@ -547,6 +547,14 @@
       vc: biontech3/3
       cwtExp: biontech3/3+P1Y
   testCases:
+    - time: rc1+P1Y
+      description: empty if there are no previous certificates
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: rc1
+              accompanyingCertificates: []
     - time: rc2+P1Y
       assertions:
         certificateReissuance:
