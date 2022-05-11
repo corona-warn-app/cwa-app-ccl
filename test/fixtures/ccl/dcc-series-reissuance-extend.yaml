@@ -626,7 +626,7 @@
                 - biontech1/2
                 - biontech2/1
                 - rc2
-- description: texts - check for separate texts
+- description: walletInfo/texts - check for separate texts
   t0: '2022-01-01'
   series:
     - time: t0
@@ -660,3 +660,43 @@
               identifier: extend
               listTitleText: 'Zu erneuernde Zertifikate:'
               consentSubtitleText: 'Erneuerung direkt über die App vornehmen'
+- description: walletInfo/accompanyingCertificates - check for correct references
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      cwtExp: t0+P1Y
+    - time: +P100D
+      vc: biontech1/2
+      cwtExp: biontech1/2+P1Y
+    - time: +P100D
+      vc: biontech2/2
+      cwtExp: biontech2/2+P1Y
+    - time: +P100D
+      rc: rc2
+      cwtExp: rc2+P1Y
+    - time: +P100D
+      vc: biontech3/3
+      cwtExp: biontech3/3+P1Y
+  testCases:
+    - time: biontech3/3+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech3/3
+              accompanyingCertificates:
+                - rc1
+                - biontech1/2
+                - biontech2/2
+                - rc2
+        walletInfo:
+          certificateReissuance:
+            certificates:
+              - action: extend
+                certificateToReissue: biontech3/3
+                accompanyingCertificates:
+                  - rc1
+                  - biontech1/2
+                  - biontech2/2
+                  - rc2
