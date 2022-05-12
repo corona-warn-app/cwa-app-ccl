@@ -653,9 +653,9 @@
               titleText:
                 de: Zertifikate erneuern
               subtitleText:
-                de: Erneuerung.*direkt über die App vornehmen
+                de: Erneuerung.*90 Tage.*direkt über die App vornehmen
               longText:
-                de: Zeitraum von 28 Tagen.*bis zu 3 Monate
+                de: '\.\n\nIm Zeitraum von 28 Tagen.*bis zu 90 Tagen'
               faqAnchor: dcc_replacement
               identifier: extend
               listTitleText: 'Zu erneuernde Zertifikate:'
