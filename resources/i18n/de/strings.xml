@@ -100,11 +100,26 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"auf Grundlage Ihrer gespeicherten Zertifikate"</string>
 
-  <!-- XHED: DCC Reissuance - Card Title -->
-  <string name="DCC_REISSUANCE_TITLE_TEXT">"Zertifikat aktualisieren"</string>
-  <!-- XTXT: DCC Reissuance - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Neuausstellung direkt über die App vornehmen. Wie Sie dafür vorgehen, erfahren Sie im nächsten Schritt."</string>
-  <!-- XTXT: DCC Reissuance - Card Long Text -->
-  <string name="DCC_REISSUANCE_LONG_TEXT">"Die Spezifikationen der EU für Zertifikate von Auffrischimpfungen wurden geändert. Dieses Zertifikat entspricht nicht den aktuellen Spezifikationen. Das Impfzertifikat ist zwar weiterhin gültig, es kann jedoch sein, dass bei einer Prüfung eine Auffrischimpfung nicht als solche erkannt wird. Bitte lassen Sie sich daher ein neues Impfzertifikat ausstellen.\n\nHaben Sie noch weitere Impf- oder Genesenenzertifikate, die noch nicht in der App gespeichert sind? Bitte scannen Sie diese jetzt ein, damit sie berücksichtigt werden können.\n\nSie können ein neues Impfzertifikat direkt kostenlos über die App anfordern. Hierfür ist Ihr Einverständnis erforderlich."</string>
+  <!-- XHED: DCC Reissuance for renewal - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_RENEW">"Zertifikat aktualisieren"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_RENEW">"Neuausstellung direkt über die App vornehmen. Wie Sie dafür vorgehen, erfahren Sie im nächsten Schritt."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_RENEW">"Die Spezifikationen der EU für Zertifikate von Auffrischimpfungen wurden geändert. Dieses Zertifikat entspricht nicht den aktuellen Spezifikationen. Das Impfzertifikat ist zwar weiterhin gültig, es kann jedoch sein, dass bei einer Prüfung eine Auffrischimpfung nicht als solche erkannt wird. Bitte lassen Sie sich daher ein neues Impfzertifikat ausstellen.\n\nHaben Sie noch weitere Impf- oder Genesenenzertifikate, die noch nicht in der App gespeichert sind? Bitte scannen Sie diese jetzt ein, damit sie berücksichtigt werden können.\n\nSie können ein neues Impfzertifikat direkt kostenlos über die App anfordern. Hierfür ist Ihr Einverständnis erforderlich."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Zu aktualisiernde Zertifikate:"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_RENEW">"Neuausstellung direkt über die App vornehmen"</string>
+
+  <!-- XHED: DCC Reissuance for extension - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Zertifikate erneuern"</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Erneuerung bis maximal 90 Tage nach Ablauf des Zertifikates direkt über die App vornehmen."</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"Für mindestens ein Zertifikat ist die technische Gültigkeit abgelaufen oder läuft in Kürze ab. Mit einem abgelaufenen Zertifikat können Sie Ihren Status nicht mehr nachweisen.\n\nIm Zeitraum von 28 Tagen vor Ablauf und bis zu 90 Tagen nach Ablauf der technischen Gültigkeit können Sie sich neue Zertifikate direkt kostenlos über die App ausstellen lassen. Hierfür ist Ihr Einverständnis erforderlich."</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Zu erneuernde Zertifikate:"</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Erneuerung direkt über die App vornehmen"</string>
 
 </resources>

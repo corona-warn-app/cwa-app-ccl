@@ -9,11 +9,13 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - janssen1/1
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             reissuanceDivision:
               visible: true
               titleText:
@@ -23,6 +25,7 @@
               longText:
                 de: wurden geändert
               faqAnchor: dcc_replacement
+              identifier: renew
             certificateToReissue: biontech2/2
             accompanyingCertificates:
               - janssen1/1
@@ -31,6 +34,7 @@
       assertions:
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             reissuanceDivision:
               longText:
                 de: '\.\n\nSie'
@@ -39,6 +43,7 @@
       assertions:
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             reissuanceDivision:
               longText:
                 de: '\n\n.*weitere Impf- oder Genesenenzertifikate.*Bitte scannen'
@@ -47,9 +52,25 @@
       assertions:
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             reissuanceDivision:
               subtitleText:
                 de: 'erfahren Sie im nächsten Schritt'
+    - time: biontech2/2
+      description: the identifier is 'renew'
+      assertions:
+        walletInfo:
+          certificateReissuance:
+            reissuanceDivision:
+              identifier: renew
+    - time: biontech2/2
+      description: check new texts
+      assertions:
+        walletInfo:
+          certificateReissuance:
+            reissuanceDivision:
+              listTitleText: 'Zu aktualisiernde Zertifikate:'
+              consentSubtitleText: 'Neuausstellung direkt über die App vornehmen'
 - description: a Janssen 2/2 after Janssen 1/1 is eligible for reissuance
   t0: '2022-01-01'
   series:
@@ -61,11 +82,13 @@
     - time: janssen2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: janssen2/2
           accompanyingCertificates:
             - janssen1/1
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             certificateToReissue: janssen2/2
             accompanyingCertificates:
               - janssen1/1
@@ -80,11 +103,13 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - biontech1/1
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             certificateToReissue: biontech2/2
             accompanyingCertificates:
               - biontech1/1
@@ -101,12 +126,14 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - rc1
             - janssen1/1
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             certificateToReissue: biontech2/2
             accompanyingCertificates:
               - rc1
@@ -220,6 +247,7 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - janssen1/1
@@ -238,6 +266,7 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - rc1

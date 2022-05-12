@@ -68,7 +68,8 @@
             "EXPIRING_SOON",
             "EXPIRED",
             "INVALID",
-            "BLOCKED"
+            "BLOCKED",
+            "REVOKED"
           ]
         }
       }
