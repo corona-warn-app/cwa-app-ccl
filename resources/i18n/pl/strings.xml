@@ -99,11 +99,26 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"na podstawie Twoich zapisanych certyfikatów"</string>
 
-  <!-- XHED: DCC Reissuance - Card Title -->
-  <string name="DCC_REISSUANCE_TITLE_TEXT">"Aktualizuj certyfikat"</string>
-  <!-- XTXT: DCC Reissuance - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Poproś o ponowne wydanie bezpośrednio w aplikacji. W następnym kroku dowiesz się, jak to zrobić."</string>
-  <!-- XTXT: DCC Reissuance - Card Long Text -->
-  <string name="DCC_REISSUANCE_LONG_TEXT">"Zmieniły się specyfikacje UE dla certyfikatów dotyczących szczepień przypominających. Niniejszy certyfikat nie jest zgodny z aktualnymi specyfikacjami. Mimo że certyfikat szczepienia zachowuje ważność, szczepienie przypominające może nie zostać zidentyfikowane podczas kontroli. Z tego względu poproś o wystawienie nowego certyfikatu szczepienia.\n\nCzy posiadasz inne certyfikaty szczepień lub certyfikaty statusu ozdrowieńca, które nie są jeszcze zapisane w aplikacji? Zeskanuj je teraz, aby można je było uwzględnić w kontrolach.\n\nNowy certyfikat szczepienia możesz zamówić bezpośrednio i bezpłatnie w aplikacji. Wymagana jest do tego Twoja zgoda."</string>
+  <!-- XHED: DCC Reissuance for renewal - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_RENEW">"Aktualizuj certyfikat"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_RENEW">"Poproś o ponowne wydanie bezpośrednio w aplikacji. W następnym kroku dowiesz się, jak to zrobić."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_RENEW">"Zmieniły się specyfikacje UE dla certyfikatów dotyczących szczepień przypominających. Niniejszy certyfikat nie jest zgodny z aktualnymi specyfikacjami. Mimo że certyfikat szczepienia zachowuje ważność, szczepienie przypominające może nie zostać zidentyfikowane podczas kontroli. Z tego względu poproś o wystawienie nowego certyfikatu szczepienia.\n\nCzy posiadasz inne certyfikaty szczepień lub certyfikaty statusu ozdrowieńca, które nie są jeszcze zapisane w aplikacji? Zeskanuj je teraz, aby można je było uwzględnić w kontrolach.\n\nNowy certyfikat szczepienia możesz zamówić bezpośrednio i bezpłatnie w aplikacji. Wymagana jest do tego Twoja zgoda."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Certyfikaty do aktualizacji:"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_RENEW">"Poproś o ponowne wydanie bezpośrednio w aplikacji"</string>
+
+  <!-- XHED: DCC Reissuance for extension - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Odnów certyfikaty"</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Odnów certyfikat do 90 dni po jego wygaśnięciu bezpośrednio w aplikacji."</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"Ważność techniczna co najmniej jednego certyfikatu wygasła lub wkrótce wygaśnie. Nie możesz udowodnić swojego statusu za pomocą wygasłego certyfikatu.\n\nMożesz złożyć wniosek o bezpłatne wydanie nowych certyfikatów bezpośrednio w aplikacji, do 28 dni przed upływem ważności certyfikatu i do 90 dni po upływie jego ważności. Wymaga to Twojej zgody."</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Certyfikaty do odnowienia:"</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Poproś o odnowienie bezpośrednio w aplikacji"</string>
 
 </resources>

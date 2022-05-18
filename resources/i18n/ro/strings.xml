@@ -99,11 +99,26 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"pe baza certificatelor dvs. salvate"</string>
 
-  <!-- XHED: DCC Reissuance - Card Title -->
-  <string name="DCC_REISSUANCE_TITLE_TEXT">"Actualizare certificat"</string>
-  <!-- XTXT: DCC Reissuance - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Solicitați reemiterea direct din aplicație. Veți descoperi cum să faceți acest lucru la pasul următor."</string>
-  <!-- XTXT: DCC Reissuance - Card Long Text -->
-  <string name="DCC_REISSUANCE_LONG_TEXT">"Prevederile UE pentru certificatele care presupun vaccinarea cu doza booster s-au modificat. Acest certificat nu corespunde cu specificațiile curente. Deși certificatul de vaccinare rămâne valabil, este posibil ca, la verificări, vaccinarea cu doza booster să nu fie identificată. Astfel, solicitați emiterea unui nou certificat de vaccinare.\n\nAveți alte certificate de vaccinare sau certificate de recuperare care nu sunt încă stocate în aplicație? Vă rugăm să le scanați acum, pentru a fi luate în considerare la verificare.\n\nPuteți solicita un certificat de vaccinare nou din aplicație, direct și gratuit. Pentru aceasta, este necesar consimțământul dvs."</string>
+  <!-- XHED: DCC Reissuance for renewal - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_RENEW">"Actualizare certificat"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_RENEW">"Solicitați reemiterea direct din aplicație. Veți descoperi cum să faceți acest lucru la pasul următor."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_RENEW">"Prevederile UE pentru certificatele care presupun vaccinarea cu doza booster s-au modificat. Acest certificat nu corespunde cu specificațiile curente. Deși certificatul de vaccinare rămâne valabil, este posibil ca, la verificări, vaccinarea cu doza booster să nu fie identificată. Astfel, solicitați emiterea unui nou certificat de vaccinare.\n\nAveți alte certificate de vaccinare sau certificate de recuperare care nu sunt încă stocate în aplicație? Vă rugăm să le scanați acum, pentru a fi luate în considerare la verificare.\n\nPuteți solicita un certificat de vaccinare nou din aplicație, direct și gratuit. Pentru aceasta, este necesar consimțământul dvs."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Certificate de actualizat:"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_RENEW">"Solicitați reemiterea direct din aplicație"</string>
+
+  <!-- XHED: DCC Reissuance for extension - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Reînnoire certificate"</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Reînnoiți certificatul în decurs de cel mult 90 de zile de la expirare, direct din aplicație."</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"Valabilitatea tehnică a cel puțin unui certificat a expirat sau va expira în curând. Nu mai puteți dovedi starea dvs. cu un certificat expirat.\n\nPuteți solicita gratuit emiterea de certificate noi direct din aplicație, cu maximum 28 de zile înainte de expirarea certificatului și în decurs de cel mult 90 de zile de la expirare. Pentru aceasta, este nevoie de consimțământul dvs."</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Certificate de reînnoit:"</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Solicitați reînnoirea direct din aplicație"</string>
 
 </resources>

@@ -99,11 +99,26 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"based on your saved certificates"</string>
 
-  <!-- XHED: DCC Reissuance - Card Title -->
-  <string name="DCC_REISSUANCE_TITLE_TEXT">"Update Certificate"</string>
-  <!-- XTXT: DCC Reissuance - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Request reissue directly in the app. You’ll find out how to do this in the next step."</string>
-  <!-- XTXT: DCC Reissuance - Card Long Text -->
-  <string name="DCC_REISSUANCE_LONG_TEXT">"The EU specifications for certificates involving booster vaccinations have changed. This certificate does not match the current specifications. While the vaccination certificate remains valid, the booster vaccination may not be identified during checks. Therefore, please request the issue of a new vaccination certificate.\n\nDo you have other vaccination certificates or certificates of recovery that are not stored in the app yet? Please scan them now, so they can be considered in the checks.\n\nYou can request a new vaccination certificate directly and free of charge in the app. Your consent is required for this."</string>
+  <!-- XHED: DCC Reissuance for renewal - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_RENEW">"Update Certificate"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_RENEW">"Request reissue directly in the app. You’ll find out how to do this in the next step."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_RENEW">"The EU specifications for certificates involving booster vaccinations have changed. This certificate does not match the current specifications. While the vaccination certificate remains valid, the booster vaccination may not be identified during checks. Therefore, please request the issue of a new vaccination certificate.\n\nDo you have other vaccination certificates or certificates of recovery that are not stored in the app yet? Please scan them now, so they can be considered in the checks.\n\nYou can request a new vaccination certificate directly and free of charge in the app. Your consent is required for this."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Certificates to update:"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_RENEW">"Request reissue directly in the app"</string>
+
+  <!-- XHED: DCC Reissuance for extension - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Renew Certificates"</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Renew a certificate up to 90 days after it has expired directly in the app."</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"The technical validity of at least one certificate has expired or will expire soon. You can no longer prove your status with an expired certificate.\n\nYou can request the issue of new certificates free of charge, directly in the app, up to 28 days before a certificate will expire and up to 90 days after a certificate has expired. Your consent is required for this."</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Certificates to renew:"</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Request renewal directly in the app"</string>
 
 </resources>
