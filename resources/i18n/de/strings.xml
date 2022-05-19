@@ -107,7 +107,7 @@
   <!-- XTXT: DCC Reissuance for renewal - Card Long Text -->
   <string name="DCC_REISSUANCE_LONG_TEXT_RENEW">"Die Spezifikationen der EU für Zertifikate von Auffrischimpfungen wurden geändert. Dieses Zertifikat entspricht nicht den aktuellen Spezifikationen. Das Impfzertifikat ist zwar weiterhin gültig, es kann jedoch sein, dass bei einer Prüfung eine Auffrischimpfung nicht als solche erkannt wird. Bitte lassen Sie sich daher ein neues Impfzertifikat ausstellen.\n\nHaben Sie noch weitere Impf- oder Genesenenzertifikate, die noch nicht in der App gespeichert sind? Bitte scannen Sie diese jetzt ein, damit sie berücksichtigt werden können.\n\nSie können ein neues Impfzertifikat direkt kostenlos über die App anfordern. Hierfür ist Ihr Einverständnis erforderlich."</string>
   <!-- XTXT: DCC Reissuance for renewal - Consent - List Title Text -->
-  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Zu aktualisiernde Zertifikate:"</string>
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Zu aktualisierende Zertifikate:"</string>
   <!-- XTXT: DCC Reissuance for renewal - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_RENEW">"Neuausstellung direkt über die App vornehmen"</string>
 
