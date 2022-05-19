@@ -114,7 +114,7 @@
   <!-- XHED: DCC Reissuance for extension - Card Title -->
   <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Zertifikate erneuern"</string>
   <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Erneuerung bis maximal 90 Tage nach Ablauf des Zertifikates direkt über die App vornehmen."</string>
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Erneuerung bis maximal 90 Tage nach Ablauf des Zertifikats direkt über die App vornehmen."</string>
   <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
   <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"Für mindestens ein Zertifikat ist die technische Gültigkeit abgelaufen oder läuft in Kürze ab. Mit einem abgelaufenen Zertifikat können Sie Ihren Status nicht mehr nachweisen.\n\nIm Zeitraum von 28 Tagen vor Ablauf und bis zu 90 Tagen nach Ablauf der technischen Gültigkeit können Sie sich neue Zertifikate direkt kostenlos über die App ausstellen lassen. Hierfür ist Ihr Einverständnis erforderlich."</string>
   <!-- XTXT: DCC Reissuance for extension - Consent - List Title Text -->
