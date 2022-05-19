@@ -70,7 +70,7 @@
           certificateReissuance:
             reissuanceDivision:
               listTitleText: 
-                de: 'Zu aktualisiernde Zertifikate:'
+                de: 'Zu aktualisierende Zertifikate:'
               consentSubtitleText:
                 de: 'Neuausstellung direkt über die App vornehmen'
 - description: a Janssen 2/2 after Janssen 1/1 is eligible for reissuance
