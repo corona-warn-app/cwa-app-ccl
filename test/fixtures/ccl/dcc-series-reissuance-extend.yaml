@@ -658,8 +658,10 @@
                 de: '\.\n\nIm Zeitraum von 28 Tagen.*bis zu 90 Tagen'
               faqAnchor: dcc_replacement
               identifier: extend
-              listTitleText: 'Zu erneuernde Zertifikate:'
-              consentSubtitleText: 'Erneuerung direkt über die App vornehmen'
+              listTitleText:
+                de: 'Zu erneuernde Zertifikate:'
+              consentSubtitleText:
+                de: 'Erneuerung direkt über die App vornehmen'
 - description: walletInfo/accompanyingCertificates - check for correct references
   t0: '2022-01-01'
   series:

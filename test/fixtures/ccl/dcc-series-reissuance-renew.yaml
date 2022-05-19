@@ -69,8 +69,10 @@
         walletInfo:
           certificateReissuance:
             reissuanceDivision:
-              listTitleText: 'Zu aktualisiernde Zertifikate:'
-              consentSubtitleText: 'Neuausstellung direkt über die App vornehmen'
+              listTitleText: 
+                de: 'Zu aktualisiernde Zertifikate:'
+              consentSubtitleText:
+                de: 'Neuausstellung direkt über die App vornehmen'
 - description: a Janssen 2/2 after Janssen 1/1 is eligible for reissuance
   t0: '2022-01-01'
   series:
