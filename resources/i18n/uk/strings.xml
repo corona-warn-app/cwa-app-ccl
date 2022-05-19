@@ -99,11 +99,26 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"на основі збережених сертифікатів"</string>
 
-  <!-- XHED: DCC Reissuance - Card Title -->
-  <string name="DCC_REISSUANCE_TITLE_TEXT">"Оновити сертифікат"</string>
-  <!-- XTXT: DCC Reissuance - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Надішліть запит на повторну видачу безпосередньо в застосунку. Як це зробити, ви дізнаєтеся на наступному кроці."</string>
-  <!-- XTXT: DCC Reissuance - Card Long Text -->
-  <string name="DCC_REISSUANCE_LONG_TEXT">"Специфікації ЄС щодо сертифікатів, що передбачають повторні вакцинації, змінилися. Цей сертифікат не відповідає поточним специфікаціям. Поки сертифікат про вакцинацію залишається дійсним, повторна вакцинація може не бути ідентифікована під час перевірок. Тому запитайте видачу нового сертифіката про вакцинацію.\n\nЧи є у вас інші сертифікати про вакцинацію, сертифікати про одужання, які ще не збережені в застосунку? Відскануйте їх зараз, щоб їх можна було враховувати при перевірках.\n\nВи можете запитати новий сертифікат про вакцинацію безпосередньо і безкоштовно в застосунку. Для цього потрібна ваша згода."</string>
+  <!-- XHED: DCC Reissuance for renewal - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_RENEW">"Оновити сертифікат"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_RENEW">"Надішліть запит на повторну видачу безпосередньо в застосунку. Як це зробити, ви дізнаєтеся на наступному кроці."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_RENEW">"Специфікації ЄС щодо сертифікатів, що передбачають повторні вакцинації, змінилися. Цей сертифікат не відповідає поточним специфікаціям. Поки сертифікат про вакцинацію залишається дійсним, повторна вакцинація може не бути ідентифікована під час перевірок. Тому запитайте видачу нового сертифіката про вакцинацію.\n\nЧи є у вас інші сертифікати про вакцинацію, сертифікати про одужання, які ще не збережені в застосунку? Відскануйте їх зараз, щоб їх можна було враховувати при перевірках.\n\nВи можете запитати новий сертифікат про вакцинацію безпосередньо і безкоштовно в застосунку. Для цього потрібна ваша згода."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Сертифікати для оновлення:"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_RENEW">"Надішліть запит на повторну видачу безпосередньо в застосунку"</string>
+
+  <!-- XHED: DCC Reissuance for extension - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Поновити сертифікати"</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Поновіть сертифікат до 90 днів після його закінчення безпосередньо в застосунку."</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"Строк технічної дії принаймні одного сертифіката закінчився або скоро закінчиться. Ви більше не можете підтвердити свій статус за допомогою простроченого сертифіката.\n\nВи можете подати запит на видачу нових сертифікатів безкоштовно безпосередньо в застосунку за 28 днів до закінчення строку дії сертифіката та до 90 днів після закінчення строку дії сертифіката."</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Сертифікати для поновлення:"</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Запит на поновлення безпосередньо в застосунку"</string>
 
 </resources>
