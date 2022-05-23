@@ -261,6 +261,94 @@
     - time: pcr1+P8M
       assertions:
         certificateReissuance: false
+- description: certificates/allowed vaccines - a VC for biontech is reissued
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+      cwtExp: biontech2/2+P1Y
+  testCases:
+    - time: biontech2/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: biontech2/2
+- description: certificates/allowed vaccines - a VC for moderna is reissued
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: moderna2/2
+      cwtExp: moderna2/2+P1Y
+  testCases:
+    - time: moderna2/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: moderna2/2
+- description: certificates/allowed vaccines - a VC for astra is reissued
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: astra2/2
+      cwtExp: astra2/2+P1Y
+  testCases:
+    - time: astra2/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: astra2/2
+- description: certificates/allowed vaccines - a VC for janssen is reissued
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen2/2
+      cwtExp: janssen2/2+P1Y
+  testCases:
+    - time: janssen2/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: janssen2/2
+- description: certificates/allowed vaccines - a VC for legacyNovavax is reissued
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: legacyNovavax2/2
+      cwtExp: legacyNovavax2/2+P1Y
+  testCases:
+    - time: legacyNovavax2/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: legacyNovavax2/2
+- description: certificates/allowed vaccines - a VC for novavax is reissued
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: novavax2/2
+      cwtExp: novavax2/2+P1Y
+  testCases:
+    - time: novavax2/2+P1Y
+      assertions:
+        certificateReissuance:
+          certificates:
+            - action: extend
+              certificateToReissue: novavax2/2
+- description: certificates/allowed vaccines - a VC for any other vaccine is NOT reissued
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: other2/2
+      cwtExp: other2/2+P1Y
+  testCases:
+    - time: other2/2+P1Y
+      assertions:
+        certificateReissuance: false
 - description: certificates/same date - iat is considered when multiple RCs have the same date
   t0: '2022-01-01'
   series:
