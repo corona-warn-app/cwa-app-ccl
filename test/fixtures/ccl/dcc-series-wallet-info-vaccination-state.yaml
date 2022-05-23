@@ -20,6 +20,7 @@
               de: Letzte Impfung heute
             longText:
               de: noch nicht vollständig
+            faqAnchor: vac_status
     - time: biontech1/2+P1D
       assertions:
         vaccinationState: PARTIAL_IMMUNIZATION
