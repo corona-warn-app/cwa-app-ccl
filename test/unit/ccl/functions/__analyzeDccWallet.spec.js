@@ -202,6 +202,21 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               const {
                 certificateReissuance: expCertificateReissuance
               } = assertions
+              const {
+                enableAssertionsForNewBatchAPI
+              } = expCertificateReissuance || {}
+
+              if (enableAssertionsForNewBatchAPI === true &&
+                expCertificateReissuance &&
+                !expCertificateReissuance.certificates) {
+                expCertificateReissuance.certificates = [{
+                  action: 'renew',
+                  certificateToReissue: expCertificateReissuance.certificateToReissue,
+                  accompanyingCertificates: expCertificateReissuance.accompanyingCertificates
+                }]
+                delete expCertificateReissuance.certificateToReissue
+                delete expCertificateReissuance.accompanyingCertificates
+              }
 
               has('certificateReissuance') &&
               it('check certificateReissuance', () => {
@@ -212,38 +227,58 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 }
               })
 
-              has('certificateReissuance.certificateToReissue') &&
-              it('check certificateReissuance.certificateToReissue', () => {
-                const expCertName = expCertificateReissuance.certificateToReissue
-                const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
-                const actBarcodeData = output.certificateReissuance.certificateToReissue
-                const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
-
-                expect(output).to.have.nested.property(
-                  'certificateReissuance.certificateToReissue.barcodeData',
-                  expBarcodeData,
-                  `expected reference to ${expCertName} but got ${actCertName}`
-                )
+              has('certificateReissuance.certificates') &&
+              it('check certificateReissuance.certificates', () => {
+                expect(output.certificateReissuance.certificates, 'length of certificateReissuance.certificates')
+                  .to.be.an('array')
+                  .and.to.have.lengthOf(expCertificateReissuance.certificates.length)
               })
-              has('certificateReissuance.accompanyingCertificates') &&
-              it('check certificateReissuance.accompanyingCertificates', () => {
-                expect(output.certificateReissuance.accompanyingCertificates)
-                  .to.be.an('array')
-                expect(output.certificateReissuance.accompanyingCertificates, 'length of certificateReissuance.accompanyingCertificates')
-                  .to.be.an('array')
-                  .and.to.have.lengthOf(expCertificateReissuance.accompanyingCertificates.length)
-                expCertificateReissuance.accompanyingCertificates.forEach((it, idx) => {
-                  const act = output.certificateReissuance.accompanyingCertificates[idx]
-                  const actBarcodeData = act.barcodeData
-                  const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
 
-                  const expCertName = it
-                  const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+              has('certificateReissuance.certificates') &&
+              expCertificateReissuance.certificates.forEach((exp, idx) => {
+                context(`certificateReissuance.certificates[${idx}]`, () => {
+                  has(`certificateReissuance.certificates[${idx}].action`) &&
+                  it('check action', () => {
+                    expect(output).to.have.nested.property(
+                      `certificateReissuance.certificates[${idx}].action`,
+                      exp.action
+                    )
+                  })
 
-                  expect(actBarcodeData).to.equal(
-                    expBarcodeData,
-                    `expected reference to ${expCertName} but got ${actCertName}`
-                  )
+                  has(`certificateReissuance.certificates[${idx}].certificateToReissue`) &&
+                  it('check certificateToReissue', () => {
+                    const act = output.certificateReissuance.certificates[idx].certificateToReissue
+                    const actBarcodeData = act.barcodeData
+                    const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                    const expCertName = exp.certificateToReissue
+                    const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                    expect(actBarcodeData).to.equal(
+                      expBarcodeData,
+                      `expected reference to ${expCertName} but got ${actCertName}`
+                    )
+                  })
+
+                  has(`certificateReissuance.certificates[${idx}].accompanyingCertificates`) &&
+                  it('check accompanyingCertificates', () => {
+                    expect(output.certificateReissuance.certificates[idx].accompanyingCertificates, 'length of accompanyingCertificates')
+                      .to.be.an('array')
+                      .and.to.have.lengthOf(exp.accompanyingCertificates.length)
+                    exp.accompanyingCertificates.forEach((it, nestedIdx) => {
+                      const act = output.certificateReissuance.certificates[idx].accompanyingCertificates[nestedIdx]
+                      const actBarcodeData = act.barcodeData
+                      const actCertName = resolveBarcodeDataToCertName(actBarcodeData)
+
+                      const expCertName = it
+                      const expBarcodeData = resolveCertNameToBarcodeData(expCertName)
+
+                      expect(actBarcodeData).to.equal(
+                        expBarcodeData,
+                        `expected reference to ${expCertName} but got ${actCertName}`
+                      )
+                    })
+                  })
                 })
               })
             })

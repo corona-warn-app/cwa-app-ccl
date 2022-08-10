@@ -9,11 +9,13 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - janssen1/1
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             reissuanceDivision:
               visible: true
               titleText:
@@ -23,6 +25,7 @@
               longText:
                 de: wurden geändert
               faqAnchor: dcc_replacement
+              identifier: renew
             certificateToReissue: biontech2/2
             accompanyingCertificates:
               - janssen1/1
@@ -31,6 +34,7 @@
       assertions:
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             reissuanceDivision:
               longText:
                 de: '\.\n\nSie'
@@ -39,6 +43,7 @@
       assertions:
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             reissuanceDivision:
               longText:
                 de: '\n\n.*weitere Impf- oder Genesenenzertifikate.*Bitte scannen'
@@ -47,9 +52,27 @@
       assertions:
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             reissuanceDivision:
               subtitleText:
                 de: 'erfahren Sie im nächsten Schritt'
+    - time: biontech2/2
+      description: the identifier is 'renew'
+      assertions:
+        walletInfo:
+          certificateReissuance:
+            reissuanceDivision:
+              identifier: renew
+    - time: biontech2/2
+      description: check new texts
+      assertions:
+        walletInfo:
+          certificateReissuance:
+            reissuanceDivision:
+              listTitleText: 
+                de: 'Zu aktualisierende Zertifikate:'
+              consentSubtitleText:
+                de: 'Neuausstellung direkt über die App vornehmen'
 - description: a Janssen 2/2 after Janssen 1/1 is eligible for reissuance
   t0: '2022-01-01'
   series:
@@ -61,11 +84,13 @@
     - time: janssen2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: janssen2/2
           accompanyingCertificates:
             - janssen1/1
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             certificateToReissue: janssen2/2
             accompanyingCertificates:
               - janssen1/1
@@ -80,11 +105,13 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - biontech1/1
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             certificateToReissue: biontech2/2
             accompanyingCertificates:
               - biontech1/1
@@ -101,12 +128,14 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - rc1
             - janssen1/1
         walletInfo:
           certificateReissuance:
+            enableAssertionsForNewBatchAPI: true
             certificateToReissue: biontech2/2
             accompanyingCertificates:
               - rc1
@@ -179,7 +208,7 @@
     - time: biontech2/2
       assertions:
         certificateReissuance: false
-- description: an accompanying DCC may be issued by a different country
+- description: an accompanying Janssen VC must not be issued by a different country
   t0: '2022-01-01'
   series:
     - time: t0
@@ -191,7 +220,36 @@
   testCases:
     - time: biontech2/2
       assertions:
+        certificateReissuance: false
+- description: an accompanying recovery VC must not be issued by a different country
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+      dccDescriptor:
+        cwtIss: FR
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance: false
+- description: an accompanying RC must not be issued by a different country
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      rc: rc1
+      dccDescriptor:
+        cwtIss: FR
+    - time: +P95D
+      vc: janssen1/1
+    - time: +P6W
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - janssen1/1
@@ -210,7 +268,31 @@
     - time: biontech2/2
       assertions:
         certificateReissuance:
+          enableAssertionsForNewBatchAPI: true
           certificateToReissue: biontech2/2
           accompanyingCertificates:
             - rc1
             - janssen1/1
+- description: VCs with swapped first and last name are not eligible
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: janssen1/1
+      dccDescriptor:
+        dccOverwrites:
+          - 'nam.gn=Erika'
+          - 'nam.gnt=ERIKA'
+          - 'nam.fn=Mustermann'
+          - 'nam.fnt=MUSTERMANN'
+    - time: +P6W
+      vc: biontech2/2
+      dccDescriptor:
+        dccOverwrites:
+          - 'nam.gn=Mustermann'
+          - 'nam.gnt=MUSTERMANN'
+          - 'nam.fn=Erika'
+          - 'nam.fnt=ERIKA'
+  testCases:
+    - time: biontech2/2
+      assertions:
+        certificateReissuance: false

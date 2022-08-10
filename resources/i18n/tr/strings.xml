@@ -99,11 +99,26 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"kayıtlı sertifikalarınız temelinde"</string>
 
-  <!-- XHED: DCC Reissuance - Card Title -->
-  <string name="DCC_REISSUANCE_TITLE_TEXT">"Sertifikayı Güncelleme"</string>
-  <!-- XTXT: DCC Reissuance - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Doğrudan uygulama içinde yeniden düzenleme talebi oluşturun. Bunu nasıl yapabileceğinizi bir sonraki adımda görebilirsiniz."</string>
-  <!-- XTXT: DCC Reissuance - Card Long Text -->
-  <string name="DCC_REISSUANCE_LONG_TEXT">"Hatırlatma aşılarını içeren sertifikalara ilişkin AB spesifikasyonları değişti. Bu sertifika güncel spesifikasyonları karşılamamaktadır. Aşı sertifikası geçerliliğini korusa da kontroller sırasında hatırlatma aşısı tanınmayabilir. Bu nedenle lütfen yeni bir aşı sertifikasının düzenlenmesi için talep oluşturun.\n\nHenüz uygulamaya kaydedilmeyen başka aşı sertifikalarınız veya iyileşme sertifikalarınız var mı? Kontrollerde göz önünde bulundurulmaları için lütfen şimdi bunları taratın.\n\nYeni aşı sertifikası talebini doğrudan ve ücretsiz olarak uygulama içinde oluşturabilirsiniz. Bunun için izniniz gereklidir."</string>
+  <!-- XHED: DCC Reissuance for renewal - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_RENEW">"Sertifikayı Güncelleme"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_RENEW">"Doğrudan uygulama içinde yeniden düzenleme talebi oluşturun. Bunu nasıl yapabileceğinizi bir sonraki adımda görebilirsiniz."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_RENEW">"Hatırlatma aşılarını içeren sertifikalara ilişkin AB spesifikasyonları değişti. Bu sertifika güncel spesifikasyonları karşılamamaktadır. Aşı sertifikası geçerliliğini korusa da kontroller sırasında hatırlatma aşısı tanınmayabilir. Bu nedenle lütfen yeni bir aşı sertifikasının düzenlenmesi için talep oluşturun.\n\nHenüz uygulamaya kaydedilmeyen başka aşı sertifikalarınız veya iyileşme sertifikalarınız var mı? Kontrollerde göz önünde bulundurulmaları için lütfen şimdi bunları taratın.\n\nYeni aşı sertifikası talebini doğrudan ve ücretsiz olarak uygulama içinde oluşturabilirsiniz. Bunun için izniniz gereklidir."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Güncellenecek sertifikalar:"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_RENEW">"Doğrudan uygulama içinde yeniden düzenleme talebi oluşturun"</string>
+
+  <!-- XHED: DCC Reissuance for extension - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Sertifikaları Yenile"</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Sertifikanın süresi sona erdikten 90 gün sonrasına dek doğrudan uygulama içinde sertifikayı yenileyin."</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"En az bir sertifikanın teknik geçerlilik süresi sona erdi veya sona ermek üzere. Süresi sona ermiş bir sertifika ile durumunuzu kanıtlayamazsınız.\n\nSertifikanın süresi sona ermeden 28 gün öncesine dek ve sertifikanın süresi sona erdikten 90 gün sonrasına dek doğrudan uygulama içinde ücretsiz olarak yeni sertifika düzenlenmesi talebinde bulunabilirsiniz. Bunun için izniniz gereklidir."</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Yenilenecek sertifikalar:"</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Doğrudan uygulama içinde yenileme talebi oluşturun"</string>
 
 </resources>

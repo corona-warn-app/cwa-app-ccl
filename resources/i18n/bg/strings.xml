@@ -99,11 +99,26 @@
   <!-- XTXT: Booster Notification - Card Title -->
   <string name="BOOSTER_NOTIFICATION_SUBTITLE_TEXT">"На база на Вашите запазени сертификати"</string>
 
-  <!-- XHED: DCC Reissuance - Card Title -->
-  <string name="DCC_REISSUANCE_TITLE_TEXT">"Актуализиране на сертификат"</string>
-  <!-- XTXT: DCC Reissuance - Card Subtitle -->
-  <string name="DCC_REISSUANCE_SUBTITLE_TEXT">"Заявете преиздаване директно в приложението. В следващата стъпка ще разберете как да направите това."</string>
-  <!-- XTXT: DCC Reissuance - Card Long Text -->
-  <string name="DCC_REISSUANCE_LONG_TEXT">"Спецификациите на ЕС за сертификатите за ваксинация с бустерни дози са променени. Този сертификат не отговаря на настоящите спецификации. Той остава валиден, но проверката не може да идентифицира ваксинирането с бустерна доза. Моля, заявете издаването на нов сертификат за ваксинация.\n\nИмате ли други сертификати за ваксинация или възстановяване, които все още не са запазени в приложението? Моля, сканирайте ги сега, за да бъдат взети предвид при проверките.\n\nМоже да заявите нов сертификат за ваксинация директно и безплатно в приложението. За тази цел ще се изисква Вашето съгласие."</string>
+  <!-- XHED: DCC Reissuance for renewal - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_RENEW">"Актуализиране на сертификат"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_RENEW">"Заявете преиздаване директно в приложението. В следващата стъпка ще разберете как да направите това."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_RENEW">"Спецификациите на ЕС за сертификатите за ваксинация с бустерни дози са променени. Този сертификат не отговаря на настоящите спецификации. Той остава валиден, но проверката не може да идентифицира ваксинирането с бустерна доза. Моля, заявете издаването на нов сертификат за ваксинация.\n\nИмате ли други сертификати за ваксинация или възстановяване, които все още не са запазени в приложението? Моля, сканирайте ги сега, за да бъдат взети предвид при проверките.\n\nМоже да заявите нов сертификат за ваксинация директно и безплатно в приложението. За тази цел ще се изисква Вашето съгласие."</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_RENEW">"Сертификати за актуализиране:"</string>
+  <!-- XTXT: DCC Reissuance for renewal - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_RENEW">"Заявяване на преиздаване директно в приложението"</string>
+
+  <!-- XHED: DCC Reissuance for extension - Card Title -->
+  <string name="DCC_REISSUANCE_TITLE_TEXT_EXTEND">"Подновяване на сертификатите"</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Subtitle -->
+  <string name="DCC_REISSUANCE_SUBTITLE_TEXT_EXTEND">"Подновете сертификата до 90 дни след изтичането му директно в приложението."</string>
+  <!-- XTXT: DCC Reissuance for extension - Card Long Text -->
+  <string name="DCC_REISSUANCE_LONG_TEXT_EXTEND">"Техническата валидност на поне един от сертификатите е изтекла или изтича скоро. Повече няма да можете да доказвате статуса си с изтекъл сертификат.\n\nМожете да заявите безплатно издаване на нови сертификати директно в приложението, до 28 дни преди изтичането на сертификата и до 90 дни след изтичането му. За това се изисква вашето съгласие."</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - List Title Text -->
+  <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Сертификати за подновяване:"</string>
+  <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
+  <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Заявяване на подновяване директно в приложението"</string>
 
 </resources>
