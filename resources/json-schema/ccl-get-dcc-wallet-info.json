@@ -304,6 +304,39 @@
               }
             }
           }
+        },
+        "maskState": {
+          "oneOf": [
+            {
+              "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/invisibleDivision"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/visibleDivision"
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "badgeText",
+                    "identifier"
+                  ],
+                  "properties": {
+                    "badgeText": {
+                      "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/uiText"
+                    },
+                    "identifier": {
+                      "type": "string",
+                      "enum": [
+                        "MASK_REQUIRED",
+                        "MASK_OPTIONAL"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       }
     },
