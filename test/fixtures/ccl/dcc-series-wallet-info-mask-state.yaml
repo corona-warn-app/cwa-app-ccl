@@ -3,16 +3,26 @@
   only: true
   series:
     - time: t0
+      tc: rat1
+    - time: +P3M
       vc: biontech1/2
     - time: +P3M
       vc: biontech2/2
   testCases:
+    - time: rat1
+      assertions:
+        maskState: OTHER
+        walletInfo:
+          maskState:
+            identifier: OTHER
+            visible: false
     - time: biontech1/2
       assertions:
         maskState: MASK_REQUIRED
         walletInfo:
           maskState:
             identifier: MASK_REQUIRED
+            visible: true
             faqAnchor: mask_rules
             titleText: Masken Pflicht
             subtitleText: gilt Maskenpflicht
@@ -24,6 +34,7 @@
         walletInfo:
           maskState:
             identifier: MASK_OPTIONAL
+            visible: true
             faqAnchor: mask_rules
             titleText: Masken befreit
             subtitleText: gilt keine Maskenpflicht

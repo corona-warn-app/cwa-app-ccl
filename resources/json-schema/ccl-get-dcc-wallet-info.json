@@ -329,7 +329,8 @@
                       "type": "string",
                       "enum": [
                         "MASK_REQUIRED",
-                        "MASK_OPTIONAL"
+                        "MASK_OPTIONAL",
+                        "OTHER"
                       ]
                     }
                   }
