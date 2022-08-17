@@ -552,6 +552,53 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   )
                 })
               })
+
+              context('maskState', () => {
+                const {
+                  maskState: expMaskState
+                } = expWalletInfo
+
+                has('maskState.visible') &&
+                it('check maskState.visible', () => {
+                  expect(output).to.have.nested.property(
+                    'maskState.visible',
+                    expMaskState.visible
+                  )
+                })
+
+                const maskStateTexts = [
+                  'badgeText', 'titleText', 'subtitleText', 'longText', 'stateChangeNotificationText'
+                ]
+                maskStateTexts.forEach(textAttribute => {
+                  has(`maskState.${textAttribute}`) &&
+                  it(`check maskState.${textAttribute}`, () => {
+                    expect(output).to.have.nested.property(`maskState.${textAttribute}`)
+                    const actTextDescriptor = output.maskState[textAttribute]
+                    const textAssertionDescriptor = expMaskState[textAttribute]
+                    expectTextToMatch(
+                      actTextDescriptor,
+                      textAssertionDescriptor,
+                      { timeUnderTest }
+                    )
+                  })
+                })
+
+                has('maskState.faqAnchor') &&
+                it('check maskState.faqAnchor', () => {
+                  expect(output).to.have.nested.property(
+                    'maskState.faqAnchor',
+                    expMaskState.faqAnchor
+                  )
+                })
+
+                has('maskState.identifier') &&
+                it('check maskState.identifier', () => {
+                  expect(output).to.have.nested.property(
+                    'maskState.identifier',
+                    expMaskState.identifier
+                  )
+                })
+              })
             })
           })
         })

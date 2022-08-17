@@ -282,6 +282,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                 })
               })
             })
+
+            has('maskState') &&
+            it('check maskState', () => {
+              expect(output).to.have.nested.property(
+                'maskState',
+                assertions.maskState
+              )
+            })
           })
         })
       })
