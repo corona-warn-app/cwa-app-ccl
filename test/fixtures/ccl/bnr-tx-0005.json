@@ -1,0 +1,35 @@
+{
+  "Identifier": "BNR-TX-0005",
+  "Type": "BoosterNotification",
+  "Country": "TX",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "1.0.0",
+  "CertificateType": "General",
+  "Description": [
+    {
+      "lang": "de",
+      "desc": "BNR-TX-0005 Langtext"
+    },
+    {
+      "lang": "en",
+      "desc": "BNR-TX-0005 long text"
+    }
+  ],
+  "ValidFrom": "2021-10-07T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [],
+  "Logic": {
+    "===": [
+      {
+        "diffTime": [
+          { "var": "external.validationClock" },
+          { "var": "payload.dob" },
+          "year"
+        ]
+      },
+      18
+    ]
+  }
+}
