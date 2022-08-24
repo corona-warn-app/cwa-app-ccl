@@ -40,3 +40,98 @@
             subtitleText: gilt keine Maskenpflicht
             longText: Keine Maskenpflicht
             badgeText: Masken befreit
+- description: walletInfo for maskState depending on scenarioIdentifier (BW like default)
+  t0: '2022-01-01'
+  only: true
+  series:
+    - time: t0
+      tc: rat1
+    - time: +P3M
+      vc: biontech1/2
+    - time: +P3M
+      vc: biontech2/2
+  testCases:
+    - time: rat1
+      scenarioIdentifier: BW
+      assertions:
+        maskState: OTHER
+        walletInfo:
+          maskState:
+            identifier: OTHER
+            visible: false
+    - time: biontech1/2
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Masken Pflicht
+            subtitleText: gilt Maskenpflicht
+            longText: Maskenpflicht
+            badgeText: Masken Pflicht
+    - time: biontech2/2
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Masken befreit
+            subtitleText: gilt keine Maskenpflicht
+            longText: Keine Maskenpflicht
+            badgeText: Masken befreit
+- description: walletInfo for maskState depending on scenarioIdentifier (HH no exception)
+  t0: '2022-01-01'
+  only: true
+  series:
+    - time: t0
+      tc: rat1
+    - time: +P3M
+      vc: biontech1/2
+    - time: +P3M
+      vc: biontech2/2
+  testCases:
+    - time: rat1
+      scenarioIdentifier: HH
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Masken Pflicht
+            subtitleText: gilt Maskenpflicht
+            longText: Maskenpflicht
+            badgeText: Masken Pflicht
+    - time: biontech1/2
+      scenarioIdentifier: HH
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Masken Pflicht
+            subtitleText: gilt Maskenpflicht
+            longText: Maskenpflicht
+            badgeText: Masken Pflicht
+    - time: biontech2/2
+      scenarioIdentifier: HH
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Masken Pflicht
+            subtitleText: gilt Maskenpflicht
+            longText: Maskenpflicht
+            badgeText: Masken Pflicht

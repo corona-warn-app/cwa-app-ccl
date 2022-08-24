@@ -1,5 +1,8 @@
 - description: walletInfo for 2G
   t0: '2022-01-01'
+  # skipping these test cases as they are not implemented at the moment
+  # and were anyway meant for testing only
+  skip: true
   series:
     - time: t0
       vc: biontech2/2
