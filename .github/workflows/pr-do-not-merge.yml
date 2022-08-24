@@ -1,0 +1,22 @@
+name: PR Check for do-not-merge
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - unlabeled
+  pull_request_review:
+    types:
+      - submitted
+
+jobs:
+  do-not-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "::error ::Found label 'do-not-merge', preventing merge of PR"
+          exit 1
+        if: contains(github.event.pull_request.labels.*.name, 'do-not-merge')
