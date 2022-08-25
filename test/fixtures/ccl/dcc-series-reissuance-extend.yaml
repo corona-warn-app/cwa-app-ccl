@@ -449,9 +449,11 @@
   series:
     - time: t0
       rc: rc1
+      cwtIat: t0+PT1H
       cwtExp: t0+P1Y
     - time: t0
       vc: biontech2/2
+      cwtIat: t0+PT2H
       cwtExp: t0+P1Y
   testCases:
     - time: biontech2/2+P1Y
@@ -459,10 +461,10 @@
         certificateReissuance:
           certificates:
             - action: extend
-              certificateToReissue: biontech2/2
+              certificateToReissue: rc1
               accompanyingCertificates: []
             - action: extend
-              certificateToReissue: rc1
+              certificateToReissue: biontech2/2
               accompanyingCertificates: []
 - description: certificates/same date - VCs have priority over RCs that refer to the same date when sent as accompanying certificates
   t0: '2022-01-01'
@@ -500,9 +502,11 @@
       cwtExp: t0+P1Y
     - time: t0+P6M
       vc: biontech3/3
+      cwtIat: t0+PT3H
       cwtExp: biontech3/3+P1Y
     - time: t0+P6M
       rc: rc2
+      cwtIat: t0+PT4H
       cwtExp: rc2+P1Y
   testCases:
     - time: biontech3/3+P1Y
@@ -510,11 +514,11 @@
         certificateReissuance:
           certificates:
             - action: extend
-              certificateToReissue: rc2
+              certificateToReissue: biontech3/3
               accompanyingCertificates:
                 - biontech2/2
             - action: extend
-              certificateToReissue: biontech3/3
+              certificateToReissue: rc2
               accompanyingCertificates:
                 - biontech2/2
 - description: certificates/issuer - RCs and VCs that were issued by DE are extended

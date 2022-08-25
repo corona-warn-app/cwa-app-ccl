@@ -1,0 +1,26 @@
+name: Reusable - CCL Test Android
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test-type:
+          - jfn
+          - ccl
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: corona-warn-app/cwa-kotlin-jfn
+          ref: main
+      - name: Download artifacts from jobs
+        uses: actions/download-artifact@v3
+      - name: Copy test cases
+        run: cp dist/android-${{ matrix.test-type }}-test-cases.gen.json src/test/resources/jfn-common-test-cases.gen.json
+      - name: Run test cases
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: test
