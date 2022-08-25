@@ -2,6 +2,12 @@ name: PR Validation
 
 on:
   pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - unlabeled
 
 jobs:
   build:
@@ -15,3 +21,22 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+          retention-days: 3
+
+  test-android:
+    uses: ./.github/workflows/reusable-ccl-test-android.yml
+    secrets: inherit
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'test-android') || contains(github.event.pull_request.labels.*.name, 'test-all') }}
+    needs:
+      - build
+
+  test-ios:
+    uses: ./.github/workflows/reusable-ccl-test-ios.yml
+    secrets: inherit
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'test-ios') || contains(github.event.pull_request.labels.*.name, 'test-all') }}
+    needs:
+      - build
