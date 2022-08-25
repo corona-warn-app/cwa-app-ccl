@@ -30,3 +30,20 @@ jobs:
           tag_name: latest
           files: |
             dist/**/*
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+          retention-days: 3
+
+  test-android:
+    uses: ./.github/workflows/reusable-ccl-test-android.yml
+    secrets: inherit
+    needs:
+      - build
+
+  test-ios:
+    uses: ./.github/workflows/reusable-ccl-test-ios.yml
+    secrets: inherit
+    needs:
+      - build
