@@ -1,0 +1,29 @@
+name: Reusable - CCL Test iOS
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        test-type:
+          - jfn
+          - ccl
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: corona-warn-app/json-functions-swift
+          ref: main
+      - name: Download artifacts from jobs
+        uses: actions/download-artifact@v3
+      - name: Copy test cases
+        run: cp dist/ios-${{ matrix.test-type }}-test-cases.gen.json Tests/jsonfunctionsTests/jfn-common-test-cases.json
+      - name: Remove assertion on number of test cases
+        # removes line 13 from the respective file
+        run: sed -i -e '13d' Tests/jsonfunctionsTests/JsonFunctionsTests.swift
+      - name: Run test cases
+        run: |
+          echo "::notice title='Debug information'::A failing test case is displayed with a red X and the index of the test case. The test case can be extracted from the respective test case file with e.g. `cat <file> | jq '.testCases[<index>]'`. The output contains the actual JSON and the expected JSON separated by the text `does not equal expected value`. JSON comparison tools such as https://www.npmjs.com/package/json-diff can be used to determine the diff between the two."
+          swift test
