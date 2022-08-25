@@ -67,7 +67,7 @@ The following channels are available for discussions, feedback, and support requ
 
 | Type                     | Channel                                                |
 | ------------------------ | ------------------------------------------------------ |
-| **General discussion, issues, bugs**   | <a href="https://github.com/corona-warn-app/cwa-app-ccl/issues/new/choose" title="General Discussion"><img src="https://img.shields.io/github/issues/corona-warn-app/cwa-app-ccl/question.svg?style=flat-square"></a> </a>   |
+| **General discussion, issues, bugs**   | <a href="https://github.com/corona-warn-app/cwa-app-ccl/issues/new/choose" title="General Discussion"><img src="https://img.shields.io/github/issues/corona-warn-app/cwa-app-ccl?style=flat-square"></a> |
 | **Other requests**    | <a href="mailto:corona-warn-app.opensource@sap.com" title="Email CWA Team"><img src="https://img.shields.io/badge/email-CWA%20team-green?logo=mail.ru&style=flat-square&logoColor=white"></a> |
 
 ## How to Contribute
@@ -93,4 +93,3 @@ You may obtain a copy of the License from [here](./LICENSE).
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the [LICENSE](./LICENSE) for the specific language governing permissions and limitations under the License.
 
 Please see the [detailed licensing information](https://api.reuse.software/info/github.com/corona-warn-app/cwa-app-ccl) via the [REUSE Tool](https://reuse.software/) for more details.
-
