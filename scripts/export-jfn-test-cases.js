@@ -168,7 +168,7 @@ const main = async () => {
           return true
         })
       }
-      return ctx.writeJSON(argv.jsonFilename, targetData, { spaces: 2 })
+      return ctx.writeJSON(argv.jsonFilename, targetData)
     })
   }
 }
