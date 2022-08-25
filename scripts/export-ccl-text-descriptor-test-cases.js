@@ -35,7 +35,7 @@ const main = async () => {
     const filepath = path.join(argv.target, argv.jsonFilename)
     const targetFilepath = path.resolve(process.cwd(), filepath)
     await fse.ensureFile(targetFilepath)
-    await fse.writeJson(targetFilepath, data, { spaces: 2 })
+    await fse.writeJson(targetFilepath, data)
     console.log(`Created JSON target ${chalk.cyan(filepath)}`)
   }
 }
