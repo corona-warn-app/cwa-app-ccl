@@ -29,6 +29,7 @@ const getTestCasesForGetDccWalletInfo = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
   const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
   const allFunctions = cclDe0001.Logic.JfnDescriptors
+  const allBNRs = fixtures.readAllBoosterNotificationRulesSync()
 
   const allTestCases = []
 
@@ -54,7 +55,7 @@ const getTestCasesForGetDccWalletInfo = async () => {
             validityState: it.validityState
           })
         }),
-        boosterNotificationRules: []
+        boosterNotificationRules: allBNRs
       }
 
       const output = ccl.evaluateFunction('getDccWalletInfo', input)
