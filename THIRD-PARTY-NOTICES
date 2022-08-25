@@ -250,7 +250,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 The following NPM packages may be included in this product:
 
  - concat-map@0.0.1
- - minimist@1.2.5
+ - minimist@1.2.6
 
 These packages each contain the following license and notice below:
 
@@ -373,7 +373,7 @@ The following NPM packages may be included in this product:
 
  - fill-range@7.0.1
  - is-number@7.0.0
- - micromatch@4.0.4
+ - micromatch@4.0.5
 
 These packages each contain the following license and notice below:
 
@@ -811,7 +811,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 The following NPM packages may be included in this product:
 
  - isexe@2.0.0
- - minimatch@3.0.4
+ - minimatch@3.1.2
  - once@1.4.0
  - rimraf@2.7.1
  - semver@5.7.1
