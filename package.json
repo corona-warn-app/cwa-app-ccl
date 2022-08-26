@@ -21,6 +21,8 @@
     "test:ccl": "mocha test/unit/ccl --recursive --color",
     "test:dist": "mocha test/dist --recursive --color --forbid-only",
     "test:jfn": "mocha test/unit/jfn --recursive --color",
+    "test:local-android": "node scripts/test-android.js",
+    "test:local-ios": "node scripts/test-ios.js",
     "test:unit": "mocha test/unit --recursive --color --forbid-only",
     "watch:ccl": "nodemon -w lib -w resources -w test -e 'js json yaml' --exec 'npx mocha test/unit/ccl --recursive --color'",
     "watch:jfn": "nodemon -w lib -w resources -w test -e 'js json yaml' --exec 'npx mocha test/unit/jfn --recursive --color'",
@@ -63,7 +65,8 @@
     "standard": "16.0.4",
     "strip-ansi": "6.0.1",
     "transliteration": "2.2.0",
-    "yargs": "16.2.0"
+    "yargs": "16.2.0",
+    "zx": "7.0.8"
   },
   "dependencies": {
     "async": "3.2.3",
