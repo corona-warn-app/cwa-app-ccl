@@ -143,21 +143,21 @@
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Erneuerung direkt über die App vornehmen"</string>
 
   <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
-  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Masken Pflicht (Titel)"</string>
+  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Maskenpflicht"</string>
   <!-- XHED: Mask State - MASK_REQUIRED Card Subtitle -->
-  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT">"Für Sie gilt Maskenpflicht"</string>
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT">"Sie sind nicht von der Maskenpflicht ausgenommen"</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"Maskenpflicht ..."</string>
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
-  <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Masken Pflicht"</string>
+  <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Maskenpflicht"</string>
 
   <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
-  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Masken befreit (Titel)"</string>
+  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Keine Maskenpflicht"</string>
   <!-- XHED: Mask State - MASK_OPTIONAL Card Subtitle -->
-  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT">"Für Sie gilt keine Maskenpflicht"</string>
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT">"Eine Maske ist dennoch empfohlen"</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"Keine Maskenpflicht ..."</string>
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Badge Text -->
-  <string name="MASK_STATE_MASK_OPTIONAL_BADGE_TEXT">"Masken befreit"</string>
+  <string name="MASK_STATE_MASK_OPTIONAL_BADGE_TEXT">"Keine Maskenpflicht"</string>
 
 </resources>
