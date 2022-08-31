@@ -128,7 +128,7 @@ const main = async () => {
     }
 
     await fileWriter.fanOutToOS(ctx => {
-      return ctx.writeJSON(argv.testCaseFilename, data, { spaces: 2 })
+      return ctx.writeJSON(argv.testCaseFilename, data)
     })
   }
 }
