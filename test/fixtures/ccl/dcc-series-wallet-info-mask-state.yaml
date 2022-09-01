@@ -301,4 +301,17 @@
           maskState:
             identifier: OTHER
             visible: false
-           
+- description: walletInfo for maskState depending on scenarioIdentifier 
+  t0: '2020-09-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech3/3
+  testCases:
+    - time: biontech3/3+P761D
+      assertions:
+        maskState: OTHER
+        walletInfo:
+          maskState:
+            identifier: OTHER
+            visible: false
