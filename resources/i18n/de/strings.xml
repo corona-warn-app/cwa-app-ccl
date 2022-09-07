@@ -16,10 +16,35 @@
   <!-- XTXT: Admission Scenario - BW Subtitle Text -->
   <!-- <string name="ADMISSION_SCENARIO_SELECTION_BW_SUBTITLE_TEXT">""</string> -->
 
+  <!-- XTXT: Admission Scenario - BY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BY_TITLE_TEXT">"Bayern"</string>
+  <!-- XTXT: Admission Scenario - BW Subtitle Text -->
+  <!-- <string name="ADMISSION_SCENARIO_SELECTION_BW_SUBTITLE_TEXT">""</string> -->
+
+  <!-- XTXT: Admission Scenario - BE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_TITLE_TEXT">"Berlin"</string>
+  <!-- XTXT: Admission Scenario - BE Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_SUBTITLE_TEXT">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
+
+  <!-- XTXT: Admission Scenario - BB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BB_TITLE_TEXT">"Brandenburg"</string>
+  <!-- XTXT: Admission Scenario - BB Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_SUBTITLE_TEXT">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
+
+  <!-- XTXT: Admission Scenario - HB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HB_TITLE_TEXT">"Bremen"</string>
+  <!-- XTXT: Admission Scenario - HB Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HB_SUBTITLE_TEXT">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
+
   <!-- XTXT: Admission Scenario - HH Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Hamburg"</string>
   <!-- XTXT: Admission Scenario - HH Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_HH_SUBTITLE_TEXT">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
+
+  <!-- XTXT: Admission Scenario - HE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HE_TITLE_TEXT">"Hessen"</string>
+  <!-- XTXT: Admission Scenario - HE Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HE_SUBTITLE_TEXT">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
 
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Status-Nachweis"</string>
