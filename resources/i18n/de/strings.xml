@@ -29,7 +29,7 @@
   <!-- XTXT: Admission Scenario - BB Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_BB_TITLE_TEXT">"Brandenburg"</string>
   <!-- XTXT: Admission Scenario - BB Subtitle Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_BE_SUBTITLE_TEXT">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
+  <string name="ADMISSION_SCENARIO_SELECTION_BB_SUBTITLE_TEXT">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
 
   <!-- XTXT: Admission Scenario - HB Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_HB_TITLE_TEXT">"Bremen"</string>
