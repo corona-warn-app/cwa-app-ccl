@@ -1,4 +1,5 @@
 import async from 'async'
+import moment from 'moment'
 import path from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
@@ -24,6 +25,38 @@ const argv = yargs(hideBin(process.argv))
     default: 'ccl-test-cases.gen.json'
   })
   .argv
+
+const getTestCasesForGetDccAdmissionCheckScenarios = async () => {
+  const allAdmissionCheckScenarios = fixtures.readAllAdmissionCheckScenariosSync()
+  const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
+  const allFunctions = cclDe0001.Logic.JfnDescriptors
+
+  const allTestCases = []
+
+  await async.forEach(allAdmissionCheckScenarios, async descriptor => {
+    const input = {
+      os: 'android',
+      language: 'en',
+      now: ccl.util.mapMomentToNow(moment.now())
+    }
+
+    const output = ccl.evaluateFunction('getDccAdmissionCheckScenarios', input)
+
+    const testCaseDescriptor = {
+      title: descriptor.description,
+      functions: allFunctions,
+      useDefaultCCLConfiguration: true,
+      evaluateFunction: {
+        name: 'getDccAdmissionCheckScenarios',
+        parameters: input
+      },
+      exp: output
+    }
+    allTestCases.push(testCaseDescriptor)
+  })
+
+  return allTestCases
+}
 
 const getTestCasesForGetDccWalletInfo = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
@@ -78,6 +111,7 @@ const getTestCasesForGetDccWalletInfo = async () => {
 
 const main = async () => {
   const allTestCases = [
+    ...(await getTestCasesForGetDccAdmissionCheckScenarios()),
     ...(await getTestCasesForGetDccWalletInfo())
   ]
 

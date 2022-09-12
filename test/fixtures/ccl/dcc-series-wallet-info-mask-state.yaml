@@ -1,0 +1,317 @@
+- description: walletInfo for maskState
+  t0: '2022-08-01'
+
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P14D
+      vc: biontech2/2
+    - time: +P28D
+      vc: biontech3/3
+  testCases:
+    - time: biontech1/2
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+    - time: biontech2/2
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+    - time: biontech3/3
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+- description: walletInfo for maskState with VC depending on scenarioIdentifier (BW with exception)
+  t0: '2022-08-01'
+
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P14D
+      vc: biontech2/2
+    - time: +P28D
+      vc: biontech3/3
+  testCases:
+    - time: biontech1/2
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+    - time: biontech2/2
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+    - time: biontech3/3
+      scenarioIdentifier: BW
+      assertions:
+        vaccinationState: COMPLETE_BOOSTER
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Keine Maskenpflicht
+            subtitleText: Eine Maske ist dennoch empfohlen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Keine Maskenpflicht
+- description: walletInfo for maskState with 2 VC depending on scenarioIdentifier (BW with exception)
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech2/2
+    - time: +P28D
+      vc: biontech3/3
+  testCases:
+    - time: biontech2/2
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+    - time: biontech3/3
+      scenarioIdentifier: BW
+      assertions:
+        vaccinationState: COMPLETE_BOOSTER
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Keine Maskenpflicht
+            subtitleText: Eine Maske ist dennoch empfohlen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Keine Maskenpflicht
+- description: walletInfo for maskState with only booster VC depending on scenarioIdentifier (BW with exception)
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech3/3
+  testCases:
+    - time: biontech3/3
+      scenarioIdentifier: BW
+      assertions:
+        vaccinationState: COMPLETE_BOOSTER
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Keine Maskenpflicht
+            subtitleText: Eine Maske ist dennoch empfohlen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Keine Maskenpflicht
+
+- description: walletInfo for maskState with RC depending on scenarioIdentifier (BW with exception)
+  t0: '2022-01-01'
+
+
+  series:
+    - time: t0
+      rc: rc1
+  testCases:
+    - time: rc1+P30D
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Keine Maskenpflicht
+            subtitleText: Eine Maske ist dennoch empfohlen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Keine Maskenpflicht
+
+- description: walletInfo for maskState with RC depending on scenarioIdentifier
+  t0: '2022-01-01'
+
+
+  series:
+    - time: t0
+      rc: rc1
+  testCases:
+    - time: rc1+P30D
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+
+
+
+- description: walletInfo for maskState depending on scenarioIdentifier (HH like default)
+  t0: '2022-07-01'
+
+  series:
+    - time: t0
+      vc: biontech1/2
+    - time: +P14D
+      vc: biontech2/2
+    - time: +P28D
+      vc: biontech3/3
+  testCases:
+    - time: biontech1/2
+      scenarioIdentifier: HH
+      assertions:
+        assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+    - time: biontech2/2
+      scenarioIdentifier: HH
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+    - time: biontech3/3
+      scenarioIdentifier: HH
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
+- description: A person who only has PCR tests and no vaccination or recovery certificate
+  t0: '2022-01-01'
+
+  series:
+    - time: t0
+      tc: pcr1
+  testCases:
+    - time: pcr1
+      assertions:
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Keine Maskenpflicht
+            subtitleText: Eine Maske ist dennoch empfohlen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Keine Maskenpflicht
+- description: A person who only has RAT tests and no vaccination or recovery certificate
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      tc: rat1
+  testCases:
+    - time: rat1
+      assertions:
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Keine Maskenpflicht
+            subtitleText: Eine Maske ist dennoch empfohlen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Keine Maskenpflicht
+- description: A person who only has expired RAT tests and no vaccination or recovery certificate
+  t0: '2022-01-01'
+  only: true
+  series:
+    - time: t0
+      tc: rat1
+  testCases:
+    - time: rat1+P2D
+      assertions:
+        maskState: OTHER
+        walletInfo:
+          maskState:
+            identifier: OTHER
+            visible: false
+- description: walletInfo for maskState depending on scenarioIdentifier 
+  t0: '2020-09-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech3/3
+  testCases:
+    - time: biontech3/3+P761D
+      assertions:
+        maskState: OTHER
+        walletInfo:
+          maskState:
+            identifier: OTHER
+            visible: false

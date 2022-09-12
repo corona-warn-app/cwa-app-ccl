@@ -45,7 +45,7 @@ describe('ccl/functions/getDccWalletInfo', async () => {
 
       seriesDescriptor.testCases.forEach((testCase, idx) => {
         const _context = testCase.only === true ? context.only : context
-        const testCaseDescription = `test case #${idx + 1} at ${testCase.time} - ${testCase.description || ''}`
+        const testCaseDescription = `test case #${idx + 1} at ${testCase.time} - ${testCase.description || ''} - scenario '${testCase.scenarioIdentifier || ''}'`
         _context(testCaseDescription, () => {
           let timeUnderTest, seriesUnderTest
           let input, output
@@ -68,6 +68,7 @@ describe('ccl/functions/getDccWalletInfo', async () => {
               boosterNotificationRules: allBNRs,
               invalidationRules: seriesDescriptor.invalidationRules || allIRs
             }
+            if (typeof testCase.scenarioIdentifier === 'string') input.scenarioIdentifier = testCase.scenarioIdentifier
 
             // output = ccl.evaluateFunction('__analyzeDccWallet', input)
             output = ccl.api.getDccWalletInfo(input)
@@ -549,6 +550,53 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   expect(actBarcodeData).to.equal(
                     expBarcodeData,
                     `expected reference to ${expCertName} but got ${actCertName}`
+                  )
+                })
+              })
+
+              context('maskState', () => {
+                const {
+                  maskState: expMaskState
+                } = expWalletInfo
+
+                has('maskState.visible') &&
+                it('check maskState.visible', () => {
+                  expect(output).to.have.nested.property(
+                    'maskState.visible',
+                    expMaskState.visible
+                  )
+                })
+
+                const maskStateTexts = [
+                  'badgeText', 'titleText', 'subtitleText', 'longText', 'stateChangeNotificationText'
+                ]
+                maskStateTexts.forEach(textAttribute => {
+                  has(`maskState.${textAttribute}`) &&
+                  it(`check maskState.${textAttribute}`, () => {
+                    expect(output).to.have.nested.property(`maskState.${textAttribute}`)
+                    const actTextDescriptor = output.maskState[textAttribute]
+                    const textAssertionDescriptor = expMaskState[textAttribute]
+                    expectTextToMatch(
+                      actTextDescriptor,
+                      textAssertionDescriptor,
+                      { timeUnderTest }
+                    )
+                  })
+                })
+
+                has('maskState.faqAnchor') &&
+                it('check maskState.faqAnchor', () => {
+                  expect(output).to.have.nested.property(
+                    'maskState.faqAnchor',
+                    expMaskState.faqAnchor
+                  )
+                })
+
+                has('maskState.identifier') &&
+                it('check maskState.identifier', () => {
+                  expect(output).to.have.nested.property(
+                    'maskState.identifier',
+                    expMaskState.identifier
                   )
                 })
               })
