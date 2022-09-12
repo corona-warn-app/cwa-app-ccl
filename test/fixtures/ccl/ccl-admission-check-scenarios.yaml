@@ -15,15 +15,11 @@
         - identifier: BW
           titleText:
             de: Baden-Württemberg
-          subtitleText:
-            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
-          enabled: false
+          enabled: true
         - identifier: BY
           titleText:
             de: Bayern
-          subtitleText:
-            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
-          enabled: false
+          enabled: true
         - identifier: BE
           titleText:
             de: Berlin
