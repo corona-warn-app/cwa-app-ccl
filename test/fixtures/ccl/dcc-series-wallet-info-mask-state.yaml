@@ -1,276 +1,709 @@
-- description: walletInfo for maskState
+- description: 0.1 - VC 1/2
   t0: '2022-08-01'
-
+  only: true
   series:
     - time: t0
       vc: biontech1/2
-    - time: +P14D
-      vc: biontech2/2
-    - time: +P28D
-      vc: biontech3/3
   testCases:
+    # basic
     - time: biontech1/2
       assertions:
         maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-    - time: biontech2/2
+    - time: biontech1/2+P90D
       assertions:
         maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-    - time: biontech3/3
+    - time: biontech1/2+P91D
       assertions:
         maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-- description: walletInfo for maskState with VC depending on scenarioIdentifier (BW with exception)
-  t0: '2022-08-01'
+    # extended
+    - time: biontech1/2
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/2+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/2+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
 
-  series:
-    - time: t0
-      vc: biontech1/2
-    - time: +P14D
-      vc: biontech2/2
-    - time: +P28D
-      vc: biontech3/3
-  testCases:
-    - time: biontech1/2
-      scenarioIdentifier: BW
-      assertions:
-        maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-    - time: biontech2/2
-      scenarioIdentifier: BW
-      assertions:
-        maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-    - time: biontech3/3
-      scenarioIdentifier: BW
-      assertions:
-        vaccinationState: COMPLETE_BOOSTER
-        maskState: MASK_OPTIONAL
-        walletInfo:
-          maskState:
-            identifier: MASK_OPTIONAL
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Keine Maskenpflicht
-            subtitleText: Eine Maske ist dennoch empfohlen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Keine Maskenpflicht
-- description: walletInfo for maskState with 2 VC depending on scenarioIdentifier (BW with exception)
+- description: 0.1 - VC 2/2
   t0: '2022-08-01'
   only: true
   series:
     - time: t0
       vc: biontech2/2
-    - time: +P28D
-      vc: biontech3/3
   testCases:
+    # basic
     - time: biontech2/2
-      scenarioIdentifier: BW
       assertions:
         maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-    - time: biontech3/3
-      scenarioIdentifier: BW
+    - time: biontech2/2+P90D
       assertions:
-        vaccinationState: COMPLETE_BOOSTER
-        maskState: MASK_OPTIONAL
-        walletInfo:
-          maskState:
-            identifier: MASK_OPTIONAL
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Keine Maskenpflicht
-            subtitleText: Eine Maske ist dennoch empfohlen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Keine Maskenpflicht
-- description: walletInfo for maskState with only booster VC depending on scenarioIdentifier (BW with exception)
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech2/2
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 0.1 - VC 2/1
   t0: '2022-08-01'
   only: true
   series:
     - time: t0
-      vc: biontech3/3
+      vc: biontech2/1
   testCases:
-    - time: biontech3/3
-      scenarioIdentifier: BW
+    # basic
+    - time: biontech2/1
       assertions:
-        vaccinationState: COMPLETE_BOOSTER
-        maskState: MASK_OPTIONAL
-        walletInfo:
-          maskState:
-            identifier: MASK_OPTIONAL
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Keine Maskenpflicht
-            subtitleText: Eine Maske ist dennoch empfohlen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Keine Maskenpflicht
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech2/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
 
-- description: walletInfo for maskState with RC depending on scenarioIdentifier (BW with exception)
-  t0: '2022-01-01'
+- description: 0.1 - VC 1/1
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech1/1
+  testCases:
+    # basic
+    - time: biontech1/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech1/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
 
-
+- description: 0.2 - RC
+  t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       rc: rc1
   testCases:
-    - time: rc1+P30D
-      scenarioIdentifier: BW
+    # basic
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
       assertions:
         maskState: MASK_OPTIONAL
-        walletInfo:
-          maskState:
-            identifier: MASK_OPTIONAL
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Keine Maskenpflicht
-            subtitleText: Eine Maske ist dennoch empfohlen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Keine Maskenpflicht
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
 
-- description: walletInfo for maskState with RC depending on scenarioIdentifier
-  t0: '2022-01-01'
-
-
+- description: 1.1 - RAT test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
+  t0: '2022-08-01'
+  only: true
   series:
     - time: t0
-      rc: rc1
+      tc: rat1
   testCases:
-    - time: rc1+P30D
+    # basic
+    - time: rat1
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rat1+PT24H
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rat1+PT24H1S
       assertions:
         maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-
-
-
-- description: walletInfo for maskState depending on scenarioIdentifier (HH like default)
-  t0: '2022-07-01'
-
-  series:
-    - time: t0
-      vc: biontech1/2
-    - time: +P14D
-      vc: biontech2/2
-    - time: +P28D
-      vc: biontech3/3
-  testCases:
-    - time: biontech1/2
-      scenarioIdentifier: HH
+    # extended
+    - time: rat1
+      scenarioIdentifier: EXTENDED
       assertions:
-        assertions:
-        maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-    - time: biontech2/2
-      scenarioIdentifier: HH
+        maskState: MASK_OPTIONAL
+    - time: rat1+PT24H
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rat1+PT24H1S
+      scenarioIdentifier: EXTENDED
       assertions:
         maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-    - time: biontech3/3
-      scenarioIdentifier: HH
-      assertions:
-        maskState: MASK_REQUIRED
-        walletInfo:
-          maskState:
-            identifier: MASK_REQUIRED
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Maskenpflicht
-- description: A person who only has PCR tests and no vaccination or recovery certificate
-  t0: '2022-01-01'
 
+- description: 1.2 - PCR test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
+  t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       tc: pcr1
   testCases:
+    # basic
     - time: pcr1
       assertions:
         maskState: MASK_OPTIONAL
-        walletInfo:
-          maskState:
-            identifier: MASK_OPTIONAL
-            visible: true
-            faqAnchor: mask_rules
-            titleText: Keine Maskenpflicht
-            subtitleText: Eine Maske ist dennoch empfohlen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
-            badgeText: Keine Maskenpflicht
-- description: A person who only has RAT tests and no vaccination or recovery certificate
-  t0: '2022-01-01'
+    - time: pcr1+PT24H
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: pcr1+PT24H1S
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: pcr1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: pcr1+PT24H
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: pcr1+PT24H1S
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.1 - RC + VC 2/1
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: biontech2/1
+  testCases:
+    # basic
+    - time: biontech2/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech2/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.1 - RC + VC 2/2 (old notation)
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: biontech2/2
+  testCases:
+    # basic
+    - time: biontech2/2
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech2/2
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/2+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/2+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.2 - VC 2/1 + RC
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech2/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # basic
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.2 - VC 2/2 + RC
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech2/2
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # basic
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.3 - VC 3/1
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech3/1
+  testCases:
+    # basic
+    - time: biontech3/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech3/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech3/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech3/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech3/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech3/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.3 - VC 3/3
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech3/3
+  testCases:
+    # basic
+    - time: biontech3/3
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech3/3+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech3/3+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech3/3
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech3/3+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech3/3+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.4 - VC 3/1 + RC
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech3/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # basic
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.4 - VC 3/3 + RC
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech3/3
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # basic
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.5 - VC 4/1
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech4/1
+  testCases:
+    # basic
+    - time: biontech4/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech4/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech4/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech4/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech4/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech4/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.5 - VC 4/4
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech4/4
+  testCases:
+    # basic
+    - time: biontech4/4
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech4/4+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech4/4+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: biontech4/4
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech4/4+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech4/4+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.6 - VC 4/1 + RC
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech4/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # basic
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.6 - VC 4/4 + RC
+  t0: '2022-08-01'
+  only: true
+  series:
+    - time: t0
+      vc: biontech4/4
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # basic
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: texts
+  t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       tc: rat1
@@ -287,31 +720,15 @@
             subtitleText: Eine Maske ist dennoch empfohlen
             longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
             badgeText: Keine Maskenpflicht
-- description: A person who only has expired RAT tests and no vaccination or recovery certificate
-  t0: '2022-01-01'
-  only: true
-  series:
-    - time: t0
-      tc: rat1
-  testCases:
-    - time: rat1+P2D
+    - time: rat1+P5D # some long duration
       assertions:
-        maskState: OTHER
+        maskState: MASK_REQUIRED
         walletInfo:
           maskState:
-            identifier: OTHER
-            visible: false
-- description: walletInfo for maskState depending on scenarioIdentifier 
-  t0: '2020-09-01'
-  only: true
-  series:
-    - time: t0
-      vc: biontech3/3
-  testCases:
-    - time: biontech3/3+P761D
-      assertions:
-        maskState: OTHER
-        walletInfo:
-          maskState:
-            identifier: OTHER
-            visible: false
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
+            badgeText: Maskenpflicht
