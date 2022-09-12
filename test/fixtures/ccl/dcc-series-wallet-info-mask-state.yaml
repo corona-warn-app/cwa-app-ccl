@@ -253,6 +253,32 @@
       scenarioIdentifier: EXTENDED
       assertions:
         maskState: MASK_REQUIRED
+    # spot check for BW - extended federal state-specific rules
+    - time: biontech2/1
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/1+P90D
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/1+P91D
+      scenarioIdentifier: BW
+      assertions:
+        maskState: MASK_REQUIRED
+    # spot check for BY - same as federal default rules
+    - time: biontech2/1
+      scenarioIdentifier: BY
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P90D
+      scenarioIdentifier: BY
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P91D
+      scenarioIdentifier: BY
+      assertions:
+        maskState: MASK_REQUIRED
 
 - description: 2.1 - RC + VC 2/2 (old notation)
   t0: '2022-08-01'
