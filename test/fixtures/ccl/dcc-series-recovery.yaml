@@ -41,8 +41,8 @@
         hasBooster: false
         hasBoosterEquivalent: true
         verificationCertificates:
-          - certificate: rc1
           - certificate: pcr1
+          - certificate: rc1
     # Additional PCR test older than 72h does not change admission state
     - time: pcr1+P3DT1S
       assertions:
@@ -59,8 +59,8 @@
         mostRelevantCertificate: rc1
         hasBooster: false
         verificationCertificates:
-          - certificate: rc1
           - certificate: rat1
+          - certificate: rc1
     # Additional RAT test older than 48h does not change admission state
     - time: rat1+P2DT1S
       assertions:
@@ -135,8 +135,8 @@
         mostRecentVaccination: biontech1/1
         hasBooster: false
         verificationCertificates:
-          - certificate: biontech1/1
           - certificate: pcr2
+          - certificate: biontech1/1
     # Additional PCR test older than 72h does not change admission state
     - time: pcr2+P3DT1S
       assertions:
@@ -156,8 +156,8 @@
         mostRecentVaccination: biontech1/1
         hasBooster: false
         verificationCertificates:
-          - certificate: biontech1/1
           - certificate: rat2
+          - certificate: biontech1/1
     # Additional RAT test older than 48h does not change admission state
     - time: rat2+P2DT1S
       assertions:
@@ -289,8 +289,8 @@
         hasBooster: false
         hasBoosterEquivalent: true
         verificationCertificates:
-          - certificate: rc1
           - certificate: pcr1
+          - certificate: rc1
     # Additional PCR test older than 72h does not change admission state
     - time: pcr1+P3DT1S
       assertions:
@@ -312,8 +312,8 @@
         hasBooster: false
         hasBoosterEquivalent: true
         verificationCertificates:
-          - certificate: rc1
           - certificate: rat1
+          - certificate: rc1
     # Additional RAT test older than 48h does not change admission state
     - time: rat1+P2DT1S
       assertions:
@@ -452,8 +452,8 @@
         mostRecentVaccination: biontech1/2
         hasBooster: false
         verificationCertificates:
-          - certificate: rc1
           - certificate: pcr1
+          - certificate: rc1
     # Additional PCR test older than 72h does not change admission state
     - time: pcr1+P3DT1S
       assertions:
@@ -473,8 +473,8 @@
         mostRecentVaccination: biontech1/2
         hasBooster: false
         verificationCertificates:
-          - certificate: rc1
           - certificate: rat1
+          - certificate: rc1
     # Additional RAT test older than 48h does not change admission state
     - time: rat1+P2DT1S
       assertions:

@@ -24,16 +24,16 @@
         admissionState: OTHER
         mostRelevantCertificate: astra2/2
         verificationCertificates:
-          - certificate: astra2/2
           - certificate: pcr1
+          - certificate: astra2/2
     - time: rat1
       description: RAT test gets priority while vaccination is prioritized
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: astra2/2
         verificationCertificates:
-          - certificate: astra2/2
           - certificate: rat1
+          - certificate: astra2/2
     - time: astra2/2+P15D
       description: vaccination gets priority after 15 days
       assertions:
