@@ -81,9 +81,9 @@
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT">""</string>
   <!-- XTXT: Admission State - OTHER Card Body -->
-  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Ihre Zertifikate erfüllen derzeit keine Regel."</string>
+  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Der G-Status ist zur Zeit nicht relevant und wird daher nicht von der App ausgewiesen."</string>
   <!-- XTXT: Admission State - OTHER State Change Notification Text -->
-  <string name="ADMISSION_STATE_OTHER_SCN_TEXT">"Ihre Zertifikate erfüllen derzeit keine Regel."</string>
+  <string name="ADMISSION_STATE_OTHER_SCN_TEXT">"Der G-Status ist zur Zeit nicht relevant und wird daher nicht von der App ausgewiesen."</string>
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Impfstatus"</string>

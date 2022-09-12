@@ -1,10 +1,372 @@
-- description: walletInfo for OTHER
-  t0: '2022-01-01'
+- description: 0.1 - VC 1/2
+  t0: '2022-08-01'
   series:
     - time: t0
       vc: biontech1/2
   testCases:
     - time: biontech1/2
+      assertions:
+        admissionState: OTHER
+    - time: biontech1/2+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech1/2+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 0.1 - VC 2/2
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
+        admissionState: OTHER
+    - time: biontech2/2+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech2/2+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 0.1 - VC 2/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/1
+  testCases:
+    - time: biontech2/1
+      assertions:
+        admissionState: OTHER
+    - time: biontech2/1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech2/1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 0.1 - VC 1/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+  testCases:
+    - time: biontech1/1
+      assertions:
+        admissionState: OTHER
+    - time: biontech1/1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech1/1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 0.2 - RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P28D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P29D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 1.1 - RAT test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      tc: rat1
+  testCases:
+    - time: rat1
+      assertions:
+        admissionState: OTHER
+    - time: rat1+PT24H
+      assertions:
+        admissionState: OTHER
+    - time: rat1+PT24H1S
+      assertions:
+        admissionState: OTHER
+
+- description: 1.2 - PCR test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      tc: pcr1
+  testCases:
+    - time: pcr1
+      assertions:
+        admissionState: OTHER
+    - time: pcr1+PT24H
+      assertions:
+        admissionState: OTHER
+    - time: pcr1+PT24H1S
+      assertions:
+        admissionState: OTHER
+
+- description: 2.1 - RC + VC 2/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: biontech2/1
+  testCases:
+    - time: biontech2/1
+      assertions:
+        admissionState: OTHER
+    - time: biontech2/1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech2/1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.1 - RC + VC 2/2 (old notation)
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: biontech2/2
+  testCases:
+    - time: biontech2/2
+      assertions:
+        admissionState: OTHER
+    - time: biontech2/2+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech2/2+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.2 - VC 2/1 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P28D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P29D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.2 - VC 2/2 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P28D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P29D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.3 - VC 3/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+  testCases:
+    - time: biontech3/1
+      assertions:
+        admissionState: OTHER
+    - time: biontech3/1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech3/1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.3 - VC 3/3
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/3
+  testCases:
+    - time: biontech3/3
+      assertions:
+        admissionState: OTHER
+    - time: biontech3/3+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech3/3+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.4 - VC 3/1 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P28D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P29D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.4 - VC 3/3 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/3
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P28D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P29D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.5 - VC 4/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech4/1
+  testCases:
+    - time: biontech4/1
+      assertions:
+        admissionState: OTHER
+    - time: biontech4/1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech4/1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.5 - VC 4/4
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech4/4
+  testCases:
+    - time: biontech4/4
+      assertions:
+        admissionState: OTHER
+    - time: biontech4/4+P90D
+      assertions:
+        admissionState: OTHER
+    - time: biontech4/4+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.6 - VC 4/1 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech4/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P28D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P29D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: 2.6 - VC 4/4 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech4/4
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P28D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P29D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P90D
+      assertions:
+        admissionState: OTHER
+    - time: rc1+P91D
+      assertions:
+        admissionState: OTHER
+
+- description: texts
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      tc: rat1
+  testCases:
+    - time: rat1
       assertions:
         admissionState: OTHER
         walletInfo:
@@ -17,122 +379,8 @@
             subtitleText:
               de: ^$
             longText:
-              de: erfüllen derzeit keine Regel
+              de: Der G-Status ist zur Zeit nicht relevant und wird daher nicht von der App ausgewiesen.
             faqAnchor: admission_policy
             stateChangeNotificationText:
-              de: erfüllen derzeit keine Regel
+              de: Der G-Status ist zur Zeit nicht relevant und wird daher nicht von der App ausgewiesen.
             identifier: OTHER
-- description: walletInfo for 2G
-  t0: '2022-01-01'
-  series:
-    - time: t0
-      vc: biontech2/2
-  testCases:
-    - time: biontech2/2+P100D
-      assertions:
-        admissionState: 2G
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^2G$
-            titleText:
-              de: Status-Nachweis
-            subtitleText:
-              de: ^2G$
-            longText:
-              de: erfüllen die 2G-Regel
-            faqAnchor: admission_policy
-            stateChangeNotificationText:
-              de: geändert.*jetzt die 2G-Regel
-            identifier: 2G
-- description: walletInfo for 2G_PLUS_PCR
-  t0: '2022-01-01'
-  series:
-    - time: t0
-      vc: biontech2/2
-    - time: +P100D
-      tc: pcr1
-  testCases:
-    - time: pcr1
-      assertions:
-        admissionState: 2G_PLUS_PCR
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^2G\+$
-            titleText:
-              de: Status-Nachweis
-            subtitleText:
-              de: ^2G\+$
-            longText:
-              de: erfüllen die 2G-Plus-Regel
-            faqAnchor: admission_policy
-            stateChangeNotificationText:
-              de: geändert.*jetzt die 2G-Plus-Regel
-            identifier: 2G_PLUS
-          verification:
-            - certificate: biontech2/2
-              buttonText:
-                de: 2G-Zertifikat
-            - certificate: pcr1
-              buttonText:
-                de: Testzertifikat
-- description: walletInfo for 2G_PLUS_RAT
-  t0: '2022-01-01'
-  series:
-    - time: t0
-      vc: biontech2/2
-    - time: +P100D
-      tc: rat1
-  testCases:
-    - time: rat1
-      assertions:
-        admissionState: 2G_PLUS_RAT
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^2G\+$
-            titleText:
-              de: Status-Nachweis
-            subtitleText:
-              de: ^2G\+$
-            longText:
-              de: erfüllen die 2G-Plus-Regel
-            faqAnchor: admission_policy
-            stateChangeNotificationText:
-              de: geändert.*jetzt die 2G-Plus-Regel
-            identifier: 2G_PLUS
-          verification:
-            - certificate: biontech2/2
-              buttonText:
-                de: 2G-Zertifikat
-            - certificate: rat1
-              buttonText:
-                de: Testzertifikat
-- description: walletInfo for 2G_PLUS
-  t0: '2022-01-01'
-  series:
-    - time: t0
-      vc: biontech2/2
-  testCases:
-    - time: biontech2/2+P20D
-      assertions:
-        admissionState: 2G_PLUS
-        walletInfo:
-          admissionState:
-            visible: true
-            badgeText:
-              de: ^2G\+$
-            titleText:
-              de: Status-Nachweis
-            subtitleText:
-              de: ^2G\+$
-            longText:
-              de: erfüllen die 2G-Plus-Regel
-            faqAnchor: admission_policy
-            stateChangeNotificationText:
-              de: geändert.*jetzt die 2G-Plus-Regel
-            identifier: 2G_PLUS
