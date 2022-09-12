@@ -35,7 +35,7 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
 
       seriesDescriptor.testCases.forEach((testCase, idx) => {
         const _context = testCase.only === true ? context.only : context
-        const testCaseDescription = `test case #${idx + 1} at ${testCase.time} - ${testCase.description || ''}`
+        const testCaseDescription = `test case #${idx + 1} at ${testCase.time} - ${testCase.description || ''} - scenario '${testCase.scenarioIdentifier || ''}'`
         _context(testCaseDescription, () => {
           let timeUnderTest, seriesUnderTest
           let input, output
@@ -58,6 +58,7 @@ describe('ccl/functions/__analyzeDccWallet', async () => {
               boosterNotificationRules: [],
               invalidationRules: seriesDescriptor.invalidationRules || allIRs
             }
+            if (typeof testCase.scenarioIdentifier === 'string') input.scenarioIdentifier = testCase.scenarioIdentifier
 
             output = ccl.evaluateFunction('__analyzeDccWallet', input)
           })
@@ -281,6 +282,14 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
                   })
                 })
               })
+            })
+
+            has('maskState') &&
+            it('check maskState', () => {
+              expect(output).to.have.nested.property(
+                'maskState',
+                assertions.maskState
+              )
             })
           })
         })
