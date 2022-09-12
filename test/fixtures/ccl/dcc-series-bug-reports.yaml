@@ -13,7 +13,7 @@
     - time: astra2/2
       description: older booster notation and thus 2G; complete immunization but not prioritized for the next 15 days as indistinguishable
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         mostRelevantCertificate: astra2/2
         hasBooster: true
         verificationCertificates:
@@ -21,7 +21,7 @@
     - time: pcr1
       description: PCR test gets priority while vaccination is prioritized
       assertions:
-        admissionState: 2G_PLUS_PCR
+        admissionState: OTHER
         mostRelevantCertificate: astra2/2
         verificationCertificates:
           - certificate: astra2/2
@@ -29,7 +29,7 @@
     - time: rat1
       description: RAT test gets priority while vaccination is prioritized
       assertions:
-        admissionState: 2G_PLUS_RAT
+        admissionState: OTHER
         mostRelevantCertificate: astra2/2
         verificationCertificates:
           - certificate: astra2/2
@@ -37,7 +37,7 @@
     - time: astra2/2+P15D
       description: vaccination gets priority after 15 days
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         mostRelevantCertificate: astra2/2
         verificationCertificates:
           - certificate: astra2/2

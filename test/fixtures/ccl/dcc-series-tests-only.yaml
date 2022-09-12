@@ -13,7 +13,7 @@
     - time: rat1
       description: RAT leads to 3G_WITH_RAT
       assertions:
-        admissionState: 3G_WITH_RAT
+        admissionState: OTHER
         mostRelevantCertificate: rat1
         hasBooster: false
         verificationCertificates:
@@ -21,27 +21,27 @@
     - time: pcr1
       description: PCR supersedes valid RAT
       assertions:
-        admissionState: 3G_WITH_PCR
+        admissionState: OTHER
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
     - time: rat2
       description: Valid PCR even supersedes a newer RAT
       assertions:
-        admissionState: 3G_WITH_PCR
+        admissionState: OTHER
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
     - time: rat3
       assertions:
-        admissionState: 3G_WITH_PCR
+        admissionState: OTHER
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
     - time: pcr1+P3DT1S
       description: RAT supersedes PCR once it becomes invalid
       assertions:
-        admissionState: 3G_WITH_RAT
+        admissionState: OTHER
         mostRelevantCertificate: rat3
         verificationCertificates:
           - certificate: rat3
@@ -55,13 +55,13 @@
   testCases:
     - time: rat1
       assertions:
-        admissionState: 3G_WITH_RAT
+        admissionState: OTHER
         mostRelevantCertificate: rat1
         verificationCertificates:
           - certificate: rat1
     - time: rat2
       assertions:
-        admissionState: 3G_WITH_RAT
+        admissionState: OTHER
         mostRelevantCertificate: rat2
         verificationCertificates:
           - certificate: rat2
@@ -81,13 +81,13 @@
   testCases:
     - time: pcr1
       assertions:
-        admissionState: 3G_WITH_PCR
+        admissionState: OTHER
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
     - time: pcr2
       assertions:
-        admissionState: 3G_WITH_PCR
+        admissionState: OTHER
         mostRelevantCertificate: pcr2
         verificationCertificates:
           - certificate: pcr2

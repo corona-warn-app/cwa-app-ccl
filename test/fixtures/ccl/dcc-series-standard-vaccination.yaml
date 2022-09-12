@@ -53,7 +53,7 @@
     # Complete vaccination valid after 15 days counts as 2G+ for 90 days
     - time: biontech2/2+P15D
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
@@ -64,7 +64,7 @@
     # Additional valid PCR test changes admission state
     - time: pcr1
       assertions:
-        admissionState: 2G_PLUS_PCR
+        admissionState: OTHER
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
@@ -76,7 +76,7 @@
     # Additional PCR test older than 72h does not change admission state
     - time: pcr1+P3DT1S
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
@@ -86,7 +86,7 @@
     # Additional valid RAT test changes admission state
     - time: rat1
       assertions:
-        admissionState: 2G_PLUS_RAT
+        admissionState: OTHER
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
@@ -98,7 +98,7 @@
     # Additional RAT test older than 48h does not change admission state
     - time: rat1+P2DT1S
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
@@ -109,24 +109,24 @@
     # on the 90th days, 2/2 is still 2G+
     - time: biontech2/2+P90D
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         hasBoosterEquivalent: true
     # after 90 days, 2/2 is not 2G+ anymore but only 2G
     - time: biontech2/2+P91D
       assertions:
-        admissionState: 2G
+        admissionState: OTHER
         hasBoosterEquivalent: false
     # PCR or RAT change admission state to 2G+
     - time: pcr2
       assertions:
-        admissionState: 2G_PLUS_PCR
+        admissionState: OTHER
     - time: rat2
       assertions:
-        admissionState: 2G_PLUS_RAT
+        admissionState: OTHER
     # Booster vaccination is immedeately valid
     - time: biontech3/3
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         mostRelevantCertificate: biontech3/3
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
@@ -137,7 +137,7 @@
     # Additional valid PCR test changes admission state
     - time: pcr3
       assertions:
-        admissionState: 2G_PLUS_PCR
+        admissionState: OTHER
         mostRelevantCertificate: biontech3/3
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
@@ -148,7 +148,7 @@
     # Additional PCR test older than 72h does not change admission state
     - time: pcr3+P3DT1S
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         mostRelevantCertificate: biontech3/3
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
@@ -158,7 +158,7 @@
     # Additional valid RAT test changes admission state
     - time: rat3
       assertions:
-        admissionState: 2G_PLUS_RAT
+        admissionState: OTHER
         mostRelevantCertificate: biontech3/3
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
@@ -169,7 +169,7 @@
     # Additional RAT test older than 48h does not change admission state
     - time: rat3+P2DT1S
       assertions:
-        admissionState: 2G_PLUS
+        admissionState: OTHER
         mostRelevantCertificate: biontech3/3
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech3/3
