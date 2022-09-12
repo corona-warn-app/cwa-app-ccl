@@ -24,29 +24,29 @@
           titleText:
             de: Berlin
           subtitleText:
-            de: Für dieses Bundesland liegen momentan keine Regeln vor 
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
           enabled: false
         - identifier: BB
           titleText:
             de: Brandenburg
           subtitleText:
-            de: Für dieses Bundesland liegen momentan keine Regeln vor 
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
           enabled: false
         - identifier: HB
           titleText:
             de: Bremen
           subtitleText:
-            de: Für dieses Bundesland liegen momentan keine Regeln vor 
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
           enabled: false
         - identifier: HH
           titleText:
             de: Hamburg
           subtitleText:
-            de: Für dieses Bundesland liegen momentan keine Regeln vor 
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
           enabled: false
         - identifier: HE
           titleText:
             de: Hessen
           subtitleText:
-            de: Für dieses Bundesland liegen momentan keine Regeln vor 
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
           enabled: false
