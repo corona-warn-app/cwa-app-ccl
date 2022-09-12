@@ -15,11 +15,15 @@
         - identifier: BW
           titleText:
             de: Baden-Württemberg
-          enabled: true
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
         - identifier: BY
           titleText:
             de: Bayern
-          enabled: true
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
         - identifier: BE
           titleText:
             de: Berlin
@@ -47,6 +51,60 @@
         - identifier: HE
           titleText:
             de: Hessen
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: MV
+          titleText:
+            de: Mecklenburg-Vorpommern
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: NI
+          titleText:
+            de: Niedersachsen
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: NW
+          titleText:
+            de: Nordrhein-Westfalen
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: RP
+          titleText:
+            de: Rheinland-Pfalz
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: SL
+          titleText:
+            de: Saarland
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: SN
+          titleText:
+            de: Sachsen
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: ST
+          titleText:
+            de: Sachsen-Anhalt
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: SH
+          titleText:
+            de: Schleswig-Holstein
+          subtitleText:
+            de: Für dieses Bundesland liegen momentan keine Regeln vor
+          enabled: false
+        - identifier: TH
+          titleText:
+            de: Thüringen
           subtitleText:
             de: Für dieses Bundesland liegen momentan keine Regeln vor
           enabled: false
