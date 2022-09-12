@@ -7,7 +7,7 @@
       tc: pcr1
     - time: +PT2H
       tc: rat2
-    - time: +P2D
+    - time: +PT2H
       tc: rat3
   testCases:
     - time: rat1
@@ -38,7 +38,7 @@
         mostRelevantCertificate: pcr1
         verificationCertificates:
           - certificate: pcr1
-    - time: pcr1+P3DT1S
+    - time: pcr1+PT24H1S
       description: RAT supersedes PCR once it becomes invalid
       assertions:
         admissionState: OTHER
