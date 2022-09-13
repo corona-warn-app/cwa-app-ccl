@@ -100,26 +100,6 @@
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Sie haben nun alle derzeit empfohlenen Impfungen erhalten. Ihr Impfschutz ist vollständig."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Derzeit wird keine weitere Impfung empfohlen."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="one">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tag vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="two">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="few">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="many">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="other">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-  </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="one">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tag wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="two">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="few">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="many">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="other">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
     <item quantity="zero">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als vollständig geimpft. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können und informieren Sie sich aber auch über empfohlene Auffrischimpfungen.</item>
