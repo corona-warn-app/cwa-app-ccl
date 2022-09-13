@@ -697,9 +697,136 @@
             visible: true
             faqAnchor: mask_rules
             titleText: Keine Maskenpflicht
-            subtitleText: Eine Maske ist dennoch empfohlen
+            # subtitleText:
+            #   de: Eine Maske ist dennoch empfohlen
             longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
             badgeText: Keine Maskenpflicht
+    - time: rat1
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Regeln des Bundes\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: DE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Regeln des Bundes\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: BW
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Baden-Württemberg\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: BY
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Bayern\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: BE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Berlin\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: BB
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Brandenburg\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: HB
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Bremen\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: HH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Hamburg\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: HE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Hessen\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: MV
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Mecklenburg-Vorpommern\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: NI
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Niedersachsen\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: NW
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Nordrhein-Westfalen\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: RP
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Rheinland-Pfalz\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: SL
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Saarland\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: SN
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Sachsen\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: ST
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Sachsen-Anhalt\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: SH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Schleswig-Holstein\nEine Maske ist dennoch empfohlen'
+    - time: rat1
+      scenarioIdentifier: TH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Thüringen\nEine Maske ist dennoch empfohlen'
     - time: rat1+P5D # some long duration
       assertions:
         maskState: MASK_REQUIRED
@@ -709,6 +836,133 @@
             visible: true
             faqAnchor: mask_rules
             titleText: Maskenpflicht
-            subtitleText: Sie sind nicht von der Maskenpflicht ausgenommen
+            # subtitleText:
+            #   de: Sie sind nicht von der Maskenpflicht ausgenommen
             longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
             badgeText: Maskenpflicht
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Regeln des Bundes\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: DE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Regeln des Bundes\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: BW
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Baden-Württemberg\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: BY
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Bayern\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: BE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Berlin\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: BB
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Brandenburg\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: HB
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Bremen\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: HH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Hamburg\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: HE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Hessen\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: MV
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Mecklenburg-Vorpommern\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: NI
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Niedersachsen\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: NW
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Nordrhein-Westfalen\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: RP
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Rheinland-Pfalz\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: SL
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Saarland\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: SN
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Sachsen\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: ST
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Sachsen-Anhalt\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: SH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Schleswig-Holstein\nSie sind nicht von der Maskenpflicht ausgenommen'
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: TH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Thüringen\nSie sind nicht von der Maskenpflicht ausgenommen'
