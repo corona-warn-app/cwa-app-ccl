@@ -170,8 +170,41 @@
 
   <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
   <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Maskenpflicht"</string>
-  <!-- XHED: Mask State - MASK_REQUIRED Card Subtitle -->
-  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT">"Sie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - Federal -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_DE">"Regeln des Bundes\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - BW -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_BW">"Baden-Württemberg\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - BY -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_BY">"Bayern\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - BE -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_BE">"Berlin\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - BB -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_BB">"Brandenburg\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - HB -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_HB">"Bremen\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - HH -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_HH">"Hamburg\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - HE -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_HE">"Hessen\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - MV -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_MV">"Mecklenburg-Vorpommern\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - NI -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_NI">"Niedersachsen\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - NW -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_NW">"Nordrhein-Westfalen\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - RP -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_RP">"Rheinland-Pfalz\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - SL -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_SL">"Saarland\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - SN -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_SN">"Sachsen\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - ST -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_ST">"Sachsen-Anhalt\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - SH -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_SH">"Schleswig-Holstein\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Subtitle - TH -->
+  <string name="MASK_STATE_MASK_REQUIRED_SUBTITLE_TEXT_TH">"Thüringen\nSie sind nicht von der Maskenpflicht ausgenommen"</string>
+
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body -->
   <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
@@ -179,8 +212,40 @@
 
   <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Keine Maskenpflicht"</string>
-  <!-- XHED: Mask State - MASK_OPTIONAL Card Subtitle -->
-  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT">"Eine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - Federal -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_DE">"Regeln des Bundes\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - BW -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_BW">"Baden-Württemberg\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - BY -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_BY">"Bayern\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - BE -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_BE">"Berlin\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - BB -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_BB">"Brandenburg\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - HB -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_HB">"Bremen\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - HH -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_HH">"Hamburg\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - HE -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_HE">"Hessen\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - MV -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_MV">"Mecklenburg-Vorpommern\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - NI -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_NI">"Niedersachsen\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - NW -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_NW">"Nordrhein-Westfalen\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - RP -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_RP">"Rheinland-Pfalz\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - SL -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_SL">"Saarland\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - SN -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_SN">"Sachsen\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - ST -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_ST">"Sachsen-Anhalt\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - SH -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_SH">"Schleswig-Holstein\nEine Maske ist dennoch empfohlen"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Subtitle - TH -->
+  <string name="MASK_STATE_MASK_OPTIONAL_SUBTITLE_TEXT_TH">"Thüringen\nEine Maske ist dennoch empfohlen"</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body -->
   <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Badge Text -->
