@@ -697,10 +697,24 @@
             visible: true
             faqAnchor: mask_rules
             titleText: Keine Maskenpflicht
-            # subtitleText:
-            #   de: Eine Maske ist dennoch empfohlen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
             badgeText: Keine Maskenpflicht
+    # federal default rules
+    - time: rat1
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            longText:
+              de: 'Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden.'
+    # extended federal state-specific rules
+    - time: rat1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        walletInfo:
+          maskState:
+            longText:
+              de: 'Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.'
+    # scenario-dependent subtitle
     - time: rat1
       scenarioIdentifier: ''
       assertions:
@@ -836,10 +850,31 @@
             visible: true
             faqAnchor: mask_rules
             titleText: Maskenpflicht
-            # subtitleText:
-            #   de: Sie sind nicht von der Maskenpflicht ausgenommen
-            longText: Von der Maskenpflicht sind alle Personen befreit, die innerhalb der letzten 3 Monate geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.
             badgeText: Maskenpflicht
+    # federal default rules
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            longText:
+              de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen Von der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden.'
+    # extended federal state-specific rules
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: EXTENDED
+      assertions:
+        walletInfo:
+          maskState:
+            longText:
+              de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.  '
+    # scenario-dependent subtitle
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: 'Regeln des Bundes'
     - time: rat1+P5D # some long duration
       scenarioIdentifier: ''
       assertions:
