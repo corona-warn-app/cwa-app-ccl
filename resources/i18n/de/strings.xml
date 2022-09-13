@@ -49,35 +49,6 @@
 
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Status-Nachweis"</string>
-
-  <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-  <!-- XTXT: Admission State - 2G_PLUS State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_SCN_TEXT">"Ihr Status hat sich geändert. Ihre Zertifikate erfüllen jetzt die 2G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
-  <!-- XTXT: Admission State - 2G Badge Text -->
-  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
-  <!-- XTXT: Admission State - 2G Card Body -->
-  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-  <!-- XTXT: Admission State - 2G State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_SCN_TEXT">"Ihr Status hat sich geändert. Ihre Zertifikate erfüllen jetzt die 2G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_SCN_TEXT">"Ihr Status hat sich geändert. Ihre Zertifikate erfüllen jetzt die 3G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_SCN_TEXT">"Ihr Status hat sich geändert. Ihre Zertifikate erfüllen jetzt die 3G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT">""</string>
   <!-- XTXT: Admission State - OTHER Card Body -->
