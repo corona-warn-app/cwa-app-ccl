@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
   <!-- XHED: Admission Scenario - Card Title -->
-  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Status für folgendes Bundesland"</string>
+  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Maskenpflichtregelung für:"</string>
   <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Ihr Bundesland"</string>
 
@@ -45,7 +45,7 @@
   <string name="ADMISSION_SCENARIO_SELECTION_TH_TITLE_TEXT">"Thüringen"</string>
 
   <!-- XTXT: Admission Scenario - Subtitle Text - Disabled -->
-  <string name="ADMISSION_SCENARIO_SELECTION_SUBTITLE_TEXT_DISABLED">"Für dieses Bundesland liegen momentan keine Regeln vor"</string>
+  <string name="ADMISSION_SCENARIO_SELECTION_SUBTITLE_TEXT_DISABLED">"Für dieses Bundesland liegen momentan keine abweichenden Regeln vor. Es gelten die Regeln des Bundes."</string>
 
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Status-Nachweis"</string>
