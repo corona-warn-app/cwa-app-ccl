@@ -18,8 +18,24 @@ jobs:
           ref: main
       - name: Download artifacts from jobs
         uses: actions/download-artifact@v3
-      - name: Copy test cases
-        run: cp dist/android-${{ matrix.test-type }}-test-cases.gen.json src/test/resources/jfn-common-test-cases.gen.json
+      # - name: Copy test cases
+      #   run: cp dist/android-${{ matrix.test-type }}-test-cases.gen.json src/test/resources/jfn-common-test-cases.gen.json
+      # the following is a stupid optimization to prevent gradle from running
+      # out of memory due to large test case files
+      - name: Copy test cases - chunk 0
+        run: cp dist/android-${{ matrix.test-type }}-test-cases.gen.json.chunk0 src/test/resources/jfn-common-test-cases.gen.json
+      - name: Run test cases
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: test
+      - name: Copy test cases - chunk 1
+        run: cp dist/android-${{ matrix.test-type }}-test-cases.gen.json.chunk1 src/test/resources/jfn-common-test-cases.gen.json
+      - name: Run test cases
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: test
+      - name: Copy test cases - chunk 2
+        run: cp dist/android-${{ matrix.test-type }}-test-cases.gen.json.chunk2 src/test/resources/jfn-common-test-cases.gen.json
       - name: Run test cases
         uses: gradle/gradle-build-action@v2
         with:
