@@ -721,126 +721,126 @@
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Regeln des Bundes'
+              de: ^Regeln des Bundes$
     - time: rat1
       scenarioIdentifier: DE
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Regeln des Bundes'
+              de: ^Regeln des Bundes$
     - time: rat1
       scenarioIdentifier: BW
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Baden-Württemberg'
+              de: ^Baden-Württemberg$
     - time: rat1
       scenarioIdentifier: BY
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Bayern'
+              de: ^Bayern$
     - time: rat1
       scenarioIdentifier: BE
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Berlin'
+              de: ^Berlin$
     - time: rat1
       scenarioIdentifier: BB
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Brandenburg'
+              de: ^Brandenburg$
     - time: rat1
       scenarioIdentifier: HB
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Bremen'
+              de: ^Bremen$
     - time: rat1
       scenarioIdentifier: HH
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Hamburg'
+              de: ^Hamburg$
     - time: rat1
       scenarioIdentifier: HE
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Hessen'
+              de: ^Hessen$
     - time: rat1
       scenarioIdentifier: MV
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Mecklenburg-Vorpommern'
+              de: ^Mecklenburg-Vorpommern$
     - time: rat1
       scenarioIdentifier: NI
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Niedersachsen'
+              de: ^Niedersachsen$
     - time: rat1
       scenarioIdentifier: NW
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Nordrhein-Westfalen'
+              de: ^Nordrhein-Westfalen$
     - time: rat1
       scenarioIdentifier: RP
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Rheinland-Pfalz'
+              de: ^Rheinland-Pfalz$
     - time: rat1
       scenarioIdentifier: SL
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Saarland'
+              de: ^Saarland$
     - time: rat1
       scenarioIdentifier: SN
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Sachsen'
+              de: ^Sachsen$
     - time: rat1
       scenarioIdentifier: ST
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Sachsen-Anhalt'
+              de: ^Sachsen-Anhalt$
     - time: rat1
       scenarioIdentifier: SH
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Schleswig-Holstein'
+              de: ^Schleswig-Holstein$
     - time: rat1
       scenarioIdentifier: TH
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Thüringen'
+              de: ^Thüringen$
     - time: rat1+P5D # some long duration
       assertions:
         maskState: MASK_REQUIRED
@@ -874,130 +874,130 @@
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Regeln des Bundes'
+              de: ^Regeln des Bundes$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: ''
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Regeln des Bundes'
+              de: ^Regeln des Bundes$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: DE
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Regeln des Bundes'
+              de: ^Regeln des Bundes$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: BW
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Baden-Württemberg'
+              de: ^Baden-Württemberg$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: BY
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Bayern'
+              de: ^Bayern$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: BE
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Berlin'
+              de: ^Berlin$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: BB
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Brandenburg'
+              de: ^Brandenburg$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: HB
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Bremen'
+              de: ^Bremen$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: HH
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Hamburg'
+              de: ^Hamburg$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: HE
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Hessen'
+              de: ^Hessen$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: MV
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Mecklenburg-Vorpommern'
+              de: ^Mecklenburg-Vorpommern$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: NI
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Niedersachsen'
+              de: ^Niedersachsen$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: NW
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Nordrhein-Westfalen'
+              de: ^Nordrhein-Westfalen$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: RP
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Rheinland-Pfalz'
+              de: ^Rheinland-Pfalz$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: SL
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Saarland'
+              de: ^Saarland$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: SN
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Sachsen'
+              de: ^Sachsen$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: ST
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Sachsen-Anhalt'
+              de: ^Sachsen-Anhalt$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: SH
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Schleswig-Holstein'
+              de: ^Schleswig-Holstein$
     - time: rat1+P5D # some long duration
       scenarioIdentifier: TH
       assertions:
         walletInfo:
           maskState:
             subtitleText:
-              de: 'Thüringen'
+              de: ^Thüringen$
