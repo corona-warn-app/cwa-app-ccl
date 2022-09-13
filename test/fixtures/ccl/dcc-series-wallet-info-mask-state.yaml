@@ -858,7 +858,7 @@
         walletInfo:
           maskState:
             longText:
-              de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen Von der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden.'
+              de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden.'
     # extended federal state-specific rules
     - time: rat1+P5D # some long duration
       scenarioIdentifier: EXTENDED

@@ -171,7 +171,7 @@
   <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
   <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Maskenpflicht"</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen Von der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
   <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
 
