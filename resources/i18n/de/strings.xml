@@ -52,7 +52,7 @@
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT">""</string>
   <!-- XTXT: Admission State - OTHER Card Body -->
-  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Der Status-Nachweis (3G, 2G, 2G+) ist zur Zeit nicht relevant und wird daher nicht von der App ausgewiesen."</string>
+  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Der Status-Nachweis (3G, 3G+, 2G, 2G+) ist zur Zeit nicht relevant und wird daher nicht von der App ausgewiesen."</string>
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Impfstatus"</string>
