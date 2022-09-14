@@ -29,9 +29,6 @@ const argv = yargs(hideBin(process.argv))
 
 const getTestCasesForGetDccAdmissionCheckScenarios = async () => {
   const allAdmissionCheckScenarios = fixtures.readAllAdmissionCheckScenariosSync()
-  const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
-  const allFunctions = cclDe0001.Logic.JfnDescriptors
-
   const allTestCases = []
 
   await async.forEach(allAdmissionCheckScenarios, async descriptor => {
@@ -45,7 +42,6 @@ const getTestCasesForGetDccAdmissionCheckScenarios = async () => {
 
     const testCaseDescriptor = {
       title: descriptor.description,
-      functions: allFunctions,
       useDefaultCCLConfiguration: true,
       evaluateFunction: {
         name: 'getDccAdmissionCheckScenarios',
@@ -61,9 +57,6 @@ const getTestCasesForGetDccAdmissionCheckScenarios = async () => {
 
 const getTestCasesForGetDccWalletInfo = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
-  const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
-  const allFunctions = cclDe0001.Logic.JfnDescriptors
-
   const allTestCases = []
 
   await async.forEach(allDccSeries, async seriesDescriptor => {
@@ -95,7 +88,6 @@ const getTestCasesForGetDccWalletInfo = async () => {
 
       const testCaseDescriptor = {
         title: `${seriesDescription} - ${testCaseDescription}`,
-        functions: allFunctions,
         useDefaultCCLConfiguration: true,
         evaluateFunction: {
           name: 'getDccWalletInfo',
@@ -121,10 +113,13 @@ const main = async () => {
   })
 
   if (argv.testCaseFilename) {
+    const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
+    const commonFunctions = cclDe0001.Logic.JfnDescriptors
     const data = {
       $comment: `Generated at ${new Date().toString()}`,
       sourceHash: hashJson(allTestCases),
       sourceTreeish: process.env.CCL_TREEISH || 'unknown',
+      commonFunctions: commonFunctions,
       testCases: allTestCases
     }
 

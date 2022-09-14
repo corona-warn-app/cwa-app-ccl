@@ -13,6 +13,10 @@ describe('dist/ccl-test-cases', () => {
     .forEach(relativeFilepath => {
       executeFromFile(relativeFilepath, {
         transform: data => data.testCases
+          .map(testCase => {
+            if (data.commonFunctions) testCase.functions = data.commonFunctions
+            return testCase
+          })
       })
     })
 })
