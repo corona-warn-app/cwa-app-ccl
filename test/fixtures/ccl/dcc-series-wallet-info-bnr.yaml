@@ -31,7 +31,7 @@
               de: auf Grundlage Ihrer gespeicherten Zertifikate
             longText:
               de: BNR-TX-0001 Langtext
-            faqAnchor: vac_cert_booster
+            faqAnchor: vac_booster_basics
     - time: astra3/3
       assertions:
         walletInfo:

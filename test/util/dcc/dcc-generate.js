@@ -93,7 +93,7 @@ const generate = async ({
     dccOverwrites.forEach(param => {
       const [partialPath, _newValue] = param.split('=')
       const pathExpression = `$..${partialPath}`
-      if (_newValue === undefined) {
+      if (_newValue === undefined || _newValue === 'undefined') {
         const pathComponents = jp.parse(pathExpression)
         const leafComponent = pathComponents.pop()
         const parentPathExpression = jp.stringify(pathComponents)
