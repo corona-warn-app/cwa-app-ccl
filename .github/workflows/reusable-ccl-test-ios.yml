@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: corona-warn-app/json-functions-swift
-          ref: chore/support-common-functions-in-test-cases
+          ref: main
       - name: Download artifacts from jobs
         uses: actions/download-artifact@v3
       - name: Copy test cases
