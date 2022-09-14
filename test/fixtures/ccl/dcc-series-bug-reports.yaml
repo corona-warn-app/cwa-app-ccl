@@ -15,7 +15,6 @@
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: astra2/2
-        hasBooster: true
         verificationCertificates:
           - certificate: astra2/2
     - time: pcr1

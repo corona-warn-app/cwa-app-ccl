@@ -15,7 +15,6 @@
       assertions:
         admissionState: OTHER
         mostRelevantCertificate: rat1
-        hasBooster: false
         verificationCertificates:
           - certificate: rat1
     - time: pcr1

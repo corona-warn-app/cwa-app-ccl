@@ -18,7 +18,6 @@
         mostRelevantCertificate: janssen1/1
         vaccinationValidFrom: 
         mostRecentVaccination: janssen1/1
-        hasBooster: false
         verificationCertificates:
           - certificate: janssen1/1
     # Complete vaccination is not yet valid
@@ -28,7 +27,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/1
     # Complete vaccination still not valid after 14 days
@@ -38,7 +36,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/1
     # Complete vaccination valid after 15 days counts as 2G+ for 90 days
@@ -48,8 +45,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
-        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/1
     # Admission state still 2G+ after 90 days
@@ -59,8 +54,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
-        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/1
     # Admission state changes after 91 days
@@ -70,8 +63,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
-        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech2/1
     # Additional valid PCR test changes admission state
@@ -81,7 +72,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
         verificationCertificates:
           - certificate: pcr
           - certificate: biontech2/1
@@ -92,7 +82,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/1
     # Additional valid RAT test changes admission state
@@ -102,7 +91,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
         verificationCertificates:
           - certificate: rat
           - certificate: biontech2/1
@@ -113,7 +101,6 @@
         mostRelevantCertificate: biontech2/1
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
-        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/1
 # Same testcases like above, but with second vaccination issued as 2/2 instead of 2/1. 
@@ -136,7 +123,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
     # Complete vaccination still not valid after 14 days
@@ -146,7 +132,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
     # Complete vaccination valid after 15 days counts as 2G+ for 90 days
@@ -156,8 +141,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
-        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
     # Admission state still 2G+ after 90 days
@@ -167,8 +150,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
-        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
     # Admission state changes after 91 days
@@ -178,8 +159,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
-        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech2/2
     # Additional valid PCR test changes admission state
@@ -189,7 +168,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
         verificationCertificates:
           - certificate: pcr
           - certificate: biontech2/2
@@ -200,7 +178,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
     # Additional valid RAT test changes admission state
@@ -210,7 +187,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
         verificationCertificates:
           - certificate: rat
           - certificate: biontech2/2
@@ -221,7 +197,6 @@
         mostRelevantCertificate: biontech2/2
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
-        hasBooster: false
         verificationCertificates:
           - certificate: biontech2/2
 
@@ -239,7 +214,6 @@
         mostRelevantCertificate: janssen2/1
         vaccinationValidFrom: janssen2/1
         mostRecentVaccination: janssen2/1
-        hasBooster: true # we assume the better result for 2/1 if in doubt
         verificationCertificates:
           - certificate: janssen2/1
     # Admission State still 2G+ after 91 days (because this could be a vacc. after recovery vacc. 
@@ -249,8 +223,6 @@
         mostRelevantCertificate: janssen2/1
         vaccinationValidFrom: janssen2/1
         mostRecentVaccination: janssen2/1
-        hasBooster: true # we assume the better result for 2/1 if in doubt
-        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: janssen2/1
 # 2Booster on J&J
@@ -266,7 +238,6 @@
         mostRelevantCertificate: biontech3/1
         vaccinationValidFrom: biontech3/1
         mostRecentVaccination: biontech3/1
-        hasBooster: true
         verificationCertificates:
           - certificate: biontech3/1
 # Reissuance of 2/2 as 2/1 with both DCCs in the wallet
@@ -288,6 +259,5 @@
         mostRelevantCertificate: janssen2/1
         vaccinationValidFrom: janssen2/1+P15D
         mostRecentVaccination: janssen2/1
-        hasBooster: false
         verificationCertificates:
           - certificate: janssen2/1

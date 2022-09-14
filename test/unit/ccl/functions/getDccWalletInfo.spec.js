@@ -180,12 +180,6 @@ End of debugging: ${chalk.magenta(testCaseDescription)}`
               )
             })
 
-            has('hasBooster') &&
-            it('check hasBooster', () => {
-              expect(output)
-                .to.have.property('hasBooster', assertions.hasBooster)
-            })
-
             has('verificationCertificates') &&
             it('check verificationCertificates', () => {
               expect(output.verification)
