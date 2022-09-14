@@ -45,21 +45,3 @@ export const hashJson = obj => {
   const digest = data.digest().toString('hex')
   return digest
 }
-
-export const chunkifyTestCases = (targetData, numberOfChunks) => {
-  // chunkify reduces the size of a test case file that is passed
-  // to gradle at once and thus reduces the risk of causing an out
-  // of memory error in gradle
-  // const iterations = Math.ceil(targetData.testCases.length / chunkSize)
-  const chunkSize = Math.ceil(targetData.testCases.length / numberOfChunks)
-  const chunks = Array.from(new Array(numberOfChunks)).map((undef, idx) => {
-    return {
-      $comment: targetData.$comment,
-      sourceHash: targetData.sourceHash,
-      sourceTreeish: targetData.sourceTreeish,
-      chunkIndex: idx,
-      testCases: targetData.testCases.slice(idx * chunkSize, (idx + 1) * chunkSize)
-    }
-  })
-  return chunks
-}

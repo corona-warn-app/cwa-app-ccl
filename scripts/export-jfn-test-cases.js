@@ -8,8 +8,7 @@ import dynamicTests from './../test/fixtures/jfn/jfn-tests/time.moment.spec.js'
 
 import {
   fileWriterFactory,
-  hashJson,
-  chunkifyTestCases
+  hashJson
 } from './util/dist.js'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -160,7 +159,7 @@ const main = async () => {
   })
 
   if (argv.jsonFilename) {
-    await fileWriter.fanOutToOS(async (ctx, { prefix: os }) => {
+    await fileWriter.fanOutToOS((ctx, { prefix: os }) => {
       const targetData = {
         ...data,
         testCases: data.testCases.filter(it => {
@@ -169,13 +168,7 @@ const main = async () => {
           return true
         })
       }
-      const chunks = chunkifyTestCases(targetData, 3)
-      return Promise.all([
-        ctx.writeJSON(argv.jsonFilename, targetData),
-        ...(chunks.map(chunk => {
-          return ctx.writeJSON(`${argv.jsonFilename}.chunk${chunks.indexOf(chunk)}`, chunk)
-        }))
-      ])
+      return ctx.writeJSON(argv.jsonFilename, targetData)
     })
   }
 }

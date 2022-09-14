@@ -7,8 +7,7 @@ import { hideBin } from 'yargs/helpers'
 import ccl from './../lib/ccl/index.js'
 import {
   fileWriterFactory,
-  hashJson,
-  chunkifyTestCases
+  hashJson
 } from './util/dist.js'
 import { readJson } from './../lib/util/local-file.js'
 
@@ -124,13 +123,7 @@ const main = async () => {
     }
 
     await fileWriter.fanOutToOS(ctx => {
-      const chunks = chunkifyTestCases(data, 3)
-      return Promise.all([
-        ctx.writeJSON(argv.testCaseFilename, data),
-        ...(chunks.map(chunk => {
-          return ctx.writeJSON(`${argv.testCaseFilename}.chunk${chunks.indexOf(chunk)}`, chunk)
-        }))
-      ])
+      return ctx.writeJSON(argv.testCaseFilename, data)
     })
   }
 }
