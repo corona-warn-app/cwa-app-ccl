@@ -49,7 +49,6 @@
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
         hasBooster: false
-        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/1
     # Admission state still 2G+ after 90 days
@@ -60,7 +59,6 @@
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
         hasBooster: false
-        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/1
     # Admission state changes after 91 days
@@ -71,7 +69,6 @@
         vaccinationValidFrom: biontech2/1+P15D
         mostRecentVaccination: biontech2/1
         hasBooster: false
-        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech2/1
     # Additional valid PCR test changes admission state
@@ -157,7 +154,6 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
-        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
     # Admission state still 2G+ after 90 days
@@ -168,7 +164,6 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
-        hasBoosterEquivalent: true
         verificationCertificates:
           - certificate: biontech2/2
     # Admission state changes after 91 days
@@ -179,7 +174,6 @@
         vaccinationValidFrom: biontech2/2+P15D
         mostRecentVaccination: biontech2/2
         hasBooster: false
-        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: biontech2/2
     # Additional valid PCR test changes admission state
@@ -250,7 +244,6 @@
         vaccinationValidFrom: janssen2/1
         mostRecentVaccination: janssen2/1
         hasBooster: true # we assume the better result for 2/1 if in doubt
-        hasBoosterEquivalent: false
         verificationCertificates:
           - certificate: janssen2/1
 # 2Booster on J&J
