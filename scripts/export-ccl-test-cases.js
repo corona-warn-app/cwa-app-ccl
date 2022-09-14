@@ -1,4 +1,5 @@
 import async from 'async'
+import moment from 'moment'
 import path from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
@@ -25,11 +26,36 @@ const argv = yargs(hideBin(process.argv))
   })
   .argv
 
+const getTestCasesForGetDccAdmissionCheckScenarios = async () => {
+  const allAdmissionCheckScenarios = fixtures.readAllAdmissionCheckScenariosSync()
+  const allTestCases = []
+
+  await async.forEach(allAdmissionCheckScenarios, async descriptor => {
+    const input = {
+      os: 'android',
+      language: 'en',
+      now: ccl.util.mapMomentToNow(moment.now())
+    }
+
+    const output = ccl.evaluateFunction('getDccAdmissionCheckScenarios', input)
+
+    const testCaseDescriptor = {
+      title: descriptor.description,
+      useDefaultCCLConfiguration: true,
+      evaluateFunction: {
+        name: 'getDccAdmissionCheckScenarios',
+        parameters: input
+      },
+      exp: output
+    }
+    allTestCases.push(testCaseDescriptor)
+  })
+
+  return allTestCases
+}
+
 const getTestCasesForGetDccWalletInfo = async () => {
   const allDccSeries = fixtures.readAllDccSeriesSync()
-  const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
-  const allFunctions = cclDe0001.Logic.JfnDescriptors
-
   const allTestCases = []
 
   await async.forEach(allDccSeries, async seriesDescriptor => {
@@ -61,7 +87,6 @@ const getTestCasesForGetDccWalletInfo = async () => {
 
       const testCaseDescriptor = {
         title: `${seriesDescription} - ${testCaseDescription}`,
-        functions: allFunctions,
         useDefaultCCLConfiguration: true,
         evaluateFunction: {
           name: 'getDccWalletInfo',
@@ -78,6 +103,7 @@ const getTestCasesForGetDccWalletInfo = async () => {
 
 const main = async () => {
   const allTestCases = [
+    ...(await getTestCasesForGetDccAdmissionCheckScenarios()),
     ...(await getTestCasesForGetDccWalletInfo())
   ]
 
@@ -86,10 +112,13 @@ const main = async () => {
   })
 
   if (argv.testCaseFilename) {
+    const cclDe0001 = await readJson('./dist/rule-distribution-ccl-de-0001.json')
+    const commonFunctions = cclDe0001.Logic.JfnDescriptors
     const data = {
       $comment: `Generated at ${new Date().toString()}`,
       sourceHash: hashJson(allTestCases),
       sourceTreeish: process.env.CCL_TREEISH || 'unknown',
+      commonFunctions: commonFunctions,
       testCases: allTestCases
     }
 

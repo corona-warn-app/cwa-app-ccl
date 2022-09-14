@@ -16,12 +16,12 @@
       description: still midnight local time if calculation was triggered during the day
       assertions:
         validUntil: '2022-01-02T00:00:00Z'
-    - time: rat1+PT44H
-      description: is restricted by the end of the validity of the RAT test (48h)
+    - time: rat1+PT20H # some time before the expected validUntil
+      description: is restricted by the end of the validity of the RAT test (24h)
       assertions:
-        validUntil: rat1+PT48H
-    - time: pcr1+PT68H
-      description: is restricted by the end of the validity of the PCR test (72h)
+        validUntil: rat1+PT24H
+    - time: pcr1+PT20H # some time before the expected validUntil
+      description: is restricted by the end of the validity of the PCR test (24h)
       assertions:
-        validUntil: pcr1+PT72H
+        validUntil: pcr1+PT24H
       

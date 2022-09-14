@@ -1,43 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
+  <!-- XHED: Admission Scenario - Card Title -->
+  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Maskenpflichtregelung für:"</string>
+  <!-- XTXT: Admission Scenario - Card Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Ihr Bundesland"</string>
+
+  <!-- XTXT: Admission Scenario - DE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Regeln des Bundes"</string>
+  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Regeln in Ihrem Bundesland können davon abweichen"</string>
+
+  <!-- XTXT: Admission Scenario - BW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Württemberg"</string>
+  <!-- XTXT: Admission Scenario - BY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BY_TITLE_TEXT">"Bayern"</string>
+  <!-- XTXT: Admission Scenario - BE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_TITLE_TEXT">"Berlin"</string>
+  <!-- XTXT: Admission Scenario - BB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BB_TITLE_TEXT">"Brandenburg"</string>
+  <!-- XTXT: Admission Scenario - HB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HB_TITLE_TEXT">"Bremen"</string>
+  <!-- XTXT: Admission Scenario - HH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Hamburg"</string>
+  <!-- XTXT: Admission Scenario - HE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HE_TITLE_TEXT">"Hessen"</string>
+  <!-- XTXT: Admission Scenario - MV Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_MV_TITLE_TEXT">"Mecklenburg-Vorpommern"</string>
+  <!-- XTXT: Admission Scenario - NI Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NI_TITLE_TEXT">"Niedersachsen"</string>
+  <!-- XTXT: Admission Scenario - NW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NW_TITLE_TEXT">"Nordrhein-Westfalen"</string>
+  <!-- XTXT: Admission Scenario - RP Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_RP_TITLE_TEXT">"Rheinland-Pfalz"</string>
+  <!-- XTXT: Admission Scenario - SL Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SL_TITLE_TEXT">"Saarland"</string>
+  <!-- XTXT: Admission Scenario - SN Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SN_TITLE_TEXT">"Sachsen"</string>
+  <!-- XTXT: Admission Scenario - ST Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_ST_TITLE_TEXT">"Sachsen-Anhalt"</string>
+  <!-- XTXT: Admission Scenario - SH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SH_TITLE_TEXT">"Schleswig-Holstein"</string>
+  <!-- XTXT: Admission Scenario - TH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TH_TITLE_TEXT">"Thüringen"</string>
+
+  <!-- XTXT: Admission Scenario - Subtitle Text - Disabled -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SUBTITLE_TEXT_DISABLED">"Für dieses Bundesland liegen momentan keine abweichenden Regeln vor. Es gelten die Regeln des Bundes."</string>
+
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Status-Nachweis"</string>
-
-  <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-  <!-- XTXT: Admission State - 2G_PLUS State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_SCN_TEXT">"Ihr Status hat sich geändert. Ihre Zertifikate erfüllen jetzt die 2G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
-  <!-- XTXT: Admission State - 2G Badge Text -->
-  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
-  <!-- XTXT: Admission State - 2G Card Body -->
-  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Ihre Zertifikate erfüllen die 2G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-  <!-- XTXT: Admission State - 2G State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_SCN_TEXT">"Ihr Status hat sich geändert. Ihre Zertifikate erfüllen jetzt die 2G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_SCN_TEXT">"Ihr Status hat sich geändert. Ihre Zertifikate erfüllen jetzt die 3G-Plus-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Ihre Zertifikate erfüllen die 3G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_SCN_TEXT">"Ihr Status hat sich geändert. Ihre Zertifikate erfüllen jetzt die 3G-Regel. Wenn Sie Ihren aktuellen Status vorweisen müssen, schließen Sie diese Ansicht und zeigen Sie den QR-Code auf der Zertifikatsübersicht."</string>
-
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT">""</string>
   <!-- XTXT: Admission State - OTHER Card Body -->
-  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Ihre Zertifikate erfüllen derzeit keine Regel."</string>
-  <!-- XTXT: Admission State - OTHER State Change Notification Text -->
-  <string name="ADMISSION_STATE_OTHER_SCN_TEXT">"Ihre Zertifikate erfüllen derzeit keine Regel."</string>
+  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Der Status-Nachweis (3G, 3G+, 2G, 2G+) ist zur Zeit nicht relevant und wird daher nicht von der App ausgewiesen."</string>
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Impfstatus"</string>
@@ -54,41 +69,21 @@
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Sie haben nun alle derzeit empfohlenen Impfungen erhalten. Ihr Impfschutz ist vollständig."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Derzeit wird keine weitere Impfung empfohlen."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="one">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tag vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="two">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="few">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="many">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="other">Sie gelten aufgrund Ihrer Impfungen und durchgemachten Infektion als ausreichend geschützt. Allerdings ist Ihr Immunschutz erst in %1$d Tagen vollständig. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-  </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="one">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tag wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="two">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="few">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="many">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-    <item quantity="other">Sie haben alle Impfungen der Grundimmunisierung erhalten. Allerdings ist Ihr Impfschutz erst in %1$d Tagen wirksam. Bitte informieren Sie sich auch über empfohlene Auffrischimpfungen.</item>
-  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="one">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tag wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="two">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="few">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="many">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
-    <item quantity="other">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können.</item>
+    <item quantity="zero">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als vollständig geimpft. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können und informieren Sie sich aber auch über empfohlene Auffrischimpfungen.</item>
+    <item quantity="one">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als vollständig geimpft. Allerdings ist Ihr Immunschutz erst in %1$d Tag wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können und informieren Sie sich aber auch über empfohlene Auffrischimpfungen.</item>
+    <item quantity="two">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als vollständig geimpft. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können und informieren Sie sich aber auch über empfohlene Auffrischimpfungen.</item>
+    <item quantity="few">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als vollständig geimpft. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können und informieren Sie sich aber auch über empfohlene Auffrischimpfungen.</item>
+    <item quantity="many">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als vollständig geimpft. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können und informieren Sie sich aber auch über empfohlene Auffrischimpfungen.</item>
+    <item quantity="other">Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als vollständig geimpft. Allerdings ist Ihr Immunschutz erst in %1$d Tagen wirksam. Bitte bedenken Sie, dass Sie noch ansteckend sein können und informieren Sie sich aber auch über empfohlene Auffrischimpfungen.</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Sie haben alle Impfungen der Grundimmunisierung erhalten. Ihr Impfschutz ist wirksam. Bitte informieren Sie sich aber auch über empfohlene Auffrischimpfungen."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Sie haben alle Impfungen für einen vollständigen Impfschutz erhalten. Ihr Impfschutz ist wirksam. Bitte informieren Sie sich aber auch über empfohlene Auffrischimpfungen."</string>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als grundimmunisiert. Bitte informieren Sie sich aber auch über empfohlene Auffrischimpfungen."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Sie gelten aufgrund Ihrer Impfung und durchgemachten Infektion als vollständig geimpft. Bitte informieren Sie sich aber auch über empfohlene Auffrischimpfungen."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Sie haben noch nicht alle derzeit geplanten Impfungen erhalten. Daher ist Ihr Impfschutz noch nicht vollständig."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Sie haben noch nicht alle derzeit empfohlenen Impfungen erhalten. Ihr Impfschutz ist noch nicht vollständig."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"2G-Zertifikat"</string>
@@ -121,5 +116,19 @@
   <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Zu erneuernde Zertifikate:"</string>
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Erneuerung direkt über die App vornehmen"</string>
+
+  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
+  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Maskenpflicht"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
+
+  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Keine Maskenpflicht"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
 
 </resources>

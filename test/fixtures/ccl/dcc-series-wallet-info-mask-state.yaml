@@ -1,0 +1,1003 @@
+- description: 0.1 - VC 1/2
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech1/2
+  testCases:
+    # federal default rules
+    - time: biontech1/2
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/2+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/2+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech1/2
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/2+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/2+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 0.1 - VC 2/2
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+  testCases:
+    # federal default rules
+    - time: biontech2/2
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech2/2
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 0.1 - VC 2/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/1
+  testCases:
+    # federal default rules
+    - time: biontech2/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech2/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 0.1 - VC 1/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+  testCases:
+    # federal default rules
+    - time: biontech1/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech1/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech1/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 0.2 - RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+  testCases:
+    # federal default rules
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 1.1 - RAT test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      tc: rat1
+  testCases:
+    # federal default rules
+    - time: rat1
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rat1+PT24H
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rat1+PT24H1S
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: rat1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rat1+PT24H
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rat1+PT24H1S
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 1.2 - PCR test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      tc: pcr1
+  testCases:
+    # federal default rules
+    - time: pcr1
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: pcr1+PT24H
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: pcr1+PT24H1S
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: pcr1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: pcr1+PT24H
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: pcr1+PT24H1S
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.1 - RC + VC 2/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: biontech2/1
+  testCases:
+    # federal default rules
+    - time: biontech2/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech2/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.1 - RC + VC 2/2 (old notation)
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: biontech2/2
+  testCases:
+    # federal default rules
+    - time: biontech2/2
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech2/2+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech2/2
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/2+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech2/2+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.2 - VC 2/1 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # federal default rules
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.2 - VC 2/2 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # federal default rules
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.3 - VC 3/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+  testCases:
+    # federal default rules
+    - time: biontech3/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech3/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech3/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech3/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech3/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech3/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.3 - VC 3/3
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/3
+  testCases:
+    # federal default rules
+    - time: biontech3/3
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech3/3+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech3/3+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech3/3
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech3/3+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech3/3+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.4 - VC 3/1 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # federal default rules
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.4 - VC 3/3 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/3
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # federal default rules
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.5 - VC 4/1
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech4/1
+  testCases:
+    # federal default rules
+    - time: biontech4/1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech4/1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech4/1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech4/1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech4/1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech4/1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.5 - VC 4/4
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech4/4
+  testCases:
+    # federal default rules
+    - time: biontech4/4
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech4/4+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: biontech4/4+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: biontech4/4
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech4/4+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: biontech4/4+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.6 - VC 4/1 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech4/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # federal default rules
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: 2.6 - VC 4/4 + RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech4/4
+    - time: +P1M
+      rc: rc1
+  testCases:
+    # federal default rules
+    - time: rc1
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P90D
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P91D
+      assertions:
+        maskState: MASK_REQUIRED
+    # extended federal state-specific rules
+    - time: rc1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P28D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+    - time: rc1+P29D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P90D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_OPTIONAL
+    - time: rc1+P91D
+      scenarioIdentifier: EXTENDED
+      assertions:
+        maskState: MASK_REQUIRED
+
+- description: texts
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      tc: rat1
+  testCases:
+    - time: rat1
+      assertions:
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Keine Maskenpflicht
+            badgeText: Keine Maskenpflicht
+    # federal default rules
+    - time: rat1
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            longText:
+              de: 'Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden.'
+    # extended federal state-specific rules
+    - time: rat1
+      scenarioIdentifier: EXTENDED
+      assertions:
+        walletInfo:
+          maskState:
+            longText:
+              de: 'Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.'
+    # scenario-dependent subtitle
+    - time: rat1
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Regeln des Bundes$
+    - time: rat1
+      scenarioIdentifier: DE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Regeln des Bundes$
+    - time: rat1
+      scenarioIdentifier: BW
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Baden-Württemberg$
+    - time: rat1
+      scenarioIdentifier: BY
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Bayern$
+    - time: rat1
+      scenarioIdentifier: BE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Berlin$
+    - time: rat1
+      scenarioIdentifier: BB
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Brandenburg$
+    - time: rat1
+      scenarioIdentifier: HB
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Bremen$
+    - time: rat1
+      scenarioIdentifier: HH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Hamburg$
+    - time: rat1
+      scenarioIdentifier: HE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Hessen$
+    - time: rat1
+      scenarioIdentifier: MV
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Mecklenburg-Vorpommern$
+    - time: rat1
+      scenarioIdentifier: NI
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Niedersachsen$
+    - time: rat1
+      scenarioIdentifier: NW
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Nordrhein-Westfalen$
+    - time: rat1
+      scenarioIdentifier: RP
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Rheinland-Pfalz$
+    - time: rat1
+      scenarioIdentifier: SL
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Saarland$
+    - time: rat1
+      scenarioIdentifier: SN
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Sachsen$
+    - time: rat1
+      scenarioIdentifier: ST
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Sachsen-Anhalt$
+    - time: rat1
+      scenarioIdentifier: SH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Schleswig-Holstein$
+    - time: rat1
+      scenarioIdentifier: TH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Thüringen$
+    - time: rat1+P5D # some long duration
+      assertions:
+        maskState: MASK_REQUIRED
+        walletInfo:
+          maskState:
+            identifier: MASK_REQUIRED
+            visible: true
+            faqAnchor: mask_rules
+            titleText: Maskenpflicht
+            badgeText: Maskenpflicht
+    # federal default rules
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            longText:
+              de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden.'
+    # extended federal state-specific rules
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: EXTENDED
+      assertions:
+        walletInfo:
+          maskState:
+            longText:
+              de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.'
+    # scenario-dependent subtitle
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Regeln des Bundes$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: ''
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Regeln des Bundes$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: DE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Regeln des Bundes$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: BW
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Baden-Württemberg$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: BY
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Bayern$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: BE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Berlin$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: BB
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Brandenburg$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: HB
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Bremen$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: HH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Hamburg$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: HE
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Hessen$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: MV
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Mecklenburg-Vorpommern$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: NI
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Niedersachsen$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: NW
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Nordrhein-Westfalen$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: RP
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Rheinland-Pfalz$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: SL
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Saarland$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: SN
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Sachsen$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: ST
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Sachsen-Anhalt$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: SH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Schleswig-Holstein$
+    - time: rat1+P5D # some long duration
+      scenarioIdentifier: TH
+      assertions:
+        walletInfo:
+          maskState:
+            subtitleText:
+              de: ^Thüringen$
