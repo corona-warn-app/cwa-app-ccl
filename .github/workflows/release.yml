@@ -47,7 +47,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          prerelease: ${{ contains(env.GITHUB_REF_NAME, '-rc.') }}
+          prerelease: true
           name: ${{ env.GITHUB_REF_NAME }}
           tag_name: ${{ env.GITHUB_REF_NAME }}
           files: dist/*
