@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
+  <!-- XHED: Admission Scenario - Card Title -->
+  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Обов’язкове носіння маски для:"</string>
+  <!-- XTXT: Admission Scenario - Card Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"вашої федеральної землі"</string>
+
+  <!-- XTXT: Admission Scenario - DE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Постанови федерального уряду"</string>
+  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Правила у вашій федеральній землі можуть відрізнятися"</string>
+
+  <!-- XTXT: Admission Scenario - BW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Баден-Вюртемберг"</string>
+  <!-- XTXT: Admission Scenario - BY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BY_TITLE_TEXT">"Баварія"</string>
+  <!-- XTXT: Admission Scenario - BE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_TITLE_TEXT">"Берлін"</string>
+  <!-- XTXT: Admission Scenario - BB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BB_TITLE_TEXT">"Бранденбург"</string>
+  <!-- XTXT: Admission Scenario - HB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HB_TITLE_TEXT">"Бремен"</string>
+  <!-- XTXT: Admission Scenario - HH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Гамбург"</string>
+  <!-- XTXT: Admission Scenario - HE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HE_TITLE_TEXT">"Гессен"</string>
+  <!-- XTXT: Admission Scenario - MV Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_MV_TITLE_TEXT">"Мекленбург - Західна Померанія"</string>
+  <!-- XTXT: Admission Scenario - NI Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NI_TITLE_TEXT">"Нижня Саксонія"</string>
+  <!-- XTXT: Admission Scenario - NW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NW_TITLE_TEXT">"Північний Рейн-Вестфалія"</string>
+  <!-- XTXT: Admission Scenario - RP Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_RP_TITLE_TEXT">"Рейнланд-Пфальц"</string>
+  <!-- XTXT: Admission Scenario - SL Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SL_TITLE_TEXT">"Саарланд"</string>
+  <!-- XTXT: Admission Scenario - SN Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SN_TITLE_TEXT">"Вільна держава Саксонія"</string>
+  <!-- XTXT: Admission Scenario - ST Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_ST_TITLE_TEXT">"Саксонія-Ангальт"</string>
+  <!-- XTXT: Admission Scenario - SH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SH_TITLE_TEXT">"Шлезвіг-Гольштейн"</string>
+  <!-- XTXT: Admission Scenario - TH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TH_TITLE_TEXT">"Тюрингія"</string>
+
+  <!-- XTXT: Admission Scenario - Subtitle Text - Disabled -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SUBTITLE_TEXT_DISABLED">"Зараз для цієї федеральної землі немає інших правил. Застосовуються федеральні правила."</string>
+
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Підтвердження статусу"</string>
-
-  <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Ваші сертифікати відповідають правилу 2G+. Якщо вам потрібно підтвердити свій поточний статус, закрийте це вікно та відобразіть QR-код в огляді сертифіката."</string>
-  <!-- XTXT: Admission State - 2G_PLUS State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_SCN_TEXT">"Ваш статус змінився. Тепер ваші сертифікати відповідають правилу 2G+. Якщо вам потрібно підтвердити свій поточний статус, закрийте це вікно та відобразіть QR-код в огляді сертифіката."</string>
-
-  <!-- XTXT: Admission State - 2G Badge Text -->
-  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
-  <!-- XTXT: Admission State - 2G Card Body -->
-  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Ваші сертифікати відповідають правилу 2G. Якщо вам потрібно підтвердити свій поточний статус, закрийте це вікно та відобразіть QR-код в огляді сертифіката."</string>
-  <!-- XTXT: Admission State - 2G State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_SCN_TEXT">"Ваш статус змінився. Тепер ваші сертифікати відповідають правилу 2G. Якщо вам потрібно підтвердити свій поточний статус, закрийте це вікно та відобразіть QR-код в огляді сертифіката."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Ваші сертифікати відповідають правилу 3G+. Якщо вам потрібно підтвердити свій поточний статус, закрийте це вікно та відобразіть QR-код в огляді сертифіката."</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_SCN_TEXT">"Ваш статус змінився. Тепер ваші сертифікати відповідають правилу 3G+. Якщо вам потрібно підтвердити свій поточний статус, закрийте це вікно та відобразіть QR-код в огляді сертифіката."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Ваші сертифікати відповідають правилу 3G. Якщо вам потрібно підтвердити свій поточний статус, закрийте це вікно та відобразіть QR-код в огляді сертифіката."</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_SCN_TEXT">"Ваш статус змінився. Тепер ваші сертифікати відповідають правилу 3G. Якщо вам потрібно підтвердити свій поточний статус, закрийте це вікно та відобразіть QR-код в огляді сертифіката."</string>
-
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT"/>
   <!-- XTXT: Admission State - OTHER Card Body -->
-  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Ваші сертифікати наразі не відповідають жодним правилам."</string>
-  <!-- XTXT: Admission State - OTHER State Change Notification Text -->
-  <string name="ADMISSION_STATE_OTHER_SCN_TEXT">"Ваші сертифікати наразі не відповідають жодним правилам."</string>
+  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Підтвердження статусу (3G, 3G+, 2G, 2G+) зараз не відповідає жодним правилам, тому не відображається в застосунку."</string>
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Статус вакцинації"</string>
@@ -53,41 +68,21 @@
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Ви отримали всі наразі рекомендовані вакцинації. Ваш захист від вакцинації повний."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"На основі ваших вакцинацій та минулої інфекції, ви маєте достатній захист. Подальша вакцинація наразі не рекомендована."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"На основі ваших вакцинацій та минулої інфекції, ви маєте достатній захист. Однак ваш імунний захист не буде повним ще %1$d днів. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="one">"На основі ваших вакцинацій та минулої інфекції, ви маєте достатній захист. Однак ваш імунний захист не буде повним ще %1$d день. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="two">"На основі ваших вакцинацій та минулої інфекції, ви маєте достатній захист. Однак ваш імунний захист не буде повним ще %1$d дні. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="few">"На основі ваших вакцинацій та минулої інфекції, ви маєте достатній захист. Однак ваш імунний захист не буде повним ще %1$d дні. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="many">"На основі ваших вакцинацій та минулої інфекції, ви маєте достатній захист. Однак ваш імунний захист не буде повним ще %1$d днів. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="other">"На основі ваших вакцинацій та минулої інфекції, ви маєте достатній захист. Однак ваш імунний захист не буде повним ще %1$d дня. Враховуйте, що ви все ще можете бути заразними."</item>
-  </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"Тепер ви отримали всі вакцинації для стандартної імунізації. Проте ваш захист від вакцинації не стане ефективним ще %1$d днів. Також дізнайтеся про рекомендовані ревакцинації."</item>
-    <item quantity="one">"Тепер ви отримали всі вакцинації для стандартної імунізації. Проте ваш захист від вакцинації не стане ефективним ще %1$d день. Також дізнайтеся про рекомендовані ревакцинації."</item>
-    <item quantity="two">"Тепер ви отримали всі вакцинації для стандартної імунізації. Проте ваш захист від вакцинації не стане ефективним ще %1$d дні. Також дізнайтеся про рекомендовані ревакцинації."</item>
-    <item quantity="few">"Тепер ви отримали всі вакцинації для стандартної імунізації. Проте ваш захист від вакцинації не стане ефективним ще %1$d дні. Також дізнайтеся про рекомендовані ревакцинації."</item>
-    <item quantity="many">"Тепер ви отримали всі вакцинації для стандартної імунізації. Проте ваш захист від вакцинації не стане ефективним ще %1$d днів. Також дізнайтеся про рекомендовані ревакцинації."</item>
-    <item quantity="other">"Тепер ви отримали всі вакцинації для стандартної імунізації. Проте ваш захист від вакцинації не стане ефективним ще %1$d дня. Також дізнайтеся про рекомендовані ревакцинації."</item>
-  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли стандартну процедуру імунізації. Проте ваш імунний захист не буде повним ще %1$d днів. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="one">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли стандартну процедуру імунізації. Проте ваш імунний захист не буде ефективним ще %1$d день. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="two">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли стандартну процедуру імунізації. Проте ваш імунний захист не буде ефективним ще %1$d дні. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="few">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли стандартну процедуру імунізації. Проте ваш імунний захист не буде повним ще %1$d дні. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="many">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли стандартну процедуру імунізації. Проте ваш імунний захист не буде повним ще %1$d днів. Враховуйте, що ви все ще можете бути заразними."</item>
-    <item quantity="other">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли стандартну процедуру імунізації. Проте ваш імунний захист не буде повним ще %1$d дня. Враховуйте, що ви все ще можете бути заразними."</item>
+    <item quantity="zero">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли повну процедуру вакцинації. Проте ваш імунний захист не буде ефективним ще %1$d дн. Враховуйте, що ви все ще можете бути заразними, а також дізнайтеся про рекомендовані ревакцинації."</item>
+    <item quantity="one">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли повну процедуру вакцинації. Проте ваш імунний захист не буде ефективним ще %1$d дн. Враховуйте, що ви все ще можете бути заразними, а також дізнайтеся про рекомендовані ревакцинації."</item>
+    <item quantity="two">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли повну процедуру вакцинації. Проте ваш імунний захист не буде ефективним ще %1$d дн. Враховуйте, що ви все ще можете бути заразними, а також дізнайтеся про рекомендовані ревакцинації."</item>
+    <item quantity="few">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли повну процедуру вакцинації. Проте ваш імунний захист не буде ефективним ще %1$d дн. Враховуйте, що ви все ще можете бути заразними, а також дізнайтеся про рекомендовані ревакцинації."</item>
+    <item quantity="many">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли повну процедуру вакцинації. Проте ваш імунний захист не буде ефективним ще %1$d дн. Враховуйте, що ви все ще можете бути заразними, а також дізнайтеся про рекомендовані ревакцинації."</item>
+    <item quantity="other">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли повну процедуру вакцинації. Проте ваш імунний захист не буде ефективним ще %1$d дн. Враховуйте, що ви все ще можете бути заразними, а також дізнайтеся про рекомендовані ревакцинації."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Тепер ви отримали всі вакцинації для стандартної імунізації. Ваш захист від вакцинації ефективний. Також дізнайтеся про рекомендовані ревакцинації."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Тепер ви отримали всі вакцинації для повного захисту. Ваш захист завдяки вакцинації ефективний. Також дізнайтеся про рекомендовані ревакцинації."</string>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли стандартну процедуру імунізації. Проте, дізнайтеся також про рекомендовані ревакцинації."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"На основі вашої вакцинації та минулої інфекції, вважається, що ви пройшли повну процедуру вакцинації. Проте, дізнайтеся також про рекомендовані ревакцинації."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Ви ще не отримали всі заплановані на даний момент вакцинації. Таким чином, ваш захист від вакцинації ще не завершений."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Ви ще не отримали всі заплановані на даний момент вакцинації. Таким чином, ваш захист за допомогою вакцинації ще не завершено."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"Сертифікат 2G"</string>
@@ -120,5 +115,19 @@
   <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Сертифікати для поновлення:"</string>
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Запит на поновлення безпосередньо в застосунку"</string>
+
+  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
+  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Обов’язкове носіння миски"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Вас не звільнено від вимоги носити маску.\n\nЩоб не мати зобов’язання щодо носіння маски, у вас має бути негативний діагноз протягом останніх 24 годин."</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Вас не звільнено від вимоги носити маску.\n\nЩоб не мати зобов’язання щодо носіння маски, ви маєте зробити щеплення або одужати від хвороби, пов’язаної з інфекцією COVID 19 протягом останніх 90 днів або у вас має бути негативний діагноз протягом останніх 24 годин."</string>
+
+  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Немає необхідності щодо обов’язкового носіння маски"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Для вас немає вимог щодо обов’язкового носіння маски, але носити маску все одно рекомендується.\n\nДля кожного, хто мав негативний діагноз за останні 24 години, немає вимог щодо обов’язкового носіння маски."</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Вас звільнено від вимоги носити маску.\n\nДля кожного, хто зробив щеплення або одужав від хвороби, пов’язаної з інфекцією COVID 19, протягом останніх 90 днів або мав негативний діагноз протягом останніх 24 годин, немає вимог щодо обов’язкового носіння маски.."</string>
 
 </resources>

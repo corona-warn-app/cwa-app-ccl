@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
+  <!-- XHED: Admission Scenario - Card Title -->
+  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Obligativitatea purtării măștii pentru:"</string>
+  <!-- XTXT: Admission Scenario - Card Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Statul dvs. federal"</string>
+
+  <!-- XTXT: Admission Scenario - DE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Reglementările guvernului federal"</string>
+  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Regulile din statul dvs. federal pot varia"</string>
+
+  <!-- XTXT: Admission Scenario - BW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Württemberg"</string>
+  <!-- XTXT: Admission Scenario - BY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BY_TITLE_TEXT">"Bavaria"</string>
+  <!-- XTXT: Admission Scenario - BE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_TITLE_TEXT">"Berlin"</string>
+  <!-- XTXT: Admission Scenario - BB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BB_TITLE_TEXT">"Brandenburg"</string>
+  <!-- XTXT: Admission Scenario - HB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HB_TITLE_TEXT">"Bremen"</string>
+  <!-- XTXT: Admission Scenario - HH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Hamburg"</string>
+  <!-- XTXT: Admission Scenario - HE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HE_TITLE_TEXT">"Hessa"</string>
+  <!-- XTXT: Admission Scenario - MV Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_MV_TITLE_TEXT">"Mecklenburg-Pomerania de Vest"</string>
+  <!-- XTXT: Admission Scenario - NI Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NI_TITLE_TEXT">"Saxonia Inferioară"</string>
+  <!-- XTXT: Admission Scenario - NW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NW_TITLE_TEXT">"Renania de Nord-Westfalia"</string>
+  <!-- XTXT: Admission Scenario - RP Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_RP_TITLE_TEXT">"Renania-Palatinat"</string>
+  <!-- XTXT: Admission Scenario - SL Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SL_TITLE_TEXT">"Saarland"</string>
+  <!-- XTXT: Admission Scenario - SN Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SN_TITLE_TEXT">"Saxonia"</string>
+  <!-- XTXT: Admission Scenario - ST Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_ST_TITLE_TEXT">"Saxonia-Anhalt"</string>
+  <!-- XTXT: Admission Scenario - SH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SH_TITLE_TEXT">"Schleswig-Holstein"</string>
+  <!-- XTXT: Admission Scenario - TH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TH_TITLE_TEXT">"Turingia"</string>
+
+  <!-- XTXT: Admission Scenario - Subtitle Text - Disabled -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SUBTITLE_TEXT_DISABLED">"În prezent, nu există reguli diferite pentru acest stat federal. Se aplică regulile federale."</string>
+
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Dovada stării"</string>
-
-  <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Certificatele dvs. respectă regula 2G plus. Dacă trebuie să dovediți starea dvs. curentă, închideți această vizualizare și afișați codul QR în sumarul certificatului."</string>
-  <!-- XTXT: Admission State - 2G_PLUS State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_SCN_TEXT">"Starea dvs. s-a modificat. Certificatele dvs. respectă acum regula 2G plus. Dacă trebuie să dovediți starea dvs. curentă, închideți această vizualizare și afișați codul QR în sumarul certificatului."</string>
-
-  <!-- XTXT: Admission State - 2G Badge Text -->
-  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
-  <!-- XTXT: Admission State - 2G Card Body -->
-  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Certificatele dvs. respectă regula 2G. Dacă trebuie să dovediți starea dvs. curentă, închideți această vizualizare și afișați codul QR în sumarul certificatului."</string>
-  <!-- XTXT: Admission State - 2G State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_SCN_TEXT">"Starea dvs. s-a modificat. Certificatele dvs. respectă acum regula 2G. Dacă trebuie să dovediți starea dvs. curentă, închideți această vizualizare și afișați codul QR în sumarul certificatului."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Certificatele dvs. respectă regula 3G plus. Dacă trebuie să dovediți starea dvs. curentă, închideți această vizualizare și afișați codul QR în sumarul certificatului."</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_SCN_TEXT">"Starea dvs. s-a modificat. Certificatele dvs. respectă acum regula 3G plus. Dacă trebuie să dovediți starea dvs. curentă, închideți această vizualizare și afișați codul QR în sumarul certificatului."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Certificatele dvs. respectă regula 3G. Dacă trebuie să dovediți starea dvs. curentă, închideți această vizualizare și afișați codul QR în sumarul certificatului."</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_SCN_TEXT">"Starea dvs. s-a modificat. Certificatele dvs. respectă acum regula 3G plus. Dacă trebuie să dovediți starea dvs. curentă, închideți această vizualizare și afișați codul QR în sumarul certificatului."</string>
-
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT"/>
   <!-- XTXT: Admission State - OTHER Card Body -->
-  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"În prezent, certificatele dvs. nu îndeplinesc nicio regulă."</string>
-  <!-- XTXT: Admission State - OTHER State Change Notification Text -->
-  <string name="ADMISSION_STATE_OTHER_SCN_TEXT">"În prezent, certificatele dvs. nu îndeplinesc nicio regulă."</string>
+  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Dovada stării (3G, 3G+, 2G, 2G+) nu este relevantă în prezent și, în consecință, nu este afișată în aplicație."</string>
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Starea vaccinării"</string>
@@ -53,41 +68,21 @@
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Ați primit toate vaccinările recomandate în acest moment. Protecția prin vaccinare este completă."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. În prezent, nu se recomandă o altă vaccinare."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="one">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zi. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="two">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="few">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="many">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="other">"În funcție de vaccinările dvs. și de infectările din trecut, se consideră că aveți protecție suficientă. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d de zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-  </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
-    <item quantity="one">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zi. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
-    <item quantity="two">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
-    <item quantity="few">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
-    <item quantity="many">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d de zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
-    <item quantity="other">"Acum ați efectuat toate vaccinările pentru imunizarea de bază. Totuși, protecția prin vaccinare nu va fi completă timp de încă %1$d zile. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
-  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="one">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zi. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="two">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi eficientă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="few">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="many">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
-    <item quantity="other">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d de zile. Aveți în vedere că încă puteți fi contagios/contagioasă."</item>
+    <item quantity="zero">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că sunteți vaccinat(ă) complet. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă și vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="one">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că sunteți vaccinat(ă) complet. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zi. Aveți în vedere că încă puteți fi contagios/contagioasă și vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="two">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că sunteți vaccinat(ă) complet. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă și vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="few">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că sunteți vaccinat(ă) complet. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă și vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="many">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că sunteți vaccinat(ă) complet. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă și vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
+    <item quantity="other">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că sunteți vaccinat(ă) complet. Totuși, protecția dvs. imună nu va fi completă timp de încă %1$d zile. Aveți în vedere că încă puteți fi contagios/contagioasă și vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Ați primit toate vaccinările pentru imunizarea de bază. Protecția dvs. prin vaccinare este eficientă. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Ați primit toate vaccinările pentru protecția completă prin vaccinare. Protecția dvs. prin vaccinare este eficientă. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</string>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că aveți imunizarea de bază. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"În funcție de vaccinarea dvs. și de infectările din trecut, se consideră că sunteți vaccinat(ă) complet. Vă recomandăm să vă documentați și despre vaccinarea recomandată cu doza booster."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nu ați primit încă toate vaccinările planificate curente. Astfel, protecția dvs. prin vaccinare nu este completă încă."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nu ați primit încă toate vaccinările recomandate curente. Astfel, protecția dvs. prin vaccinare nu este completă încă."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"Certificat 2G"</string>
@@ -120,5 +115,19 @@
   <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Certificate de reînnoit:"</string>
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Solicitați reînnoirea direct din aplicație"</string>
+
+  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
+  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Obligativitatea purtării măștii"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Nu sunteți scutit(ă) de obligativitatea purtării măștii faciale.\n\nPentru a fi scutit(ă) de obligativitatea purtării măștii faciale, trebuie să aveți un diagnostic negativ în ultimele 24 de ore."</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Nu sunteți scutit(ă) de obligativitatea purtării măștii faciale.\n\nPentru a fi scutit(ă) de obligativitatea purtării măștii faciale, trebuie să fiți vaccinat(ă) sau să vă fi recuperat după infecția cu COVID 19 în ultimele 90 de zile sau să aveți un diagnostic negativ în ultimele 24 de ore."</string>
+
+  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Fără obligativitatea purtării măștii"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Sunteți scutit(ă) de obligativitatea purtării măștii faciale, dar purtarea acesteia este, totuși, recomandată.\n\nOrice persoană care are un diagnostic negativ în ultimele 24 de ore este scutită de obligativitatea purtării măștii faciale."</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Sunteți scutit(ă) de obligativitatea purtării măștii faciale, dar purtarea acesteia este, totuși, recomandată.\n\nOrice persoană vaccinată sau care s-a recuperat după infecția cu COVID 19 în ultimele 90 de zile sau care are un diagnostic negativ în ultimele 24 de ore este scutită de obligativitatea purtării măștii faciale."</string>
 
 </resources>

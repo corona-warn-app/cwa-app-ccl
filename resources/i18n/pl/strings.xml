@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
+  <!-- XHED: Admission Scenario - Card Title -->
+  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Obowiązek noszenia maseczek dla:"</string>
+  <!-- XTXT: Admission Scenario - Card Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Twojego kraju związkowego"</string>
+
+  <!-- XTXT: Admission Scenario - DE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Przepisy władz federalnych"</string>
+  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Wytyczne w Twoim kraju związkowym mogą być inne"</string>
+
+  <!-- XTXT: Admission Scenario - BW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Badenia-Wirtembergia"</string>
+  <!-- XTXT: Admission Scenario - BY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BY_TITLE_TEXT">"Bawaria"</string>
+  <!-- XTXT: Admission Scenario - BE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_TITLE_TEXT">"Berlin"</string>
+  <!-- XTXT: Admission Scenario - BB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BB_TITLE_TEXT">"Brandenburgia"</string>
+  <!-- XTXT: Admission Scenario - HB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HB_TITLE_TEXT">"Brema"</string>
+  <!-- XTXT: Admission Scenario - HH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Hamburg"</string>
+  <!-- XTXT: Admission Scenario - HE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HE_TITLE_TEXT">"Hesja"</string>
+  <!-- XTXT: Admission Scenario - MV Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_MV_TITLE_TEXT">"Meklemburgia-Pomorze Zachodnie"</string>
+  <!-- XTXT: Admission Scenario - NI Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NI_TITLE_TEXT">"Dolna Saksonia"</string>
+  <!-- XTXT: Admission Scenario - NW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NW_TITLE_TEXT">"Nadrenia Północna-Westfalia"</string>
+  <!-- XTXT: Admission Scenario - RP Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_RP_TITLE_TEXT">"Nadrenia-Palatynat"</string>
+  <!-- XTXT: Admission Scenario - SL Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SL_TITLE_TEXT">"Saara"</string>
+  <!-- XTXT: Admission Scenario - SN Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SN_TITLE_TEXT">"Saksonia"</string>
+  <!-- XTXT: Admission Scenario - ST Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_ST_TITLE_TEXT">"Saksonia-Anhalt"</string>
+  <!-- XTXT: Admission Scenario - SH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SH_TITLE_TEXT">"Szlezwik-Holsztyn"</string>
+  <!-- XTXT: Admission Scenario - TH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TH_TITLE_TEXT">"Turyngia"</string>
+
+  <!-- XTXT: Admission Scenario - Subtitle Text - Disabled -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SUBTITLE_TEXT_DISABLED">"Nie ma obecnie innych wytycznych dla tego kraju związkowego. Obowiązują przepisy federalne."</string>
+
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Dowód statusu"</string>
-
-  <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 2G plus. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
-  <!-- XTXT: Admission State - 2G_PLUS State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_SCN_TEXT">"Twój status uległ zmianie. Twoje certyfikaty są teraz zgodne z zasadą 2G plus. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
-
-  <!-- XTXT: Admission State - 2G Badge Text -->
-  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
-  <!-- XTXT: Admission State - 2G Card Body -->
-  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 2G. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
-  <!-- XTXT: Admission State - 2G State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_SCN_TEXT">"Twój status uległ zmianie. Twoje certyfikaty są teraz zgodne z zasadą 2G. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 3G plus. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i pokaż kod QR w przeglądzie certyfikatów."</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_SCN_TEXT">"Twój status uległ zmianie. Twoje certyfikaty są teraz zgodne z zasadą 3G plus. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Twoje certyfikaty są zgodne z zasadą 3G. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i pokaż kod QR w przeglądzie certyfikatów."</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_SCN_TEXT">"Twój status uległ zmianie. Twoje certyfikaty są teraz zgodne z zasadą 3G. Jeśli musisz udowodnić swój aktualny status, zamknij ten widok i wyświetl kod QR w przeglądzie certyfikatów."</string>
-
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT"/>
   <!-- XTXT: Admission State - OTHER Card Body -->
-  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Twoje certyfikaty nie są obecnie zgodne z żadnymi zasadami."</string>
-  <!-- XTXT: Admission State - OTHER State Change Notification Text -->
-  <string name="ADMISSION_STATE_OTHER_SCN_TEXT">"Twoje certyfikaty nie są obecnie zgodne z żadnymi zasadami."</string>
+  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Dowód statusu (3G, 3G+, 2G, 2G+) nie jest obecnie ważny i dlatego nie jest wyświetlany w aplikacji."</string>
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Status zaszczepienia"</string>
@@ -53,41 +68,21 @@
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Otrzymałeś(-aś) wszystkie aktualnie zalecane szczepienia. Masz pełną ochronę poszczepienną."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Obecnie nie zaleca się kolejnych szczepień."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-    <item quantity="one">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejny %1$d dzień. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-    <item quantity="two">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-    <item quantity="few">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-    <item quantity="many">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-    <item quantity="other">"Na podstawie przebytych szczepień i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dnia. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-  </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
-    <item quantity="one">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dzień. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
-    <item quantity="two">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
-    <item quantity="few">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
-    <item quantity="many">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
-    <item quantity="other">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności, jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dnia. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</item>
-  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-    <item quantity="one">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejny %1$d dzień. Weź pod uwagę, że nadal możesz zarażać."</item>
-    <item quantity="two">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz wystarczającą ochronę. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę, że nadal możesz zarażać."</item>
-    <item quantity="few">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-    <item quantity="many">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dni. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
-    <item quantity="other">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Twoja ochrona immunologiczna nie będzie jednak pełna przez kolejne %1$d dnia. Weź pod uwagę fakt, że nadal możesz zarażać."</item>
+    <item quantity="zero">"Na podstawie przebytego szczepienia i infekcji można uznać, że jesteś w pełni zaszczepiony(-a). Jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Weź pod uwagę, że nadal możesz zarażać, a także zapoznaj się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="one">"Na podstawie przebytego szczepienia i infekcji można uznać, że jesteś w pełni zaszczepiony(-a). Jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dzień. Weź pod uwagę, że nadal możesz zarażać, a także zapoznaj się z zalecanymi szczepieniami przypominającymi.."</item>
+    <item quantity="two">"Na podstawie przebytego szczepienia i infekcji można uznać, że jesteś w pełni zaszczepiony(-a). Jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Weź pod uwagę, że nadal możesz zarażać, a także zapoznaj się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="few">"Na podstawie przebytego szczepienia i infekcji można uznać, że jesteś w pełni zaszczepiony(-a). Jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Weź pod uwagę, że nadal możesz zarażać, a także zapoznaj się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="many">"Na podstawie przebytego szczepienia i infekcji można uznać, że jesteś w pełni zaszczepiony(-a). Jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Weź pod uwagę, że nadal możesz zarażać, a także zapoznaj się z zalecanymi szczepieniami przypominającymi."</item>
+    <item quantity="other">"Na podstawie przebytego szczepienia i infekcji można uznać, że jesteś w pełni zaszczepiony(-a). Jednak pełną ochronę poszczepienną uzyskasz dopiero za %1$d dni. Weź pod uwagę, że nadal możesz zarażać, a także zapoznaj się z zalecanymi szczepieniami przypominającymi."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia podstawowej odporności. Twoja ochrona poszczepienna jest skuteczna. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Otrzymałeś(-aś) już wszystkie szczepienia w celu zapewnienia pełnej ochrony poszczepiennej. Twoja ochrona poszczepienna jest skuteczna. Prosimy również o zapoznanie się z zalecanymi szczepieniami przypominającymi."</string>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Na podstawie przebytego szczepienia i infekcji można uznać, że posiadasz podstawową odporność. Prosimy jednak o zapoznanie się z zalecanymi szczepieniami przypominającymi."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Na podstawie przebytego szczepienia i infekcji można uznać, że jesteś w pełni zaszczepiony(-a). Prosimy jednak o zapoznanie się z zalecanymi szczepieniami przypominającymi."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nie otrzymałeś(-aś) jeszcze wszystkich zaplanowanych szczepień. W związku z tym Twoja ochrona poszczepienna nie jest jeszcze pełna."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nie otrzymałeś(-aś) jeszcze wszystkich zalecanych szczepień. W związku z tym Twoja ochrona poszczepienna nie jest jeszcze pełna."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"Certyfikat 2G"</string>
@@ -120,5 +115,19 @@
   <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Certyfikaty do odnowienia:"</string>
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Poproś o odnowienie bezpośrednio w aplikacji"</string>
+
+  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
+  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Obowiązek noszenia maseczki"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Nie jesteś zwolniony(-a) z obowiązku noszenia maseczki.\n\nAby uzyskać zwolnienie z obowiązku noszenia maseczki, musisz mieć negatywny wynik (brak zakażenia) z ostatnich 24 godzin."</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Nie jesteś zwolniony(-a) z obowiązku noszenia maseczki.\n\nAby uzyskać zwolnienie z obowiązku noszenia maseczki, musisz mieć szczepienie lub przebytą infekcję COVID 19 w ciągu ostatnich 90 dni albo mieć negatywny wynik (brak zakażenia) z ostatnich 24 godzin."</string>
+
+  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Nie ma obowiązku noszenia maseczki"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Jesteś zwolniony(-a) z obowiązku noszenia maseczki, ale noszenie maseczki jest nadal zalecane.\n\nKażdy, kto ma negatywny wynik (brak zakażenia) z ostatnich 24 godzin, jest zwolniony z obowiązku noszenia maseczki."</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Jesteś zwolniony(-a) z obowiązku noszenia maseczki, ale noszenie maseczki jest nadal zalecane.\n\nKażdy, kto ma szczepienie lub przeszedł infekcję COVID 19 w ciągu ostatnich 90 dni albo ma negatywny wynik (brak zakażenia) z ostatnich 24 godzin, jest zwolniony z obowiązku noszenia maseczki."</string>
 
 </resources>

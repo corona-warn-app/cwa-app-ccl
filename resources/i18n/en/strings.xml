@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
+  <!-- XHED: Admission Scenario - Card Title -->
+  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Mask mandates for:"</string>
+  <!-- XTXT: Admission Scenario - Card Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Your federal state"</string>
+
+  <!-- XTXT: Admission Scenario - DE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Federal government regulations"</string>
+  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Rules in your federal state may vary"</string>
+
+  <!-- XTXT: Admission Scenario - BW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Württemberg"</string>
+  <!-- XTXT: Admission Scenario - BY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BY_TITLE_TEXT">"Bavaria"</string>
+  <!-- XTXT: Admission Scenario - BE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_TITLE_TEXT">"Berlin"</string>
+  <!-- XTXT: Admission Scenario - BB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BB_TITLE_TEXT">"Brandenburg"</string>
+  <!-- XTXT: Admission Scenario - HB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HB_TITLE_TEXT">"Bremen"</string>
+  <!-- XTXT: Admission Scenario - HH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Hamburg"</string>
+  <!-- XTXT: Admission Scenario - HE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HE_TITLE_TEXT">"Hesse"</string>
+  <!-- XTXT: Admission Scenario - MV Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_MV_TITLE_TEXT">"Mecklenburg-Western Pomerania"</string>
+  <!-- XTXT: Admission Scenario - NI Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NI_TITLE_TEXT">"Lower Saxony"</string>
+  <!-- XTXT: Admission Scenario - NW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NW_TITLE_TEXT">"North Rhine-Westphalia"</string>
+  <!-- XTXT: Admission Scenario - RP Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_RP_TITLE_TEXT">"Rhineland-Palatinate"</string>
+  <!-- XTXT: Admission Scenario - SL Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SL_TITLE_TEXT">"Saarland"</string>
+  <!-- XTXT: Admission Scenario - SN Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SN_TITLE_TEXT">"Saxony"</string>
+  <!-- XTXT: Admission Scenario - ST Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_ST_TITLE_TEXT">"Saxony-Anhalt"</string>
+  <!-- XTXT: Admission Scenario - SH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SH_TITLE_TEXT">"Schleswig-Holstein"</string>
+  <!-- XTXT: Admission Scenario - TH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TH_TITLE_TEXT">"Thuringia"</string>
+
+  <!-- XTXT: Admission Scenario - Subtitle Text - Disabled -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SUBTITLE_TEXT_DISABLED">"There are currently no different rules for this federal state. The federal rules apply."</string>
+
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Proof of Status"</string>
-
-  <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Your certificates satisfy the 2G plus rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
-  <!-- XTXT: Admission State - 2G_PLUS State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_SCN_TEXT">"Your status has changed. Your certificates now satisfy the 2G plus rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
-
-  <!-- XTXT: Admission State - 2G Badge Text -->
-  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
-  <!-- XTXT: Admission State - 2G Card Body -->
-  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Your certificates satisfy the 2G rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
-  <!-- XTXT: Admission State - 2G State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_SCN_TEXT">"Your status has changed. Your certificates now satisfy the 2G rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Your certificates satisfy the 3G plus rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_SCN_TEXT">"Your status has changed. Your certificates now satisfy the 3G plus rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Your certificates satisfy the 3G rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_SCN_TEXT">"Your status has changed. Your certificates now satisfy the 3G rule. If you need to prove your current status, close this view and show the QR code in the certificate overview."</string>
-
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT"/>
   <!-- XTXT: Admission State - OTHER Card Body -->
-  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Your certificates do not currently satisfy any rules."</string>
-  <!-- XTXT: Admission State - OTHER State Change Notification Text -->
-  <string name="ADMISSION_STATE_OTHER_SCN_TEXT">"Your certificates do not currently satisfy any rules."</string>
+  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Proof of status (3G, 3G+, 2G, 2G+) is not currently relevant and is therefore not displayed in the app."</string>
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Vaccination Status"</string>
@@ -53,41 +68,21 @@
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"You have received all currently recommended vaccinations. Your vaccination protection is complete."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"Based on your vaccinations and past infection, you are considered to have sufficient protection. No further vaccination is currently recommended."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
-    <item quantity="one">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d day. Please consider that you could still be contagious."</item>
-    <item quantity="two">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
-    <item quantity="few">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
-    <item quantity="many">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
-    <item quantity="other">"Based on your vaccinations and past infection, you are considered to have sufficient protection. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
-  </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
-    <item quantity="one">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d day. Please also find out about the recommended booster vaccinations."</item>
-    <item quantity="two">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
-    <item quantity="few">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
-    <item quantity="many">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
-    <item quantity="other">"You have received all vaccinations for basic immunization. However, your vaccination protection will not become effective for another %1$d days. Please also find out about the recommended booster vaccinations."</item>
-  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
-    <item quantity="one">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be effective for another %1$d day. Please consider that you could still be contagious."</item>
-    <item quantity="two">"Based on your vaccination and past infection, you are deemed to have basic immunization. However, your immune protection will not be effective for another %1$d days. Please consider that you could still be contagious."</item>
-    <item quantity="few">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
-    <item quantity="many">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
-    <item quantity="other">"Based on your vaccination and past infection, you are considered to have basic immunization. However, your immune protection will not be complete for another %1$d days. Please consider that you could still be contagious."</item>
+    <item quantity="zero">"Based on your vaccination and past infection, you are considered to be fully vaccinated. However, your immune protection will not be effective for another %1$d days. Please consider that you could still be contagious and also find out about the recommended booster vaccinations."</item>
+    <item quantity="one">"Based on your vaccination and past infection, you are considered to be fully vaccinated. However, your immune protection will not be effective for another %1$d day. Please consider that you could still be contagious and also find out about the recommended booster vaccinations."</item>
+    <item quantity="two">"Based on your vaccination and past infection, you are considered to be fully vaccinated. However, your immune protection will not be effective for another %1$d days. Please consider that you could still be contagious and also find out about the recommended booster vaccinations."</item>
+    <item quantity="few">"Based on your vaccination and past infection, you are considered to be fully vaccinated. However, your immune protection will not be effective for another %1$d days. Please consider that you could still be contagious and also find out about the recommended booster vaccinations."</item>
+    <item quantity="many">"Based on your vaccination and past infection, you are considered to be fully vaccinated. However, your immune protection will not be effective for another %1$d days. Please consider that you could still be contagious and also find out about the recommended booster vaccinations."</item>
+    <item quantity="other">"Based on your vaccination and past infection, you are considered to be fully vaccinated. However, your immune protection will not be effective for another %1$d days. Please consider that you could still be contagious and also find out about the recommended booster vaccinations."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"You have received all vaccinations for basic immunization. Your vaccination protection is effective. Please also find out about the recommended booster vaccinations."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"You have received all vaccinations for full vaccination protection. Your vaccination protection is effective. Please also find out about the recommended booster vaccinations."</string>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Based on your vaccination and past infection, you are considered to have basic immunization. However, please also find out about the recommended booster vaccinations."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Based on your vaccination and past infection, you are considered to be fully vaccinated. However, please also find out about the recommended booster vaccinations."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"You have not yet received all the currently planned vaccinations. As such, your vaccination protection is not complete yet."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"You have not received all of the currently recommended vaccinations yet. You do not have full vaccination protection yet."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"2G Certificate"</string>
@@ -120,5 +115,19 @@
   <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Certificates to renew:"</string>
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Request renewal directly in the app"</string>
+
+  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
+  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Mask Mandate"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"You are not exempt from the requirement to wear a mask.\n\nTo be exempt from the mask mandate, you must have had a negative diagnosis in the last 24 hours."</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"You are not exempt from the requirement to wear a mask.\n\nTo be exempt from the mask mandate, you must have had a vaccination or recovered from a COVID 19 infection within the last 90 days or had a negative diagnosis in the last 24 hours."</string>
+
+  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"No Mask Mandate"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"You are exempt from the requirement to wear a mask, but wearing a mask is still recommended.\n\nAnyone who has had a negative diagnosis in the last 24 hours is exempt from the mask mandate."</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"You are exempt from the requirement to wear a mask, but wearing a mask is still recommended.\n\nAnyone who has had a vaccination or recovered from a COVID 19 infection within the last 90 days or had a negative diagnosis in the last 24 hours is exempt from the mask mandate."</string>
 
 </resources>
