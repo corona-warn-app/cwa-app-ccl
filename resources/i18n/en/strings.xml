@@ -128,6 +128,6 @@
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
   <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"You are exempt from the requirement to wear a mask, but wearing a mask is still recommended.\n\nAnyone who has had a negative diagnosis in the last 24 hours is exempt from the mask mandate."</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"You are exempt from the requirement to wear a mask, but wearing a mask is still recommended.\n\nAnyone who has had a vaccination or recovered from a COVID 19 infection within the last 90 days or had a negative diagnosis in the last 24 hours is exempt from the mask mandate."</string>
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"You are exempt from the requirement to wear a mask, but wearing a mask is still recommended.\n\nAnyone who has had a vaccination or recovered from a COVID-19 infection within the last 90 days or had a negative diagnosis in the last 24 hours is exempt from the mask mandate."</string>
 
 </resources>
