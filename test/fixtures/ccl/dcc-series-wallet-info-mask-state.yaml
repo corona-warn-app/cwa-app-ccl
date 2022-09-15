@@ -696,8 +696,10 @@
             identifier: MASK_OPTIONAL
             visible: true
             faqAnchor: mask_rules
-            titleText: Keine Maskenpflicht
-            badgeText: Keine Maskenpflicht
+            titleText:
+              de: Keine Maskenpflicht
+            badgeText:
+              de: Keine Maskenpflicht
     # federal default rules
     - time: rat1
       scenarioIdentifier: ''
@@ -849,8 +851,10 @@
             identifier: MASK_REQUIRED
             visible: true
             faqAnchor: mask_rules
-            titleText: Maskenpflicht
-            badgeText: Maskenpflicht
+            titleText:
+              de: Maskenpflicht
+            badgeText:
+              de: Maskenpflicht
     # federal default rules
     - time: rat1+P5D # some long duration
       scenarioIdentifier: ''
