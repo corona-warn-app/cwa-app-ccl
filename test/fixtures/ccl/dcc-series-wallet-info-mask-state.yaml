@@ -4,14 +4,17 @@
     - time: t0
       vc: biontech1/2
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech1/2
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech1/2+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech1/2+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -30,18 +33,22 @@
 
 - description: 0.1 - VC 2/2
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech2/2
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech2/2
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech2/2+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech2/2+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -60,18 +67,22 @@
 
 - description: 0.1 - VC 2/1
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech2/1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech2/1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech2/1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech2/1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -90,18 +101,22 @@
 
 - description: 0.1 - VC 1/1
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech1/1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech1/1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech1/1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech1/1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -120,24 +135,30 @@
 
 - description: 0.2 - RC
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       rc: rc1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: rc1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P28D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P29D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -164,18 +185,22 @@
 
 - description: 1.1 - RAT test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       tc: rat1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: rat1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_OPTIONAL
     - time: rat1+PT24H
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_OPTIONAL
     - time: rat1+PT24H1S
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -194,18 +219,22 @@
 
 - description: 1.2 - PCR test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       tc: pcr1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: pcr1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_OPTIONAL
     - time: pcr1+PT24H
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_OPTIONAL
     - time: pcr1+PT24H1S
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -224,20 +253,24 @@
 
 - description: 2.1 - RC + VC 2/1
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       rc: rc1
     - time: +P1M
       vc: biontech2/1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech2/1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech2/1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech2/1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -256,20 +289,24 @@
 
 - description: 2.1 - RC + VC 2/2 (old notation)
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       rc: rc1
     - time: +P1M
       vc: biontech2/2
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech2/2
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech2/2+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech2/2+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -288,26 +325,32 @@
 
 - description: 2.2 - VC 2/1 + RC
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech2/1
     - time: +P1M
       rc: rc1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: rc1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P28D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P29D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -334,26 +377,32 @@
 
 - description: 2.2 - VC 2/2 + RC
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech2/2
     - time: +P1M
       rc: rc1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: rc1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P28D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P29D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -380,18 +429,22 @@
 
 - description: 2.3 - VC 3/1
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech3/1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech3/1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech3/1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech3/1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -410,18 +463,22 @@
 
 - description: 2.3 - VC 3/3
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech3/3
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech3/3
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech3/3+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech3/3+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -440,26 +497,32 @@
 
 - description: 2.4 - VC 3/1 + RC
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech3/1
     - time: +P1M
       rc: rc1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: rc1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P28D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P29D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -486,26 +549,32 @@
 
 - description: 2.4 - VC 3/3 + RC
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech3/3
     - time: +P1M
       rc: rc1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: rc1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P28D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P29D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -532,18 +601,22 @@
 
 - description: 2.5 - VC 4/1
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech4/1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech4/1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech4/1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech4/1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -562,18 +635,22 @@
 
 - description: 2.5 - VC 4/4
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech4/4
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: biontech4/4
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech4/4+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: biontech4/4+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -592,26 +669,32 @@
 
 - description: 2.6 - VC 4/1 + RC
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech4/1
     - time: +P1M
       rc: rc1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: rc1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P28D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P29D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -638,26 +721,32 @@
 
 - description: 2.6 - VC 4/4 + RC
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       vc: biontech4/4
     - time: +P1M
       rc: rc1
   testCases:
-    # federal default rules
+    # basic federal state-specific rules
     - time: rc1
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P28D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P29D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P90D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     - time: rc1+P91D
+      scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
     # extended federal state-specific rules
@@ -684,6 +773,7 @@
 
 - description: texts
   t0: '2022-08-01'
+  only: true
   series:
     - time: t0
       tc: rat1
@@ -700,9 +790,9 @@
               de: Keine Maskenpflicht
             badgeText:
               de: Keine Maskenpflicht
-    # federal default rules
+    # basic federal state-specific rules
     - time: rat1
-      scenarioIdentifier: ''
+      scenarioIdentifier: BASIC
       assertions:
         walletInfo:
           maskState:
@@ -718,7 +808,7 @@
               de: 'Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.'
     # scenario-dependent subtitle
     - time: rat1
-      scenarioIdentifier: ''
+      scenarioIdentifier: BASIC
       assertions:
         walletInfo:
           maskState:
@@ -855,9 +945,9 @@
               de: Maskenpflicht
             badgeText:
               de: Maskenpflicht
-    # federal default rules
+    # basic federal state-specific rules
     - time: rat1+P5D # some long duration
-      scenarioIdentifier: ''
+      scenarioIdentifier: BASIC
       assertions:
         walletInfo:
           maskState:
@@ -873,14 +963,14 @@
               de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.'
     # scenario-dependent subtitle
     - time: rat1+P5D # some long duration
-      scenarioIdentifier: ''
+      scenarioIdentifier: BASIC
       assertions:
         walletInfo:
           maskState:
             subtitleText:
               de: ^Regeln des Bundes$
     - time: rat1+P5D # some long duration
-      scenarioIdentifier: ''
+      scenarioIdentifier: BASIC
       assertions:
         walletInfo:
           maskState:
