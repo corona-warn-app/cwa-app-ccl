@@ -121,13 +121,13 @@
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
   <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Nie jesteś zwolniony(-a) z obowiązku noszenia maseczki.\n\nAby uzyskać zwolnienie z obowiązku noszenia maseczki, musisz mieć negatywny wynik (brak zakażenia) z ostatnich 24 godzin."</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Nie jesteś zwolniony(-a) z obowiązku noszenia maseczki.\n\nAby uzyskać zwolnienie z obowiązku noszenia maseczki, musisz mieć szczepienie lub przebytą infekcję COVID 19 w ciągu ostatnich 90 dni albo mieć negatywny wynik (brak zakażenia) z ostatnich 24 godzin."</string>
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Nie jesteś zwolniony(-a) z obowiązku noszenia maseczki.\n\nAby uzyskać zwolnienie z obowiązku noszenia maseczki, musisz mieć szczepienie lub przebytą infekcję COVID-19 w ciągu ostatnich 90 dni albo mieć negatywny wynik (brak zakażenia) z ostatnich 24 godzin."</string>
 
   <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Nie ma obowiązku noszenia maseczki"</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
   <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Jesteś zwolniony(-a) z obowiązku noszenia maseczki, ale noszenie maseczki jest nadal zalecane.\n\nKażdy, kto ma negatywny wynik (brak zakażenia) z ostatnich 24 godzin, jest zwolniony z obowiązku noszenia maseczki."</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Jesteś zwolniony(-a) z obowiązku noszenia maseczki, ale noszenie maseczki jest nadal zalecane.\n\nKażdy, kto ma szczepienie lub przeszedł infekcję COVID 19 w ciągu ostatnich 90 dni albo ma negatywny wynik (brak zakażenia) z ostatnich 24 godzin, jest zwolniony z obowiązku noszenia maseczki."</string>
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Jesteś zwolniony(-a) z obowiązku noszenia maseczki, ale noszenie maseczki jest nadal zalecane.\n\nKażdy, kto ma szczepienie lub przeszedł infekcję COVID-19 w ciągu ostatnich 90 dni albo ma negatywny wynik (brak zakażenia) z ostatnich 24 godzin, jest zwolniony z obowiązku noszenia maseczki."</string>
 
 </resources>

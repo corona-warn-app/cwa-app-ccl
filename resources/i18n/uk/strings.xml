@@ -121,13 +121,13 @@
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
   <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Вас не звільнено від вимоги носити маску.\n\nЩоб не мати зобов’язання щодо носіння маски, у вас має бути негативний діагноз протягом останніх 24 годин."</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Вас не звільнено від вимоги носити маску.\n\nЩоб не мати зобов’язання щодо носіння маски, ви маєте зробити щеплення або одужати від хвороби, пов’язаної з інфекцією COVID 19 протягом останніх 90 днів або у вас має бути негативний діагноз протягом останніх 24 годин."</string>
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Вас не звільнено від вимоги носити маску.\n\nЩоб не мати зобов’язання щодо носіння маски, ви маєте зробити щеплення або одужати від хвороби, пов’язаної з інфекцією COVID-19 протягом останніх 90 днів або у вас має бути негативний діагноз протягом останніх 24 годин."</string>
 
   <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Немає необхідності щодо обов’язкового носіння маски"</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
   <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Для вас немає вимог щодо обов’язкового носіння маски, але носити маску все одно рекомендується.\n\nДля кожного, хто мав негативний діагноз за останні 24 години, немає вимог щодо обов’язкового носіння маски."</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Вас звільнено від вимоги носити маску.\n\nДля кожного, хто зробив щеплення або одужав від хвороби, пов’язаної з інфекцією COVID 19, протягом останніх 90 днів або мав негативний діагноз протягом останніх 24 годин, немає вимог щодо обов’язкового носіння маски.."</string>
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Вас звільнено від вимоги носити маску.\n\nДля кожного, хто зробив щеплення або одужав від хвороби, пов’язаної з інфекцією COVID-19, протягом останніх 90 днів або мав негативний діагноз протягом останніх 24 годин, немає вимог щодо обов’язкового носіння маски.."</string>
 
 </resources>

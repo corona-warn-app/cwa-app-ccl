@@ -121,13 +121,13 @@
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
   <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Не сте освободени от задължението да носите маска.\n\nЗа да бъдете освободени от задължението за носене на маска, трябва да сте имали отрицателен резултат от последните 24 часа."</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Не сте освободени от задължението да носите маска.\n\nЗа да бъдете освободени от задължението за носене на маска, трябва да сте ваксинирани или да сте се възстановили от инфекция с COVID 19 през последните 90 дни или да имате отрицателен резултат от последните 24 часа."</string>
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Не сте освободени от задължението да носите маска.\n\nЗа да бъдете освободени от задължението за носене на маска, трябва да сте ваксинирани или да сте се възстановили от инфекция с COVID-19 през последните 90 дни или да имате отрицателен резултат от последните 24 часа."</string>
 
   <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Не се изисква носене на маска"</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
   <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Освободени сте от задължението да носите маска, но все пак носенето на маска е препоръчително.\n\nВсеки, който е имал отрицателен резултат от тест през последните 24 часа, е освободен от задължението за носене на маска."</string>
   <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Освободени сте от изискването за носене на маска, но носенето на маска все пак е препоръчително.\n\nВсеки, който е бил ваксиниран или се е възстановил от инфекция с COVID 19 през последните 90 дни или е имал отрицателен резултат от тест през последните 24 часа, е освободен от задължението за носене на маска."</string>
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Освободени сте от изискването за носене на маска, но носенето на маска все пак е препоръчително.\n\nВсеки, който е бил ваксиниран или се е възстановил от инфекция с COVID-19 през последните 90 дни или е имал отрицателен резултат от тест през последните 24 часа, е освободен от задължението за носене на маска."</string>
 
 </resources>

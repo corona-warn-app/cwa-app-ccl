@@ -121,7 +121,7 @@
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
   <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"You are not exempt from the requirement to wear a mask.\n\nTo be exempt from the mask mandate, you must have had a negative diagnosis in the last 24 hours."</string>
   <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"You are not exempt from the requirement to wear a mask.\n\nTo be exempt from the mask mandate, you must have had a vaccination or recovered from a COVID 19 infection within the last 90 days or had a negative diagnosis in the last 24 hours."</string>
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"You are not exempt from the requirement to wear a mask.\n\nTo be exempt from the mask mandate, you must have had a vaccination or recovered from a COVID-19 infection within the last 90 days or had a negative diagnosis in the last 24 hours."</string>
 
   <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"No Mask Mandate"</string>
