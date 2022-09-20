@@ -6,6 +6,8 @@
   <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Ihr Bundesland"</string>
 
+  <!-- XTXT: Admission Scenario - EMPTY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_EMPTY_TITLE_TEXT">""</string>
   <!-- XTXT: Admission Scenario - NO_SELECTION Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_NO_SELECTION_TITLE_TEXT">"keine Auswahl"</string>
   <!-- XTXT: Admission Scenario - BW Title Text -->
@@ -114,8 +116,10 @@
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Erneuerung direkt über die App vornehmen"</string>
 
-  <!-- XHED: Mask State - Card Title -->
-  <string name="MASK_STATE_TITLE_TEXT">"Maskenpflicht"</string>
+  <!-- XHED: Mask State - Default Card Title -->
+  <string name="MASK_STATE_DEFAULT_TITLE_TEXT">"Maskenpflicht"</string>
+  <!-- XHED: Mask State - MASK_OPTIONAL - Card Title -->
+  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Keine Maskenpflicht"</string>
 
   <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
   <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Maskenpflicht"</string>
