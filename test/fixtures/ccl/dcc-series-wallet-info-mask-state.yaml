@@ -991,7 +991,7 @@
     - time: t0
       tc: rat1
   testCases:
-    # default
+    # default, no scenario selection (implicit)
     - time: rat1
       assertions:
         maskState: OTHER
@@ -999,26 +999,64 @@
           maskState:
             identifier: OTHER
             visible: false
-    # basic federal state-specific rules
+    # NO_SELECTION (explicit; M1)
     - time: rat1
-      scenarioIdentifier: BASIC
+      scenarioIdentifier: NO_SELECTION
       assertions:
+        maskState: NO_SELECTION
         walletInfo:
           maskState:
+            identifier: OTHER
             visible: true
             faqAnchor: mask_rules
             titleText:
-              de: Keine Maskenpflicht
+              de: Maskenpflicht
+            subtitleText:
+              de: ^keine Auswahl$
+            badgeText:
+              de: ^$ #empty
+            longText:
+              de: 'Ohne Auswahl eines Bundeslandes kann Ihnen nicht angezeigt werden, ob Sie von einer bundeslandspezifischen Maskenpflicht ausgenommen sind\.'
+    # NO_MANDATE (M2)
+    - time: rat1
+      scenarioIdentifier: NO_MANDATE
+      assertions:
+        maskState: NO_MANDATE
+        walletInfo:
+          maskState:
+            identifier: OTHER
+            visible: true
+            faqAnchor: mask_rules
+            titleText:
+              de: Maskenpflicht
+            badgeText:
+              de: ^$ #empty
+            longText:
+              de: 'Für dieses Bundesland liegen keine bundeslandspezifischen Regeln vor\. Es gelten daher nur die bundeseinheitlichen Regeln zur Maskenpflicht\.'
+    # MASK_OPTIONAL for basic federal state-specific rules (M4)
+    - time: rat1
+      scenarioIdentifier: BASIC
+      assertions:
+        maskState: MASK_OPTIONAL
+        walletInfo:
+          maskState:
+            identifier: MASK_OPTIONAL
+            visible: true
+            faqAnchor: mask_rules
+            titleText:
+              de: Maskenpflicht
             badgeText:
               de: Keine Maskenpflicht
             longText:
-              de: 'Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden.'
-    # extended federal state-specific rules
+              de: 'Sie sind in diesem Bundesland in einigen Situationen von der Maskenpflicht ausgenommen; eine Maske ist dennoch empfohlen\.'
+    # MASK_OPTIONAL for extended federal state-specific rules (M4)
     - time: rat1
       scenarioIdentifier: EXTENDED
       assertions:
+        maskState: MASK_OPTIONAL
         walletInfo:
           maskState:
+            identifier: MASK_OPTIONAL
             visible: true
             faqAnchor: mask_rules
             titleText:
@@ -1026,22 +1064,8 @@
             badgeText:
               de: Keine Maskenpflicht
             longText:
-              de: 'Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.'
+              de: 'Sie sind in diesem Bundesland in einigen Situationen von der Maskenpflicht ausgenommen; eine Maske ist dennoch empfohlen\.'
     # scenario-dependent subtitle
-    - time: rat1
-      scenarioIdentifier: BASIC
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Regeln des Bundes$
-    - time: rat1
-      scenarioIdentifier: DE
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Regeln des Bundes$
     - time: rat1
       scenarioIdentifier: BW
       assertions:
@@ -1154,20 +1178,14 @@
           maskState:
             subtitleText:
               de: ^Thüringen$
-    # default
-    - time: rat1+P5D # some long duration
-      assertions:
-        maskState: OTHER
-        walletInfo:
-          maskState:
-            identifier: OTHER
-            visible: false
-    # basic federal state-specific rules
+    # MASK_REQUIRED for basic federal state-specific rules (M4)
     - time: rat1+P5D # some long duration
       scenarioIdentifier: BASIC
       assertions:
+        maskState: MASK_REQUIRED
         walletInfo:
           maskState:
+            identifier: MASK_REQUIRED
             visible: true
             faqAnchor: mask_rules
             titleText:
@@ -1175,13 +1193,15 @@
             badgeText:
               de: Maskenpflicht
             longText:
-              de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden.'
-    # extended federal state-specific rules
+              de: 'Sie sind in diesem Bundesland nicht von der Maskenpflicht ausgenommen\.'
+    # MASK_REQUIRED for extended federal state-specific rules (M4)
     - time: rat1+P5D # some long duration
       scenarioIdentifier: EXTENDED
       assertions:
+        maskState: MASK_REQUIRED
         walletInfo:
           maskState:
+            identifier: MASK_REQUIRED
             visible: true
             faqAnchor: mask_rules
             titleText:
@@ -1189,138 +1209,4 @@
             badgeText:
               de: Maskenpflicht
             longText:
-              de: 'Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden.'
-    # scenario-dependent subtitle
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: BASIC
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Regeln des Bundes$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: BASIC
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Regeln des Bundes$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: DE
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Regeln des Bundes$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: BW
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Baden-Württemberg$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: BY
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Bayern$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: BE
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Berlin$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: BB
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Brandenburg$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: HB
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Bremen$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: HH
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Hamburg$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: HE
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Hessen$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: MV
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Mecklenburg-Vorpommern$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: NI
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Niedersachsen$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: NW
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Nordrhein-Westfalen$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: RP
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Rheinland-Pfalz$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: SL
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Saarland$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: SN
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Sachsen$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: ST
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Sachsen-Anhalt$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: SH
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Schleswig-Holstein$
-    - time: rat1+P5D # some long duration
-      scenarioIdentifier: TH
-      assertions:
-        walletInfo:
-          maskState:
-            subtitleText:
-              de: ^Thüringen$
+              de: 'Sie sind in diesem Bundesland nicht von der Maskenpflicht ausgenommen\.'
