@@ -6,11 +6,10 @@
   <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Ihr Bundesland"</string>
 
-  <!-- XTXT: Admission Scenario - DE Title Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Regeln des Bundes"</string>
-  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Regeln in Ihrem Bundesland können davon abweichen"</string>
-
+  <!-- XTXT: Admission Scenario - EMPTY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_EMPTY_TITLE_TEXT">""</string>
+  <!-- XTXT: Admission Scenario - NO_SELECTION Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NO_SELECTION_TITLE_TEXT">"keine Auswahl"</string>
   <!-- XTXT: Admission Scenario - BW Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Württemberg"</string>
   <!-- XTXT: Admission Scenario - BY Title Text -->
@@ -117,18 +116,29 @@
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Erneuerung direkt über die App vornehmen"</string>
 
-  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
-  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Maskenpflicht"</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Sie sind nicht von der Maskenpflicht ausgenommen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
-
-  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <!-- XHED: Mask State - Default Card Title -->
+  <string name="MASK_STATE_DEFAULT_TITLE_TEXT">"Maskenpflicht"</string>
+  <!-- XHED: Mask State - MASK_OPTIONAL - Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Keine Maskenpflicht"</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Sie sind von der Maskenpflicht ausgenommen, eine Maske ist dennoch empfohlen.\n\nVon der Maskenpflicht sind alle Personen ausgenommen, die innerhalb der letzten 90 Tage geimpft wurden oder genesen sind oder innerhalb der letzten 24 Stunden negativ getestet wurden."</string>
+
+  <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
+  <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Maskenpflicht"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"Sie sind in diesem Bundesland nicht von der Maskenpflicht ausgenommen.\n\nHinweis:\nSofern das Bundesland, in dem Sie sich aufhalten, eine Maskenpflicht angeordnet hat, befreit Sie ein negativer Schnell- oder PCR-Test bei Freizeit-, Kultur- und Sportveranstaltungen sowie in gastronomischen Einrichtungen für 24 Stunden von dieser Maskenpflicht. Ein unbeaufsichtigt durchgeführter Selbsttest genügt nicht. Ihr Bundesland kann regeln, dass Sie auch durch Impfungen oder Genesung (wenn diese höchstens drei Monate zurückliegen) von der Maskenpflicht befreit sind. Eine Befreiung von der Maskenpflicht gilt nicht im öffentlichen Personenfernverkehr, in Krankenhäusern, Pflegeeinrichtungen und für Patientinnen und Patienten in Arztpraxen.\n\nSollten Ihre in der App hinterlegten COVID-Zertifikate ausreichen, um Sie in Ihrem Bundesland von der Maskenpflicht zu befreien, färbt sich Ihr Zertifikat grün. Ihre Befreiung von der Maskenpflicht in Ihrem Bundesland kann durch einen Scan Ihres QR-Codes mithilfe der CovPassCheck-App nachgewiesen werden."</string>
+
+  <!-- XTXT: Mask State - MASK_OPTIONAL Badge Text -->
+  <string name="MASK_STATE_MASK_OPTIONAL_BADGE_TEXT">"Keine Maskenpflicht"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"Sie sind in diesem Bundesland in einigen Situationen von der Maskenpflicht ausgenommen; eine Maske ist dennoch empfohlen.\n\nHinweis:\nSofern das Bundesland, in dem Sie sich aufhalten, eine Maskenpflicht angeordnet hat, befreit Sie ein negativer Schnell- oder PCR-Test bei Freizeit-, Kultur- und Sportveranstaltungen sowie in gastronomischen Einrichtungen für 24 Stunden von dieser Maskenpflicht. Ein unbeaufsichtigt durchgeführter Selbsttest genügt nicht. Ihr Bundesland kann regeln, dass Sie auch durch Impfungen oder Genesung (wenn diese höchstens drei Monate zurückliegen) von der Maskenpflicht befreit sind. Eine Befreiung von der Maskenpflicht gilt nicht im öffentlichen Personenfernverkehr, in Krankenhäusern, Pflegeeinrichtungen und für Patientinnen und Patienten in Arztpraxen.\n\nSollten Ihre in der App hinterlegten COVID-Zertifikate ausreichen, um Sie in Ihrem Bundesland von der Maskenpflicht zu befreien, färbt sich Ihr Zertifikat grün. Ihre Befreiung von der Maskenpflicht in Ihrem Bundesland kann durch einen Scan Ihres QR-Codes mithilfe der CovPassCheck-App nachgewiesen werden."</string>
+
+  <!-- XTXT: Mask State - NO_SELECTION Badge Text -->
+  <string name="MASK_STATE_NO_SELECTION_BADGE_TEXT">""</string>
+  <!-- XTXT: Mask State - NO_SELECTION Card Body -->
+  <string name="MASK_STATE_NO_SELECTION_LONG_TEXT">"Ohne Auswahl eines Bundeslandes kann Ihnen nicht angezeigt werden, ob Sie von einer bundeslandspezifischen Maskenpflicht ausgenommen sind.\n\nHinweis:\nSofern das Bundesland, in dem Sie sich aufhalten, eine Maskenpflicht angeordnet hat, befreit Sie ein negativer Schnell- oder PCR-Test bei Freizeit-, Kultur- und Sportveranstaltungen sowie in gastronomischen Einrichtungen für 24 Stunden von dieser Maskenpflicht. Ein unbeaufsichtigt durchgeführter Selbsttest genügt nicht. Ihr Bundesland kann regeln, dass Sie auch durch Impfungen oder Genesung (wenn diese höchstens drei Monate zurückliegen) von der Maskenpflicht befreit sind. Eine Befreiung von der Maskenpflicht gilt nicht im öffentlichen Personenfernverkehr, in Krankenhäusern, Pflegeeinrichtungen und für Patientinnen und Patienten in Arztpraxen.\n\nSollten Ihre in der App hinterlegten COVID-Zertifikate ausreichen, um Sie in Ihrem Bundesland von der Maskenpflicht zu befreien, färbt sich Ihr Zertifikat grün. Ihre Befreiung von der Maskenpflicht in Ihrem Bundesland kann durch einen Scan Ihres QR-Codes mithilfe der CovPassCheck-App nachgewiesen werden."</string>
+
+  <!-- XTXT: Mask State - NO_MANDATE Badge Text -->
+  <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT">""</string>
+  <!-- XTXT: Mask State - NO_MANDATE Card Body -->
+  <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Für dieses Bundesland liegen keine bundeslandspezifischen Regeln vor. Es gelten daher nur die bundeseinheitlichen Regeln zur Maskenpflicht.\n\nHinweis:\nSofern das Bundesland, in dem Sie sich aufhalten, eine Maskenpflicht angeordnet hat, befreit Sie ein negativer Schnell- oder PCR-Test bei Freizeit-, Kultur- und Sportveranstaltungen sowie in gastronomischen Einrichtungen für 24 Stunden von dieser Maskenpflicht. Ein unbeaufsichtigt durchgeführter Selbsttest genügt nicht. Ihr Bundesland kann regeln, dass Sie auch durch Impfungen oder Genesung (wenn diese höchstens drei Monate zurückliegen) von der Maskenpflicht befreit sind. Eine Befreiung von der Maskenpflicht gilt nicht im öffentlichen Personenfernverkehr, in Krankenhäusern, Pflegeeinrichtungen und für Patientinnen und Patienten in Arztpraxen.\n\nSollten Ihre in der App hinterlegten COVID-Zertifikate ausreichen, um Sie in Ihrem Bundesland von der Maskenpflicht zu befreien, färbt sich Ihr Zertifikat grün. Ihre Befreiung von der Maskenpflicht in Ihrem Bundesland kann durch einen Scan Ihres QR-Codes mithilfe der CovPassCheck-App nachgewiesen werden."</string>
 
 </resources>
