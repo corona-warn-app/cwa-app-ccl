@@ -378,7 +378,7 @@
       scenarioIdentifier: BW
       assertions:
         maskState: MASK_REQUIRED
-    # spot check for BY - same as federal default rules
+    # spot check for BY - basic federal state-specific rules
     - time: biontech2/1
       scenarioIdentifier: BY
       assertions:
@@ -391,6 +391,19 @@
       scenarioIdentifier: BY
       assertions:
         maskState: MASK_REQUIRED
+    # spot check for BE - NO_MANDATE
+    - time: biontech2/1
+      scenarioIdentifier: BE
+      assertions:
+        maskState: NO_MANDATE
+    - time: biontech2/1+P90D
+      scenarioIdentifier: BE
+      assertions:
+        maskState: NO_MANDATE
+    - time: biontech2/1+P91D
+      scenarioIdentifier: BE
+      assertions:
+        maskState: NO_MANDATE
 
 - description: 2.1 - RC + VC 2/2 (old notation)
   t0: '2022-08-01'
