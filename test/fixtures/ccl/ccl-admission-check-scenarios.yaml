@@ -1,4 +1,4 @@
-- description: scenarios info for identifiers DE, BW, HH and languageCode DE
+- description: scenarios info contains list of federal states
   assertions:
     labelText:
       de: ^Maskenpflichtregelung für:$
@@ -6,11 +6,9 @@
       titleText:
         de: Ihr Bundesland
       items:
-        - identifier: DE
+        - identifier: NO_SELECTION
           titleText:
-            de: Regeln des Bundes
-          subtitleText:
-            de: Regeln in Ihrem Bundesland können davon abweichen
+            de: keine Auswahl
           enabled: true
         - identifier: BW
           titleText:
