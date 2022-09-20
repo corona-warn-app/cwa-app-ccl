@@ -21,9 +21,7 @@
         - identifier: BE
           titleText:
             de: Berlin
-          subtitleText:
-            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
-          enabled: false
+          enabled: true
         - identifier: BB
           titleText:
             de: Brandenburg
