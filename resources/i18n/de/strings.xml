@@ -6,11 +6,6 @@
   <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Ihr Bundesland"</string>
 
-  <!-- XTXT: Admission Scenario - DE Title Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Regeln des Bundes"</string>
-  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Regeln in Ihrem Bundesland können davon abweichen"</string>
-
   <!-- XTXT: Admission Scenario - NO_SELECTION Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_NO_SELECTION_TITLE_TEXT">"keine Auswahl"</string>
   <!-- XTXT: Admission Scenario - BW Title Text -->
