@@ -5,11 +5,10 @@
   <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Twojego kraju związkowego"</string>
 
-  <!-- XTXT: Admission Scenario - DE Title Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Przepisy władz federalnych"</string>
-  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Wytyczne w Twoim kraju związkowym mogą być inne"</string>
-
+  <!-- XTXT: Admission Scenario - EMPTY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_EMPTY_TITLE_TEXT"/>
+  <!-- XTXT: Admission Scenario - NO_SELECTION Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NO_SELECTION_TITLE_TEXT">"Bez zaznaczenia"</string>
   <!-- XTXT: Admission Scenario - BW Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Badenia-Wirtembergia"</string>
   <!-- XTXT: Admission Scenario - BY Title Text -->
@@ -116,18 +115,29 @@
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Poproś o odnowienie bezpośrednio w aplikacji"</string>
 
-  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
-  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Obowiązek noszenia maseczki"</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Nie jesteś zwolniony(-a) z obowiązku noszenia maseczki.\n\nAby uzyskać zwolnienie z obowiązku noszenia maseczki, musisz mieć negatywny wynik (brak zakażenia) z ostatnich 24 godzin."</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Nie jesteś zwolniony(-a) z obowiązku noszenia maseczki.\n\nAby uzyskać zwolnienie z obowiązku noszenia maseczki, musisz mieć szczepienie lub przebytą infekcję COVID-19 w ciągu ostatnich 90 dni albo mieć negatywny wynik (brak zakażenia) z ostatnich 24 godzin."</string>
-
-  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <!-- XHED: Mask State - Default Card Title -->
+  <string name="MASK_STATE_DEFAULT_TITLE_TEXT">"Obowiązek noszenia maseczki"</string>
+  <!-- XHED: Mask State - MASK_OPTIONAL - Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Nie ma obowiązku noszenia maseczki"</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Jesteś zwolniony(-a) z obowiązku noszenia maseczki, ale noszenie maseczki jest nadal zalecane.\n\nKażdy, kto ma negatywny wynik (brak zakażenia) z ostatnich 24 godzin, jest zwolniony z obowiązku noszenia maseczki."</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Jesteś zwolniony(-a) z obowiązku noszenia maseczki, ale noszenie maseczki jest nadal zalecane.\n\nKażdy, kto ma szczepienie lub przeszedł infekcję COVID-19 w ciągu ostatnich 90 dni albo ma negatywny wynik (brak zakażenia) z ostatnich 24 godzin, jest zwolniony z obowiązku noszenia maseczki."</string>
+
+  <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
+  <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Obowiązek noszenia maseczki"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"Nie jesteś zwolniony(-a) z obowiązku noszenia maseczki w tym kraju związkowym.\n\nUwaga:\nJeśli kraj związkowy, w którym obecnie przebywasz, nałożył obowiązek noszenia maseczki, negatywny wynik szybkiego testu lub testu PCR zwolni Cię z tego obowiązku w przypadku aktywności rekreacyjnych, wydarzeń kulturalnych i sportowych oraz wizyt w restauracjach i barach przez 24 godziny. Jednak nie wystarczy samodzielne wykonanie testu bez nadzoru. Twój kraj związkowy może także wdrożyć zwolnienie z obowiązku noszenia maseczki po zaszczepieniu lub przebyciu infekcji (w ciągu ostatnich trzech miesięcy). Zwolnienie z obowiązku noszenia maseczki nie dotyczy transportu publicznego, szpitali i ośrodków zdrowia lub pacjentów w gabinetach lekarskich.\n\nJeśli zapisane przez Ciebie w aplikacji certyfikaty COVID wystarczają do zwolnienia z obowiązku noszenia maseczki w Twoim kraju związkowym, certyfikat wyświetla się na zielono. Możesz potwierdzić swoje zwolnienie z obowiązku noszenia maseczki poprzez zeskanowanie kodu QR w aplikacji CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - MASK_OPTIONAL Badge Text -->
+  <string name="MASK_STATE_MASK_OPTIONAL_BADGE_TEXT">"Nie ma obowiązku noszenia maseczki"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"Jesteś zwolniony(-a) z obowiązku noszenia maseczki w tym kraju związkowym w pewnych sytuacjach, ale noszenie maseczki jest nadal zalecane.\n\nUwaga:\nJeśli kraj związkowy, w którym obecnie przebywasz, nałożył obowiązek noszenia maseczki, negatywny wynik szybkiego testu lub testu PCR zwolni Cię z tego obowiązku w przypadku aktywności rekreacyjnych, wydarzeń kulturalnych i sportowych oraz wizyt w restauracjach i barach przez 24 godziny. Jednak nie wystarczy samodzielne wykonanie testu bez nadzoru. Twój kraj związkowy może także wdrożyć zwolnienie z obowiązku noszenia maseczki po zaszczepieniu lub przebyciu infekcji (w ciągu ostatnich trzech miesięcy). Zwolnienie z obowiązku noszenia maseczki nie dotyczy transportu publicznego, szpitali i ośrodków zdrowia lub pacjentów w gabinetach lekarskich.\n\nJeśli zapisane przez Ciebie w aplikacji certyfikaty COVID wystarczają do zwolnienia z obowiązku noszenia maseczki w Twoim kraju związkowym, certyfikat wyświetla się na zielono. Możesz potwierdzić swoje zwolnienie z obowiązku noszenia maseczki poprzez zeskanowanie kodu QR w aplikacji CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - NO_SELECTION Badge Text -->
+  <string name="MASK_STATE_NO_SELECTION_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_SELECTION Card Body -->
+  <string name="MASK_STATE_NO_SELECTION_LONG_TEXT">"Jeśli nie wybierzesz kraju związkowego, aplikacje nie będzie mogła wskazać, czy jesteś zwolniony(-a) z obowiązku noszenia maseczki w tym kraju związkowym.\n\nUwaga:\nJeśli kraj związkowy, w którym obecnie przebywasz, nałożył obowiązek noszenia maseczki, negatywny wynik szybkiego testu lub testu PCR zwolni Cię z tego obowiązku w przypadku aktywności rekreacyjnych, wydarzeń kulturalnych i sportowych oraz wizyt w restauracjach i barach przez 24 godziny. Jednak nie wystarczy samodzielne wykonanie testu bez nadzoru. Twój kraj związkowy może także wdrożyć zwolnienie z obowiązku noszenia maseczki po zaszczepieniu lub przebyciu infekcji (w ciągu ostatnich trzech miesięcy). Zwolnienie z obowiązku noszenia maseczki nie dotyczy transportu publicznego, szpitali i ośrodków zdrowia lub pacjentów w gabinetach lekarskich.\n\nJeśli zapisane przez Ciebie w aplikacji certyfikaty COVID wystarczają do zwolnienia z obowiązku noszenia maseczki w Twoim kraju związkowym, certyfikat wyświetla się na zielono. Możesz potwierdzić swoje zwolnienie z obowiązku noszenia maseczki poprzez zeskanowanie kodu QR w aplikacji CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - NO_MANDATE Badge Text -->
+  <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_MANDATE Card Body -->
+  <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Nie zdefiniowano reguł dla tego kraju związkowego. Dlatego zastosowanie mają tylko standardowe krajowe reguły dotyczące obowiązku noszenia maseczki.\n\nUwaga:\nJeśli kraj związkowy, w którym obecnie przebywasz, nałożył obowiązek noszenia maseczki, negatywny wynik szybkiego testu lub testu PCR zwolni Cię z tego obowiązku w przypadku aktywności rekreacyjnych, wydarzeń kulturalnych i sportowych oraz wizyt w restauracjach i barach przez 24 godziny. Jednak nie wystarczy samodzielne wykonanie testu bez nadzoru. Twój kraj związkowy może także wdrożyć zwolnienie z obowiązku noszenia maseczki po zaszczepieniu lub przebyciu infekcji (w ciągu ostatnich trzech miesięcy). Zwolnienie z obowiązku noszenia maseczki nie dotyczy transportu publicznego, szpitali i ośrodków zdrowia lub pacjentów w gabinetach lekarskich.\n\nJeśli zapisane przez Ciebie w aplikacji certyfikaty COVID wystarczają do zwolnienia z obowiązku noszenia maseczki w Twoim kraju związkowym, certyfikat wyświetla się na zielono. Możesz potwierdzić swoje zwolnienie z obowiązku noszenia maseczki poprzez zeskanowanie kodu QR w aplikacji CovPassCheck."</string>
 
 </resources>
