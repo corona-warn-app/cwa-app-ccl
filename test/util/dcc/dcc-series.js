@@ -1,6 +1,7 @@
 import async from 'async'
 import moment from 'moment'
 
+import decode from './dcc-decode.js'
 import generate from './dcc-generate.js'
 
 const vaccineShortNamesByMedicalProduct = {
@@ -135,6 +136,18 @@ const parseSeries = async ({ series, defaultDccDescriptor, t0 }) => {
   const dccDescriptors = await async.mapSeries(series, async it => {
     const idx = series.indexOf(it)
     const time = resolveTime(it.time, idx, series, t0)
+
+    if (it.barcodeData) {
+      return {
+        ...it,
+        time,
+        dccDescriptor: {},
+        dcc: decode.fromBarcodeData(it.barcodeData),
+        barcodeData: it.barcodeData,
+        validityState: it.validityState || 'VALID'
+      }
+    }
+
     const dccDescriptor = it.dccDescriptor || {}
     const partialDccDescriptor = parseSeriesEntry(it, time)
     partialDccDescriptor.dccOverwrites = partialDccDescriptor.dccOverwrites || []
