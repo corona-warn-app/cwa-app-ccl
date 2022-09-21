@@ -5,11 +5,10 @@
   <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Your federal state"</string>
 
-  <!-- XTXT: Admission Scenario - DE Title Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Federal government regulations"</string>
-  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Rules in your federal state may vary"</string>
-
+  <!-- XTXT: Admission Scenario - EMPTY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_EMPTY_TITLE_TEXT"/>
+  <!-- XTXT: Admission Scenario - NO_SELECTION Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NO_SELECTION_TITLE_TEXT">"No selection"</string>
   <!-- XTXT: Admission Scenario - BW Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Württemberg"</string>
   <!-- XTXT: Admission Scenario - BY Title Text -->
@@ -116,18 +115,29 @@
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Request renewal directly in the app"</string>
 
-  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
-  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Mask Mandate"</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"You are not exempt from the requirement to wear a mask.\n\nTo be exempt from the mask mandate, you must have had a negative diagnosis in the last 24 hours."</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"You are not exempt from the requirement to wear a mask.\n\nTo be exempt from the mask mandate, you must have had a vaccination or recovered from a COVID-19 infection within the last 90 days or had a negative diagnosis in the last 24 hours."</string>
-
-  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <!-- XHED: Mask State - Default Card Title -->
+  <string name="MASK_STATE_DEFAULT_TITLE_TEXT">"Mask Mandate"</string>
+  <!-- XHED: Mask State - MASK_OPTIONAL - Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"No Mask Mandate"</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"You are exempt from the requirement to wear a mask, but wearing a mask is still recommended.\n\nAnyone who has had a negative diagnosis in the last 24 hours is exempt from the mask mandate."</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"You are exempt from the requirement to wear a mask, but wearing a mask is still recommended.\n\nAnyone who has had a vaccination or recovered from a COVID-19 infection within the last 90 days or had a negative diagnosis in the last 24 hours is exempt from the mask mandate."</string>
+
+  <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
+  <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Mask Mandate"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"You are not exempt from the mask mandate in this state.\n\nNote:\nIf the state where you are currently located has imposed a mask mandate, a negative rapid test or PCR test will exempt you from this mask mandate for recreational activities, cultural and sports events, and restaurants and bars for 24 hours. An unsupervised self-test is not sufficient, however. Your state may also implement exemptions from the mask mandate after a vaccination or recovery from infection (within the last three months). Exemptions from the mask mandate do not apply on public transportation, in hospitals and care facilities, or to patients in doctors’ offices.\n\nIf the COVID certificates you have saved in the app are sufficient to exempt you from the mask mandate in your state, the certificate appears in green. Your exemption from the mask mandate in your state can be confirmed by scanning your QR code with the CovPassCheck app."</string>
+
+  <!-- XTXT: Mask State - MASK_OPTIONAL Badge Text -->
+  <string name="MASK_STATE_MASK_OPTIONAL_BADGE_TEXT">"No Mask Mandate"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"You are exempt from the mask mandate in this state in certain situations, but wearing a mask is still recommended.\n\nNote:\nIf the state where you are currently located has imposed a mask mandate, a negative rapid test or PCR test will exempt you from this mask mandate for recreational activities, cultural and sports events, and restaurants and bars for 24 hours. An unsupervised self-test is not sufficient, however. Your state may also implement exemptions from the mask mandate after a vaccination or recovery from infection (within the last three months). Exemptions from the mask mandate do not apply on public transportation, in hospitals and care facilities, or to patients in doctors’ offices.\n\nIf the COVID certificates you have saved in the app are sufficient to exempt you from the mask mandate in your state, the certificate appears in green. Your exemption from the mask mandate in your state can be confirmed by scanning your QR code with the CovPassCheck app."</string>
+
+  <!-- XTXT: Mask State - NO_SELECTION Badge Text -->
+  <string name="MASK_STATE_NO_SELECTION_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_SELECTION Card Body -->
+  <string name="MASK_STATE_NO_SELECTION_LONG_TEXT">"If you do not select a state, the app cannot indicate whether you are exempt from a state-specific mask mandate.\n\nNote:\nIf the state where you are currently located has imposed a mask mandate, a negative rapid test or PCR test will exempt you from this mask mandate for recreational activities, cultural and sports events, and restaurants and bars for 24 hours. An unsupervised self-test is not sufficient, however. Your state may also implement exemptions from the mask mandate after a vaccination or recovery from infection (within the last three months). Exemptions from the mask mandate do not apply on public transportation, in hospitals and care facilities, or to patients in doctors’ offices.\n\nIf the COVID certificates you have saved in the app are sufficient to exempt you from the mask mandate in your state, the certificate appears in green. Your exemption from the mask mandate in your state can be confirmed by scanning your QR code with the CovPassCheck app."</string>
+
+  <!-- XTXT: Mask State - NO_MANDATE Badge Text -->
+  <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_MANDATE Card Body -->
+  <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"No state-specific rules have been defined for this state. Therefore, only the standard nationwide rules regarding the mask mandate apply.\n\nNote:\nIf the state where you are currently located has imposed a mask mandate, a negative rapid test or PCR test will exempt you from this mask mandate for recreational activities, cultural and sports events, and restaurants and bars for 24 hours. An unsupervised self-test is not sufficient, however. Your state may also implement exemptions from the mask mandate after a vaccination or recovery from infection (within the last three months). Exemptions from the mask mandate do not apply on public transportation, in hospitals and care facilities, or to patients in doctors’ offices.\n\nIf the COVID certificates you have saved in the app are sufficient to exempt you from the mask mandate in your state, the certificate appears in green. Your exemption from the mask mandate in your state can be confirmed by scanning your QR code with the CovPassCheck app."</string>
 
 </resources>

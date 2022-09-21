@@ -5,11 +5,10 @@
   <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Statul dvs. federal"</string>
 
-  <!-- XTXT: Admission Scenario - DE Title Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Reglementările guvernului federal"</string>
-  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Regulile din statul dvs. federal pot varia"</string>
-
+  <!-- XTXT: Admission Scenario - EMPTY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_EMPTY_TITLE_TEXT"/>
+  <!-- XTXT: Admission Scenario - NO_SELECTION Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NO_SELECTION_TITLE_TEXT">"Nicio selecţie"</string>
   <!-- XTXT: Admission Scenario - BW Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Württemberg"</string>
   <!-- XTXT: Admission Scenario - BY Title Text -->
@@ -116,18 +115,29 @@
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Solicitați reînnoirea direct din aplicație"</string>
 
-  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
-  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Obligativitatea purtării măștii"</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Nu sunteți scutit(ă) de obligativitatea purtării măștii faciale.\n\nPentru a fi scutit(ă) de obligativitatea purtării măștii faciale, trebuie să aveți un diagnostic negativ în ultimele 24 de ore."</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Nu sunteți scutit(ă) de obligativitatea purtării măștii faciale.\n\nPentru a fi scutit(ă) de obligativitatea purtării măștii faciale, trebuie să fiți vaccinat(ă) sau să vă fi recuperat după infecția cu COVID-19 în ultimele 90 de zile sau să aveți un diagnostic negativ în ultimele 24 de ore."</string>
-
-  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <!-- XHED: Mask State - Default Card Title -->
+  <string name="MASK_STATE_DEFAULT_TITLE_TEXT">"Obligativitatea purtării măștii"</string>
+  <!-- XHED: Mask State - MASK_OPTIONAL - Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Fără obligativitatea purtării măștii"</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Sunteți scutit(ă) de obligativitatea purtării măștii faciale, dar purtarea acesteia este, totuși, recomandată.\n\nOrice persoană care are un diagnostic negativ în ultimele 24 de ore este scutită de obligativitatea purtării măștii faciale."</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Sunteți scutit(ă) de obligativitatea purtării măștii faciale, dar purtarea acesteia este, totuși, recomandată.\n\nOrice persoană vaccinată sau care s-a recuperat după infecția cu COVID-19 în ultimele 90 de zile sau care are un diagnostic negativ în ultimele 24 de ore este scutită de obligativitatea purtării măștii faciale."</string>
+
+  <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
+  <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Obligativitatea purtării măștii"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"Nu sunteți scutit(ă) de obligativitatea purtării măștii faciale în acest stat.\n\nNotă:\nDacă statul în care vă aflați momentan a impus obligativitatea purtării măștii, un test rapid negativ sau un test PCR negativ vă va scuti de obligativitatea purtării măștii timp de 24 de ore pentru activitățile recreative, culturale și evenimentele sportive, precum și pentru accesul în baruri sau restaurante. O testare acasă nesupravegheată nu este totuși suficientă. De asemenea, statul în care vă aflați poate aplica scutiri de la obligativitatea purtării măștii în urma vaccinării sau a recuperării după boală (în ultimele trei luni). Scutirea de la obligativitatea purtării măștii nu se aplică în transportul public, în spitale și în instituțiile de asistență și nici pacienților aflați în cabinetele medicilor.\n\nDacă certificatele COVID pe care le-ați salvat în aplicație sunt suficiente pentru a vă scuti de obligativitatea purtării măștii în statul dvs., acestea apar cu verde în aplicație. Scutirea de la obligativitatea purtării măștii în statul dvs. poate fi confirmată prin scanarea codului QR cu aplicația CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - MASK_OPTIONAL Badge Text -->
+  <string name="MASK_STATE_MASK_OPTIONAL_BADGE_TEXT">"Fără obligativitatea purtării măștii"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"Sunteți scutit(ă) de obligativitatea purtării măștii faciale în acest stat în anumite situații, dar se recomandă în continuare purtarea măștii.\n\nNotă:\nDacă statul în care vă aflați momentan a impus obligativitatea purtării măștii, un test rapid negativ sau un test PCR negativ vă va scuti de obligativitatea purtării măștii timp de 24 de ore pentru activitățile recreative, culturale și evenimentele sportive, precum și pentru accesul în baruri sau restaurante. O testare acasă nesupravegheată nu este totuși suficientă. De asemenea, statul în care vă aflați poate aplica scutiri de la obligativitatea purtării măștii în urma vaccinării sau a recuperării după boală (în ultimele trei luni). Scutirea de la obligativitatea purtării măștii nu se aplică în transportul public, în spitale și în instituțiile de asistență și nici pacienților aflați în cabinetele medicilor.\n\nDacă certificatele COVID pe care le-ați salvat în aplicație sunt suficiente pentru a vă scuti de obligativitatea purtării măștii în statul dvs., acestea apar cu verde în aplicație. Scutirea de la obligativitatea purtării măștii în statul dvs. poate fi confirmată prin scanarea codului QR cu aplicația CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - NO_SELECTION Badge Text -->
+  <string name="MASK_STATE_NO_SELECTION_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_SELECTION Card Body -->
+  <string name="MASK_STATE_NO_SELECTION_LONG_TEXT">"Dacă nu selectați un stat, aplicația nu poate specifica dacă sunteți scutit(ă) de obligativitatea purtării măștii dependentă de statul respectiv.\n\nNotă:\nDacă statul în care vă aflați momentan a impus obligativitatea purtării măștii, un test rapid negativ sau un test PCR negativ vă va scuti de obligativitatea purtării măștii timp de 24 de ore pentru activitățile recreative, culturale și evenimentele sportive, precum și pentru accesul în baruri sau restaurante. O testare acasă nesupravegheată nu este totuși suficientă. De asemenea, statul în care vă aflați poate aplica scutiri de la obligativitatea purtării măștii în urma vaccinării sau a recuperării după boală (în ultimele trei luni). Scutirea de la obligativitatea purtării măștii nu se aplică în transportul public, în spitale și în instituțiile de asistență și nici pacienților aflați în cabinetele medicilor.\n\nDacă certificatele COVID pe care le-ați salvat în aplicație sunt suficiente pentru a vă scuti de obligativitatea purtării măștii în statul dvs., acestea apar cu verde în aplicație. Scutirea de la obligativitatea purtării măștii în statul dvs. poate fi confirmată prin scanarea codului QR cu aplicația CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - NO_MANDATE Badge Text -->
+  <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_MANDATE Card Body -->
+  <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Nu au fost definite reguli specifice statului pentru acest stat. Prin urmare, se aplică doar regulile standard la nivel național cu privire la obligativitatea purtării măștii faciale.\n\nNotă:\nDacă statul în care vă aflați momentan a impus obligativitatea purtării măștii, un test rapid negativ sau un test PCR negativ vă va scuti de obligativitatea purtării măștii timp de 24 de ore pentru activitățile recreative, culturale și evenimentele sportive, precum și pentru accesul în baruri sau restaurante. O testare acasă nesupravegheată nu este totuși suficientă. De asemenea, statul în care vă aflați poate aplica scutiri de la obligativitatea purtării măștii în urma vaccinării sau a recuperării după boală (în ultimele trei luni). Scutirea de la obligativitatea purtării măștii nu se aplică în transportul public, în spitale și în instituțiile de asistență și nici pacienților aflați în cabinetele medicilor.\n\nDacă certificatele COVID pe care le-ați salvat în aplicație sunt suficiente pentru a vă scuti de obligativitatea purtării măștii în statul dvs., acestea apar cu verde în aplicație. Scutirea de la obligativitatea purtării măștii în statul dvs. poate fi confirmată prin scanarea codului QR cu aplicația CovPassCheck."</string>
 
 </resources>
