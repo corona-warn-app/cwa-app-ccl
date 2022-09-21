@@ -8,7 +8,22 @@ const title = str => {
   const len = stripAnsi(str).length
   return `${chalk.bold(str)}\n${repeat(len, '=')}`
 }
-const _yaml = (obj, { indentation = 0 } = {}) => indent(indentation, yaml.dump(obj))
+const dumpJsonSafe = obj => {
+  try {
+    return JSON.stringify(obj)
+  } catch (err) {
+    return chalk.red(err)
+  }
+}
+const dumpYamlSafe = obj => {
+  try {
+    return yaml.dump(obj)
+  } catch (err) {
+    return `${chalk.red(err)}\nFalling back to JSON:\n${dumpJsonSafe(obj)}`
+  }
+}
+const _yaml = (obj, { indentation = 0 } = {}) => indent(indentation, dumpYamlSafe(obj))
+const json = (obj, { indentation = 0 } = {}) => indent(indentation, dumpJsonSafe(obj))
 const passOrFail = boolean => `${boolean ? chalk.green('PASS') : chalk.red('FAIL')}`
 const prefixLine = (str, prefix) => {
   return str.split('\n')
@@ -21,6 +36,7 @@ export default {
   indent,
   title,
   yaml: _yaml,
+  json,
   passOrFail,
   prefixLine
 }

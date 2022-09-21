@@ -97,7 +97,7 @@ ${chalk.cyan('Booster Notification Rules')} (${allBNRs.length} BNRs)
 ${terminal.yaml(allBNRs)}
 
 ${chalk.cyan('Output of the operation')}
-${terminal.yaml(output)}
+${terminal.yaml(output)}${testCase.debugAsJson === true ? `\n${terminal.json(output)}` : ''}
 
 End of debugging: ${chalk.magenta(testCaseDescription)}`
 
