@@ -5,11 +5,10 @@
   <!-- XTXT: Admission Scenario - Card Subtitle Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Eyaletiniz"</string>
 
-  <!-- XTXT: Admission Scenario - DE Title Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_TITLE_TEXT">"Federal hükûmet düzenlemeleri"</string>
-  <!-- XTXT: Admission Scenario - DE Subtitle Text -->
-  <string name="ADMISSION_SCENARIO_SELECTION_DE_SUBTITLE_TEXT">"Eyaletinizdeki kurallar değişiklik gösterebilir"</string>
-
+  <!-- XTXT: Admission Scenario - EMPTY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_EMPTY_TITLE_TEXT"/>
+  <!-- XTXT: Admission Scenario - NO_SELECTION Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NO_SELECTION_TITLE_TEXT">"Seçim yok"</string>
   <!-- XTXT: Admission Scenario - BW Title Text -->
   <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Baden-Württemberg"</string>
   <!-- XTXT: Admission Scenario - BY Title Text -->
@@ -116,18 +115,29 @@
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Doğrudan uygulama içinde yenileme talebi oluşturun"</string>
 
-  <!-- XHED: Mask State - MASK_REQUIRED Card Title -->
-  <string name="MASK_STATE_MASK_REQUIRED_TITLE_TEXT">"Maske Zorunluluğu"</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_BASIC">"Maske takma gerekliliğinden muaf değilsiniz.\n\nMaske zorunluluğundan muaf olmak için son 24 saat içinde negatif tanı almış olmanız gerekir."</string>
-  <!-- XTXT: Mask State - MASK_REQUIRED Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT_EXTENDED">"Maske takma gerekliliğinden muaf değilsiniz.\n\nMaske zorunluluğundan muaf olmak için son 90 gün içinde aşı olmuş ya da COVID-19 enfeksiyonu geçirmiş olmanız veya son 24 saat içinde negatif tanı almış olmanız gerekir."</string>
-
-  <!-- XHED: Mask State - MASK_OPTIONAL Card Title -->
+  <!-- XHED: Mask State - Default Card Title -->
+  <string name="MASK_STATE_DEFAULT_TITLE_TEXT">"Maske Zorunluluğu"</string>
+  <!-- XHED: Mask State - MASK_OPTIONAL - Card Title -->
   <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Maske Zorunluluğu Yok"</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Federal default rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_BASIC">"Maske takma gerekliliğinden muafsınız ancak yine de maske takmanız önerilir.\n\nSon 24 saat içinde negatif tanı almış herkes maske zorunluluğundan muaftır."</string>
-  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body - Extended federal state-specific rules -->
-  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT_EXTENDED">"Maske takma gerekliliğinden muafsınız ancak yine de maske takmanız önerilir.\n\nSon 90 gün içinde aşı olmuş ya da COVID-19 enfeksiyonu geçirmiş veya son 24 saat içinde negatif tanı almış herkes maske zorunluluğundan muaftır."</string>
+
+  <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
+  <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Maske Zorunluluğu"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"Bu eyaletteki maske zorunluluğundan muaf değilsiniz.\n\nNot:\nGüncel olarak bulunduğunuz eyalet maske zorunluluğu uyguluyorsa negatif hızlı test veya PCR testi sizi eğlence amaçlı etkinlikler, kültürel etkinlikler ve spor etkinlikleri, restoranlar ve barlar için 24 saatliğine bu maske zorunluluğundan muaf tutar. Ancak gözetimsiz olarak kendi kendine yapılan testler yeterli değildir. Ayrıca eyaletiniz, aşı olduktan veya enfeksiyon geçirdikten (en az üç ay içinde) sonra maske zorunluluğundan muafiyetler uygulayabilir. Maske zorunluluğundan muafiyetler toplu taşımada, hastanelerde ve bakım tesislerinde veya doktor muayenehanesindeki hastalar için geçerli değildir.\n\nUygulamada kaydettiğiniz COVID sertifikaları sizi eyaletinizdeki maske zorunluluğundan muaf tutmak için yeterliyse sertifikalar yeşil renkte görüntülenir. Maske zorunluluğu muafiyetiniz, CovPassCheck uygulamasıyla QR kodunuz taranarak doğrulanabilir."</string>
+
+  <!-- XTXT: Mask State - MASK_OPTIONAL Badge Text -->
+  <string name="MASK_STATE_MASK_OPTIONAL_BADGE_TEXT">"Maske Zorunluluğu Yok"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"Bu eyaletteki maske zorunluluğundan bazı durumlarda muafsınız ancak yine de maske takılması önerilir.\n\nNot:\nGüncel olarak bulunduğunuz eyalet maske zorunluluğu uyguluyorsa negatif hızlı test veya PCR testi sizi eğlence amaçlı etkinlikler, kültürel etkinlikler ve spor etkinlikleri, restoranlar ve barlar için 24 saatliğine bu maske zorunluluğundan muaf tutar. Ancak gözetimsiz olarak kendi kendine yapılan testler yeterli değildir. Ayrıca eyaletiniz, aşı olduktan veya enfeksiyon geçirdikten (en az üç ay içinde) sonra maske zorunluluğundan muafiyetler uygulayabilir. Maske zorunluluğundan muafiyetler toplu taşımada, hastanelerde ve bakım tesislerinde veya doktor muayenehanesindeki hastalar için geçerli değildir.\n\nUygulamada kaydettiğiniz COVID sertifikaları sizi eyaletinizdeki maske zorunluluğundan muaf tutmak için yeterliyse sertifikalar yeşil renkte görüntülenir. Maske zorunluluğu muafiyetiniz, CovPassCheck uygulamasıyla QR kodunuz taranarak doğrulanabilir."</string>
+
+  <!-- XTXT: Mask State - NO_SELECTION Badge Text -->
+  <string name="MASK_STATE_NO_SELECTION_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_SELECTION Card Body -->
+  <string name="MASK_STATE_NO_SELECTION_LONG_TEXT">"Eyalet seçmezseniz uygulama, eyalete özel maske zorunluluğundan muaf olup olmadığınızı belirtemez.\n\nNot:\nGüncel olarak bulunduğunuz eyalet maske zorunluluğu uyguluyorsa negatif hızlı test veya PCR testi sizi eğlence amaçlı etkinlikler, kültürel etkinlikler ve spor etkinlikleri, restoranlar ve barlar için 24 saatliğine bu maske zorunluluğundan muaf tutar. Ancak gözetimsiz olarak kendi kendine yapılan testler yeterli değildir. Ayrıca eyaletiniz, aşı olduktan veya enfeksiyon geçirdikten (en az üç ay içinde) sonra maske zorunluluğundan muafiyetler uygulayabilir. Maske zorunluluğundan muafiyetler toplu taşımada, hastanelerde ve bakım tesislerinde veya doktor muayenehanesindeki hastalar için geçerli değildir.\n\nUygulamada kaydettiğiniz COVID sertifikaları sizi eyaletinizdeki maske zorunluluğundan muaf tutmak için yeterliyse sertifikalar yeşil renkte görüntülenir. Maske zorunluluğu muafiyetiniz, CovPassCheck uygulamasıyla QR kodunuz taranarak doğrulanabilir."</string>
+
+  <!-- XTXT: Mask State - NO_MANDATE Badge Text -->
+  <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_MANDATE Card Body -->
+  <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Bu eyalet için eyalete özel kurallar tanımlanmadı. Dolayısıyla yalnızca maske zorunluluğuna ilişkin ülke geneli standart kurallar geçerlidir.\n\nNot:\nGüncel olarak bulunduğunuz eyalet maske zorunluluğu uyguluyorsa negatif hızlı test veya PCR testi sizi eğlence amaçlı etkinlikler, kültürel etkinlikler ve spor etkinlikleri, restoranlar ve barlar için 24 saatliğine bu maske zorunluluğundan muaf tutar. Ancak gözetimsiz olarak kendi kendine yapılan testler yeterli değildir. Ayrıca eyaletiniz, aşı olduktan veya enfeksiyon geçirdikten (en az üç ay içinde) sonra maske zorunluluğundan muafiyetler uygulayabilir. Maske zorunluluğundan muafiyetler toplu taşımada, hastanelerde ve bakım tesislerinde veya doktor muayenehanesindeki hastalar için geçerli değildir.\n\nUygulamada kaydettiğiniz COVID sertifikaları sizi eyaletinizdeki maske zorunluluğundan muaf tutmak için yeterliyse sertifikalar yeşil renkte görüntülenir. Maske zorunluluğu muafiyetiniz, CovPassCheck uygulamasıyla QR kodunuz taranarak doğrulanabilir."</string>
 
 </resources>
