@@ -18,28 +18,28 @@
     - time: biontech1/2
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech1/2+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech1/2+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech1/2
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech1/2+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech1/2+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 0.1 - VC 2/2
   t0: '2022-08-01'
@@ -61,28 +61,28 @@
     - time: biontech2/2
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/2+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/2+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech2/2
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/2+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/2+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 0.1 - VC 2/1
   t0: '2022-08-01'
@@ -104,28 +104,28 @@
     - time: biontech2/1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech2/1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 0.1 - VC 1/1
   t0: '2022-08-01'
@@ -147,28 +147,28 @@
     - time: biontech1/1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech1/1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech1/1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech1/1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech1/1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech1/1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 0.2 - RC
   t0: '2022-08-01'
@@ -196,44 +196,44 @@
     - time: rc1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: rc1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 1.1 - RAT test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
   t0: '2022-08-01'
@@ -255,28 +255,28 @@
     - time: rat1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rat1+PT24H
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rat1+PT24H1S
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: rat1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rat1+PT24H
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rat1+PT24H1S
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 1.2 - PCR test - MASK_OPTIONAL within 24 hours, MASK_REQUIRED otherwise
   t0: '2022-08-01'
@@ -298,28 +298,28 @@
     - time: pcr1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: pcr1+PT24H
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: pcr1+PT24H1S
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: pcr1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: pcr1+PT24H
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: pcr1+PT24H1S
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.1 - RC + VC 2/1
   t0: '2022-08-01'
@@ -343,67 +343,67 @@
     - time: biontech2/1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech2/1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech2/1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech2/1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # spot check for BW - extended federal state-specific rules
     - time: biontech2/1
       scenarioIdentifier: BW
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech2/1+P90D
       scenarioIdentifier: BW
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech2/1+P91D
       scenarioIdentifier: BW
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # spot check for BY - basic federal state-specific rules
     - time: biontech2/1
       scenarioIdentifier: BY
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/1+P90D
       scenarioIdentifier: BY
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/1+P91D
       scenarioIdentifier: BY
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # spot check for BE - NO_MANDATE
     - time: biontech2/1
       scenarioIdentifier: BE
       assertions:
-        maskState: NO_MANDATE
+        maskState: OTHER
     - time: biontech2/1+P90D
       scenarioIdentifier: BE
       assertions:
-        maskState: NO_MANDATE
+        maskState: OTHER
     - time: biontech2/1+P91D
       scenarioIdentifier: BE
       assertions:
-        maskState: NO_MANDATE
+        maskState: OTHER
 
 - description: 2.1 - RC + VC 2/2 (old notation)
   t0: '2022-08-01'
@@ -427,28 +427,28 @@
     - time: biontech2/2
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/2+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech2/2+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech2/2
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech2/2+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech2/2+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.2 - VC 2/1 + RC
   t0: '2022-08-01'
@@ -478,44 +478,44 @@
     - time: rc1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: rc1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.2 - VC 2/2 + RC
   t0: '2022-08-01'
@@ -545,44 +545,44 @@
     - time: rc1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: rc1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.3 - VC 3/1
   t0: '2022-08-01'
@@ -604,28 +604,28 @@
     - time: biontech3/1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech3/1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech3/1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech3/1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech3/1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech3/1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.3 - VC 3/3
   t0: '2022-08-01'
@@ -647,28 +647,28 @@
     - time: biontech3/3
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech3/3+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech3/3+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech3/3
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech3/3+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech3/3+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.4 - VC 3/1 + RC
   t0: '2022-08-01'
@@ -698,44 +698,44 @@
     - time: rc1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: rc1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.4 - VC 3/3 + RC
   t0: '2022-08-01'
@@ -765,44 +765,44 @@
     - time: rc1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: rc1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.5 - VC 4/1
   t0: '2022-08-01'
@@ -824,28 +824,28 @@
     - time: biontech4/1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech4/1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech4/1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech4/1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech4/1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech4/1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.5 - VC 4/4
   t0: '2022-08-01'
@@ -867,28 +867,28 @@
     - time: biontech4/4
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech4/4+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: biontech4/4+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: biontech4/4
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech4/4+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: biontech4/4+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.6 - VC 4/1 + RC
   t0: '2022-08-01'
@@ -918,44 +918,44 @@
     - time: rc1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: rc1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: 2.6 - VC 4/4 + RC
   t0: '2022-08-01'
@@ -985,44 +985,44 @@
     - time: rc1
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: BASIC
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     # extended federal state-specific rules
     - time: rc1
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P28D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
     - time: rc1+P29D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P90D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_OPTIONAL
+        maskState: OTHER
     - time: rc1+P91D
       scenarioIdentifier: EXTENDED
       assertions:
-        maskState: MASK_REQUIRED
+        maskState: OTHER
 
 - description: texts
   t0: '2022-08-01'
