@@ -1040,6 +1040,7 @@
             visible: false
     # NO_SELECTION (explicit; M1)
     - time: rat1
+      skip: true
       scenarioIdentifier: NO_SELECTION
       assertions:
         maskState: NO_SELECTION
@@ -1058,6 +1059,7 @@
               de: 'Ohne Auswahl eines Bundeslandes kann Ihnen nicht angezeigt werden, ob Sie von einer bundeslandspezifischen Maskenpflicht ausgenommen sind\.'
     # NO_MANDATE (M2)
     - time: rat1
+      skip: true
       scenarioIdentifier: NO_MANDATE
       assertions:
         maskState: NO_MANDATE
@@ -1074,6 +1076,7 @@
               de: 'Für dieses Bundesland liegen keine bundeslandspezifischen Regeln vor\. Es gelten daher nur die bundeseinheitlichen Regeln zur Maskenpflicht\.'
     # MASK_OPTIONAL for basic federal state-specific rules (M4)
     - time: rat1
+      skip: true
       scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_OPTIONAL
@@ -1090,6 +1093,7 @@
               de: 'Sie sind in diesem Bundesland in einigen Situationen von der Maskenpflicht ausgenommen; eine Maske ist dennoch empfohlen\.'
     # MASK_OPTIONAL for extended federal state-specific rules (M4)
     - time: rat1
+      skip: true
       scenarioIdentifier: EXTENDED
       assertions:
         maskState: MASK_OPTIONAL
@@ -1106,6 +1110,7 @@
               de: 'Sie sind in diesem Bundesland in einigen Situationen von der Maskenpflicht ausgenommen; eine Maske ist dennoch empfohlen\.'
     # scenario-dependent subtitle
     - time: rat1
+      skip: true
       scenarioIdentifier: BW
       assertions:
         walletInfo:
@@ -1113,6 +1118,7 @@
             subtitleText:
               de: ^Baden-Württemberg$
     - time: rat1
+      skip: true
       scenarioIdentifier: BY
       assertions:
         walletInfo:
@@ -1120,6 +1126,7 @@
             subtitleText:
               de: ^Bayern$
     - time: rat1
+      skip: true
       scenarioIdentifier: BE
       assertions:
         walletInfo:
@@ -1127,6 +1134,7 @@
             subtitleText:
               de: ^Berlin$
     - time: rat1
+      skip: true
       scenarioIdentifier: BB
       assertions:
         walletInfo:
@@ -1134,6 +1142,7 @@
             subtitleText:
               de: ^Brandenburg$
     - time: rat1
+      skip: true
       scenarioIdentifier: HB
       assertions:
         walletInfo:
@@ -1141,6 +1150,7 @@
             subtitleText:
               de: ^Bremen$
     - time: rat1
+      skip: true
       scenarioIdentifier: HH
       assertions:
         walletInfo:
@@ -1148,6 +1158,7 @@
             subtitleText:
               de: ^Hamburg$
     - time: rat1
+      skip: true
       scenarioIdentifier: HE
       assertions:
         walletInfo:
@@ -1155,6 +1166,7 @@
             subtitleText:
               de: ^Hessen$
     - time: rat1
+      skip: true
       scenarioIdentifier: MV
       assertions:
         walletInfo:
@@ -1162,6 +1174,7 @@
             subtitleText:
               de: ^Mecklenburg-Vorpommern$
     - time: rat1
+      skip: true
       scenarioIdentifier: NI
       assertions:
         walletInfo:
@@ -1169,6 +1182,7 @@
             subtitleText:
               de: ^Niedersachsen$
     - time: rat1
+      skip: true
       scenarioIdentifier: NW
       assertions:
         walletInfo:
@@ -1176,6 +1190,7 @@
             subtitleText:
               de: ^Nordrhein-Westfalen$
     - time: rat1
+      skip: true
       scenarioIdentifier: RP
       assertions:
         walletInfo:
@@ -1183,6 +1198,7 @@
             subtitleText:
               de: ^Rheinland-Pfalz$
     - time: rat1
+      skip: true
       scenarioIdentifier: SL
       assertions:
         walletInfo:
@@ -1190,6 +1206,7 @@
             subtitleText:
               de: ^Saarland$
     - time: rat1
+      skip: true
       scenarioIdentifier: SN
       assertions:
         walletInfo:
@@ -1197,6 +1214,7 @@
             subtitleText:
               de: ^Sachsen$
     - time: rat1
+      skip: true
       scenarioIdentifier: ST
       assertions:
         walletInfo:
@@ -1204,6 +1222,7 @@
             subtitleText:
               de: ^Sachsen-Anhalt$
     - time: rat1
+      skip: true
       scenarioIdentifier: SH
       assertions:
         walletInfo:
@@ -1211,6 +1230,7 @@
             subtitleText:
               de: ^Schleswig-Holstein$
     - time: rat1
+      skip: true
       scenarioIdentifier: TH
       assertions:
         walletInfo:
@@ -1219,6 +1239,7 @@
               de: ^Thüringen$
     # MASK_REQUIRED for basic federal state-specific rules (M4)
     - time: rat1+P5D # some long duration
+      skip: true
       scenarioIdentifier: BASIC
       assertions:
         maskState: MASK_REQUIRED
@@ -1235,6 +1256,7 @@
               de: 'Sie sind in diesem Bundesland nicht von der Maskenpflicht ausgenommen\.'
     # MASK_REQUIRED for extended federal state-specific rules (M4)
     - time: rat1+P5D # some long duration
+      skip: true
       scenarioIdentifier: EXTENDED
       assertions:
         maskState: MASK_REQUIRED
