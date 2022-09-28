@@ -1,0 +1,108 @@
+- description: scenarios info contains list of federal states
+  assertions:
+    labelText:
+      de: ^Maskenpflichtregelung für:$
+    scenarioSelection:
+      titleText:
+        de: Ihr Bundesland
+      items:
+        - identifier: NO_SELECTION
+          titleText:
+            de: keine Auswahl
+          enabled: true
+        - identifier: BW
+          titleText:
+            de: Baden-Württemberg
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: BY
+          titleText:
+            de: Bayern
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: BE
+          titleText:
+            de: Berlin
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: BB
+          titleText:
+            de: Brandenburg
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: HB
+          titleText:
+            de: Bremen
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: HH
+          titleText:
+            de: Hamburg
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: HE
+          titleText:
+            de: Hessen
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: MV
+          titleText:
+            de: Mecklenburg-Vorpommern
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: NI
+          titleText:
+            de: Niedersachsen
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: NW
+          titleText:
+            de: Nordrhein-Westfalen
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: RP
+          titleText:
+            de: Rheinland-Pfalz
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: SL
+          titleText:
+            de: Saarland
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: SN
+          titleText:
+            de: Sachsen
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: ST
+          titleText:
+            de: Sachsen-Anhalt
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: SH
+          titleText:
+            de: Schleswig-Holstein
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false
+        - identifier: TH
+          titleText:
+            de: Thüringen
+          subtitleText:
+            de: ^Für dieses Bundesland liegen momentan keine abweichenden Regeln vor\. Es gelten die Regeln des Bundes\.$
+          enabled: false

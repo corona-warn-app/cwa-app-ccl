@@ -1,42 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
+  <!-- XHED: Admission Scenario - Card Title -->
+  <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Изисквания за носене на маска за:"</string>
+  <!-- XTXT: Admission Scenario - Card Subtitle Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TITLE_TEXT">"Вашата федерална провинция"</string>
+
+  <!-- XTXT: Admission Scenario - EMPTY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_EMPTY_TITLE_TEXT"/>
+  <!-- XTXT: Admission Scenario - NO_SELECTION Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NO_SELECTION_TITLE_TEXT">"Няма избор"</string>
+  <!-- XTXT: Admission Scenario - BW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BW_TITLE_TEXT">"Баден-Вюртемберг"</string>
+  <!-- XTXT: Admission Scenario - BY Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BY_TITLE_TEXT">"Бавария"</string>
+  <!-- XTXT: Admission Scenario - BE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BE_TITLE_TEXT">"Берлин"</string>
+  <!-- XTXT: Admission Scenario - BB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_BB_TITLE_TEXT">"Бранденбург"</string>
+  <!-- XTXT: Admission Scenario - HB Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HB_TITLE_TEXT">"Бремен"</string>
+  <!-- XTXT: Admission Scenario - HH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HH_TITLE_TEXT">"Хамбург"</string>
+  <!-- XTXT: Admission Scenario - HE Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_HE_TITLE_TEXT">"Хесен"</string>
+  <!-- XTXT: Admission Scenario - MV Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_MV_TITLE_TEXT">"Мекленбург-Западна Померания"</string>
+  <!-- XTXT: Admission Scenario - NI Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NI_TITLE_TEXT">"Долна Саксония"</string>
+  <!-- XTXT: Admission Scenario - NW Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_NW_TITLE_TEXT">"Северен Рейн-Вестфалия"</string>
+  <!-- XTXT: Admission Scenario - RP Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_RP_TITLE_TEXT">"Рейнланд-Пфалц"</string>
+  <!-- XTXT: Admission Scenario - SL Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SL_TITLE_TEXT">"Саарланд"</string>
+  <!-- XTXT: Admission Scenario - SN Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SN_TITLE_TEXT">"Саксония"</string>
+  <!-- XTXT: Admission Scenario - ST Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_ST_TITLE_TEXT">"Саксония-Анхалт"</string>
+  <!-- XTXT: Admission Scenario - SH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SH_TITLE_TEXT">"Шлезвиг-Холщайн"</string>
+  <!-- XTXT: Admission Scenario - TH Title Text -->
+  <string name="ADMISSION_SCENARIO_SELECTION_TH_TITLE_TEXT">"Тюрингия"</string>
+
+  <!-- XTXT: Admission Scenario - Subtitle Text - Disabled -->
+  <string name="ADMISSION_SCENARIO_SELECTION_SUBTITLE_TEXT_DISABLED">"В момента няма други правила за Вашата федерална провинция. Важат правилата на федералното правителство."</string>
+
   <!-- XHED: Admission State - Card Title -->
   <string name="ADMISSION_STATE_TITLE_TEXT">"Доказателство за статус"</string>
-
-  <!-- XTXT: Admission State - 2G_PLUS Badge Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_BADGE_TEXT">"2G+"</string>
-  <!-- XTXT: Admission State - 2G_PLUS Card Body -->
-  <string name="ADMISSION_STATE_2G_PLUS_LONG_TEXT">"Вашите сертификати отговарят на 2G plus правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
-  <!-- XTXT: Admission State - 2G_PLUS State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_PLUS_SCN_TEXT">"Статусът Ви е променен. Вашите сертификати вече отговарят на правилото \"2G plus\". Ако се налага да доказвате текущия си статус, затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
-
-  <!-- XTXT: Admission State - 2G Badge Text -->
-  <string name="ADMISSION_STATE_2G_BADGE_TEXT">"2G"</string>
-  <!-- XTXT: Admission State - 2G Card Body -->
-  <string name="ADMISSION_STATE_2G_LONG_TEXT">"Вашите сертификати отговарят на 2G правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
-  <!-- XTXT: Admission State - 2G State Change Notification Text -->
-  <string name="ADMISSION_STATE_2G_SCN_TEXT">"Статусът Ви е променен. Вашите сертификати вече отговарят на правилото \"2G\". Ако се налага да доказвате текущия си статус, затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_PCR Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_BADGE_TEXT">"3G+"</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_LONG_TEXT">"Вашите сертификати отговарят на 3G plus правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
-  <!-- XTXT: Admission State - 3G_WITH_PCR State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_PCR_SCN_TEXT">"Статусът Ви е променен. Вашите сертификати вече отговарят на правилото \"3G plus\". Ако се налага да доказвате текущия си статус, затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
-
-  <!-- XTXT: Admission State - 3G_WITH_RAT Badge Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_BADGE_TEXT">"3G"</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT Card Body -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_LONG_TEXT">"Вашите сертификати отговарят на 3G правилото. Ако Ви се налага да доказвате своя текущ статус затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
-  <!-- XTXT: Admission State - 3G_WITH_RAT State Change Notification Text -->
-  <string name="ADMISSION_STATE_3G_WITH_RAT_SCN_TEXT">"Статусът Ви е променен. Вашите сертификати вече отговарят на правилото \"3G\". Ако се налага да доказвате текущия си статус, затворете този изглед и покажете QR кода в “Преглед на сертификати”."</string>
-
   <!-- XTXT: Admission State - OTHER Badge Text -->
   <string name="ADMISSION_STATE_OTHER_BADGE_TEXT"/>
   <!-- XTXT: Admission State - OTHER Card Body -->
-  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"В момента сертификатите Ви не отговарят на нито едно правило."</string>
-  <!-- XTXT: Admission State - OTHER State Change Notification Text -->
-  <string name="ADMISSION_STATE_OTHER_SCN_TEXT">"В момента сертификатите Ви не отговарят на нито едно правило."</string>
+  <string name="ADMISSION_STATE_OTHER_LONG_TEXT">"Понастоящем доказателството за статус (3G, 3G+, 2G, 2G+) не е релевантно и не се показва в приложението."</string>
 
   <!-- XHED: Vaccination State - Card Title -->
   <string name="VACCINATION_STATE_TITLE_TEXT">"Ваксинационен статус"</string>
@@ -53,41 +67,21 @@
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_BOOSTER Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_BOOSTER_LONG_TEXT">"Получили сте всички препоръчителни за момента ваксинации. Ваксинационната Ви защита е пълна."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_LONG_TEXT">"Въз основа на ваксинациите и миналите Ви заразявания се счита, че имате достатъчна защита. В момента не се препоръчва допълнителна ваксинация."</string>
-  <!-- XTXT: Vaccination State - COMPLETE_BOOSTER_RC_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_BOOSTER_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"Въз основа на ваксинациите и миналите Ви заразявания се счита, че имате достатъчна защита. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="one">"Въз основа на ваксинациите и миналите Ви заразявания се счита, че имате достатъчна защита. Но е необходим още %1$d ден, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="two">"Въз основа на ваксинациите и миналите Ви заразявания се счита, че имате достатъчна защита. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="few">"Въз основа на ваксинациите и миналите Ви заразявания се счита, че имате достатъчна защита. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="many">"Въз основа на ваксинациите и миналите Ви заразявания се счита, че имате достатъчна защита. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="other">"Въз основа на ваксинациите и миналите Ви заразявания се счита, че имате достатъчна защита. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-  </plurals>
-  <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_PENDING Card Long Text -->
-  <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_PENDING_LONG_TEXT">
-    <item quantity="zero">"Получили сте всички ваксинации за базова имунизация. Но ваксинационната Ви защита ще е ефективна едва след %1$d дена. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</item>
-    <item quantity="one">"Получили сте всички ваксинации за базова имунизация. Но ваксинационната Ви защита ще е ефективна едва след %1$d ден. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</item>
-    <item quantity="two">"Получили сте всички ваксинации за базова имунизация. Но ваксинационната Ви защита ще е ефективна едва след %1$d дена. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</item>
-    <item quantity="few">"Получили сте всички ваксинации за базова имунизация. Но ваксинационната Ви защита ще е ефективна едва след %1$d дена. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</item>
-    <item quantity="many">"Получили сте всички ваксинации за базова имунизация. Но ваксинационната Ви защита ще е ефективна едва след %1$d дена. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</item>
-    <item quantity="other">"Получили сте всички ваксинации за базова имунизация. Но ваксинационната Ви защита ще е ефективна едва след %1$d дена. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</item>
-  </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC_PENDING Card Long Text -->
   <plurals name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_PENDING_LONG_TEXT">
-    <item quantity="zero">"Въз основа на ваксинацията и миналото Ви заразяване се счита, че имате базова имунизация. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="one">"Въз основа на ваксинацията и миналото Ви заразяване се счита, че имате базова защита. Но е необходим още %1$d ден, за да е ефективна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="two">"Въз основа на ваксинациите и миналите ви заразявания се счита, че имате базова имунизация. Но са необходими още %1$d дена, за да е ефективна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="few">"Въз основа на ваксинацията и миналото Ви заразяване се счита, че имате базова имунизация. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="many">"Въз основа на ваксинацията и миналото Ви заразяване се счита, че имате базова имунизация. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
-    <item quantity="other">"Въз основа на ваксинацията и миналото Ви заразяване се счита, че имате базова имунизация. Но са необходими още %1$d дена, за да е пълна имунната Ви защита. Моля, имайте предвид, че е възможно все още да сте заразни."</item>
+    <item quantity="zero">"Въз основа на ваксинацията и миналите инфекции се счита, че сте напълно ваксинирани. Въпреки това имунната Ви защита няма да бъде ефективна в продължение на още %1$d дни. Моля, имайте предвид, че все още може да сте заразни, и също така се информирайте за препоръчителните бустерни ваксинации."</item>
+    <item quantity="one">"Въз основа на ваксинацията и прекараните инфекции се счита, че сте напълно ваксинирани. Въпреки това имунната Ви защита няма да бъде ефективна още %1$d ден. Моля, имайте предвид, че все още може да сте заразни, и също така се информирайте за препоръчителните бустерни ваксинации."</item>
+    <item quantity="two">"Въз основа на ваксинацията и миналите инфекции се счита, че сте напълно ваксинирани. Въпреки това имунната Ви защита няма да бъде ефективна в продължение на още %1$d дни. Моля, имайте предвид, че все още може да сте заразни, и също така се информирайте за препоръчителните бустерни ваксинации."</item>
+    <item quantity="few">"Въз основа на ваксинацията и миналите инфекции се счита, че сте напълно ваксинирани. Въпреки това имунната Ви защита няма да бъде ефективна в продължение на още %1$d дни. Моля, имайте предвид, че все още може да сте заразни, и също така се информирайте за препоръчителните бустерни ваксинации."</item>
+    <item quantity="many">"Въз основа на ваксинацията и миналите инфекции се счита, че сте напълно ваксинирани. Въпреки това имунната Ви защита няма да бъде ефективна в продължение на още %1$d дни. Моля, имайте предвид, че все още може да сте заразни, и също така се информирайте за препоръчителните бустерни ваксинации."</item>
+    <item quantity="other">"Въз основа на ваксинацията и миналите инфекции се счита, че сте напълно ваксинирани. Въпреки това имунната Ви защита няма да бъде ефективна в продължение на още %1$d дни. Моля, имайте предвид, че все още може да сте заразни, и също така се информирайте за препоръчителните бустерни ваксинации."</item>
   </plurals>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Получили сте всички ваксинации за базова имунизация. Ваксинационната Ви защита е ефективна. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_LONG_TEXT">"Получили сте всички ваксинации за пълна имунизация. Ваксинационната Ви защита е ефективна. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</string>
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
-  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Въз основа на ваксинацията и миналото Ви заразяване се счита, че имате базова имунизация. Но моля вижте също и информацията за препоръчителните ваксинации с бустерни дози."</string>
+  <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Въз основа на ваксинацията и миналото Ви заразяване се счита, че имате пълна имунизация. Моля, вижте също и информацията за препоръчителните ваксинации с бустерни дози."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Не сте получили всички планирани за момента ваксинации – Вашата ваксинационна защита все още не е пълна."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Не сте получили всички препоръчителни за момента ваксинации – Вашата ваксинационна защита все още не е пълна."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"2G Сертификат"</string>
@@ -120,5 +114,30 @@
   <string name="DCC_REISSUANCE_LIST_TITLE_TEXT_EXTEND">"Сертификати за подновяване:"</string>
   <!-- XTXT: DCC Reissuance for extension - Consent - Subtitle Text -->
   <string name="DCC_REISSUANCE_CONSENT_SUBTITLE_TEXT_EXTEND">"Заявяване на подновяване директно в приложението"</string>
+
+  <!-- XHED: Mask State - Default Card Title -->
+  <string name="MASK_STATE_DEFAULT_TITLE_TEXT">"Изисква се носене на маска"</string>
+  <!-- XHED: Mask State - MASK_OPTIONAL - Card Title -->
+  <string name="MASK_STATE_MASK_OPTIONAL_TITLE_TEXT">"Не се изисква носене на маска"</string>
+
+  <!-- XTXT: Mask State - MASK_REQUIRED Badge Text -->
+  <string name="MASK_STATE_MASK_REQUIRED_BADGE_TEXT">"Изисква се носене на маска"</string>
+  <!-- XTXT: Mask State - MASK_REQUIRED Card Body -->
+  <string name="MASK_STATE_MASK_REQUIRED_LONG_TEXT">"Не сте освободени от задължението за носене на маска в тази държава.\n\nЗабележка:\nАко държавата, където се намирате в момента, е наложила задължение за носене на маска, отрицателен бърз тест или PCR тест може да ви освободи от задължението за носене на маска за развлекателни дейности, културни и спортни събития и ресторанти и барове за 24 часа. Неконтролираното самотестуване не е достатъчно. Вашата държава също така може да внедри изключения от задължението за носена на маска след ваксинация или възстановяване от инфекция (в последните три месеца). Изключенията от задължението за носене на маска не важат в обществения транспорт, в болниците и заведенията за медицински грижи или за пациентите в лекарските кабинети.\n\nАко сертификатите за COVID, които сте запазили в приложението, са достатъчни, за да бъдете освободени от задължението за носене на маска във вашата държава, сертификатът е оцветен в зелено. Освобождаването ви от задължението за носене на маска във вашата държава може да бъде потвърдено чрез сканиране на вашия QR код с приложението CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - MASK_OPTIONAL Badge Text -->
+  <string name="MASK_STATE_MASK_OPTIONAL_BADGE_TEXT">"Не се изисква носене на маска"</string>
+  <!-- XTXT: Mask State - MASK_OPTIONAL Card Body -->
+  <string name="MASK_STATE_MASK_OPTIONAL_LONG_TEXT">"Освободени сте от задължението за носене на маска в тази държава в определени ситуации, но все пак носенето на маска е препоръчително.\n\nЗабележка:\nАко държавата, където се намирате в момента, е наложила задължение за носене на маска, отрицателен бърз тест или PCR тест може да ви освободи от задължението за носене на маска за развлекателни дейности, културни и спортни събития и ресторанти и барове за 24 часа. Неконтролираното самотестуване не е достатъчно. Вашата държава също така може да внедри изключения от задължението за носена на маска след ваксинация или възстановяване от инфекция (в последните три месеца). Изключенията от задължението за носене на маска не важат в обществения транспорт, в болниците и заведенията за медицински грижи или за пациентите в лекарските кабинети.\n\nАко сертификатите за COVID, които сте запазили в приложението, са достатъчни, за да бъдете освободени от задължението за носене на маска във вашата държава, сертификатът е оцветен в зелено. Освобождаването ви от задължението за носене на маска във вашата държава може да бъде потвърдено чрез сканиране на вашия QR код с приложението CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - NO_SELECTION Badge Text -->
+  <string name="MASK_STATE_NO_SELECTION_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_SELECTION Card Body -->
+  <string name="MASK_STATE_NO_SELECTION_LONG_TEXT">"Ако не изберете държава, приложението не може да покаже дали сте освободени от задължението за носене на маска, специфично за държавата.\n\nЗабележка:\nАко държавата, където се намирате в момента, е наложила задължение за носене на маска, отрицателен бърз тест или PCR тест може да ви освободи от задължението за носене на маска за развлекателни дейности, културни и спортни събития и ресторанти и барове за 24 часа. Неконтролираното самотестуване не е достатъчно. Вашата държава също така може да внедри изключения от задължението за носена на маска след ваксинация или възстановяване от инфекция (в последните три месеца). Изключенията от задължението за носене на маска не важат в обществения транспорт, в болниците и заведенията за медицински грижи или за пациентите в лекарските кабинети.\n\nАко сертификатите за COVID, които сте запазили в приложението, са достатъчни, за да бъдете освободени от задължението за носене на маска във вашата държава, сертификатът е оцветен в зелено. Освобождаването ви от задължението за носене на маска във вашата държава може да бъде потвърдено чрез сканиране на вашия QR код с приложението CovPassCheck."</string>
+
+  <!-- XTXT: Mask State - NO_MANDATE Badge Text -->
+  <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
+  <!-- XTXT: Mask State - NO_MANDATE Card Body -->
+  <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Няма определени правила, специфични за тази държава. Затова са приложими само стандартните национални правила, които се отнасят за задължението за носене на маска.\n\nЗабележка:\nАко държавата, където се намирате в момента, е наложила задължение за носене на маска, отрицателен бърз тест или PCR тест може да ви освободи от задължението за носене на маска за развлекателни дейности, културни и спортни събития и ресторанти и барове за 24 часа. Неконтролираното самотестуване не е достатъчно. Вашата държава също така може да внедри изключения от задължението за носена на маска след ваксинация или възстановяване от инфекция (в последните три месеца). Изключенията от задължението за носене на маска не важат в обществения транспорт, в болниците и заведенията за медицински грижи или за пациентите в лекарските кабинети.\n\nАко сертификатите за COVID, които сте запазили в приложението, са достатъчни, за да бъдете освободени от задължението за носене на маска във вашата държава, сертификатът е оцветен в зелено. Освобождаването ви от задължението за носене на маска във вашата държава може да бъде потвърдено чрез сканиране на вашия QR код с приложението CovPassCheck."</string>
 
 </resources>
