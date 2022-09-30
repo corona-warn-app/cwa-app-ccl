@@ -155,3 +155,34 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         verificationCertificates:
           - certificate: legacyNovavax3/3
+- description: valneva 1/2 + valneva 2/2 + valneva 3/3
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: valneva1/2
+    - time: +P6W
+      vc: valneva2/2
+    - time: +P6W
+      vc: valneva3/3
+  testCases:
+    - time: valneva1/2
+      assertions:
+        mostRelevantCertificate: valneva1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: valneva1/2
+    - time: valneva2/2
+      assertions:
+        mostRelevantCertificate: valneva2/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: valneva2/2
+    - time: valneva2/2+P15D
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+    - time: valneva3/3
+      assertions:
+        mostRelevantCertificate: valneva3/3
+        vaccinationState: COMPLETE_IMMUNIZATION
+        verificationCertificates:
+          - certificate: valneva3/3
