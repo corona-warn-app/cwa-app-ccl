@@ -23,7 +23,7 @@
         walletInfo:
           vaccinationState:
             longText:
-              de: ^Sie haben noch nicht alle derzeit empfohlenen Impfungen erhalten\. Ihr Impfschutz ist noch nicht vollständig\.$
+              de: '^Sie haben noch nicht alle derzeit empfohlenen Impfungen erhalten\. Ihr Impfschutz ist noch nicht vollständig\.\n\nBitte beachten Sie, dass der in der App angezeigte Impfstatus gemäß Infektionsschutzgesetz bestimmt wird. Für Kinder unter 12 Jahren und alle anderen Personen bestehen nach Bundesrecht derzeit keine Beschränkungen, die an den in der App einsehbaren Impfstatus „vollständig geimpft“ anknüpfen. Bitte beachten Sie zum einen die Empfehlungen der Ständigen Impfkommission und zum anderen möglicherweise abweichende Regeln in Ihrem Bundesland\.$'
 
 - description: 0.1 - VC 2/2
   t0: '2022-08-01'
