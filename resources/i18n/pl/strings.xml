@@ -81,7 +81,7 @@
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Na podstawie przebytego szczepienia i infekcji można uznać, że jesteś w pełni zaszczepiony(-a). Prosimy jednak o zapoznanie się z zalecanymi szczepieniami przypominającymi."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nie otrzymałeś(-aś) jeszcze wszystkich zalecanych szczepień. W związku z tym Twoja ochrona poszczepienna nie jest jeszcze pełna."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Nie otrzymałeś(-aś) jeszcze wszystkich zalecanych obecnie szczepień. Twoja ochrona poszczepienna nie jest jeszcze pełna.\n\nNależy pamiętać, że status zaszczepienia przedstawiony w ustawie jest ustalany na podstawie niemieckiego prawa o ochronie przed infekcjami. Dzieci poniżej 12 roku życia, jak również wszystkie inne osoby, nie podlegają obecnie żadnym ograniczeniom wynikającym ze statusu „W pełni zaszczepiony” wyświetlanego w aplikacji. Prosimy o przestrzeganie zaleceń niemieckiej komisji ds. szczepień, a także wszelkich innych zasad obowiązujących w Twoim kraju związkowym."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"Certyfikat 2G"</string>

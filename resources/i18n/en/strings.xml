@@ -81,7 +81,7 @@
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Based on your vaccination and past infection, you are considered to be fully vaccinated. However, please also find out about the recommended booster vaccinations."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"You have not received all of the currently recommended vaccinations yet. You do not have full vaccination protection yet."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"You have not received all of the currently recommended vaccinations yet. You do not have full vaccination protection yet.\n\nPlease note that the vaccination status displayed in the act is determined based on German infection protection law. Children under 12 years of age, as well as all other people, are currently not subject to any restrictions resulting from the “Fully vaccinated” status displayed in the app. Please follow the recommendations of the German vaccination commission, as well as any possibly different rules in your German state."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"2G Certificate"</string>
