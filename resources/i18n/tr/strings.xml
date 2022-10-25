@@ -81,7 +81,7 @@
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION_RC Card Long Text -->
   <string name="VACCINATION_STATE_COMPLETE_IMMUNIZATION_RC_LONG_TEXT">"Aşınıza ve enfeksiyon geçmişinize göre tüm aşıları yaptırmış olarak değerlendiriliyorsunuz. Ancak lütfen önerilen hatırlatma aşıları hakkında da bilgi edinin."</string>
   <!-- XTXT: Vaccination State - PARTIAL_IMMUNIZATION Card Long Text -->
-  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Henüz şu anda önerilen tüm aşıları olmadınız. Henüz tam aşı korumanız yok.\n\nUygulamada görüntülenen aşı durumunun Almanya enfeksiyondan korunma yasası temelinde belirlendiğini lütfen unutmayın. Diğer tüm kişilerin yanı sıra 12 yaş altındaki çocuklar, şu anda uygulamada görüntülenen \"Tamamen aşılandı\" durumundan kaynaklanan herhangi bir kısıtlamaya tabi değildir. Lütfen Almanya eyaletinizde geçerli olabilecek farklı kuralların yanı sıra Almanya aşı komisyonunun önerilerini takip edin."</string>
+  <string name="VACCINATION_STATE_PARTIAL_IMMUNIZATION_LONG_TEXT">"Henüz şu anda önerilen tüm aşıları olmadınız. Henüz tam aşı korumanız yok.\n\nUygulamada görüntülenen aşı durumunun Almanya enfeksiyondan korunma yasası temelinde belirlendiğini lütfen unutmayın. Diğer tüm kişilerin yanı sıra 12 yaş altındaki çocuklar, şu anda uygulamada görüntülenen \"Tamamen aşılandı\" durumundan kaynaklanan herhangi bir kısıtlamaya tabi değildir. Lütfen Almanya eyaletinizde geçerli olabilecek farklı kuralların yanı sıra Almanya Daimi Aşı Komisyonu\'nun (STIKO) önerilerini takip edin."</string>
   
   <!-- XTXT: Vaccination State - COMPLETE_IMMUNIZATION Card Subtitle -->
   <string name="PERSON_VIEW_2G_CERTIFICATE">"2G Sertifikası"</string>
