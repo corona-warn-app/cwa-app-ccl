@@ -66,7 +66,7 @@
     "strip-ansi": "6.0.1",
     "transliteration": "2.2.0",
     "yargs": "16.2.0",
-    "zx": "7.0.8"
+    "zx": "7.1.1"
   },
   "dependencies": {
     "async": "3.2.3",
