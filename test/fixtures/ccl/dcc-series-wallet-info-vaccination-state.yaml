@@ -450,6 +450,186 @@
       assertions:
         vaccinationState: COMPLETE_BOOSTER
 
+# WHO tests for 2.1
+- description: WHO list - RC + VC 2/1 (WHO) -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: who-covishield2/1
+  testCases:
+    - time: who-covishield2/1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - RC + VC 1/1 (non-mRNA) + VC 2/1 (WHO) -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: astra1/1
+    - time: +P1M
+      vc: who-covishield2/1
+  testCases:
+    - time: who-covishield2/1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - RC + VC 1/1 (mRNA) + VC 2/1 (WHO) -> COMPLETE_IMMUNIZATION_RC
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      rc: rc1
+    - time: +P1M
+      vc: biontech1/1
+    - time: +P1M
+      vc: who-covishield2/1
+  testCases:
+    - time: who-covishield2/1
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_RC
+
+# WHO tests for 2.2
+- description: WHO list - VC 2/1 (WHO) + RC -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: who-covishield2/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - VC 1/1 (non-mRNA) + VC 2/1 (WHO) + RC -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: astra1/1
+    - time: +P1M
+      vc: who-covishield2/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - VC 1/1 (mRNA) + VC 2/1 (WHO) + RC -> COMPLETE_IMMUNIZATION_RC_PENDING
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech1/1
+    - time: +P1M
+      vc: who-covishield2/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_RC_PENDING
+    - time: rc1+P28D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_RC_PENDING
+    - time: rc1+P29D
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION_RC
+
+# WHO tests for 2.3
+- description: WHO list - VC 2/1 (non-mRNA) + VC 3/1 (WHO) -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: astra2/1
+    - time: +P1M
+      vc: who-covishield3/1
+  testCases:
+    - time: who-covishield3/1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - VC 2/1 (mRNA) + VC 3/1 (WHO) -> COMPLETE_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/1
+    - time: +P1M
+      vc: who-covishield3/1
+  testCases:
+    - time: who-covishield3/1
+      assertions:
+        vaccinationState: COMPLETE_IMMUNIZATION
+
+# WHO tests for 2.4
+- description: WHO list - VC 3/1 (WHO) + RC -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: who-covishield3/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - VC 2/2 (non-mRNA) + VC 3/1 (WHO) + RC -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: astra2/2
+    - time: +P1M
+      vc: who-covishield3/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - VC 2/2 (mRNA) + VC 3/1 (WHO) + RC -> COMPLETE_BOOSTER
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech2/2
+    - time: +P1M
+      vc: who-covishield3/1
+    - time: +P1M
+      rc: rc1
+  testCases:
+    - time: rc1
+      assertions:
+        vaccinationState: COMPLETE_BOOSTER
+
+# WHO tests for 2.5
+- description: WHO list - VC 4/1 (WHO) -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: who-covishield4/1
+  testCases:
+    - time: who-covishield4/1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - VC 3/3 (non-mRNA) + VC 4/1 (WHO) -> PARTIAL_IMMUNIZATION
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: astra3/3
+    - time: +P1M
+      vc: who-covishield4/1
+  testCases:
+    - time: who-covishield4/1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+- description: WHO list - VC 3/3 (mRNA) + VC 4/1 (WHO) -> COMPLETE_BOOSTER
+  t0: '2022-08-01'
+  series:
+    - time: t0
+      vc: biontech3/3
+    - time: +P1M
+      vc: who-covishield4/1
+  testCases:
+    - time: who-covishield4/1
+      assertions:
+        vaccinationState: COMPLETE_BOOSTER
+
 - description: general texts
   t0: '2022-08-01'
   series:
