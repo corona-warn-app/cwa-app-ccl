@@ -501,6 +501,9 @@
     - time: rc1
       assertions:
         vaccinationState: PARTIAL_IMMUNIZATION
+    - time: rc1+P29D
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
 - description: WHO list - VC 1/1 (non-mRNA) + VC 2/1 (WHO) + RC -> PARTIAL_IMMUNIZATION
   t0: '2022-08-01'
   series:
@@ -512,6 +515,9 @@
       rc: rc1
   testCases:
     - time: rc1
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+    - time: rc1+P29D
       assertions:
         vaccinationState: PARTIAL_IMMUNIZATION
 - description: WHO list - VC 1/1 (mRNA) + VC 2/1 (WHO) + RC -> COMPLETE_IMMUNIZATION_RC_PENDING
@@ -570,6 +576,9 @@
     - time: rc1
       assertions:
         vaccinationState: PARTIAL_IMMUNIZATION
+    - time: rc1+P29D
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
 - description: WHO list - VC 2/2 (non-mRNA) + VC 3/1 (WHO) + RC -> PARTIAL_IMMUNIZATION
   t0: '2022-08-01'
   series:
@@ -583,6 +592,9 @@
     - time: rc1
       assertions:
         vaccinationState: PARTIAL_IMMUNIZATION
+    - time: rc1+P29D
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
 - description: WHO list - VC 2/2 (mRNA) + VC 3/1 (WHO) + RC -> COMPLETE_BOOSTER
   t0: '2022-08-01'
   series:
@@ -594,6 +606,9 @@
       rc: rc1
   testCases:
     - time: rc1
+      assertions:
+        vaccinationState: COMPLETE_BOOSTER
+    - time: rc1+P29D
       assertions:
         vaccinationState: COMPLETE_BOOSTER
 
