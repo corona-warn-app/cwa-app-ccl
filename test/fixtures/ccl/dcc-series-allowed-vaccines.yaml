@@ -186,3 +186,34 @@
         vaccinationState: COMPLETE_IMMUNIZATION
         verificationCertificates:
           - certificate: valneva3/3
+- description: vidprevtyn 1/2 + vidprevtyn 2/2 + vidprevtyn 3/3
+  t0: '2022-01-01'
+  series:
+    - time: t0
+      vc: vidprevtyn1/2
+    - time: +P6W
+      vc: vidprevtyn2/2
+    - time: +P6W
+      vc: vidprevtyn3/3
+  testCases:
+    - time: vidprevtyn1/2
+      assertions:
+        mostRelevantCertificate: vidprevtyn1/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: vidprevtyn1/2
+    - time: vidprevtyn2/2
+      assertions:
+        mostRelevantCertificate: vidprevtyn2/2
+        vaccinationState: PARTIAL_IMMUNIZATION
+        verificationCertificates:
+          - certificate: vidprevtyn2/2
+    - time: vidprevtyn2/2+P15D
+      assertions:
+        vaccinationState: PARTIAL_IMMUNIZATION
+    - time: vidprevtyn3/3
+      assertions:
+        mostRelevantCertificate: vidprevtyn3/3
+        vaccinationState: COMPLETE_IMMUNIZATION
+        verificationCertificates:
+          - certificate: vidprevtyn3/3
