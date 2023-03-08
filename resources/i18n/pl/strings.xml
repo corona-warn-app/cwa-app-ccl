@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
   <!-- XHED: Admission Scenario - Card Title -->
   <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Obowiązek noszenia maseczek dla:"</string>
@@ -139,5 +139,12 @@
   <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
   <!-- XTXT: Mask State - NO_MANDATE Card Body -->
   <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Nie zdefiniowano reguł dla tego kraju związkowego. Dlatego zastosowanie mają tylko standardowe krajowe reguły dotyczące obowiązku noszenia maseczki.\n\nUwaga:\nJeśli kraj związkowy, w którym obecnie przebywasz, nałożył obowiązek noszenia maseczki, negatywny wynik szybkiego testu lub testu PCR zwolni Cię z tego obowiązku w przypadku aktywności rekreacyjnych, wydarzeń kulturalnych i sportowych oraz wizyt w restauracjach i barach przez 24 godziny. Jednak nie wystarczy samodzielne wykonanie testu bez nadzoru. Twój kraj związkowy może także wdrożyć zwolnienie z obowiązku noszenia maseczki po zaszczepieniu lub przebyciu infekcji (w ciągu ostatnich trzech miesięcy). Zwolnienie z obowiązku noszenia maseczki nie dotyczy transportu publicznego, szpitali i ośrodków zdrowia lub pacjentów w gabinetach lekarskich.\n\nJeśli zapisane przez Ciebie w aplikacji certyfikaty COVID wystarczają do zwolnienia z obowiązku noszenia maseczki w Twoim kraju związkowym, certyfikat wyświetla się na zielono. Możesz potwierdzić swoje zwolnienie z obowiązku noszenia maseczki poprzez zeskanowanie kodu QR w aplikacji CovPassCheck."</string>
+
+  <!-- XTXT: Status Tab Notice - Title Text -->
+  <string name="STATUS_TAB_NOTICE_TITLE_TEXT">"Ważne!"</string>
+  <!-- XTXT: Status Tab Notice - Subtitle Text -->
+  <string name="STATUS_TAB_NOTICE_SUBTITLE_TEXT">"Ostrzeganie innych osób za pośrednictwem aplikacji Corona-Warn-App będzie możliwe tylko do 30 kwietnia 2023 r."</string>
+  <!-- XTXT: Status Tab Notice - Long Text -->
+  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"Od 1 maja 2023 r. nie będziesz mieć możliwości ostrzegania innych osób o zwiększonym ryzyku infekcji ani nie będzieć otrzymywać ostrzeżeń o narażeniu na ryzyko. Rozwój aplikacji Corona-Warn-App zostanie wstrzymany z dniem 1 czerwca 2023 r. Nadal będziesz mieć dostęp do certyfikatów zapisanych w CWA, a także do swojego dziennika kontaktów, ale dodawanie nowych certyfikatów nie będzie możliwe."</string>
 
 </resources>

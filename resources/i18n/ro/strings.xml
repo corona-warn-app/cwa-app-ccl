@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
   <!-- XHED: Admission Scenario - Card Title -->
   <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Obligativitatea purtării măștii pentru:"</string>
@@ -139,5 +139,12 @@
   <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
   <!-- XTXT: Mask State - NO_MANDATE Card Body -->
   <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Nu au fost definite reguli specifice statului pentru acest stat. Prin urmare, se aplică doar regulile standard la nivel național cu privire la obligativitatea purtării măștii faciale.\n\nNotă:\nDacă statul în care vă aflați momentan a impus obligativitatea purtării măștii, un test rapid negativ sau un test PCR negativ vă va scuti de obligativitatea purtării măștii timp de 24 de ore pentru activitățile recreative, culturale și evenimentele sportive, precum și pentru accesul în baruri sau restaurante. O testare acasă nesupravegheată nu este totuși suficientă. De asemenea, statul în care vă aflați poate aplica scutiri de la obligativitatea purtării măștii în urma vaccinării sau a recuperării după boală (în ultimele trei luni). Scutirea de la obligativitatea purtării măștii nu se aplică în transportul public, în spitale și în instituțiile de asistență și nici pacienților aflați în cabinetele medicilor.\n\nDacă certificatele COVID pe care le-ați salvat în aplicație sunt suficiente pentru a vă scuti de obligativitatea purtării măștii în statul dvs., acestea apar cu verde în aplicație. Scutirea de la obligativitatea purtării măștii în statul dvs. poate fi confirmată prin scanarea codului QR cu aplicația CovPassCheck."</string>
+
+  <!-- XTXT: Status Tab Notice - Title Text -->
+  <string name="STATUS_TAB_NOTICE_TITLE_TEXT">"Important!"</string>
+  <!-- XTXT: Status Tab Notice - Subtitle Text -->
+  <string name="STATUS_TAB_NOTICE_SUBTITLE_TEXT">"Îi veți mai putea avertiza pe ceilalți prin intermediul aplicației Corona-Warn doar până pe 30 aprilie 2023."</string>
+  <!-- XTXT: Status Tab Notice - Long Text -->
+  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"Începând cu 1 mai 2023 nu îi veți mai putea avertiza pe ceilalți cu privire la riscul crescut de infectare și nici nu veți mai primi avertizări de la propriile dvs. expuneri la risc. Dezvoltarea aplicației Corona-Warn va înceta de la 1 iunie 2023. Veți putea accesa în continuare certificatele pe care le-ați salvat deja în aplicație, precum și jurnalul de contacte, dar nu veți mai putea adăuga certificate noi."</string>
 
 </resources>

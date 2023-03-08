@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
   <!-- XHED: Admission Scenario - Card Title -->
   <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Обов’язкове носіння маски для:"</string>
@@ -139,5 +139,12 @@
   <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
   <!-- XTXT: Mask State - NO_MANDATE Card Body -->
   <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Для цієї країни не визначено жодних спеціальних правил. Тому тут застосовуються лише стандартні загальнонаціональні правила щодо обов’язкового носіння маски.\n\nПримітка.\nЯкщо в країні вашого поточного перебування прийнято обов’язкове використання маски, негативний результат експрес-тесту або ПЛР-тесту звільнить вас від зобов’язання щодо носіння маски під час розважальних, культурних і спортивних заходів, а також у ресторанах і барах на 24 години. Однак незалежного самостійного тестування недостатньо. Ваша країна також може ввести винятки з обов’язку щодо носіння маски після вакцинації або одужання від інфекції (протягом останніх трьох місяців). Звільнення від обов’язку щодо носіння масок не поширюється на перебування в громадському транспорті, лікарні та закладах догляду, а також відвідування пацієнтами кабінетів лікарів.\n\nЯкщо сертифікатів COVID, які ви зберегли в застосунку, достатньо, щоб звільнити вас від обов’язку щодо носіння маски у вашій країні, сертифікат буде зеленим. Ваше звільнення від обов’язку щодо носіння маски у вашій країні можна підтвердити, відсканувавши QR-код за допомогою застосунку CovPassCheck."</string>
+
+  <!-- XTXT: Status Tab Notice - Title Text -->
+  <string name="STATUS_TAB_NOTICE_TITLE_TEXT">"Важливо!"</string>
+  <!-- XTXT: Status Tab Notice - Subtitle Text -->
+  <string name="STATUS_TAB_NOTICE_SUBTITLE_TEXT">"Ви зможете попереджати інших через застосунок Corona-Warn-App тільки до 30 квітня 2023 року."</string>
+  <!-- XTXT: Status Tab Notice - Long Text -->
+  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"З 1 травня 2023 року ви більше не зможете попереджати інших про підвищений ризик зараження, а також не отримуватимете попереджень про власні схильності до ризиків. Розробку застосунку Corona-Warn-App буде припинено 1 червня 2023 року. Ви все одно матимете доступ до сертифікатів, збережених у CWA, а також до свого щоденника контактів, але не зможете додавати нові сертифікати."</string>
 
 </resources>

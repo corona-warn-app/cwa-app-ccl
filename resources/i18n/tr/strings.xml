@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
 
   <!-- XHED: Admission Scenario - Card Title -->
   <string name="ADMISSION_SCENARIO_LABEL_TEXT">"Maske zorunlulukları:"</string>
@@ -139,5 +139,12 @@
   <string name="MASK_STATE_NO_MANDATE_BADGE_TEXT"/>
   <!-- XTXT: Mask State - NO_MANDATE Card Body -->
   <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Bu eyalet için eyalete özel kurallar tanımlanmadı. Dolayısıyla yalnızca maske zorunluluğuna ilişkin ülke geneli standart kurallar geçerlidir.\n\nNot:\nGüncel olarak bulunduğunuz eyalet maske zorunluluğu uyguluyorsa negatif hızlı test veya PCR testi sizi eğlence amaçlı etkinlikler, kültürel etkinlikler ve spor etkinlikleri, restoranlar ve barlar için 24 saatliğine bu maske zorunluluğundan muaf tutar. Ancak gözetimsiz olarak kendi kendine yapılan testler yeterli değildir. Ayrıca eyaletiniz, aşı olduktan veya enfeksiyon geçirdikten (en az üç ay içinde) sonra maske zorunluluğundan muafiyetler uygulayabilir. Maske zorunluluğundan muafiyetler toplu taşımada, hastanelerde ve bakım tesislerinde veya doktor muayenehanesindeki hastalar için geçerli değildir.\n\nUygulamada kaydettiğiniz COVID sertifikaları sizi eyaletinizdeki maske zorunluluğundan muaf tutmak için yeterliyse sertifikalar yeşil renkte görüntülenir. Maske zorunluluğu muafiyetiniz, CovPassCheck uygulamasıyla QR kodunuz taranarak doğrulanabilir."</string>
+
+  <!-- XTXT: Status Tab Notice - Title Text -->
+  <string name="STATUS_TAB_NOTICE_TITLE_TEXT">"Önemli!"</string>
+  <!-- XTXT: Status Tab Notice - Subtitle Text -->
+  <string name="STATUS_TAB_NOTICE_SUBTITLE_TEXT">"Kullanıcıları yalnızca 30 Nisan 2023 tarihine kadar Corona-Warn-App yoluyla uyarabilirsiniz."</string>
+  <!-- XTXT: Status Tab Notice - Long Text -->
+  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"1 Mayıs 2023 tarihi itibarıyla artık diğer kullanıcıları daha yüksek enfeksiyon riski konusunda uyaramazsınız ve kendi riske maruz kalmalarınız konusunda uyarı alamazsınız. Corona-Warn-App\'in geliştirilmesi 1 Haziran 2023 tarihi itibarıyla durdurulacak. Temas güncenizin yanı sıra CWA\'ya zaten kaydettiğiniz sertifikalara erişmeye devam edebilirsiniz ancak yeni sertifika ekleyemezsiniz."</string>
 
 </resources>
