@@ -1,0 +1,14 @@
+- description: not visible until 2023-04-02 EOB CET
+  now: '2023-04-02T23:59:59+02:00'
+  assertions:
+    visible: false
+- description: visible from 2023-04-03 midnight CET
+  now: '2023-04-03T00:00:00+02:00'
+  assertions:
+    visible: true
+    titleText:
+      de: 'Achtung'
+    subtitleText:
+      de: '30\. April 2023'
+    longText:
+      de: '1\. Mai 2023'
