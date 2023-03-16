@@ -145,6 +145,6 @@
   <!-- XTXT: Status Tab Notice - Subtitle Text -->
   <string name="STATUS_TAB_NOTICE_SUBTITLE_TEXT">"Ostrzeganie innych osób za pośrednictwem aplikacji Corona-Warn-App będzie możliwe tylko do 30 kwietnia 2023 r."</string>
   <!-- XTXT: Status Tab Notice - Long Text -->
-  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"Od 1 maja 2023 r. nie będziesz mieć możliwości ostrzegania innych osób o zwiększonym ryzyku infekcji ani nie będzieć otrzymywać ostrzeżeń o narażeniu na ryzyko. Rozwój aplikacji Corona-Warn-App zostanie wstrzymany z dniem 1 czerwca 2023 r. Nadal będziesz mieć dostęp do certyfikatów zapisanych w CWA, a także do swojego dziennika kontaktów, ale dodawanie nowych certyfikatów nie będzie możliwe."</string>
+  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"Od 1 maja 2023 r. nie będziesz mieć możliwości ostrzegania innych osób o zwiększonym ryzyku infekcji ani nie będziesz otrzymywać ostrzeżeń o narażeniu na ryzyko. Rozwój aplikacji Corona-Warn-App zostanie wstrzymany z dniem 1 czerwca 2023 r. Nadal będziesz mieć dostęp do certyfikatów zapisanych w aplikacji, a także do swojego dziennika kontaktów, ale dodawanie nowych certyfikatów nie będzie możliwe."</string>
 
 </resources>
