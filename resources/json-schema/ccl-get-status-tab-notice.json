@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccl.coronawarn.app/functions/getStatusTabNotice",
+  "title": "CCL - Get Status Tab Notice",
+  "description": "Common Covid Logic (CCL) - Get Status Tab Notice",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/input"
+    },
+    {
+      "$ref": "#/$defs/output"
+    }
+  ],
+  "$defs": {
+    "input": {
+      "title": "CCL - Get Status Tab Notice - Input",
+      "description": "Common Covid Logic (CCL) - Input of Get Status Tab Notice",
+      "type": "object",
+      "required": [
+        "os",
+        "language",
+        "now"
+      ],
+      "properties": {
+        "os": {
+          "type": "string",
+          "enum": [
+            "android",
+            "ios"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "now": {
+          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/systemTime"
+        }
+      }
+    },
+    "output": {
+      "oneOf": [
+        {
+          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/invisibleDivision"
+        },
+        {
+          "$ref": "https://ccl.coronawarn.app/ccl-commons.json#/$defs/visibleDivision"
+        }
+      ]
+    }
+  }
+}
