@@ -145,6 +145,6 @@
   <!-- XTXT: Status Tab Notice - Subtitle Text -->
   <string name="STATUS_TAB_NOTICE_SUBTITLE_TEXT">"Kullanıcıları yalnızca 30 Nisan 2023 tarihine kadar Corona-Warn-App yoluyla uyarabilirsiniz."</string>
   <!-- XTXT: Status Tab Notice - Long Text -->
-  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"1 Mayıs 2023 tarihi itibarıyla artık diğer kullanıcıları daha yüksek enfeksiyon riski konusunda uyaramazsınız ve kendi riske maruz kalmalarınız konusunda uyarı alamazsınız. Corona-Warn-App\'in geliştirilmesi 1 Haziran 2023 tarihi itibarıyla durdurulacak. Temas güncenizin yanı sıra CWA\'ya zaten kaydettiğiniz sertifikalara erişmeye devam edebilirsiniz ancak yeni sertifika ekleyemezsiniz."</string>
+  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"1 Mayıs 2023 tarihi itibarıyla artık diğer kullanıcıları daha yüksek enfeksiyon riski konusunda uyaramazsınız ve kendi riske maruz kalmalarınız konusunda uyarı alamazsınız. Corona-Warn-App\'in geliştirilmesi 1 Haziran 2023 tarihi itibarıyla durdurulacak. Temas güncenizin yanı sıra uygulamaya zaten kaydettiğiniz sertifikalara erişmeye devam edebilirsiniz ancak yeni sertifika ekleyemezsiniz."</string>
 
 </resources>
