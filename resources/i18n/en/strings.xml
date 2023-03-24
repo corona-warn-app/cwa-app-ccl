@@ -145,6 +145,6 @@
   <!-- XTXT: Status Tab Notice - Subtitle Text -->
   <string name="STATUS_TAB_NOTICE_SUBTITLE_TEXT">"You will only be able to warn others through the Corona-Warn-App until April 30, 2023."</string>
   <!-- XTXT: Status Tab Notice - Long Text -->
-  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"As of May 1, 2023, you will no longer be able to warn others of an increased risk of infection, nor will you receive warnings from your own risk exposures. Development of the Corona-Warn-App will be discontinued as of June 1, 2023. You will still be able to access the certificates you have saved in the CWA, as well as your contact diary, but you will not be able to add new certificates."</string>
+  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"As of May 1, 2023, you will no longer be able to warn others of an increased risk of infection, nor will you receive warnings from your own risk exposures. Development of the Corona-Warn-App will be discontinued as of June 1, 2023. You will still be able to access the certificates you have saved in the app, as well as your contact diary, but you will not be able to add new certificates."</string>
 
 </resources>
