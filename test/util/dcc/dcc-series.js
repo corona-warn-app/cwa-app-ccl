@@ -12,6 +12,15 @@ const vaccineShortNamesByMedicalProduct = {
   'EU/1/21/1618': ['novavax', 'nova'],
   'NVX-CoV2373': ['legacyNovavax'],
   'EU/1/21/1624': ['valneva'],
+  'EU/1/21/1580': ['vidprevtyn'],
+  // WHO-approved vaccines
+  Covishield: ['who-covishield'],
+  'Inactivated-SARS-CoV-2-Vero-Cell': ['who-vero-cell'],
+  CoronaVac: ['who-coronavac'],
+  Covaxin: ['who-covaxin'],
+  Covovax: ['who-covovax'],
+  Convidecia: ['who-convidecia'],
+  'WIBP-CorV': ['who-wibp-corv'],
   other: ['other']
 }
 const vaccineMetadataByMedicalProduct = {
@@ -22,6 +31,14 @@ const vaccineMetadataByMedicalProduct = {
   'EU/1/21/1618': { ma: 'ORG-100032020', vp: '1119305005' /* tbd */ },
   'NVX-CoV2373': { ma: 'ORG-100032020', vp: '1119305005' /* tbd */ },
   'EU/1/21/1624': { ma: 'ORG-100036422', vp: 'J07BX03' },
+  'EU/1/21/1580': { ma: 'ORG-100000788', vp: 'J07BX03' },
+  Covishield: { ma: 'ORG-100001981', vp: 'J07BX03' },
+  'Inactivated-SARS-CoV-2-Vero-Cell': { ma: 'ORG-100010771', vp: 'J07BX03' },
+  CoronaVac: { ma: 'CoronaVac', vp: 'J07BX03' },
+  Covaxin: { ma: 'Bharat-Biotech', vp: 'J07BX03' },
+  Covovax: { ma: 'ORG-100001981', vp: 'J07BX03' },
+  Convidecia: { ma: 'ORG-100013793', vp: 'J07BX03' },
+  'WIBP-CorV': { ma: 'Sinopharm-WIBP', vp: 'J07BX03' },
   other: { ma: 'other', vp: 'other' }
 }
 const vaccineShortNames = Object.entries(vaccineShortNamesByMedicalProduct)

@@ -141,4 +141,11 @@
   <!-- XTXT: Mask State - NO_MANDATE Card Body -->
   <string name="MASK_STATE_NO_MANDATE_LONG_TEXT">"Für dieses Bundesland liegen keine bundeslandspezifischen Regeln vor. Es gelten daher nur die bundeseinheitlichen Regeln zur Maskenpflicht.\n\nHinweis:\nSofern das Bundesland, in dem Sie sich aufhalten, eine Maskenpflicht angeordnet hat, befreit Sie ein negativer Schnell- oder PCR-Test bei Freizeit-, Kultur- und Sportveranstaltungen sowie in gastronomischen Einrichtungen für 24 Stunden von dieser Maskenpflicht. Ein unbeaufsichtigt durchgeführter Selbsttest genügt nicht. Ihr Bundesland kann regeln, dass Sie auch durch Impfungen oder Genesung (wenn diese höchstens drei Monate zurückliegen) von der Maskenpflicht befreit sind. Eine Befreiung von der Maskenpflicht gilt nicht im öffentlichen Personenfernverkehr, in Krankenhäusern, Pflegeeinrichtungen und für Patientinnen und Patienten in Arztpraxen.\n\nSollten Ihre in der App hinterlegten COVID-Zertifikate ausreichen, um Sie in Ihrem Bundesland von der Maskenpflicht zu befreien, färbt sich Ihr Zertifikat grün. Ihre Befreiung von der Maskenpflicht in Ihrem Bundesland kann durch einen Scan Ihres QR-Codes mithilfe der CovPassCheck-App nachgewiesen werden."</string>
 
+  <!-- XTXT: Status Tab Notice - Title Text -->
+  <string name="STATUS_TAB_NOTICE_TITLE_TEXT">"Achtung!"</string>
+  <!-- XTXT: Status Tab Notice - Subtitle Text -->
+  <string name="STATUS_TAB_NOTICE_SUBTITLE_TEXT">"Es wird nur noch bis zum 30. April 2023 möglich sein, andere Personen über die Corona-Warn-App zu warnen!"</string>
+  <!-- XTXT: Status Tab Notice - Long Text -->
+  <string name="STATUS_TAB_NOTICE_LONG_TEXT">"Ab dem 1. Mai 2023 können Sie andere Personen hinsichtlich eines erhöhten Infektionsrisikos nicht mehr warnen und Sie erhalten keine Warnungen mehr über Risikobegegnungen. Ab dem 1. Juni 2023 wird die Corona-Warn-App nicht mehr weiterentwickelt. Auf Ihre in der App gespeicherten Zertifikate und das Kontakt-Tagebuch haben Sie jedoch weiterhin Zugriff. Allerdings können Sie keine neuen Zertifikate mehr hinzufügen."</string>
+
 </resources>
